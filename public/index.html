@@ -1467,31 +1467,17 @@ async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp
 function sendSuggest(el){document.getElementById('ask-input').value=el.textContent;sendMsg();}
 function inputKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
 function parseMarkdown(text){
-  // Convert **bold**
-  text = text.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
-  // Convert *italic* (single asterisk, not already handled)
-  text = text.replace(/\*([^*
-]+?)\*/g,'<em>$1</em>');
-  // Convert bullet lines starting with - or •
-  const lines = text.split('
-');
-  let html = '';
-  let inList = false;
-  for(let line of lines){
-    const bulletMatch = line.match(/^[-•]\s+(.+)/);
-    if(bulletMatch){
-      if(!inList){ html += '<ul style="margin:6px 0 6px 16px;padding:0;">'; inList=true; }
-      html += '<li style="margin-bottom:3px;">'+bulletMatch[1]+'</li>';
-    } else {
-      if(inList){ html += '</ul>'; inList=false; }
-      if(line.trim()==='') html += '<br>';
-      else html += '<span>'+line+'</span><br>';
-    }
+  text=text.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  text=text.replace(/\*([^*\n]+?)\*/g,'<em>$1</em>');
+  var lines=text.split('\n'),html='',inList=false;
+  for(var i=0;i<lines.length;i++){
+    var line=lines[i];
+    var bm=line.match(/^[-\u2022]\s+(.+)/);
+    if(bm){if(!inList){html+='<ul style="margin:6px 0 6px 16px;padding:0;">';inList=true;}html+='<li style="margin-bottom:3px;">'+bm[1]+'</li>';}
+    else{if(inList){html+='</ul>';inList=false;}if(line.trim()==='')html+='<br>';else html+=line+'<br>';}
   }
-  if(inList) html += '</ul>';
-  // Clean up extra trailing <br>
-  html = html.replace(/(<br>)+$/,'');
-  return html;
+  if(inList)html+='</ul>';
+  return html.replace(/(<br>)+$/,'');
 }
 function addMsg(text,role){const c=document.getElementById('ask-msgs'),div=document.createElement('div');div.className='msg msg-'+(role==='user'?'user':'ai');const b=document.createElement('div');b.className='msg-bubble'+(role==='ai'&&text==='...'?' typing':'');if(role==='ai'&&text!=='...'){b.innerHTML=parseMarkdown(text);}else{b.textContent=text;}div.appendChild(b);c.appendChild(div);c.scrollTop=c.scrollHeight;return b;}
 
