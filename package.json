@@ -1,0 +1,12 @@
+{
+  "name": "marine-benefits-hub",
+  "version": "1.0.0",
+  "description": "USMC benefits reference app — pay, BAH, TRICARE, and more in plain English",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "devDependencies": {
+    "vercel": "^34.0.0"
+  }
+}
