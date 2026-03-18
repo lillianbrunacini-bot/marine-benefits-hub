@@ -1394,8 +1394,7 @@ function sendSuggest(el){document.getElementById('ask-input').value=el.textConte
 function inputKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
 function parseMarkdown(text){
   text=text.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
-  text=text.replace(/\*([^*\n]+?)\*/g,'<em>$1</em>');
-  var lines=text.split('\n'),html='',inList=false;
+text=text.replace(/\*([^*\n]+?)\*/g,'<em>$1</em>');  var lines=text.split('\n'),html='',inList=false;
   for(var i=0;i<lines.length;i++){
     var line=lines[i];
     var bm=line.match(/^[-\u2022]\s+(.+)/);
