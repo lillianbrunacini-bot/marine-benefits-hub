@@ -1544,5 +1544,6 @@ function filterAcro(q){
 
 async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});try{const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();const reply=data.content?.[0]?.text||'Something went wrong. Try again.';bubble.classList.remove('typing');bubble.innerHTML=parseMarkdown(reply);msgs.push({role:'assistant',content:reply});}catch(e){bubble.classList.remove('typing');bubble.textContent='Connection error. Try again.';}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
 </script>
+    <script src="/fix.js"></script>
 </body>
 </html>
