@@ -784,80 +784,6 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 
     <!-- BASE FACILITIES -->
     <div class="panel" id="p-facilities">
-      <div class="ib"><div class="ib-t">Showing facilities for your duty station</div><div class="ib-b">Switch base below if needed. All phone numbers verified 2025. Always call ahead — hours change frequently.</div></div>
-
-      <select class="base-sel" id="fac-base-sel" onchange="renderFacilities(this.value)">
-        <option value="pendleton">Camp Pendleton, CA</option>
-        <option value="29palms">29 Palms (MCAGCC), CA</option>
-        <option value="quantico">MCB Quantico, VA</option>
-        <option value="lejeune">Camp Lejeune, NC</option>
-        <option value="miramar">MCAS Miramar, CA</option>
-      </select>
-
-      <div class="map-wrap">
-        <iframe class="map-frame" id="fac-map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Naval+Hospital+Camp+Pendleton+CA"></iframe>
-        <div class="map-label" id="map-label">Showing: Camp Pendleton key facilities</div>
-      </div>
-
-      <div id="fac-list"></div>
-    </div>
-
-    <!-- WHO TO CALL -->
-    <div class="panel" id="p-contacts">
-      <div class="ib"><div class="ib-t">Know before you need it</div><div class="ib-b">Save these numbers in your phone now, not when you're stressed and need them. The FRO number is the most important one — get it from your unit as soon as you arrive.</div></div>
-
-      <div class="contact-card">
-        <div class="contact-head"><div class="contact-head-icon" style="background:#fff0f0;"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#ff6b6b" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="contact-head-title">Healthcare &amp; TRICARE</div><div class="contact-head-sub">Medical, dental, prescriptions, referrals</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">TRICARE Main Line</div><div class="contact-item-desc">Enroll, change plans, find providers, referrals</div></div><div class="contact-item-r"><div class="contact-phone">1-844-866-9378</div><div class="contact-web">tricare.mil</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">TRICARE West Region (CA bases)</div><div class="contact-item-desc">Pendleton, Miramar, 29 Palms</div></div><div class="contact-item-r"><div class="contact-phone">1-844-866-9378</div><div class="contact-web">tricare.mil/west</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">TRICARE East Region (East Coast)</div><div class="contact-item-desc">Quantico, Lejeune, and East Coast bases</div></div><div class="contact-item-r"><div class="contact-phone">1-844-866-9378</div><div class="contact-web">tricare.mil/east</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Express Scripts (prescriptions)</div><div class="contact-item-desc">Mail-order pharmacy, refills, transfers</div></div><div class="contact-item-r"><div class="contact-phone">1-877-363-1303</div><div class="contact-web">express-scripts.com</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Mental Health / Crisis Line</div><div class="contact-item-desc">Veterans &amp; military crisis support, 24/7</div></div><div class="contact-item-r"><div class="contact-phone">988 (press 1)</div><div class="contact-web">veteranscrisisline.net</div></div></div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-head"><div class="contact-head-icon" style="background:#eff6ff;"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#3b82f6" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#3b82f6" stroke-width="1.5"/></svg></div><div><div class="contact-head-title">Pay &amp; Finance</div><div class="contact-head-sub">LES, BAH, allotments, pay issues</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">MyPay (DFAS)</div><div class="contact-item-desc">View LES, change allotments, tax withholding</div></div><div class="contact-item-r"><div class="contact-phone">1-888-332-7411</div><div class="contact-web">mypay.dfas.mil</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">DFAS Main Line</div><div class="contact-item-desc">Pay errors, missing payments, allotment issues</div></div><div class="contact-item-r"><div class="contact-phone">1-888-332-7411</div><div class="contact-web">dfas.mil</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Unit S-1 (Admin)</div><div class="contact-item-desc">BAH changes, dependent updates, orders</div><div class="base-tag" style="background:#eff6ff;color:#3b82f6;">Get from your unit</div></div><div class="contact-item-r"><div class="contact-phone">Ask your FRO</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">USAA</div><div class="contact-item-desc">Banking, insurance — best rates for military</div></div><div class="contact-item-r"><div class="contact-phone">1-800-531-8722</div><div class="contact-web">usaa.com</div></div></div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-head"><div class="contact-head-icon" style="background:#ecfdf5;"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M13 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="#10b981" stroke-width="1.5"/><path d="M5 17c0-3 2-5 5-5s5 2 5 5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="contact-head-title">Family &amp; Spouse Support</div><div class="contact-head-sub">Help during deployment and daily base life</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Unit FRO (Family Readiness Officer)</div><div class="contact-item-desc">First call for family issues, deployment info, resources</div><div class="base-tag" style="background:#ecfdf5;color:#10b981;">Get from your unit ASAP</div></div><div class="contact-item-r"><div class="contact-phone">Ask your unit</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Military OneSource</div><div class="contact-item-desc">Free counseling, financial advice, relocation help, 24/7</div></div><div class="contact-item-r"><div class="contact-phone">1-800-342-9647</div><div class="contact-web">militaryonesource.mil</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Navy-Marine Corps Relief Society</div><div class="contact-item-desc">Emergency financial assistance, interest-free loans</div></div><div class="contact-item-r"><div class="contact-phone">1-866-645-8762</div><div class="contact-web">nmcrs.org</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Marine Corps Family Team Building</div><div class="contact-item-desc">LINKS classes, spouse programs, deployment support</div></div><div class="contact-item-r"><div class="contact-phone">Base-specific</div><div class="contact-web">usmc-mccs.org</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">American Red Cross</div><div class="contact-item-desc">Emergency messages to deployed Marines, 24/7</div></div><div class="contact-item-r"><div class="contact-phone">1-877-272-7337</div><div class="contact-web">redcross.org</div></div></div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-head"><div class="contact-head-icon" style="background:#faeeda;"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="3" y="7" width="14" height="10" rx="2" stroke="#d97706" stroke-width="1.5"/><path d="M7 7V5a3 3 0 016 0v2" stroke="#d97706" stroke-width="1.5"/></svg></div><div><div class="contact-head-title">ID Cards, DEERS &amp; Benefits Enrollment</div><div class="contact-head-sub">ID cards, dependent enrollment, benefit changes</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">DEERS National Line</div><div class="contact-item-desc">Update dependent info, verify enrollment</div></div><div class="contact-item-r"><div class="contact-phone">1-800-538-9552</div><div class="contact-web">dmdc.osd.mil/deers</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Real ID / ID Card Office</div><div class="contact-item-desc">New ID cards, renewals — must go in person</div><div class="base-tag" style="background:#faeeda;color:#d97706;">Walk-in or appointment at RAPIDS office</div></div><div class="contact-item-r"><div class="contact-phone">1-800-538-9552</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">SCRA Benefits</div><div class="contact-item-desc">Interest rate cap, lease termination, legal protections</div></div><div class="contact-item-r"><div class="contact-phone">1-800-342-9647</div><div class="contact-web">militaryonesource.mil</div></div></div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-head"><div class="contact-head-icon" style="background:#f5f3ff;"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 4L18 8l-8 4L2 8z" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div><div class="contact-head-title">Education &amp; Tuition</div><div class="contact-head-sub">TA, GI Bill, MyCAA for spouses</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Tuition Assistance (Marine OnLine)</div><div class="contact-item-desc">Apply for TA, track usage</div></div><div class="contact-item-r"><div class="contact-phone">1-877-628-9872</div><div class="contact-web">mol.tqs.usmc.mil</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">GI Bill / VA Education</div><div class="contact-item-desc">Apply, check status, transfer to dependents</div></div><div class="contact-item-r"><div class="contact-phone">1-888-442-4551</div><div class="contact-web">va.gov/education</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">MyCAA (spouse education)</div><div class="contact-item-desc">Up to $4,000 for eligible military spouses</div></div><div class="contact-item-r"><div class="contact-phone">1-800-342-9647</div><div class="contact-web">mycaa.com</div></div></div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-head"><div class="contact-head-icon" style="background:#fff7ed;"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2 6 4.5S13.5 12 10 13c-3.5-1-6-3-6-5.5S6.5 3 10 3z" stroke="#f59e0b" stroke-width="1.5"/><path d="M10 13v4" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="contact-head-title">VA &amp; Transition</div><div class="contact-head-sub">Disability claims, separation, veterans benefits</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">VA Main Line</div><div class="contact-item-desc">Benefits, disability claims, healthcare</div></div><div class="contact-item-r"><div class="contact-phone">1-800-827-1000</div><div class="contact-web">va.gov</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">VA Disability Claims</div><div class="contact-item-desc">File a claim, check status, appeals</div></div><div class="contact-item-r"><div class="contact-phone">1-800-827-1000</div><div class="contact-web">va.gov/disability</div></div></div>
-        <div class="contact-item"><div class="contact-item-l"><div class="contact-item-name">Transition Assistance Program (TAP)</div><div class="contact-item-desc">Separating soon? TAP classes are mandatory and helpful</div></div><div class="contact-item-r"><div class="contact-phone">Base-specific</div><div class="contact-web">dodtap.mil</div></div></div>
-      </div>
-
-    
-
-    <!-- BASE FACILITIES -->
-    <div class="panel" id="p-facilities">
       <div class="ib"><div class="ib-t">Showing facilities for your selected base</div><div class="ib-b">Change your base below. Addresses and phone numbers are verified from official .mil sources. Hours change — always call ahead.</div></div>
 
       <div class="base-select-wrap">
@@ -1558,25 +1484,22 @@ const FACILITIES = {
 };
 
 function renderFacilities(baseKey) {
-  const base = FACILITIES[baseKey];
+  var base = FACILITIES[baseKey];
   if (!base) return;
-  
-  // Update map
-  const mapFrame = document.getElementById('fac-map');
-  const firstFac = base.facilities[0];
+  var mapFrame = document.getElementById('fac-map');
+  var firstFac = base.facilities[0];
   mapFrame.src = 'https://maps.google.com/maps?q=' + firstFac.map + '&output=embed&z=14';
-  document.getElementById('map-label').textContent = 'Showing: ' + base.name + ' key facilities — tap any card for directions';
-
-  // Render facility cards
-  const list = document.getElementById('fac-list');
-  const categories = [...new Set(base.facilities.map(f => f.category))];
-  
-  let html = '';
-  categories.forEach(cat => {
-    const facs = base.facilities.filter(f => f.category === cat);
+  document.getElementById('map-label').textContent = 'Showing: ' + base.name + ' key facilities';
+  var list = document.getElementById('fac-list');
+  var seen = [];
+  var categories = base.facilities.map(function(f){return f.category;}).filter(function(c,i,a){return a.indexOf(c)===i;});
+  var html = '';
+  categories.forEach(function(cat) {
+    var facs = base.facilities.filter(function(f){return f.category===cat;});
     html += '<div><div class="sh">' + cat + '</div><div class="fac-grid">';
-    facs.forEach(f => {
-      html += '<div class="fac-card" onclick="window.open('https://maps.google.com/maps?q=' + f.map + '','_blank')">';
+    facs.forEach(function(f) {
+      var url = 'https://maps.google.com/maps?q=' + f.map;
+      html += '<div class="fac-card" onclick="window.open('' + url + '','_blank')">';
       html += '<div class="fac-icon" style="background:' + f.bg + ';"><span style="font-size:18px;">' + f.icon + '</span></div>';
       html += '<div class="fac-name">' + f.name + '</div>';
       html += '<div class="fac-addr">' + f.addr + '</div>';
