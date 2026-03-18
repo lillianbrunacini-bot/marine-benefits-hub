@@ -308,7 +308,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         </select>
       </div>
     </div>
-    <div id="dep-count-wrap" style="display:none;">
+    <div id="dep-count-wrap" style="display:none;padding:0;">
       <div class="ob-lbl">Number of dependents</div>
       <select class="ob-sel" id="ob-depcount">
         <option value="1">1 dependent</option>
@@ -318,7 +318,6 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         <option value="5">5 dependents</option>
         <option value="6">6+ dependents</option>
       </select>
-      <div style="font-size:11px;color:var(--ink3);margin-top:6px;line-height:1.5;">Dependents include your spouse, children, and anyone else you claim for BAH purposes.</div>
     </div>
     <div><div class="ob-lbl">Duty station</div>
       <select class="ob-sel" id="ob-station">
@@ -1452,7 +1451,7 @@ function getBasePay(g,y){const a=PAY[g];if(!a)return 2000;return a[getPayIdx(par
 function resolveStation(s){const sl=s.toLowerCase();for(const[k,a]of Object.entries(STATION_MAP)){if(a.some(x=>sl.includes(x)))return k;}return null;}
 function getBAH(g,housing,stKey){if(housing==='barracks')return 0;if(!stKey||stKey==='okinawa')return null;const t=BAH[housing==='dep'?stKey+'_d':stKey];return t?t[g]||null:null;}
 function fmt(n){return'$'+Math.round(n).toLocaleString();}
-function launch(){const grade=document.getElementById('ob-grade').value,yos=document.getElementById('ob-yos').value,housing=document.getElementById('ob-housing').value,station=document.getElementById('ob-station').value.trim(),depcount=parseInt(document.getElementById('ob-depcount').value)||1;if(!grade||!station){alert('Please select a pay grade and enter your duty station.');return;}P={grade,yos:parseInt(yos)||0,housing,station,depcount:housing==='dep'?depcount:0};buildUI();document.getElementById('ob').style.display='none';document.getElementById('main').classList.add('on');document.getElementById('ai-intro').textContent='You are a '+grade+' with '+P.yos+' years at '+station+'.';
+function launch(){const grade=document.getElementById('ob-grade').value,yos=document.getElementById('ob-yos').value,housing=document.getElementById('ob-housing').value,station=document.getElementById('ob-station').value;const depcountEl=document.getElementById('ob-depcount');const depcount=depcountEl?parseInt(depcountEl.value)||1:1;if(!grade||!station){alert('Please select your rank and duty station.');return;}P={grade,yos:parseInt(yos)||0,housing,station,depcount:housing==='dep'?depcount:0};buildUI();document.getElementById('ob').style.display='none';document.getElementById('main').classList.add('on');document.getElementById('ai-intro').textContent='You are a '+grade+' with '+P.yos+' years at '+station+'.';
   // Auto-select base in facilities tab
   const stKey=resolveStation(station);
   const baseMap={'pendleton':'pendleton','29palms':'29palms','quantico':'quantico','lejeune':'lejeune','miramar':'miramar','hawaii':'hawaii','okinawa':'okinawa'};
@@ -1500,11 +1499,7 @@ function addMsg(text,role){const c=document.getElementById('ask-msgs'),div=docum
 function toggleDepCount(val){
   const wrap = document.getElementById('dep-count-wrap');
   if(!wrap) return;
-  if(val === 'dep'){
-    wrap.style.setProperty('display','block','important');
-  } else {
-    wrap.style.setProperty('display','none','important');
-  }
+  wrap.setAttribute('style', val === 'dep' ? 'display:block;padding:0;' : 'display:none;padding:0;');
 }
 
 
