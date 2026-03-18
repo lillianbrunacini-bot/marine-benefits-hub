@@ -179,6 +179,32 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
 .dc-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px;}
 .dc-desc{font-size:11px;color:var(--ink3);line-height:1.5;}
 .dc-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;margin-top:6px;}
+
+/* DICTIONARY */
+.dict-search{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:var(--r);padding:11px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .15s;margin-bottom:14px;}
+.dict-search:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(90,122,58,0.1);}
+.rank-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+.rank-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:13px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow);}
+.rank-ins{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;}
+.rank-info{flex:1;min-width:0;}
+.rank-grade{font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px;}
+.rank-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;line-height:1.3;}
+.rank-aka{font-size:11px;color:var(--ink3);line-height:1.4;}
+.acro-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
+.acro-item:last-child{border-bottom:none;}
+.acro-abbr{font-size:13px;font-weight:700;color:var(--coral);min-width:70px;flex-shrink:0;font-family:'Instrument Serif',serif;}
+.acro-full{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.acro-desc{font-size:11px;color:var(--ink3);line-height:1.5;}
+.org-node{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:10px 14px;text-align:center;box-shadow:var(--shadow);}
+.org-node.highlight{border-color:var(--coral);background:var(--coral-light);}
+.org-title{font-size:12px;font-weight:700;color:var(--ink);}
+.org-sub{font-size:10px;color:var(--ink3);margin-top:2px;}
+.org-line{width:1px;height:16px;background:var(--border2);margin:0 auto;}
+.org-row{display:flex;gap:8px;justify-content:center;}
+.org-row .org-node{flex:1;}
+.filter-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px;}
+.filter-btn{font-size:11px;font-weight:600;padding:5px 13px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--ink2);cursor:pointer;transition:all .15s;}
+.filter-btn.on{background:var(--coral-light);border-color:var(--coral-mid);color:var(--coral);}
 </style>
 </head>
 <body>
@@ -260,7 +286,7 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
     <div class="tab" onclick="tab('edu',this)">Education</div>
     <div class="tab" onclick="tab('housing',this)">Housing</div>
     <div class="tab" onclick="tab('spouse',this)">Spouse &amp; Family</div>
-    <div class="tab" onclick="tab('va',this)">VA</div>
+    <div class="tab" onclick="tab('va',this)">VA</div><div class="tab" onclick="tab('dictionary',this)">Spouse Dictionary <span class="tab-dot"></span></div>
   </div>
 
   <div class="body">
@@ -493,6 +519,108 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
 </div>
 </div>
 
+    <!-- SPOUSE DICTIONARY -->
+    <div class="panel" id="p-dictionary">
+      <div class="ib"><div class="ib-t">Your field guide to Marine Corps life</div><div class="ib-b">Ranks, acronyms, and how it all fits together. Bookmark this tab for the first few months.</div></div>
+
+      <!-- RANK GUIDE -->
+      <div>
+        <div class="sh">Enlisted ranks — E-1 to E-9</div>
+        <div class="rank-grid">
+          <div class="rank-card"><div class="rank-ins" style="background:#f1f5f9;color:#475569;">Pvt</div><div class="rank-info"><div class="rank-grade">E-1</div><div class="rank-title">Private</div><div class="rank-aka">Brand new. Just out of boot camp.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#f1f5f9;color:#475569;">PFC</div><div class="rank-info"><div class="rank-grade">E-2</div><div class="rank-title">Private First Class</div><div class="rank-aka">Usually after a few months of service.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#e0f2fe;color:#0369a1;">LCpl</div><div class="rank-info"><div class="rank-grade">E-3</div><div class="rank-title">Lance Corporal</div><div class="rank-aka">First rank with a leadership role. Very common rank to marry into.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#e0f2fe;color:#0369a1;">Cpl</div><div class="rank-info"><div class="rank-grade">E-4</div><div class="rank-title">Corporal</div><div class="rank-aka">First NCO rank. Leads a small team (fire team). Huge step up in responsibility.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#166534;">Sgt</div><div class="rank-info"><div class="rank-grade">E-5</div><div class="rank-title">Sergeant</div><div class="rank-aka">Leads a squad (~13 Marines). Career is getting serious here.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#166534;">SSgt</div><div class="rank-info"><div class="rank-grade">E-6</div><div class="rank-title">Staff Sergeant</div><div class="rank-aka">Senior NCO. Advises platoon commanders. Typically 6–10 years in.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#854d0e;">GySgt</div><div class="rank-info"><div class="rank-grade">E-7</div><div class="rank-title">Gunnery Sergeant</div><div class="rank-aka">"Gunny." One of the most respected ranks in the Corps. Technical expert.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#854d0e;">MSgt</div><div class="rank-info"><div class="rank-grade">E-8</div><div class="rank-title">Master Sergeant / First Sergeant</div><div class="rank-aka">1stSgt is the senior enlisted of a company — your Marine's direct boss if they're enlisted.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#fae8ff;color:#7e22ce;">SgtMaj</div><div class="rank-info"><div class="rank-grade">E-9</div><div class="rank-title">Sergeant Major / Master Gunnery Sgt</div><div class="rank-aka">Top of the enlisted ranks. SgtMaj of the Marine Corps advises the Commandant.</div></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sh">Officer ranks — O-1 to O-10</div>
+        <div class="rank-grid">
+          <div class="rank-card"><div class="rank-ins" style="background:#f0fdf4;color:#166534;">2ndLt</div><div class="rank-info"><div class="rank-grade">O-1</div><div class="rank-title">Second Lieutenant</div><div class="rank-aka">Fresh out of OCS or NROTC. Leads a platoon (~40 Marines). Learning the ropes.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#f0fdf4;color:#166534;">1stLt</div><div class="rank-info"><div class="rank-grade">O-2</div><div class="rank-title">First Lieutenant</div><div class="rank-aka">Usually ~18 months in. Takes on more responsibilities, often exec of a platoon.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#14532d;">Capt</div><div class="rank-info"><div class="rank-grade">O-3</div><div class="rank-title">Captain</div><div class="rank-aka">Commands a company (~180 Marines). First real command. Big deal.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#14532d;">Maj</div><div class="rank-info"><div class="rank-grade">O-4</div><div class="rank-title">Major</div><div class="rank-aka">Staff officer level. Works at battalion or regiment headquarters.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#78350f;">LtCol</div><div class="rank-info"><div class="rank-grade">O-5</div><div class="rank-title">Lieutenant Colonel</div><div class="rank-aka">Commands a battalion (~800 Marines). This is serious seniority.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#78350f;">Col</div><div class="rank-info"><div class="rank-grade">O-6</div><div class="rank-title">Colonel</div><div class="rank-aka">Commands a regiment or large installation. 20+ years typically.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#fae8ff;color:#6b21a8;">BGen</div><div class="rank-info"><div class="rank-grade">O-7</div><div class="rank-title">Brigadier General</div><div class="rank-aka">First general officer rank. One star. Less than 1% of officers reach this.</div></div></div>
+          <div class="rank-card"><div class="rank-ins" style="background:#fae8ff;color:#6b21a8;">Gen</div><div class="rank-info"><div class="rank-grade">O-10</div><div class="rank-title">General / Commandant</div><div class="rank-aka">The Commandant of the Marine Corps is the highest-ranking Marine. Four stars.</div></div></div>
+        </div>
+      </div>
+
+      <!-- ORG CHART -->
+      <div>
+        <div class="sh">How a Marine unit is organized</div>
+        <div class="card"><div style="padding:16px;">
+          <div class="org-node" style="max-width:200px;margin:0 auto;border-color:var(--coral);background:var(--coral-light);"><div class="org-title">Marine Corps</div><div class="org-sub">~180,000 active duty</div></div>
+          <div class="org-line"></div>
+          <div class="org-row">
+            <div class="org-node"><div class="org-title">Division</div><div class="org-sub">~19,000 Marines · commanded by a MajGen (O-8)</div></div>
+          </div>
+          <div class="org-line"></div>
+          <div class="org-row">
+            <div class="org-node"><div class="org-title">Regiment</div><div class="org-sub">~3,000 Marines · Col (O-6)</div></div>
+          </div>
+          <div class="org-line"></div>
+          <div class="org-row">
+            <div class="org-node"><div class="org-title">Battalion</div><div class="org-sub">~800 Marines · LtCol (O-5)</div></div>
+          </div>
+          <div class="org-line"></div>
+          <div class="org-row">
+            <div class="org-node"><div class="org-title">Company</div><div class="org-sub">~180 Marines · Capt (O-3)</div></div>
+          </div>
+          <div class="org-line"></div>
+          <div class="org-row">
+            <div class="org-node"><div class="org-title">Platoon</div><div class="org-sub">~40 Marines · 2ndLt or 1stLt</div></div>
+          </div>
+          <div class="org-line"></div>
+          <div class="org-row">
+            <div class="org-node"><div class="org-title">Squad</div><div class="org-sub">~13 Marines · Sgt (E-5)</div></div>
+            <div class="org-node"><div class="org-title">Squad</div><div class="org-sub">~13 Marines · Sgt (E-5)</div></div>
+            <div class="org-node"><div class="org-title">Squad</div><div class="org-sub">~13 Marines · Sgt (E-5)</div></div>
+          </div>
+          <div class="org-line"></div>
+          <div class="org-row">
+            <div class="org-node highlight"><div class="org-title">Fire Team</div><div class="org-sub">4 Marines · Cpl (E-4)</div></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- ACRONYM DICTIONARY -->
+      <div>
+        <div class="sh">Acronym dictionary</div>
+        <input class="dict-search" id="dict-search" type="text" placeholder="Search acronyms... e.g. BAH, PCS, MOS" oninput="filterAcro(this.value)"/>
+        <div class="card"><div class="rows" id="acro-list" style="gap:0;">
+          <div class="acro-item" data-terms="BAH basic allowance housing rent"><div class="acro-abbr">BAH</div><div><div class="acro-full">Basic Allowance for Housing</div><div class="acro-desc">Monthly tax-free payment to cover rent. Based on rank and duty station. If you rent for less than your BAH, you keep the difference.</div></div></div>
+          <div class="acro-item" data-terms="BAS basic allowance subsistence food"><div class="acro-abbr">BAS</div><div><div class="acro-full">Basic Allowance for Subsistence</div><div class="acro-desc">Monthly tax-free food allowance. Officers get $311/mo, enlisted get $460/mo (2026). You get it regardless of whether you eat in the chow hall.</div></div></div>
+          <div class="acro-item" data-terms="PCS permanent change station move orders"><div class="acro-abbr">PCS</div><div><div class="acro-full">Permanent Change of Station</div><div class="acro-desc">When your Marine gets orders to move to a new base. Usually happens every 2–3 years. The government pays for your move.</div></div></div>
+          <div class="acro-item" data-terms="MOS military occupational specialty job"><div class="acro-abbr">MOS</div><div><div class="acro-full">Military Occupational Specialty</div><div class="acro-desc">Your Marine's job. Every job in the Corps has a 4-digit code. 0302 = Infantry Officer. 0311 = Rifleman. 6174 = Helicopter mechanic.</div></div></div>
+          <div class="acro-item" data-terms="LES leave earnings statement paycheck"><div class="acro-abbr">LES</div><div><div class="acro-full">Leave and Earnings Statement</div><div class="acro-desc">Your Marine's monthly pay stub. Shows base pay, all allowances, deductions, and leave balance. Available on MyPay.dfas.mil.</div></div></div>
+          <div class="acro-item" data-terms="DEERS defense enrollment eligibility reporting system ID card"><div class="acro-abbr">DEERS</div><div><div class="acro-full">Defense Enrollment Eligibility Reporting System</div><div class="acro-desc">The military's database of who's eligible for benefits. You must be enrolled in DEERS to use TRICARE, get an ID card, or access base. Do this first thing after marriage or birth.</div></div></div>
+          <div class="acro-item" data-terms="NCO non commissioned officer sergeant corporal"><div class="acro-abbr">NCO</div><div><div class="acro-full">Non-Commissioned Officer</div><div class="acro-desc">Enlisted leaders — Corporal (E-4) through Sergeant Major (E-9). They're promoted from within the enlisted ranks, not commissioned from college/OCS.</div></div></div>
+          <div class="acro-item" data-terms="OCS officer candidate school commissioning"><div class="acro-abbr">OCS</div><div><div class="acro-full">Officer Candidate School</div><div class="acro-desc">Where civilians become Marine officers. 10 weeks in Quantico, VA. If your Marine went to college and joined as an officer, they went through OCS or NROTC.</div></div></div>
+          <div class="acro-item" data-terms="TDY TAD temporary duty away travel"><div class="acro-abbr">TAD / TDY</div><div><div class="acro-full">Temporary Additional Duty</div><div class="acro-desc">Short-term assignment away from home base for training, schools, or missions. Not a full PCS — they come back. BAH stays the same.</div></div></div>
+          <div class="acro-item" data-terms="CO commanding officer boss unit leader"><div class="acro-abbr">CO</div><div><div class="acro-full">Commanding Officer</div><div class="acro-desc">The boss of a unit — company, battalion, or regiment. What civilians would call the CEO of that unit. Has a lot of authority over your Marine's daily life.</div></div></div>
+          <div class="acro-item" data-terms="XO executive officer second in command"><div class="acro-abbr">XO</div><div><div class="acro-full">Executive Officer</div><div class="acro-desc">Second in command of a unit. Handles the admin and day-to-day operations so the CO can focus on leadership and mission.</div></div></div>
+          <div class="acro-item" data-terms="SNCO staff nco senior noncommissioned"><div class="acro-abbr">SNCO</div><div><div class="acro-full">Staff Non-Commissioned Officer</div><div class="acro-desc">Staff Sergeant (E-6) and above. More experienced NCOs who serve in staff or advisory roles rather than directly leading small teams.</div></div></div>
+          <div class="acro-item" data-terms="FRO family readiness officer spouse support"><div class="acro-abbr">FRO</div><div><div class="acro-full">Family Readiness Officer</div><div class="acro-desc">The unit's designated contact for military families. Your first call when you can't reach your Marine, need info about deployment, or need help navigating resources. Get this number early.</div></div></div>
+          <div class="acro-item" data-terms="FRG family readiness group spouses community"><div class="acro-abbr">FRG</div><div><div class="acro-full">Family Readiness Group</div><div class="acro-desc">The spouse and family community for a unit. Hosts events, shares info during deployments, and is a great way to meet other military spouses. Some are very active, others less so.</div></div></div>
+          <div class="acro-item" data-terms="USMC marine corps branch service"><div class="acro-abbr">USMC</div><div><div class="acro-full">United States Marine Corps</div><div class="acro-desc">One of the six branches of the U.S. Armed Forces. Known for infantry and expeditionary warfare. Administratively part of the Department of the Navy.</div></div></div>
+          <div class="acro-item" data-terms="UA unauthorized absence AWOL missing"><div class="acro-abbr">UA</div><div><div class="acro-full">Unauthorized Absence</div><div class="acro-desc">The Marine equivalent of AWOL (Absent Without Leave). Missing a formation or duty without permission. A serious offense that can affect pay and career.</div></div></div>
+          <div class="acro-item" data-terms="TLE temporary lodging expense hotel PCS move"><div class="acro-abbr">TLE</div><div><div class="acro-full">Temporary Lodging Expense</div><div class="acro-desc">Reimbursement for hotel/temp housing during a PCS move. Up to 10 days covered. Claim it — most people forget.</div></div></div>
+          <div class="acro-item" data-terms="SCRA servicemembers civil relief act interest debt"><div class="acro-abbr">SCRA</div><div><div class="acro-full">Servicemembers Civil Relief Act</div><div class="acro-desc">A federal law that protects active duty military financially. Caps interest rates at 6% on pre-service debt, protects against eviction, and more. Very useful during deployment.</div></div></div>
+          <div class="acro-item" data-terms="MTF military treatment facility base hospital clinic"><div class="acro-abbr">MTF</div><div><div class="acro-full">Military Treatment Facility</div><div class="acro-desc">The hospital or clinic on base. TRICARE is free here. If you have a choice, always use the MTF first before going off-base.</div></div></div>
+          <div class="acro-item" data-terms="MOL marine online portal admin"><div class="acro-abbr">MOL</div><div><div class="acro-full">Marine OnLine</div><div class="acro-desc">The Marine Corps' internal admin portal. Where Marines apply for Tuition Assistance, check leave balances, and manage personal records.</div></div></div>
+        </div></div>
+      </div>
+
+    </div>
+
 <script>
 const PAY={'E-1':[1833,1833,1833,1833,1833,1833,1833,1833,1833,1833,1833,1833],'E-2':[2055,2055,2055,2055,2055,2055,2055,2055,2055,2055,2055,2055],'E-3':[2161,2161,2272,2272,2272,2272,2272,2272,2272,2272,2272,2272],'E-4':[2393,2393,2531,2645,2745,2745,2745,2745,2745,2745,2745,2745],'E-5':[2610,2610,2730,2880,3014,3134,3213,3213,3213,3213,3213,3213],'E-6':[2848,2848,2979,3090,3213,3389,3494,3566,3566,3566,3566,3566],'E-7':[3294,3294,3408,3530,3671,3836,3969,4104,4245,4342,4447,4561],'E-8':[4739,4739,4883,5033,5183,5278,5416,5557,5695,5795,5878,5878],'E-9':[5789,5789,5789,5961,6133,6307,6482,6655,6827,7001,7174,7348],'W-1':[3399,3546,3628,3711,3837,3964,4090,4219,4346,4473,4601,4730],'W-2':[3868,4052,4181,4311,4440,4570,4699,4829,4958,5088,5217,5347],'W-3':[4381,4563,4694,4824,4955,5085,5215,5346,5476,5607,5736,5867],'W-4':[4783,4969,5099,5229,5359,5489,5619,5749,5879,6009,6139,6269],'O-1':[3637,3758,3898,3898,3898,3898,3898,3898,3898,3898,3898,3898],'O-2':[4187,4772,5503,5503,5503,5503,5503,5503,5503,5503,5503,5503],'O-3':[4862,5503,5932,6218,6503,6800,6986,6986,6986,6986,6986,6986],'O-4':[5553,6431,6858,7155,7407,7655,7990,8238,8381,8381,8381,8381],'O-5':[6432,7264,7752,8018,8248,8490,8665,9059,9313,9517,9617,9617],'O-6':[7733,8493,9058,9058,9165,9544,9597,9597,9852,10331,10636,10936],'O-7':[10014,10476,10680,10873,11171,11562,11835,12107,12380,12652,13198,13744],'O-8':[12131,12523,12797,13063,13340,13834,14183,14535,14797,15296,15592,15888]};
 const YOS_IDX=[0,2,3,4,6,8,10,12,14,16,18,20];
@@ -514,6 +642,16 @@ async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp
 function sendSuggest(el){document.getElementById('ask-input').value=el.textContent;sendMsg();}
 function inputKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
 function addMsg(text,role){const c=document.getElementById('ask-msgs'),div=document.createElement('div');div.className='msg msg-'+(role==='user'?'user':'ai');const b=document.createElement('div');b.className='msg-bubble'+(role==='ai'&&text==='...'?' typing':'');b.textContent=text;div.appendChild(b);c.appendChild(div);c.scrollTop=c.scrollHeight;return b;}
+
+function filterAcro(q){
+  const items=document.querySelectorAll('.acro-item');
+  const ql=q.toLowerCase();
+  items.forEach(item=>{
+    const terms=(item.dataset.terms||'')+item.textContent;
+    item.style.display=terms.toLowerCase().includes(ql)?'':'none';
+  });
+}
+
 async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});try{const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();const reply=data.content?.[0]?.text||'Something went wrong. Try again.';bubble.classList.remove('typing');bubble.textContent=reply;msgs.push({role:'assistant',content:reply});}catch(e){bubble.classList.remove('typing');bubble.textContent='Connection error. Try again.';}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
 </script>
 </body>
