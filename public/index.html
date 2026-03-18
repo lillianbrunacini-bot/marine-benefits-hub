@@ -9,7 +9,7 @@
 :root{
   --white:#ffffff;--off:#f8f7f5;--off2:#f0ede8;
   --ink:#1a1714;--ink2:#6b6560;--ink3:#a8a29e;
-  --coral:#ff6b6b;--coral-light:#fff0f0;--coral-mid:#ffd5d5;
+  --coral:#5a7a3a;--coral-light:#f2f5ee;--coral-mid:#c2d4a8;
   --teal:#0d9488;--teal-light:#f0fdfa;--teal-mid:#99f6e4;
   --sky:#3b82f6;--sky-light:#eff6ff;
   --amber:#f59e0b;--amber-light:#fffbeb;
@@ -37,10 +37,10 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
 .ob-form{width:100%;max-width:380px;display:flex;flex-direction:column;gap:14px;}
 .ob-lbl{font-size:11px;font-weight:600;color:var(--ink2);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:5px;}
 .ob-sel,.ob-inp{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:var(--r);padding:11px 13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;appearance:none;-webkit-appearance:none;transition:border-color .15s,box-shadow .15s;}
-.ob-sel:focus,.ob-inp:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,107,107,0.12);}
+.ob-sel:focus,.ob-inp:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(90,122,58,0.12);}
 .ob-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .ob-btn{background:var(--coral);color:white;border:none;border-radius:var(--r);padding:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .15s,transform .1s;margin-top:4px;letter-spacing:0.01em;}
-.ob-btn:hover{background:#ff5252;}
+.ob-btn:hover{background:#4a6830;}
 .ob-btn:active{transform:scale(.98);}
 .ob-note{font-size:11px;color:var(--ink3);text-align:center;margin-top:12px;}
 .ob-divider{display:flex;align-items:center;gap:12px;margin:4px 0;}
@@ -138,9 +138,9 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
 .msg-ai .msg-bubble.typing{color:var(--ink3);font-style:italic;}
 .ask-input-row{padding:10px 12px;border-top:1px solid var(--border);display:flex;gap:9px;align-items:flex-end;}
 .ask-input{flex:1;background:var(--off);border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;resize:none;min-height:38px;max-height:100px;transition:border-color .15s;}
-.ask-input:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,107,107,0.1);}
+.ask-input:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(90,122,58,0.1);}
 .ask-send{background:var(--coral);border:none;border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s,transform .1s;}
-.ask-send:hover{background:#ff5252;}
+.ask-send:hover{background:#4a6830;}
 .ask-send:active{transform:scale(.95);}
 .ask-send:disabled{background:var(--border);cursor:not-allowed;}
 .ask-send svg{width:15px;height:15px;}
@@ -288,7 +288,7 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
             <div class="ql">Education</div>
           </div>
           <div class="qc" onclick="tab('spouse',document.querySelectorAll('.tab')[6])">
-            <div class="qi" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M13 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="#ff6b6b" stroke-width="1.5"/><path d="M5 17c0-3 2-5 5-5s5 2 5 5" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="qi" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M13 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="#5a7a3a" stroke-width="1.5"/><path d="M5 17c0-3 2-5 5-5s5 2 5 5" stroke="#5a7a3a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
             <div class="ql">Spouse &amp; Family</div>
           </div>
           <div class="qc" onclick="tab('ask',document.querySelectorAll('.tab')[1])">
@@ -317,7 +317,7 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
       <div class="ib"><div class="ib-t">Your personal benefits assistant</div><div class="ib-b">Ask anything — BAH changes during deployment, what discounts your spouse qualifies for, how to use TA, what happens to pay during PCS. I know your profile already.</div></div>
       <div class="ask-wrap">
         <div class="ask-header">
-          <div class="ask-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#ff6b6b" stroke-width="1.5"/><path d="M8 8.5c0-1.1.9-2 2-2s2 .9 2 2c0 1-1 1.5-1.5 2S10 11.5 10 11.5" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="14" r=".8" fill="#ff6b6b"/></svg></div>
+          <div class="ask-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#5a7a3a" stroke-width="1.5"/><path d="M8 8.5c0-1.1.9-2 2-2s2 .9 2 2c0 1-1 1.5-1.5 2S10 11.5 10 11.5" stroke="#5a7a3a" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="14" r=".8" fill="#5a7a3a"/></svg></div>
           <div><div class="ask-title">Ask anything</div><div class="ask-sub">Powered by Claude &middot; USMC-focused &middot; 2026 rates</div></div>
         </div>
         <div class="ask-msgs" id="ask-msgs">
@@ -428,7 +428,7 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
           </div>
         </div>
 
-        <div class="card"><div class="ch"><div class="ci" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 6v4l3 3" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="#ff6b6b" stroke-width="1.5"/></svg></div><div class="ct"><div class="ct-t">Adding a new dependent</div><div class="ct-d">Baby, marriage, or adoption</div></div></div><div class="div"></div>
+        <div class="card"><div class="ch"><div class="ci" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 6v4l3 3" stroke="#5a7a3a" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="#5a7a3a" stroke-width="1.5"/></svg></div><div class="ct"><div class="ct-t">Adding a new dependent</div><div class="ct-d">Baby, marriage, or adoption</div></div></div><div class="div"></div>
           <div class="rows">
             <div class="row"><span class="rl">BAH rate change kicks in</span><span class="rv g">Day of the event</span></div>
             <div class="row"><span class="rl">Not end of month &mdash; immediately</span><span class="rv g">Correct</span></div>
@@ -454,7 +454,7 @@ html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(
         <div class="disc-grid">
           <div class="dc"><div class="dc-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#3b82f6" stroke-width="1.5"/></svg></div><div class="dc-name">Commissary</div><div class="dc-desc">~30% below retail. Use it every week.</div><div class="dc-badge" style="background:#eff6ff;color:#3b82f6;">~30% off groceries</div></div>
           <div class="dc"><div class="dc-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#10b981" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="dc-name">Amazon Prime</div><div class="dc-desc">Free with military verification via ID.me.</div><div class="dc-badge" style="background:#ecfdf5;color:#10b981;">Free Prime</div></div>
-          <div class="dc"><div class="dc-icon" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c0 0-7 4-7 9a7 7 0 0014 0c0-5-7-9-7-9z" stroke="#ff6b6b" stroke-width="1.5"/></svg></div><div class="dc-name">Disney Parks</div><div class="dc-desc">$50–80 off per day for military families.</div><div class="dc-badge" style="background:#fff0f0;color:#ff6b6b;">$50–80 / day off</div></div>
+          <div class="dc"><div class="dc-icon" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c0 0-7 4-7 9a7 7 0 0014 0c0-5-7-9-7-9z" stroke="#5a7a3a" stroke-width="1.5"/></svg></div><div class="dc-name">Disney Parks</div><div class="dc-desc">$50–80 off per day for military families.</div><div class="dc-badge" style="background:#fff0f0;color:#5a7a3a;">$50–80 / day off</div></div>
           <div class="dc"><div class="dc-icon" style="background:#fffbeb;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 7h14M3 10h14M3 13h14" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="dc-name">National Parks</div><div class="dc-desc">America the Beautiful pass — free annual access to all national parks.</div><div class="dc-badge" style="background:#fffbeb;color:#f59e0b;">Free annual pass</div></div>
           <div class="dc"><div class="dc-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="6" width="14" height="10" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M7 6V5a3 3 0 016 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div><div class="dc-name">USAA</div><div class="dc-desc">Banking and insurance. Spouses are eligible too.</div><div class="dc-badge" style="background:#f5f3ff;color:#8b5cf6;">Spouses eligible</div></div>
           <div class="dc"><div class="dc-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="dc-name">Lowe's &amp; Home Depot</div><div class="dc-desc">10% off in-store with military ID.</div><div class="dc-badge" style="background:#f0fdfa;color:#0d9488;">10% off</div></div>
