@@ -143,7 +143,7 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--navy);co
 <div class="main" id="main">
   <div class="topbar"><div class="tb-l"><div class="tb-mark"><svg viewBox="0 0 16 16" fill="none"><polygon points="8,1 15,4.5 15,11.5 8,15 1,11.5 1,4.5" fill="#0d1b2e"/></svg></div><div class="tb-brand">Marine <em>Benefits</em> Hub</div></div><div class="tb-r"><div class="chip">USMC</div><div class="ava" id="ava">-</div></div></div>
   <div class="hero"><div class="hero-row"><div><div class="hero-g">Welcome,</div><div class="hero-n" id="h-name">Marine</div><div class="hero-m" id="h-meta">-</div></div><div class="pay-badge"><div class="pb-lbl">Est. monthly</div><div class="pb-amt" id="h-pay">-</div><div class="pb-sub">base + allowances</div></div></div><div style="height:13px;"></div></div>
-  <div class="tabs"><div class="tab on" onclick="tab('overview',this)">Overview</div><div class="tab" onclick="tab('ask',this)">Ask AI<span class="tab-dot"></span></div><div class="tab" onclick="tab('pay',this)">Pay &amp; Allowances</div><div class="tab" onclick="tab('tricare',this)">Healthcare</div><div class="tab" onclick="tab('edu',this)">Education</div><div class="tab" onclick="tab('housing',this)">Housing (BAH)</div><div class="tab" onclick="tab('va',this)">VA &amp; Transition</div></div>
+  <div class="tabs"><div class="tab on" onclick="tab('overview',this)">Overview</div><div class="tab" onclick="tab('ask',this)">Ask AI<span class="tab-dot"></span></div><div class="tab" onclick="tab('pay',this)">Pay &amp; Allowances</div><div class="tab" onclick="tab('tricare',this)">Healthcare</div><div class="tab" onclick="tab('edu',this)">Education</div><div class="tab" onclick="tab('housing',this)">Housing (BAH)</div><div class="tab" onclick="tab('va',this)">VA &amp; Transition</div><div class="tab" onclick="tab('spouse',this)">Spouse &amp; Family<span class="tab-dot"></span></div></div>
   <div class="body">
     <div class="panel on" id="p-overview">
       <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>2026 rates in effect.</strong> BAH updated Jan 1. Use the Ask AI tab to get personalized answers to any benefits question.</div></div>
@@ -187,6 +187,86 @@ html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--navy);co
       <div class="ib"><div class="ib-t">Document everything now</div><div class="ib-b">A VA disability rating depends on a documented service connection. Record every injury, exposure, and medical event on active duty. Don't wait until separation.</div></div>
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">VA disability compensation (2026)</div><div class="ct-d">Tax-free monthly &mdash; veteran only, no dependents</div></div></div><div class="div"></div><div class="rows"><div class="row"><span class="rl">10%</span><span class="rv">$175.51 / mo</span></div><div class="row"><span class="rl">20%</span><span class="rv">$346.95 / mo</span></div><div class="row"><span class="rl">30%</span><span class="rv">$524.31 / mo</span></div><div class="row"><span class="rl">50%</span><span class="rv">$1,075.16 / mo</span></div><div class="row"><span class="rl">70%</span><span class="rv">$1,716.28 / mo</span></div><div class="row"><span class="rl">100%</span><span class="rv g">$3,737.85 / mo</span></div></div></div>
       <div class="ib"><div class="ib-t">PACT Act expanded eligibility</div><div class="ib-b">Deployed near burn pits or toxic exposures? File a PACT Act claim. The VA must now prove you're NOT eligible. Appeals are always an option.</div></div>
+    </div>
+
+    <div class="panel" id="p-spouse">
+      <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>This section is for military spouses &amp; families.</strong> Benefits, discounts, and what to expect when things change.</div></div>
+
+      <div><div class="sh">BAH changes — what spouses need to know</div>
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">During deployment</div><div class="ct-d">BAH does NOT stop during deployment</div></div><div class="pill p-g">Common myth</div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">BAH continues during deployment</span><span class="rv g">Yes — full rate</span></div>
+          <div class="row"><span class="rl">Changes if spouse moves off base</span><span class="rv">Rate stays the same</span></div>
+          <div class="row"><span class="rl">Unaccompanied orders (no family)</span><span class="rv">Reduced rate applies</span></div>
+          <div class="row"><span class="rl">Family stays at home of record</span><span class="rv g">Full w/ dep rate paid</span></div>
+        </div></div>
+
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">During a PCS move</div><div class="ct-d">The transition period catches people off guard</div></div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">Rate while at losing installation</span><span class="rv">Old duty station rate</span></div>
+          <div class="row"><span class="rl">Rate switches to new installation</span><span class="rv">On reporting date</span></div>
+          <div class="row"><span class="rl">TLE (Temporary Lodging Expense)</span><span class="rv g">Up to 10 days covered</span></div>
+          <div class="row"><span class="rl">Per diem during travel days</span><span class="rv g">Paid for family</span></div>
+          <div class="row"><span class="rl">MIHA (overseas housing add-on)</span><span class="rv">Applies OCONUS</span></div>
+        </div></div>
+
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Adding a new dependent</div><div class="ct-d">Marriage, birth, or adoption</div></div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">BAH rate change effective</span><span class="rv g">Date of qualifying event</span></div>
+          <div class="row"><span class="rl">Not end of month — immediately</span><span class="rv g">Yes</span></div>
+          <div class="row"><span class="rl">Submit via</span><span class="rv dim">S-1 / DEERS update</span></div>
+          <div class="row"><span class="rl">DEERS enrollment deadline</span><span class="rv">Within 60 days</span></div>
+          <div class="row"><span class="rl">TRICARE coverage for newborn</span><span class="rv g">Automatic for 60 days</span></div>
+        </div></div>
+      </div>
+
+      <div><div class="sh">PCS entitlements checklist</div>
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">What you're entitled to on a PCS</div><div class="ct-d">Most families leave money on the table — know what to claim</div></div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">Household goods shipment (HHG)</span><span class="rv g">Full weight allowance</span></div>
+          <div class="row"><span class="rl">PPM / DITY move incentive</span><span class="rv g">95% of gov't cost</span></div>
+          <div class="row"><span class="rl">POV shipment (1 vehicle)</span><span class="rv g">Paid by gov't</span></div>
+          <div class="row"><span class="rl">TLE (temp lodging)</span><span class="rv g">Up to 10 days</span></div>
+          <div class="row"><span class="rl">Per diem (travel days)</span><span class="rv g">Per person in family</span></div>
+          <div class="row"><span class="rl">Mileage reimbursement</span><span class="rv g">IRS rate per mile</span></div>
+          <div class="row"><span class="rl">DPS (Defense Personal Property)</span><span class="rv dim">Schedule at move.mil</span></div>
+          <div class="row"><span class="rl">BAH overlap (old + new)</span><span class="rv">Not applicable — switches on report date</span></div>
+        </div></div>
+      </div>
+
+      <div><div class="sh">Military spouse discounts</div>
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Retail &amp; shopping</div></div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">Exchange (MCX / PX / BX)</span><span class="rv g">Tax-free, lower prices</span></div>
+          <div class="row"><span class="rl">Commissary</span><span class="rv g">~30% below retail avg</span></div>
+          <div class="row"><span class="rl">Amazon Military</span><span class="rv g">Free Prime w/ ID.me</span></div>
+          <div class="row"><span class="rl">Apple</span><span class="rv g">~8% off devices</span></div>
+          <div class="row"><span class="rl">Dell</span><span class="rv g">10–15% off</span></div>
+          <div class="row"><span class="rl">Lowe's / Home Depot</span><span class="rv g">10% off</span></div>
+        </div></div>
+
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Travel &amp; entertainment</div></div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">Disney Parks</span><span class="rv g">~$50–80 off / day</span></div>
+          <div class="row"><span class="rl">Universal Studios</span><span class="rv g">Discounted tickets</span></div>
+          <div class="row"><span class="rl">National Parks (America the Beautiful)</span><span class="rv g">Free annual pass</span></div>
+          <div class="row"><span class="rl">Hotels (Marriott, Hilton, IHG)</span><span class="rv g">Military rate available</span></div>
+          <div class="row"><span class="rl">Airlines (United, Delta, AA)</span><span class="rv g">Free checked bags</span></div>
+          <div class="row"><span class="rl">Amtrak</span><span class="rv g">10% off</span></div>
+        </div></div>
+
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Financial &amp; insurance</div></div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">USAA (banking + insurance)</span><span class="rv g">Spouses eligible</span></div>
+          <div class="row"><span class="rl">Navy Federal Credit Union</span><span class="rv g">Spouses eligible</span></div>
+          <div class="row"><span class="rl">SGLI spouse coverage</span><span class="rv g">Up to $100k / $27/mo</span></div>
+          <div class="row"><span class="rl">SCRA interest rate cap</span><span class="rv g">6% on pre-service debt</span></div>
+          <div class="row"><span class="rl">TurboTax / H&amp;R Block</span><span class="rv g">Free federal filing</span></div>
+        </div></div>
+
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Seasonal &amp; recurring deals</div></div></div><div class="div"></div><div class="rows">
+          <div class="row"><span class="rl">Commissary case lot sales</span><span class="rv dim">Spring &amp; Fall annually</span></div>
+          <div class="row"><span class="rl">Exchange tax-free weekends</span><span class="rv dim">Varies by state / base</span></div>
+          <div class="row"><span class="rl">Veterans Day (Nov 11)</span><span class="rv g">Dozens of free meals &amp; deals</span></div>
+          <div class="row"><span class="rl">Military Appreciation Month (May)</span><span class="rv g">Widest discount window</span></div>
+          <div class="row"><span class="rl">MWR programs on base</span><span class="rv g">Tickets, trips, gear rental</span></div>
+        </div></div>
+
+        <div class="ib"><div class="ib-t">Verify with ID.me or your military ID</div><div class="ib-b">Most discounts require verification through ID.me, SheerID, or showing a military ID in person. Spouse discounts typically require the servicemember's ID or enrollment in DEERS. Ask the AI tab for help finding a specific discount.</div></div>
+      </div>
     </div>
   </div>
 </div>
