@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%235a7a3a'/%3E%3Crect x='9' y='6' width='14' height='19' rx='2' fill='white' opacity='0.95'/%3E%3Crect x='12' y='4' width='8' height='4' rx='1.5' fill='white'/%3E%3Cpath d='M12 15l2.5 2.5L20 12' stroke='%235a7a3a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='12' y1='20' x2='20' y2='20' stroke='%235a7a3a' stroke-width='1.5' stroke-linecap='round' opacity='0.5'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%235a7a3a'/><rect x='1.5' y='10' width='29' height='21' rx='3' fill='%235a7a3a'/><path d='M5,14 Q5,7 16,7 Q27,7 27,14 Z' fill='%234a6a2f'/><circle cx='16' cy='5' r='4' fill='%234a6a2f'/><circle cx='16' cy='5' r='2.2' fill='white'/><rect x='3' y='14' width='26' height='15' rx='1.5' fill='%234a6a2f'/><rect x='3' y='14' width='26' height='3' fill='white' opacity='0.88'/><rect x='3' y='19.5' width='26' height='3' fill='white' opacity='0.88'/><rect x='3' y='25' width='26' height='3' fill='white' opacity='0.88'/><rect x='3' y='14' width='10' height='9.5' fill='%233d5828'/><circle cx='5.5' cy='16.5' r='0.9' fill='white'/><circle cx='8.5' cy='16.5' r='0.9' fill='white'/><circle cx='11.5' cy='16.5' r='0.9' fill='white'/><circle cx='7' cy='19.5' r='0.9' fill='white'/><circle cx='10' cy='19.5' r='0.9' fill='white'/><circle cx='5.5' cy='22.5' r='0.9' fill='white'/><circle cx='8.5' cy='22.5' r='0.9' fill='white'/><circle cx='11.5' cy='22.5' r='0.9' fill='white'/></svg>"><rect width='32' height='32' rx='6' fill='%235a7a3a'/><rect x='4.5' y='5.5' width='23' height='24' rx='3' fill='%235a7a3a'/><rect x='11' y='2.5' width='10' height='6.5' rx='2.5' fill='%235a7a3a'/><rect x='12.5' y='3.2' width='7' height='4' rx='1.5' fill='%234a6830'/><rect x='6.5' y='10' width='19' height='14' rx='1' fill='%234a6830'/><rect x='6.5' y='10' width='19' height='1.9' fill='white' opacity='0.9'/><rect x='6.5' y='13.8' width='19' height='1.9' fill='white' opacity='0.9'/><rect x='6.5' y='17.6' width='19' height='1.9' fill='white' opacity='0.9'/><rect x='6.5' y='21.4' width='19' height='1.9' fill='white' opacity='0.85'/><rect x='6.5' y='10' width='7.5' height='7.5' fill='%233d5a2a' opacity='0.8'/><circle cx='8.3' cy='11.4' r='0.6' fill='white'/><circle cx='10.1' cy='11.4' r='0.6' fill='white'/><circle cx='11.9' cy='11.4' r='0.6' fill='white'/><circle cx='9.2' cy='13' r='0.6' fill='white'/><circle cx='11' cy='13' r='0.6' fill='white'/><circle cx='8.3' cy='14.6' r='0.6' fill='white'/><circle cx='10.1' cy='14.6' r='0.6' fill='white'/><circle cx='11.9' cy='14.6' r='0.6' fill='white'/><line x1='7' y1='27' x2='25' y2='27' stroke='white' stroke-width='1.4' stroke-linecap='round' opacity='0.5'/><line x1='7' y1='29.5' x2='17' y2='29.5' stroke='white' stroke-width='1.4' stroke-linecap='round' opacity='0.4'/></svg>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Semper Sorted</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 /* ONBOARD */
 .ob{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;background:var(--white);min-height:600px;}
 .ob-logo{display:flex;align-items:center;gap:10px;margin-bottom:40px;}
-.ob-mark{width:38px;height:38px;background:var(--coral);border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.ob-mark{width:92px;height:38px;background:transparent;border-radius:0;display:flex;align-items:center;justify-content:center;}
 .ob-mark svg{width:20px;height:20px;}
 .ob-brand{font-size:18px;font-weight:700;color:var(--ink);}
 .ob-brand em{color:var(--coral);font-style:normal;}
@@ -283,34 +283,59 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 <!-- ONBOARD -->
 <div class="ob" id="ob">
   <div class="ob-logo">
-    <div class="ob-mark"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- clipboard body -->
-  <rect x="3" y="3.5" width="14" height="15" rx="2" fill="white" opacity="0.92"/>
-  <!-- clipboard clip top -->
-  <rect x="6.5" y="1.5" width="7" height="3.5" rx="1.5" fill="white"/>
-  <rect x="7.5" y="2" width="5" height="2.5" rx="1" fill="#5a7a3a"/>
-  <!-- american flag (white silhouette inside clipboard) -->
-  <!-- flag body outline -->
-  <rect x="5" y="5.5" width="10" height="7" rx="0.5" fill="white" opacity="0.15"/>
-  <!-- stripes -->
-  <rect x="5" y="5.5" width="10" height="1" fill="white" opacity="0.9"/>
-  <rect x="5" y="7.5" width="10" height="1" fill="white" opacity="0.9"/>
-  <rect x="5" y="9.5" width="10" height="1" fill="white" opacity="0.9"/>
-  <rect x="5" y="11.5" width="10" height="1" fill="white" opacity="0.9"/>
-  <!-- canton -->
-  <rect x="5" y="5.5" width="4" height="4" fill="white" opacity="0.5"/>
-  <!-- stars (3x3 dots) -->
-  <circle cx="5.8" cy="6.3" r="0.3" fill="white"/>
-  <circle cx="6.7" cy="6.3" r="0.3" fill="white"/>
-  <circle cx="7.6" cy="6.3" r="0.3" fill="white"/>
-  <circle cx="6.2" cy="7.1" r="0.3" fill="white"/>
-  <circle cx="7.1" cy="7.1" r="0.3" fill="white"/>
-  <circle cx="5.8" cy="7.9" r="0.3" fill="white"/>
-  <circle cx="6.7" cy="7.9" r="0.3" fill="white"/>
-  <circle cx="7.6" cy="7.9" r="0.3" fill="white"/>
-  <!-- bottom lines on clipboard -->
-  <line x1="5.5" y1="14.5" x2="14.5" y2="14.5" stroke="#5a7a3a" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
-  <line x1="5.5" y1="16.5" x2="11" y2="16.5" stroke="#5a7a3a" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+    <div class="ob-mark"><svg viewBox="0 0 88 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- PENCIL tip up -->
+  <g transform="translate(2, 2)">
+    <polygon points="5,0 1,7 9,7" fill="white" opacity="0.9"/>
+    <polygon points="5,0 3.5,4 6.5,4" fill="white" opacity="0.5"/>
+    <rect x="1" y="6" width="8" height="22" fill="white" opacity="0.85"/>
+    <rect x="0" y="27" width="10" height="3" rx="0.8" fill="white" opacity="0.6"/>
+    <rect x="1" y="29" width="8" height="4" rx="1.5" fill="white" opacity="0.5"/>
+  </g>
+  <!-- CLIPBOARD center -->
+  <g transform="translate(16, 0)">
+    <rect x="0" y="6" width="24" height="30" rx="2" fill="white" opacity="0.9"/>
+    <path d="M3,9.5 Q3,4 12,4 Q21,4 21,9.5 Z" fill="white" opacity="0.7"/>
+    <circle cx="12" cy="2.5" r="3" fill="white" opacity="0.7"/>
+    <circle cx="12" cy="2.5" r="1.5" fill="#5a7a3a"/>
+    <rect x="1.5" y="9.5" width="21" height="24" rx="1" fill="white" opacity="0.6"/>
+    <rect x="1.5" y="9.5" width="21" height="3" fill="white" opacity="0.9"/>
+    <rect x="1.5" y="14.5" width="21" height="3" fill="white" opacity="0.9"/>
+    <rect x="1.5" y="19.5" width="21" height="3" fill="white" opacity="0.9"/>
+    <rect x="1.5" y="24.5" width="21" height="3" fill="white" opacity="0.9"/>
+    <rect x="1.5" y="29.5" width="21" height="3" fill="white" opacity="0.9"/>
+    <rect x="1.5" y="9.5" width="9" height="9" fill="#5a7a3a" opacity="0.4"/>
+    <circle cx="3.5" cy="11.5" r="0.7" fill="white"/>
+    <circle cx="6"   cy="11.5" r="0.7" fill="white"/>
+    <circle cx="8.5" cy="11.5" r="0.7" fill="white"/>
+    <circle cx="4.8" cy="14"   r="0.7" fill="white"/>
+    <circle cx="7.2" cy="14"   r="0.7" fill="white"/>
+    <circle cx="3.5" cy="16.5" r="0.7" fill="white"/>
+    <circle cx="6"   cy="16.5" r="0.7" fill="white"/>
+    <circle cx="8.5" cy="16.5" r="0.7" fill="white"/>
+  </g>
+  <!-- RIFLE barrel up -->
+  <g transform="translate(46, 36) rotate(-90) scale(0.19)">
+    <path d="M0,-3 L8,-5 L10,0 L8,5 L0,3 Z" fill="white" opacity="0.8"/>
+    <rect x="8"   y="-3"  width="72" height="6"  rx="1" fill="white" opacity="0.85"/>
+    <rect x="54"  y="-5"  width="10" height="10" rx="1" fill="white" opacity="0.7"/>
+    <rect x="60"  y="-12" width="9"  height="8"  rx="1" fill="white" opacity="0.7"/>
+    <rect x="80"  y="-7"  width="48" height="14" rx="2" fill="white" opacity="0.75"/>
+    <line x1="82" y1="-3" x2="126" y2="-3" stroke="#5a7a3a" stroke-width="2" opacity="0.5"/>
+    <line x1="82" y1="1"  x2="126" y2="1"  stroke="#5a7a3a" stroke-width="2" opacity="0.5"/>
+    <rect x="128" y="-9"  width="38" height="12" rx="2" fill="white" opacity="0.85"/>
+    <rect x="132" y="-22" width="24" height="14" rx="2" fill="white" opacity="0.7"/>
+    <rect x="140" y="-28" width="8"  height="8"  rx="1" fill="white" opacity="0.6"/>
+    <rect x="128" y="3"   width="38" height="16" rx="2" fill="white" opacity="0.7"/>
+    <path d="M138,19 Q145,31 154,19" stroke="white" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M150,18 L158,18 L161,37 Q160,41 155,41 L150,41 Q147,37 148,27 Z" fill="white" opacity="0.7"/>
+    <path d="M136,19 L142,19 L146,54 Q145,58 141,58 Q137,58 136,54 Z" fill="white" opacity="0.75"/>
+    <rect x="164" y="-4"  width="22" height="8"  rx="3" fill="white" opacity="0.7"/>
+    <rect x="183" y="-9"  width="37" height="18" rx="3" fill="white" opacity="0.85"/>
+    <rect x="187" y="-6"  width="3"  height="12" rx="1" fill="white" opacity="0.5"/>
+    <rect x="193" y="-6"  width="3"  height="12" rx="1" fill="white" opacity="0.5"/>
+    <rect x="212" y="-7"  width="9"  height="14" rx="2" fill="white" opacity="0.7"/>
+  </g>
 </svg></div>
     <div class="ob-brand">Semper <em>Sorted</em></div>
   </div>
@@ -410,7 +435,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 <div class="main" id="main">
   <div class="topbar">
     <div class="tb-l">
-      <div class="tb-mark"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><!-- clipboard body --><rect x="3.5" y="3" width="13" height="15.5" rx="1.8" fill="white" opacity="0.95"/><!-- clipboard clip --><rect x="7" y="1.5" width="6" height="3" rx="1" fill="white"/><!-- flag stripes: red and white alternating --><clipPath id="fc"><rect x="4.5" y="5.5" width="11" height="7.5" rx="0.5"/></clipPath><g clip-path="url(#fc)"><rect x="4.5" y="5.5" width="11" height="1.07" fill="#B22234"/><rect x="4.5" y="6.57" width="11" height="1.07" fill="white"/><rect x="4.5" y="7.64" width="11" height="1.07" fill="#B22234"/><rect x="4.5" y="8.71" width="11" height="1.07" fill="white"/><rect x="4.5" y="9.78" width="11" height="1.07" fill="#B22234"/><rect x="4.5" y="10.85" width="11" height="1.07" fill="white"/><rect x="4.5" y="11.92" width="11" height="1.14" fill="#B22234"/><!-- canton blue --><rect x="4.5" y="5.5" width="4.4" height="4.3" fill="#3C3B6E"/><!-- stars: 3x2 simple dots --><circle cx="5.5" cy="6.5" r="0.35" fill="white"/><circle cx="6.5" cy="6.5" r="0.35" fill="white"/><circle cx="7.5" cy="6.5" r="0.35" fill="white"/><circle cx="6" cy="7.4" r="0.35" fill="white"/><circle cx="7" cy="7.4" r="0.35" fill="white"/><circle cx="8" cy="7.4" r="0.35" fill="white"/><circle cx="5.5" cy="8.3" r="0.35" fill="white"/><circle cx="6.5" cy="8.3" r="0.35" fill="white"/><circle cx="7.5" cy="8.3" r="0.35" fill="white"/></g><!-- bottom lines on clipboard --><line x1="6" y1="15" x2="14" y2="15" stroke="#5a7a3a" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/><line x1="6" y1="16.8" x2="11" y2="16.8" stroke="#5a7a3a" stroke-width="1.1" stroke-linecap="round" opacity="0.5"/></svg></div>
+      <div class="tb-mark"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3.5" width="14" height="15" rx="1.8" fill="#5a7a3a"/><rect x="7" y="1.5" width="6" height="4" rx="1.5" fill="#5a7a3a"/><rect x="8" y="2" width="4" height="2.5" rx="0.8" fill="#4a6830"/><clipPath id="cl"><rect x="4.5" y="6" width="11" height="8" rx="0.4"/></clipPath><g clip-path="url(#cl)"><rect x="4.5" y="6" width="11" height="8" fill="#4a6830"/><rect x="4.5" y="6" width="11" height="1.1" fill="white" opacity="0.9"/><rect x="4.5" y="8.2" width="11" height="1.1" fill="white" opacity="0.9"/><rect x="4.5" y="10.4" width="11" height="1.1" fill="white" opacity="0.9"/><rect x="4.5" y="12.6" width="11" height="1.1" fill="white" opacity="0.9"/><rect x="4.5" y="6" width="4.5" height="4.4" fill="#3d5a2a" opacity="0.8"/><circle cx="5.4" cy="6.9" r="0.28" fill="white"/><circle cx="6.3" cy="6.9" r="0.28" fill="white"/><circle cx="7.2" cy="6.9" r="0.28" fill="white"/><circle cx="5.85" cy="7.7" r="0.28" fill="white"/><circle cx="6.75" cy="7.7" r="0.28" fill="white"/><circle cx="5.4" cy="8.5" r="0.28" fill="white"/><circle cx="6.3" cy="8.5" r="0.28" fill="white"/><circle cx="7.2" cy="8.5" r="0.28" fill="white"/></g><line x1="5" y1="16" x2="15" y2="16" stroke="white" stroke-width="0.9" stroke-linecap="round" opacity="0.5"/><line x1="5" y1="17.5" x2="11" y2="17.5" stroke="white" stroke-width="0.9" stroke-linecap="round" opacity="0.4"/></svg></div>
       <div class="tb-brand">Semper <em>Sorted</em></div>
     </div>
     <div class="tb-r">
