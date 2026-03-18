@@ -25,35 +25,9 @@
 html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(--off);color:var(--ink);font-size:14px;-webkit-font-smoothing:antialiased;}
 #app{min-height:100vh;display:flex;flex-direction:column;}
 
-/* ONBOARD */
-.ob{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;background:var(--white);min-height:600px;}
-.ob-logo{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:28px;}
-.ob-mark{width:220px;height:138px;display:flex;align-items:center;justify-content:center;}
-.ob-mark svg{width:20px;height:20px;}
-.ob-brand{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:0.05em;font-family:'Courier New',Courier,monospace;text-transform:uppercase;text-align:center;}
-.ob-brand em{color:var(--coral);font-style:italic;}
-.ob-headline{font-family:'Courier New',Courier,monospace;font-size:22px;font-weight:400;text-align:center;line-height:1.4;margin-bottom:10px;color:var(--ink);letter-spacing:0.02em;}
-.ob-headline em{color:var(--coral);font-style:italic;}
-.ob-sub{font-size:14px;color:var(--ink2);text-align:center;margin-bottom:36px;line-height:1.7;max-width:300px;}
-.ob-form{width:100%;max-width:380px;display:flex;flex-direction:column;gap:14px;}
-.ob-lbl{font-size:11px;font-weight:600;color:var(--ink2);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:5px;}
-.ob-sel,.ob-inp{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:var(--r);padding:11px 13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;appearance:none;-webkit-appearance:none;transition:border-color .15s,box-shadow .15s;}
-.ob-sel:focus,.ob-inp:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(90,122,58,0.12);}
-.ob-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.ob-btn{background:var(--coral);color:white;border:none;border-radius:var(--r);padding:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .15s,transform .1s;margin-top:4px;letter-spacing:0.01em;}
-.ob-btn:hover{background:#4a6830;}
-.ob-btn:active{transform:scale(.98);}
-.ob-note{font-size:11px;color:var(--ink3);text-align:center;margin-top:12px;}
-.ob-features{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:380px;margin:16px 0 8px;}
-.ob-feat{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-size:12px;font-weight:500;color:var(--ink2);background:var(--white);line-height:1;}
-.ob-feat svg{flex-shrink:0;color:var(--coral);opacity:.85;}
-.ob-divider{display:flex;align-items:center;gap:12px;margin:4px 0;}
-.ob-divider::before,.ob-divider::after{content:'';flex:1;height:1px;background:var(--border);}
-.ob-divider span{font-size:11px;color:var(--ink3);}
-
 /* MAIN */
-.main{display:none;flex-direction:row;min-height:100vh;background:var(--off);}
-.main.on{display:flex;}
+.main{display:flex;flex-direction:row;min-height:100vh;background:var(--off);}
+
 
 .topbar{display:none;}
 .tb-l{display:flex;align-items:center;gap:14px;}
@@ -214,7 +188,12 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 
 /* FACILITIES & CONTACTS */
 .fac-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
-.fac-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:13px;box-shadow:var(--shadow);cursor:pointer;transition:border-color .15s,box-shadow .15s;}
+.fac-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow);cursor:pointer;transition:border-color .15s,box-shadow .15s;}
+.fac-card:hover{border-color:var(--coral-mid);box-shadow:var(--shadow-md);}
+.fac-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:5px;}
+.fac-addr{font-size:11.5px;color:var(--ink2);margin-bottom:3px;}
+.fac-phone{font-size:11.5px;color:var(--coral);font-weight:500;margin-bottom:2px;}
+.fac-hours{font-size:11px;color:var(--ink3);}
 .fac-card:hover{border-color:var(--coral-mid);box-shadow:var(--shadow-md);}
 .fac-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
 .fac-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;}
@@ -313,7 +292,25 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .hero-brand-name{font-family:'Courier New',Courier,monospace;font-size:36px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);line-height:1.1;}
 .hero-brand-sub{font-size:14px;color:var(--ink3);margin-top:8px;letter-spacing:.04em;}
 .sb-greeting{font-size:11px;color:rgba(255,255,255,0.7);margin-bottom:4px;}
-.sb-name{font-family:'Courier New',Courier,monospace;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:white;margin-bottom:3px;}
+.sb-name-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;}
+.sb-name{font-family:'Courier New',Courier,monospace;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:white;}
+.sb-edit-btn{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:6px;padding:4px 5px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0;}
+.sb-edit-btn:hover{background:rgba(255,255,255,0.22);}
+.pm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:100;backdrop-filter:blur(2px);}
+.pm{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:101;background:var(--white);border-radius:var(--rlg);box-shadow:0 20px 60px rgba(0,0,0,0.2);width:360px;max-width:calc(100vw - 32px);max-height:90vh;overflow-y:auto;}
+.pm-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 16px;border-bottom:1px solid var(--border);}
+.pm-title{font-family:'Courier New',Courier,monospace;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);}
+.pm-close{background:var(--off);border:none;border-radius:8px;padding:6px;cursor:pointer;color:var(--ink2);display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.pm-close:hover{background:var(--border);}
+.pm-body{padding:20px 24px;display:flex;flex-direction:column;gap:14px;}
+.pm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pm-field{display:flex;flex-direction:column;gap:5px;}
+.pm-lbl{font-size:11px;font-weight:600;color:var(--ink2);letter-spacing:.07em;text-transform:uppercase;}
+.pm-sel{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:var(--r);padding:10px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;appearance:none;-webkit-appearance:none;transition:border-color .15s,box-shadow .15s;}
+.pm-sel:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(90,122,58,0.12);}
+.pm-footer{padding:16px 24px 20px;border-top:1px solid var(--border);}
+.pm-save{width:100%;background:var(--coral);color:white;border:none;border-radius:var(--r);padding:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .15s;}
+.pm-save:hover{background:#4a6830;}
 .sb-station{font-size:11px;color:rgba(255,255,255,0.65);margin-bottom:12px;}
 .sb-pay-row{background:rgba(255,255,255,0.12);border-radius:8px;padding:10px 14px;}
 .sb-pay-lbl{font-size:9px;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}
@@ -326,127 +323,79 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 <div id="app">
 
 <!-- ONBOARD -->
-<div class="ob" id="ob">
-  <div class="ob-logo">
-    <div class="ob-mark"><img src="data:image/svg+xml,%3Csvg%20viewBox=%22219%2028%20202%20138%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20transform=%22translate%28270%2C%2045%29%22%3E%3Cpolygon%20points=%226%2C0%201%2C16%2011%2C16%22%20fill=%22%234a6a2f%22%2F%3E%3Cpolygon%20points=%226%2C0%204.5%2C8%207.5%2C8%22%20fill=%22%233d5828%22%2F%3E%3Crect%20x=%221%22%20y=%2215%22%20width=%2210%22%20height=%2283%22%20fill=%22%235a7a3a%22%2F%3E%3Crect%20x=%222%22%20y=%2215%22%20width=%222.5%22%20height=%2283%22%20fill=%22white%22%20opacity=%220.1%22%2F%3E%3Crect%20x=%220%22%20y=%2297%22%20width=%2212%22%20height=%224%22%20rx=%221%22%20fill=%22%233d5828%22%2F%3E%3Crect%20x=%221%22%20y=%22100%22%20width=%2210%22%20height=%227%22%20rx=%222.5%22%20fill=%22%234a6a2f%22%2F%3E%3C%2Fg%3E%3Cg%20transform=%22translate%28292%2C%2045%29%22%3E%3Crect%20x=%220%22%20y=%2218%22%20width=%2256%22%20height=%2292%22%20rx=%224%22%20fill=%22%235a7a3a%22%2F%3E%3Cpath%20d=%22M7%2C25%20Q7%2C14%2028%2C14%20Q49%2C14%2049%2C25%20Z%22%20fill=%22%234a6a2f%22%2F%3E%3Ccircle%20cx=%2228%22%20cy=%229%22%20r=%227%22%20fill=%22%234a6a2f%22%2F%3E%3Ccircle%20cx=%2228%22%20cy=%229%22%20r=%223.8%22%20fill=%22white%22%2F%3E%3Crect%20x=%224%22%20y=%2225%22%20width=%2248%22%20height=%2276%22%20rx=%222%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%224%22%20y=%2225%22%20width=%2248%22%20height=%226.5%22%20fill=%22white%22%20opacity=%220.88%22%2F%3E%3Crect%20x=%224%22%20y=%2237%22%20width=%2248%22%20height=%226.5%22%20fill=%22white%22%20opacity=%220.88%22%2F%3E%3Crect%20x=%224%22%20y=%2249%22%20width=%2248%22%20height=%226.5%22%20fill=%22white%22%20opacity=%220.88%22%2F%3E%3Crect%20x=%224%22%20y=%2261%22%20width=%2248%22%20height=%226.5%22%20fill=%22white%22%20opacity=%220.88%22%2F%3E%3Crect%20x=%224%22%20y=%2273%22%20width=%2248%22%20height=%226.5%22%20fill=%22white%22%20opacity=%220.88%22%2F%3E%3Crect%20x=%224%22%20y=%2285%22%20width=%2248%22%20height=%226.5%22%20fill=%22white%22%20opacity=%220.88%22%2F%3E%3Crect%20x=%224%22%20y=%2225%22%20width=%2220%22%20height=%2220%22%20fill=%22%233d5828%22%2F%3E%3Ccircle%20cx=%227.5%22%20cy=%2228.5%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3Ccircle%20cx=%2212%22%20cy=%2228.5%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3Ccircle%20cx=%2216.5%22%20cy=%2228.5%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3Ccircle%20cx=%2210%22%20cy=%2233%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3Ccircle%20cx=%2214.5%22%20cy=%2233%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3Ccircle%20cx=%227.5%22%20cy=%2237.5%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3Ccircle%20cx=%2212%22%20cy=%2237.5%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3Ccircle%20cx=%2216.5%22%20cy=%2237.5%22%20r=%221.1%22%20fill=%22white%22%2F%3E%3C%2Fg%3E%3Cg%20transform=%22translate%28366%2C%20155%29%20rotate%28-90%29%20scale%280.508%29%22%3E%3Cpath%20d=%22M0%2C-3%20L8%2C-5%20L10%2C0%20L8%2C5%20L0%2C3%20Z%22%20fill=%22%233d5828%22%2F%3E%3Crect%20x=%228%22%20y=%22-3%22%20width=%2272%22%20height=%226%22%20rx=%221%22%20fill=%22%235a7a3a%22%2F%3E%3Crect%20x=%2254%22%20y=%22-5%22%20width=%2210%22%20height=%2210%22%20rx=%221%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%2260%22%20y=%22-12%22%20width=%229%22%20height=%228%22%20rx=%221%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%2262%22%20y=%22-17%22%20width=%225%22%20height=%226%22%20rx=%221%22%20fill=%22%233d5828%22%2F%3E%3Crect%20x=%2280%22%20y=%22-7%22%20width=%2248%22%20height=%2214%22%20rx=%222.5%22%20fill=%22%234a6a2f%22%2F%3E%3Cline%20x1=%2282%22%20y1=%22-3%22%20x2=%22126%22%20y2=%22-3%22%20stroke=%22%233d5828%22%20stroke-width=%221.5%22%2F%3E%3Cline%20x1=%2282%22%20y1=%221%22%20x2=%22126%22%20y2=%221%22%20stroke=%22%233d5828%22%20stroke-width=%221.5%22%2F%3E%3Crect%20x=%22128%22%20y=%22-9%22%20width=%2238%22%20height=%2212%22%20rx=%222%22%20fill=%22%235a7a3a%22%2F%3E%3Crect%20x=%22132%22%20y=%22-22%22%20width=%2224%22%20height=%2214%22%20rx=%222.5%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%22140%22%20y=%22-28%22%20width=%228%22%20height=%228%22%20rx=%221.5%22%20fill=%22%233d5828%22%2F%3E%3Crect%20x=%22164%22%20y=%22-7%22%20width=%226%22%20height=%225%22%20rx=%221%22%20fill=%22%233d5828%22%2F%3E%3Crect%20x=%22128%22%20y=%223%22%20width=%2238%22%20height=%2216%22%20rx=%222%22%20fill=%22%234a6a2f%22%2F%3E%3Cpath%20d=%22M138%2C19%20Q145%2C31%20154%2C19%22%20stroke=%22%233d5828%22%20stroke-width=%222.5%22%20fill=%22none%22%20stroke-linecap=%22round%22%2F%3E%3Cpath%20d=%22M150%2C18%20L158%2C18%20L161%2C37%20Q160%2C41%20155%2C41%20L150%2C41%20Q147%2C37%20148%2C27%20Z%22%20fill=%22%233d5828%22%2F%3E%3Cpath%20d=%22M136%2C19%20L142%2C19%20L146%2C54%20Q145%2C58%20141%2C58%20Q137%2C58%20136%2C54%20Z%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%22164%22%20y=%22-4%22%20width=%2222%22%20height=%228%22%20rx=%223.5%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%22183%22%20y=%22-9%22%20width=%2237%22%20height=%2218%22%20rx=%223%22%20fill=%22%235a7a3a%22%2F%3E%3Crect%20x=%22187%22%20y=%22-6%22%20width=%223%22%20height=%2212%22%20rx=%221%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%22193%22%20y=%22-6%22%20width=%223%22%20height=%2212%22%20rx=%221%22%20fill=%22%234a6a2f%22%2F%3E%3Crect%20x=%22212%22%20y=%22-7%22%20width=%229%22%20height=%2214%22%20rx=%222%22%20fill=%22%234a6a2f%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" width="162" height="138" alt="logo" style="display:block;max-width:100%;"/></div>
-    <div class="ob-brand">SEMPER <em>SORTED</em></div>
+
+<!-- PROFILE MODAL -->
+<div class="pm-overlay" id="pm-overlay" onclick="closeProfileModal()" style="display:none;"></div>
+<div class="pm" id="pm" style="display:none;">
+  <div class="pm-header">
+    <div class="pm-title">Edit Profile</div>
+    <button class="pm-close" onclick="closeProfileModal()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="2" y1="2" x2="12" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="12" y1="2" x2="2" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
   </div>
-  <div class="ob-headline">Everything military<br>life throws at you.<br><em>One place.</em></div>
-  <div class="ob-sub">Pay. Housing. Healthcare. Schools. Base facilities. Partner deals. Spouse community. Plain English — no runaround.</div>
-  <div class="ob-features">
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="3.5" width="13" height="8" rx="1.8" stroke="currentColor" stroke-width="1.4"/><circle cx="7.5" cy="7.5" r="1.7" stroke="currentColor" stroke-width="1.3"/><line x1="4" y1="7.5" x2="4" y2="7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="7.5" x2="11" y2="7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      Pay &amp; BAH
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="2.5" width="11" height="10" rx="1.8" stroke="currentColor" stroke-width="1.4"/><line x1="7.5" y1="5.2" x2="7.5" y2="9.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="5.2" y1="7.5" x2="9.8" y2="7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      TRICARE
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M1.5 6.8L7.5 2l6 4.8V13a.7.7 0 01-.7.7H2.2a.7.7 0 01-.7-.7V6.8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 13.7V9.2h4v4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Housing
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2L1 5.5l6.5 3.3L14 5.5 7.5 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M4 7v3.5c0 1.1 1.6 2 3.5 2s3.5-.9 3.5-2V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="14" y1="5.5" x2="14" y2="9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      Education
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5C5.3 1.5 3.5 3.3 3.5 5.5c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="7.5" cy="5.5" r="1.4" stroke="currentColor" stroke-width="1.3"/></svg>
-      Base Facilities
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="4.8" cy="4.8" r="2.1" stroke="currentColor" stroke-width="1.4"/><circle cx="10.2" cy="4.8" r="2.1" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.1 1.7-3.6 3.8-3.6S8.6 11.9 8.6 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9.8 10.6C11.5 10.8 13 12.1 13 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      Spouse &amp; Family
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M1.5 1.5h1.8l1.9 7.2h6.1l1.5-5.1H4.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.2" cy="12.2" r="1" fill="currentColor"/><circle cx="10.8" cy="12.2" r="1" fill="currentColor"/></svg>
-      Deals &amp; Discounts
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M5.8 5.8c0-1 .8-1.8 1.7-1.8s1.7.8 1.7 1.8c0 .8-.5 1.3-1.1 1.6L7.5 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="7.5" cy="10.5" r=".7" fill="currentColor"/></svg>
-      AI Assistant
-    </div>
-    <div class="ob-feat">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.7 4H13l-3.2 2.4 1.2 3.9-3.5-2.1-3.5 2.1 1.2-3.9L2 5.5h3.8z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-      VA Benefits
-    </div>
-  </div>
-  <div style="text-align:center;font-size:12px;color:var(--ink3);margin:4px 0 2px;font-style:italic;">Tell us about your situation — we'll personalize everything.</div>
-  <div class="ob-form">
-    <div><div class="ob-lbl">Rank</div>
-      <select class="ob-sel" id="ob-grade">
-        <option value="">Select your grade</option>
+  <div class="pm-body">
+    <div class="pm-field">
+      <label class="pm-lbl">Rank</label>
+      <select class="pm-sel" id="pm-grade">
+        <option value="" disabled selected>Select your rank</option>
         <optgroup label="Enlisted"><option>E-1</option><option>E-2</option><option>E-3</option><option>E-4</option><option>E-5</option><option>E-6</option><option>E-7</option><option>E-8</option><option>E-9</option></optgroup>
         <optgroup label="Warrant Officer"><option>W-1</option><option>W-2</option><option>W-3</option><option>W-4</option><option>W-5</option></optgroup>
         <optgroup label="Officer"><option>O-1</option><option>O-2</option><option>O-3</option><option>O-4</option><option>O-5</option><option>O-6</option><option>O-7</option><option>O-8</option></optgroup>
       </select>
     </div>
-    <div class="ob-grid">
-      <div><div class="ob-lbl">Years of service</div>
-        <select class="ob-sel" id="ob-yos">
+    <div class="pm-grid">
+      <div class="pm-field">
+        <label class="pm-lbl">Years of Service</label>
+        <select class="pm-sel" id="pm-yos">
           <option value="0">Under 2 yrs</option><option value="2">2 yrs</option><option value="3">3 yrs</option><option value="4">4 yrs</option><option value="6">6 yrs</option><option value="8">8 yrs</option><option value="10">10 yrs</option><option value="12">12 yrs</option><option value="14">14 yrs</option><option value="16">16 yrs</option><option value="18">18 yrs</option><option value="20">20+ yrs</option>
         </select>
       </div>
-      <div><div class="ob-lbl">Housing</div>
-        <select class="ob-sel" id="ob-housing" onchange="toggleDepCount(this.value)">
+      <div class="pm-field">
+        <label class="pm-lbl">Living Situation</label>
+        <select class="pm-sel" id="pm-housing" onchange="pmToggleDep(this.value)">
           <option value="nodep">Without dependents</option>
           <option value="dep">With dependents</option>
-          <option value="barracks">In barracks / on base</option>
+          <option value="barracks">Barracks / on base</option>
         </select>
       </div>
     </div>
-    <div id="dep-count-wrap" style="display:none;">
-      <div class="ob-lbl">How many dependents?</div>
-      <select class="ob-sel" id="ob-depcount">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6+</option>
+    <div class="pm-field" id="pm-dep-wrap">
+      <label class="pm-lbl">Dependents</label>
+      <select class="pm-sel" id="pm-depcount">
+        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5+</option>
       </select>
-      <p style="font-size:11px;color:var(--ink3);margin-top:6px;">Includes spouse, children, and anyone else claimed for BAH.</p>
     </div>
-    <div><div class="ob-lbl">Duty station</div>
-      <select class="ob-sel" id="ob-station">
-        <option value="">Select your base</option>
-        <optgroup label="California">
+    <div class="pm-field">
+      <label class="pm-lbl">Duty Station</label>
+      <select class="pm-sel" id="pm-station">
+        <option value="" disabled selected>Select your duty station</option>
+        <optgroup label="CONUS West">
           <option value="Camp Pendleton">Camp Pendleton, CA</option>
-          <option value="29 Palms">29 Palms (MCAGCC), CA</option>
+          <option value="29 Palms">Twentynine Palms, CA</option>
           <option value="MCAS Miramar">MCAS Miramar, CA</option>
-          <option value="MCRD San Diego">MCRD San Diego, CA</option>
-          <option value="Marine Barracks Barstow">Marine Barracks Barstow, CA</option>
+          <option value="MCAS Yuma">MCAS Yuma, AZ</option>
         </optgroup>
-        <optgroup label="Virginia / East Coast">
-          <option value="Quantico">MCB Quantico, VA</option>
-          <option value="Henderson Hall">Henderson Hall, VA</option>
-        </optgroup>
-        <optgroup label="North Carolina">
+        <optgroup label="CONUS East">
           <option value="Camp Lejeune">Camp Lejeune, NC</option>
           <option value="MCAS Cherry Point">MCAS Cherry Point, NC</option>
           <option value="MCAS New River">MCAS New River, NC</option>
+          <option value="MCB Quantico">MCB Quantico, VA</option>
+          <option value="8th and I">Marine Barracks Washington (8th &amp; I)</option>
         </optgroup>
-        <optgroup label="South Carolina">
-          <option value="MCRD Parris Island">MCRD Parris Island, SC</option>
-          <option value="MCAS Beaufort">MCAS Beaufort, SC</option>
-        </optgroup>
-        <optgroup label="Hawaii">
-          <option value="MCB Hawaii">MCB Hawaii (Kaneohe Bay), HI</option>
-        </optgroup>
-        <optgroup label="Japan / OCONUS">
-          <option value="Okinawa">Camp Butler / Foster, Okinawa</option>
+        <optgroup label="Hawaii &amp; Pacific">
+          <option value="MCB Hawaii">MCB Hawaii (K-Bay)</option>
           <option value="MCAS Iwakuni">MCAS Iwakuni, Japan</option>
+          <option value="Okinawa">Camp Butler / Okinawa</option>
         </optgroup>
         <optgroup label="Other">
-          <option value="8th and I">Marine Barracks Washington (8th & I)</option>
-          <option value="Marine Barracks Yuma">MCAS Yuma, AZ</option>
           <option value="Camp Blaz">Camp Blaz, Guam</option>
           <option value="Other">Other / Not listed</option>
         </optgroup>
       </select>
     </div>
-    <button class="ob-btn" onclick="launch()">Take me in &rarr;</button>
-    <div class="ob-note">No account needed &middot; Your info stays on this device &middot; Free</div>
+  </div>
+  <div class="pm-footer">
+    <button class="pm-save" id="pm-save-btn" onclick="saveProfile()">Save &amp; Update</button>
   </div>
 </div>
 
@@ -456,7 +405,12 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
   <div class="sidebar">
     <div class="sb-hero">
       <div class="sb-greeting">Hey there,</div>
-      <div class="sb-name" id="sb-name">Marine</div>
+      <div class="sb-name-row">
+        <div class="sb-name" id="sb-name">Marine</div>
+        <button class="sb-edit-btn" onclick="openProfileModal()" title="Edit profile">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M9 2L11 4L4.5 10.5L2 11L2.5 8.5L9 2z" stroke="rgba(255,255,255,0.8)" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
       <div class="sb-station" id="sb-user">—</div>
       <div class="sb-pay-row">
         <div class="sb-pay-lbl">Est. monthly take-home</div>
@@ -582,10 +536,46 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
     <!-- PAY -->
     <div class="panel" id="p-pay">
       <div class="ib"><div class="ib-t">BAH and BAS are completely tax-free</div><div class="ib-b">Only base pay gets taxed. BAH (housing) and BAS (food) come out untouched, which makes your real compensation much higher than it looks on paper.</div></div>
+
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Your monthly breakdown</div><div class="ct-d" id="pay-desc">2026 rates</div></div></div><div class="div"></div><div class="rows" id="pay-rows"></div></div>
+
       <div class="sh">Full 2026 USMC pay table</div>
       <div class="card" style="overflow-x:auto;"><div style="padding:13px 16px;"><table class="pay-tbl" id="pay-table"></table></div></div>
-      <div class="ib"><div class="ib-t">Extra pays you might qualify for</div><div class="ib-b">Hostile fire ($225/mo), Airborne/Jump ($150/mo), Sea pay (varies), SDAP for SSgt+, Foreign Language Pay, Diving pay. Ask the AI tab what applies to your situation.</div></div>
+
+      <div class="sh">Special & Incentive Pays</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Hostile Fire / Combat Pay</span><span class="rv g">$225/mo — tax-free in combat zone</span></div>
+        <div class="row"><span class="rl">Airborne / Jump Pay</span><span class="rv">$150–$225/mo depending on status</span></div>
+        <div class="row"><span class="rl">Sea Pay</span><span class="rv">$50–$805/mo based on grade &amp; time at sea</span></div>
+        <div class="row"><span class="rl">Diving Pay</span><span class="rv">$150–$340/mo depending on qualification</span></div>
+        <div class="row"><span class="rl">Foreign Language Proficiency Pay</span><span class="rv">$100–$1,000/mo based on language &amp; level</span></div>
+        <div class="row"><span class="rl">SDAP (Staff Duty)</span><span class="rv">$600–$2,700/mo for SSgt and above in key billets</span></div>
+        <div class="row"><span class="rl">Hazardous Duty Pay</span><span class="rv">$150–$250/mo for certain MOS assignments</span></div>
+        <div class="row"><span class="rl">Family Separation Allowance (FSA)</span><span class="rv">$250/mo when deployed away from dependents 30+ days</span></div>
+        <div class="row"><span class="rl">Clothing Allowance (enlisted)</span><span class="rv">~$400–500/yr for uniform upkeep</span></div>
+      </div></div>
+
+      <div class="sh">TSP — Your Retirement Account</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">What it is</span><span class="rv">Thrift Savings Plan — federal 401(k) equivalent</span></div>
+        <div class="row"><span class="rl">BRS automatic contribution</span><span class="rv">DoD contributes 1% of base pay automatically</span></div>
+        <div class="row"><span class="rl">Matching (after 2 years)</span><span class="rv">DoD matches up to 4% of your contributions</span></div>
+        <div class="row"><span class="rl">2026 contribution limit</span><span class="rv">$23,500/yr ($31,000 if in a combat zone)</span></div>
+        <div class="row"><span class="rl">Traditional vs Roth</span><span class="rv">Traditional: pre-tax. Roth: post-tax, tax-free in retirement</span></div>
+        <div class="row"><span class="rl">How to enroll / change</span><span class="rv">Marine OnLine (MOL) → MyPay → TSP</span></div>
+      </div></div>
+
+      <div class="sh">Understanding Your LES</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Leave and Earnings Statement</span><span class="rv">Your pay stub — available on MyPay at mypay.dfas.mil</span></div>
+        <div class="row"><span class="rl">Entitlements</span><span class="rv">Everything you're owed: base pay, BAH, BAS, special pays</span></div>
+        <div class="row"><span class="rl">Deductions</span><span class="rv">Federal tax, FICA, SGLI, TSP, allotments</span></div>
+        <div class="row"><span class="rl">SGLI (life insurance)</span><span class="rv">$29/mo for $400,000 coverage — best deal in insurance</span></div>
+        <div class="row"><span class="rl">Mid-month vs end of month</span><span class="rv">Pay splits 1st and 15th. Combat zone pay is tax-exempt.</span></div>
+        <div class="row"><span class="rl">Pay issues</span><span class="rv">Contact your unit S1 / IPAC first, then DFAS: 1-888-332-7411</span></div>
+      </div></div>
+
+      <div class="ib"><div class="ib-t">Combat zone = tax-free base pay</div><div class="ib-b">If you're deployed to a designated combat zone, your entire base pay becomes tax-free for that month — even if you were only there for one day. BAH and BAS are always tax-free regardless.</div></div>
     </div>
 
     <!-- TRICARE -->
@@ -631,7 +621,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         <div class="rows">
           <div class="row"><span class="rl">Tuition at a public in-state school</span><span class="rv g">100% covered</span></div>
           <div class="row"><span class="rl">Private / out-of-state school cap</span><span class="rv">$28,937 / yr</span></div>
-          <div class="row"><span class="rl">Monthly housing stipend</span><span class="rv g">E-5 w/ dependents BAH rate</span></div>
+          <div class="row"><span class="rl">Monthly housing stipend</span><span class="rv g" id="gi-bah-rate">E-5 w/ dep BAH rate</span></div>
           <div class="row"><span class="rl">Books and supplies</span><span class="rv g">Up to $1,000 / yr</span></div>
           <div class="row"><span class="rl">Total time available</span><span class="rv">36 months</span></div>
           <div class="row"><span class="rl">Can you give it to your kids?</span><span class="rv">Yes (4-yr commitment)</span></div>
@@ -642,9 +632,39 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 
     <!-- HOUSING -->
     <div class="panel" id="p-housing">
-      <div class="ib"><div class="ib-t">You keep what you don't spend</div><div class="ib-b">BAH is based on median rent in your area. If you find a place cheaper than your BAH rate, the leftover is yours to keep &mdash; tax-free. It's not a use-it-or-lose-it thing.</div></div>
+      <div class="ib"><div class="ib-t">You keep what you don't spend</div><div class="ib-b">BAH is based on median rent in your area. If you find a place cheaper than your BAH rate, the leftover is yours to keep — tax-free. It's not a use-it-or-lose-it thing.</div></div>
+
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Your BAH rate</div><div class="ct-d" id="bah-desc">Based on your grade and duty station</div></div></div><div class="div"></div><div class="rows" id="bah-rows"></div></div>
-      <div class="ib"><div class="ib-t">Going overseas? It's called OHA instead</div><div class="ib-b">OCONUS stations use Overseas Housing Allowance (OHA) instead of BAH. It covers your actual rent up to a local cap, plus a utilities allowance. Rates vary a lot by country &mdash; ask the AI tab for your specific location.</div></div>
+
+      <div class="sh">How BAH Works</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">What BAH covers</span><span class="rv">Rent, renter's insurance, and basic utilities allowance</span></div>
+        <div class="row"><span class="rl">Rate is based on</span><span class="rv">Your grade, dependent status, and duty station ZIP code</span></div>
+        <div class="row"><span class="rl">It's tax-free</span><span class="rv">BAH is never taxed — it doesn't count as income</span></div>
+        <div class="row"><span class="rl">Two tiers only</span><span class="rv">With dependents or without — more dependents don't increase it</span></div>
+        <div class="row"><span class="rl">Rate protection</span><span class="rv">If BAH drops, your rate is frozen until it rises again</span></div>
+        <div class="row"><span class="rl">Living in barracks</span><span class="rv">BAH is waived — housing is provided at no cost to you</span></div>
+      </div></div>
+
+      <div class="sh">On-Base vs Off-Base Housing</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">On-base (government quarters)</span><span class="rv">BAH is signed over to the housing office — no out-of-pocket</span></div>
+        <div class="row"><span class="rl">Privatized housing (Lincoln, Balfour)</span><span class="rv">They collect your BAH directly — clarify what's included</span></div>
+        <div class="row"><span class="rl">Off-base advantage</span><span class="rv">Keep anything left over after rent — some families pocket $200–600/mo</span></div>
+        <div class="row"><span class="rl">Renter's insurance</span><span class="rv">Required on most bases — USAA and NFCU offer military rates</span></div>
+        <div class="row"><span class="rl">Utilities on base</span><span class="rv">Usually included, but some privatized homes have usage limits</span></div>
+      </div></div>
+
+      <div class="sh">PCS &amp; Moving</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">When BAH changes</span><span class="rv">Switches to new duty station rate on your report date</span></div>
+        <div class="row"><span class="rl">TLE — Temporary Lodging Expense</span><span class="rv">Up to 10 days of temp housing covered at each end of a PCS move</span></div>
+        <div class="row"><span class="rl">MIHA (overseas)</span><span class="rv">Move-in housing allowance — one-time payment for deposits abroad</span></div>
+        <div class="row"><span class="rl">Dual BAH (rare)</span><span class="rv">If family stays behind during unaccompanied orders, you may get both rates</span></div>
+        <div class="row"><span class="rl">Book your move</span><span class="rv">move.mil — schedule HHG pickup at least 60 days out</span></div>
+      </div></div>
+
+      <div class="ib"><div class="ib-t">Going overseas? It's called OHA instead</div><div class="ib-b">OCONUS stations use Overseas Housing Allowance (OHA) instead of BAH. OHA covers your actual rent up to a local cap, plus a utilities allowance and a move-in allowance (MIHA). Rates vary significantly by country — Okinawa and mainland Japan OHA rates are generally generous. Ask the AI tab for your specific location.</div></div>
     </div>
 
     <!-- SPOUSE -->
@@ -823,10 +843,10 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         <div class="rows">
           <div class="row"><span class="rl">10% rating</span><span class="rv">$175.51 / mo</span></div>
           <div class="row"><span class="rl">20% rating</span><span class="rv">$346.95 / mo</span></div>
-          <div class="row"><span class="rl">30% rating</span><span class="rv">$524.31 / mo</span></div>
-          <div class="row"><span class="rl">50% rating</span><span class="rv">$1,075.16 / mo</span></div>
-          <div class="row"><span class="rl">70% rating</span><span class="rv">$1,716.28 / mo</span></div>
-          <div class="row"><span class="rl">100% rating</span><span class="rv g">$3,737.85 / mo</span></div>
+          <div class="row"><span class="rl">30% rating</span><span class="rv">$537.42 / mo</span></div>
+          <div class="row"><span class="rl">50% rating</span><span class="rv">$1,102.04 / mo</span></div>
+          <div class="row"><span class="rl">70% rating</span><span class="rv">$1,759.19 / mo</span></div>
+          <div class="row"><span class="rl">100% rating</span><span class="rv g">$3,831.30 / mo</span></div>
         </div>
       </div>
       <div class="ib"><div class="ib-t">PACT Act &mdash; burn pit exposure</div><div class="ib-b">If you were near burn pits or had toxic exposures, file a claim under the PACT Act. The burden of proof has flipped &mdash; the VA now has to prove you're NOT eligible. Always worth filing.</div></div>
@@ -918,571 +938,66 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
           <option value="okinawa">MCB Camp Butler, Okinawa</option>
         </select>
       </div>
+      <div id="fac-rendered"></div>
 
-      <!-- CAMP PENDLETON -->
-      <div class="base-content on" id="fac-pendleton">
-        <div class="sh">Healthcare</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">Naval Hospital Camp Pendleton (NHCP)</div><div class="fac-address">200 Mercy Circle, Camp Pendleton, CA 92055</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Appointments / TRICARE</span><span class="fac-rv"><a href="tel:7607254357">(760) 725-4357</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Patient Relations</span><span class="fac-rv"><a href="tel:7607251436">(760) 725-1436</a></span></div>
-            <div class="fac-row"><span class="fac-rl">After Hours / Quarterdeck</span><span class="fac-rv"><a href="tel:7607251288">(760) 725-1288</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Website</span><span class="fac-rv"><a href="https://camp-pendleton.tricare.mil" target="_blank">camp-pendleton.tricare.mil</a></span></div>
-          </div>
-          <iframe class="fac-map" src="https://maps.google.com/maps?q=200+Mercy+Circle+Camp+Pendleton+CA&output=embed" loading="lazy"></iframe>
-        </div>
-
-        <div class="sh">DEERS / ID Cards</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><circle cx="7" cy="11" r="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="11" y1="9" x2="16" y2="9" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="12" x2="14" y2="12" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">DEERS / ID Card Center (Mainside)</div><div class="fac-address">Building 1103, Camp Pendleton, CA 92055</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7607253300">(760) 725-3300</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1600</span></div>
-            <div class="fac-row"><span class="fac-rl">Appointments</span><span class="fac-rv"><a href="https://rapids-portal.dmdc.osd.mil" target="_blank">rapids-portal.dmdc.osd.mil</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Tip</span><span class="fac-rv" style="color:var(--amber);font-size:11px;">Book online — walk-ins wait 2–3 hrs</span></div>
-          </div>
-        </div>
-
-        <div class="sh">Commissary & Exchange</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-1.5 8H4.5L3 5z" stroke="#10b981" stroke-width="1.5"/><circle cx="8" cy="16" r="1" fill="#10b981"/><circle cx="13" cy="16" r="1" fill="#10b981"/></svg></div>
-            <div><div class="fac-name">Commissary</div><div class="fac-address">Building 13200, Mainside, Camp Pendleton, CA 92055</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7607262025">(760) 726-2025</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Sat 0900–1900, Sun 0900–1800</span></div>
-          </div>
-        </div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">Marine Corps Exchange (MCX)</div><div class="fac-address">Near Main Gate, Mainside, Camp Pendleton, CA 92055</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7607261263">(760) 726-1263</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Sat 0900–2000, Sun 1000–1800</span></div>
-            <div class="fac-row"><span class="fac-rl">Note</span><span class="fac-rv" style="color:var(--ink3);font-size:11px;">Largest MCX in the Marine Corps</span></div>
-          </div>
-        </div>
-
-        <div class="sh">Admin & Finance</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#f59e0b" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">IPAC (Personnel Admin)</div><div class="fac-address">Building 1254, Mainside, Camp Pendleton, CA 92055</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7607253304">(760) 725-3304</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1600</span></div>
-            <div class="fac-row"><span class="fac-rl">Handles</span><span class="fac-rv" style="color:var(--ink3);font-size:11px;">Orders, dependent adds, BAH changes</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 29 PALMS -->
-      <div class="base-content" id="fac-29palms">
-        <div class="sh">Healthcare</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">Naval Hospital Twentynine Palms</div><div class="fac-address">1521 Sturgis Road, Twentynine Palms, CA 92278</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Appointments</span><span class="fac-rv"><a href="tel:7608307500">(760) 830-7500</a></span></div>
-            <div class="fac-row"><span class="fac-rl">After Hours Nurse Line</span><span class="fac-rv"><a href="tel:18006001600">1-800-600-1600</a></span></div>
-          </div>
-          <iframe class="fac-map" src="https://maps.google.com/maps?q=Naval+Hospital+Twentynine+Palms+CA&output=embed" loading="lazy"></iframe>
-        </div>
-
-        <div class="sh">DEERS / ID Cards</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><circle cx="7" cy="11" r="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="11" y1="9" x2="16" y2="9" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">DEERS / ID Card Office</div><div class="fac-address">1551 Fourth Street, Bldg 1551, Twentynine Palms, CA 92278</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7608305365">(760) 830-5365</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Alternate</span><span class="fac-rv"><a href="tel:7608307326">(760) 830-7326</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1530</span></div>
-          </div>
-        </div>
-
-        <div class="sh">Commissary & Exchange</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-1.5 8H4.5L3 5z" stroke="#10b981" stroke-width="1.5"/><circle cx="8" cy="16" r="1" fill="#10b981"/><circle cx="13" cy="16" r="1" fill="#10b981"/></svg></div>
-            <div><div class="fac-name">Commissary</div><div class="fac-address">Del Valle Drive, Bldg 1025, Twentynine Palms, CA 92278</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7608307578">(760) 830-7578</a></span></div>
-          </div>
-        </div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">Marine Corps Exchange (MCX)</div><div class="fac-address">Building 1024, Del Valle St, Twentynine Palms, CA 92278</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7608306163">(760) 830-6163</a></span></div>
-          </div>
-        </div>
-
-        <div class="sh">Admin & Finance</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#f59e0b" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">Finance Office</div><div class="fac-address">1521 Fourth Street, Bldg 1521, Twentynine Palms, CA 92278</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7608307342">(760) 830-7342</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1600</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- QUANTICO -->
-      <div class="base-content" id="fac-quantico">
-        <div class="sh">Healthcare</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">Naval Health Clinic Quantico</div><div class="fac-address">3259 Catlin Ave, Quantico, VA 22134</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Main Phone</span><span class="fac-rv"><a href="tel:7037841725">(703) 784-1725</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Toll Free</span><span class="fac-rv"><a href="tel:18887841802">1-888-784-1802</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1600</span></div>
-            <div class="fac-row"><span class="fac-rl">Note</span><span class="fac-rv" style="color:var(--amber);font-size:11px;">No ER — dial 911 for emergencies</span></div>
-          </div>
-          <iframe class="fac-map" src="https://maps.google.com/maps?q=3259+Catlin+Ave+Quantico+VA+22134&output=embed" loading="lazy"></iframe>
-        </div>
-
-        <div class="sh">DEERS / ID Cards</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><circle cx="7" cy="11" r="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="11" y1="9" x2="16" y2="9" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">DEERS / ID Card Center (Little Hall)</div><div class="fac-address">2034 Barnett Ave, Suite 102, Quantico, VA 22134</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7037842758">(703) 784-2758</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Walk-ins</span><span class="fac-rv">Mon–Fri 0700–0900 only</span></div>
-            <div class="fac-row"><span class="fac-rl">Appointments</span><span class="fac-rv">0900–1440 Mon–Thu</span></div>
-            <div class="fac-row"><span class="fac-rl">Tip</span><span class="fac-rv" style="color:var(--amber);font-size:11px;">Always book an appt — walk-ins wait hours</span></div>
-          </div>
-        </div>
-
-        <div class="sh">Commissary & Exchange</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-1.5 8H4.5L3 5z" stroke="#10b981" stroke-width="1.5"/><circle cx="8" cy="16" r="1" fill="#10b981"/><circle cx="13" cy="16" r="1" fill="#10b981"/></svg></div>
-            <div><div class="fac-name">Commissary</div><div class="fac-address">3400 Russell Road, Quantico, VA 22134</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7037842233">(703) 784-2233</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0900–2000, Sat 0900–1900, Sun 0900–1800</span></div>
-          </div>
-        </div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">Marine Corps Exchange (MCX)</div><div class="fac-address">3500 Russell Road, Quantico, VA 22134</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7034328800">(703) 432-8800</a></span></div>
-          </div>
-        </div>
-
-        <div class="sh">Admin & Finance</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#f59e0b" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">Finance Office</div><div class="fac-address">MCB Quantico, VA 22134</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:7037842400">(703) 784-2400</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1600</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CAMP LEJEUNE -->
-      <div class="base-content" id="fac-lejeune">
-        <div class="sh">Healthcare</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">Naval Hospital Camp Lejeune</div><div class="fac-address">Hospital Corps Blvd, Camp Lejeune, NC 28547</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Main / Appointments</span><span class="fac-rv"><a href="tel:9104504300">(910) 450-4300</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Appointments (HELP line)</span><span class="fac-rv"><a href="tel:9104504357">(910) 450-4357</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Labor & Delivery</span><span class="fac-rv"><a href="tel:9104504280">(910) 450-4280</a></span></div>
-          </div>
-          <iframe class="fac-map" src="https://maps.google.com/maps?q=Naval+Hospital+Camp+Lejeune+NC&output=embed" loading="lazy"></iframe>
-        </div>
-
-        <div class="sh">DEERS / ID Cards</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><circle cx="7" cy="11" r="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="11" y1="9" x2="16" y2="9" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">DEERS / ID Card Office</div><div class="fac-address">Building 59, Molly Pitcher Road, Camp Lejeune, NC 28542</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:9104512727">(910) 451-2727</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Alternate</span><span class="fac-rv"><a href="tel:9104514223">(910) 451-4223</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1600</span></div>
-          </div>
-        </div>
-
-        <div class="sh">Commissary & Exchange</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-1.5 8H4.5L3 5z" stroke="#10b981" stroke-width="1.5"/><circle cx="8" cy="16" r="1" fill="#10b981"/><circle cx="13" cy="16" r="1" fill="#10b981"/></svg></div>
-            <div><div class="fac-name">Commissary</div><div class="fac-address">1230 Holcomb Boulevard, Camp Lejeune, NC 28547</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:9104515071">(910) 451-5071</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Sat 0900–1900, Sun 1000–1800</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MIRAMAR -->
-      <div class="base-content" id="fac-miramar">
-        <div class="ib"><div class="ib-t">MCAS Miramar</div><div class="ib-b">Miramar is an air station primarily. Most Marines and families use Naval Medical Center San Diego (Balboa) for TRICARE. The MCX and commissary are on base.</div></div>
-        <div class="sh">Healthcare</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">Branch Health Clinic Miramar</div><div class="fac-address">MCAS Miramar, San Diego, CA 92145</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Appointments</span><span class="fac-rv"><a href="tel:6198329000">(619) 532-9000</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Full Hospital (Balboa)</span><span class="fac-rv"><a href="tel:6195329000">(619) 532-9000</a></span></div>
-          </div>
-        </div>
-        <div class="sh">DEERS / Commissary / MCX</div>
-        <div class="fac-card">
-          <div class="fac-rows" style="padding-top:13px;">
-            <div class="fac-row"><span class="fac-rl">DEERS / ID Cards</span><span class="fac-rv"><a href="tel:8582779100">(858) 577-9100</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Commissary</span><span class="fac-rv"><a href="tel:8582779400">(858) 577-9400</a></span></div>
-            <div class="fac-row"><span class="fac-rl">MCX</span><span class="fac-rv"><a href="tel:8582779200">(858) 577-9200</a></span></div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- HAWAII -->
-      <div class="base-content" id="fac-hawaii">
-        <div class="ib"><div class="ib-t">MCB Hawaii (Kaneohe Bay)</div><div class="ib-b">K-Bay is on the windward side of Oahu. For major medical, Marines and families also use Tripler Army Medical Center in Honolulu. Cost of living is high — your BAH reflects this.</div></div>
-
-        <div class="sh">Healthcare</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">Naval Health Clinic Kaneohe Bay</div><div class="fac-address">D Street, Building 3089, MCBH, HI 96863</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Main Phone</span><span class="fac-rv"><a href="tel:8082573365">(808) 257-3365</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0715–1600</span></div>
-            <div class="fac-row"><span class="fac-rl">Weekends & Holidays</span><span class="fac-rv">Makalapa Naval Clinic</span></div>
-            <div class="fac-row"><span class="fac-rl">Major Hospital (ER)</span><span class="fac-rv"><a href="tel:8088348000">Tripler AMC: (808) 834-8000</a></span></div>
-          </div>
-          <iframe class="fac-map" src="https://maps.google.com/maps?q=Naval+Health+Clinic+Kaneohe+Bay+Hawaii&output=embed" loading="lazy"></iframe>
-        </div>
-
-        <div class="sh">DEERS / ID Cards</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><circle cx="7" cy="11" r="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="11" y1="9" x2="16" y2="9" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">DEERS / ID Card Center</div><div class="fac-address">Building 1044, Third St & Selden St, MCBH, HI 96863</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:8082573346">(808) 257-3346</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Alternate</span><span class="fac-rv"><a href="tel:8082573348">(808) 257-3348</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Walk-ins</span><span class="fac-rv">Mon–Fri 0700–0900 only</span></div>
-            <div class="fac-row"><span class="fac-rl">Appointments</span><span class="fac-rv"><a href="https://rapids-portal.dmdc.osd.mil" target="_blank">Book online</a></span></div>
-          </div>
-        </div>
-
-        <div class="sh">Commissary & Exchange</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-1.5 8H4.5L3 5z" stroke="#10b981" stroke-width="1.5"/><circle cx="8" cy="16" r="1" fill="#10b981"/><circle cx="13" cy="16" r="1" fill="#10b981"/></svg></div>
-            <div><div class="fac-name">Commissary</div><div class="fac-address">Building 6088, Mokapu Road, MCBH, HI 96863</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:8082571465">(808) 257-1465</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Tue–Sat 0900–1900, Sun 0900–1800, Mon closed</span></div>
-            <div class="fac-row"><span class="fac-rl">Tip</span><span class="fac-rv" style="color:var(--amber);font-size:11px;">Hawaii groceries are expensive off-base — use this</span></div>
-          </div>
-        </div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">Marine Corps Exchange (MCX)</div><div class="fac-address">Building 6109, Cushman Ave, MCBH, HI 96863</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:8082543890">(808) 254-3890</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0900–2030, Sat–Sun 0900–1830</span></div>
-          </div>
-        </div>
-
-        <div class="sh">Admin & Finance</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#f59e0b" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">DMO / Distribution Management Office</div><div class="fac-address">Building 209, Second St & C St, MCBH, HI 96734</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Phone</span><span class="fac-rv"><a href="tel:8082573566">(808) 257-3566</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Handles</span><span class="fac-rv" style="color:var(--ink3);font-size:11px;">PCS move scheduling and coordination</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- OKINAWA -->
-      <div class="base-content" id="fac-okinawa">
-        <div class="ib"><div class="ib-t">MCB Camp Butler — Okinawa, Japan</div><div class="ib-b">Camp Butler is a complex of 6 camps: Foster, Kinser, Courtney, Hansen, Schwab, and Gonsalves, plus MCAS Futenma. Most family services are centered at Camp Foster. Phone numbers from CONUS use the +81 country code prefix shown below.</div></div>
-
-        <div class="sh">Healthcare</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">U.S. Naval Hospital Okinawa</div><div class="fac-address">Building 960, Tarawa Road, Camp Foster, Okinawa</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Info Desk (24/7)</span><span class="fac-rv"><a href="tel:+81989717555">098-971-7555 (local)</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Appointments (WELL line)</span><span class="fac-rv"><a href="tel:+81989719355">098-971-9355</a></span></div>
-            <div class="fac-row"><span class="fac-rl">DSN</span><span class="fac-rv">315-646-7555</span></div>
-            <div class="fac-row"><span class="fac-rl">Pharmacy refill line</span><span class="fac-rv">646-7999 (DSN)</span></div>
-            <div class="fac-row"><span class="fac-rl">Website</span><span class="fac-rv"><a href="https://okinawa.tricare.mil" target="_blank">okinawa.tricare.mil</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Note</span><span class="fac-rv" style="color:var(--ink3);font-size:11px;">Largest Naval hospital overseas. Branch clinics at all major camps.</span></div>
-          </div>
-          <iframe class="fac-map" src="https://maps.google.com/maps?q=US+Naval+Hospital+Okinawa+Camp+Foster+Japan&output=embed" loading="lazy"></iframe>
-        </div>
-
-        <div class="sh">DEERS / ID Cards</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><circle cx="7" cy="11" r="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="11" y1="9" x2="16" y2="9" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-            <div><div class="fac-name">DEERS / ID Card Center — Camp Foster</div><div class="fac-address">Building 5831, Camp Foster, Okinawa</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">DSN</span><span class="fac-rv">645-7219</span></div>
-            <div class="fac-row"><span class="fac-rl">Hours</span><span class="fac-rv">Mon–Fri 0730–1600</span></div>
-            <div class="fac-row"><span class="fac-rl">Camp Courtney office</span><span class="fac-rv">DSN: 622-6202</span></div>
-            <div class="fac-row"><span class="fac-rl">Appointments</span><span class="fac-rv"><a href="https://rapids-portal.dmdc.osd.mil" target="_blank">Book online</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Tip</span><span class="fac-rv" style="color:var(--amber);font-size:11px;">Update DEERS before leaving CONUS if possible</span></div>
-          </div>
-        </div>
-
-        <div class="sh">Commissary & Exchange</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-1.5 8H4.5L3 5z" stroke="#10b981" stroke-width="1.5"/><circle cx="8" cy="16" r="1" fill="#10b981"/><circle cx="13" cy="16" r="1" fill="#10b981"/></svg></div>
-            <div><div class="fac-name">Commissary — Camp Foster</div><div class="fac-address">Camp Foster, Okinawa (main commissary)</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">DSN</span><span class="fac-rv">645-7219</span></div>
-            <div class="fac-row"><span class="fac-rl">Online ordering</span><span class="fac-rv"><a href="https://shop.commissaries.com" target="_blank">CLICK2GO available</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Tip</span><span class="fac-rv" style="color:var(--ink3);font-size:11px;">Also commissaries at Kinser, Courtney, Hansen</span></div>
-          </div>
-        </div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">Marine Corps Exchange (MCX)</div><div class="fac-address">Multiple locations — Foster, Kinser, Courtney, Hansen</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">Main MCX (Foster)</span><span class="fac-rv">DSN: 645-7219</span></div>
-            <div class="fac-row"><span class="fac-rl">Website</span><span class="fac-rv"><a href="https://www.shopmyexchange.com" target="_blank">shopmyexchange.com</a></span></div>
-          </div>
-        </div>
-
-        <div class="sh">Admin & Finance</div>
-        <div class="fac-card">
-          <div class="fac-header">
-            <div class="fac-icon" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#f59e0b" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#f59e0b" stroke-width="1.5"/></svg></div>
-            <div><div class="fac-name">IPAC Okinawa</div><div class="fac-address">Camp Foster, Okinawa</div></div>
-          </div>
-          <div class="fac-rows">
-            <div class="fac-row"><span class="fac-rl">DSN</span><span class="fac-rv">645-7219</span></div>
-            <div class="fac-row"><span class="fac-rl">Website</span><span class="fac-rv"><a href="https://www.mcbbutler.marines.mil/Base-Information/IPAC-Okinawa/" target="_blank">mcbbutler.marines.mil</a></span></div>
-            <div class="fac-row"><span class="fac-rl">Handles</span><span class="fac-rv" style="color:var(--ink3);font-size:11px;">Orders, pay, BAH, dependent enrollment</span></div>
-          </div>
-        </div>
-
-        <div class="ib"><div class="ib-t">OHA instead of BAH</div><div class="ib-b">In Okinawa you receive Overseas Housing Allowance (OHA) instead of BAH. OHA covers your actual rent up to a local cap, plus a utilities allowance (MIHA). It resets based on what you actually pay — keep your lease handy.</div></div>
-      </div>
-
-      <div class="ib"><div class="ib-t">Don't see your base?</div><div class="ib-b">Ask the AI tab — type "facilities at [your base]" and it'll give you the key numbers and addresses. We're adding more bases soon.</div></div>
     </div>
 
     <!-- WHO TO CALL -->
     <div class="panel" id="p-contacts">
-      <div class="ib"><div class="ib-t">Know who to call before you need to call them</div><div class="ib-b">Save these in your phone now. When something goes wrong is not the time to search for a number.</div></div>
+      <div class="ib"><div class="ib-t">Keep these numbers saved</div><div class="ib-b">Most of these lines are available 24/7. Don't wait until you're in crisis to find them — save the ones relevant to you now.</div></div>
 
-      <div class="contact-category">
-        <div class="cc-header">Healthcare & TRICARE <div class="cc-line"></div></div>
-        <div class="contact-card">
-          <div class="cc-item">
-            <div class="cc-title">Schedule an appointment at your MTF</div>
-            <div class="cc-desc">Your base hospital or clinic. This is your first call for any non-emergency medical need.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18006001600">Nurse Line: 1-800-600-1600</a><a class="cc-link web" href="https://tricare.mil" target="_blank">tricare.mil</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">TRICARE general questions & enrollment</div>
-            <div class="cc-desc">Questions about coverage, finding a provider, or switching plans.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18443664622">1-844-366-4622</a><a class="cc-link web" href="https://tricare.mil/GettingCare" target="_blank">Find a provider</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">TRICARE pharmacy (Express Scripts)</div>
-            <div class="cc-desc">For mail-order prescriptions, refills, or pharmacy questions.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18773637827">1-877-363-7827</a><a class="cc-link web" href="https://www.express-scripts.com/tricare" target="_blank">express-scripts.com/tricare</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">TRICARE dental (FEDVIP)</div>
-            <div class="cc-desc">Enrollment, coverage questions, and finding a dentist.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18882124337">1-888-212-4337</a><a class="cc-link web" href="https://www.benefeds.com" target="_blank">benefeds.com</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">MHS Nurse Advice Line (24/7)</div>
-            <div class="cc-desc">Not sure if you need to go to the ER? Call this first.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18006001600">1-800-600-1600</a></div>
-          </div>
-        </div>
-      </div>
+      <div class="sh">Pay &amp; Admin</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">DFAS MyPay (pay issues)</span><span class="rv">1-888-332-7411</span></div>
+        <div class="row"><span class="rl">IPAC (your unit's pay office)</span><span class="rv">Ask your S1 / admin</span></div>
+        <div class="row"><span class="rl">DEERS Enrollment</span><span class="rv">1-800-538-9552</span></div>
+        <div class="row"><span class="rl">ID Card / RAPIDS</span><span class="rv">1-800-477-8227</span></div>
+        <div class="row"><span class="rl">TSP / Retirement</span><span class="rv">1-877-968-3778</span></div>
+      </div></div>
 
-      <div class="contact-category">
-        <div class="cc-header">Pay & Finance <div class="cc-line"></div></div>
-        <div class="contact-card">
-          <div class="cc-item">
-            <div class="cc-title">Pay issues — DFAS (Defense Finance)</div>
-            <div class="cc-desc">Missing pay, LES questions, BAH changes not showing up.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18883327411">1-888-332-7411</a><a class="cc-link web" href="https://mypay.dfas.mil" target="_blank">myPay</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">BAH / housing allowance changes</div>
-            <div class="cc-desc">New dependent, PCS, or housing situation changed — go to your S-1 first, then DFAS if it's not updated.</div>
-            <div class="cc-links"><a class="cc-link web" href="https://www.defensetravel.dod.mil/site/bahCalc.cfm" target="_blank">BAH Calculator (DTMO)</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">Travel pay / PCS reimbursements</div>
-            <div class="cc-desc">Per diem, mileage, TLE claims after a PCS move.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18883327411">DFAS: 1-888-332-7411</a><a class="cc-link web" href="https://www.move.mil" target="_blank">move.mil</a></div>
-          </div>
-        </div>
-      </div>
+      <div class="sh">Healthcare</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">TRICARE Beneficiary Line</span><span class="rv">1-800-444-5445</span></div>
+        <div class="row"><span class="rl">TRICARE Nurse Advice Line</span><span class="rv">1-800-874-2273 (24/7)</span></div>
+        <div class="row"><span class="rl">TRICARE Dental (MetLife)</span><span class="rv">1-855-638-8371</span></div>
+        <div class="row"><span class="rl">TRICARE Pharmacy (Express Scripts)</span><span class="rv">1-877-363-1303</span></div>
+        <div class="row"><span class="rl">Mental Health Crisis / Warmline</span><span class="rv">1-800-342-9647</span></div>
+      </div></div>
 
-      <div class="contact-category">
-        <div class="cc-header">DEERS & ID Cards <div class="cc-line"></div></div>
-        <div class="contact-card">
-          <div class="cc-item">
-            <div class="cc-title">Update DEERS / get a new ID card</div>
-            <div class="cc-desc">Marriage, new baby, address change — update within 60 days. Book an appointment online to avoid a multi-hour wait.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18003382287">1-800-538-9552</a><a class="cc-link web" href="https://rapids-portal.dmdc.osd.mil" target="_blank">Book appointment online</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">milConnect (manage benefits online)</div>
-            <div class="cc-desc">Update DEERS info, view benefit eligibility, manage dependent info from anywhere.</div>
-            <div class="cc-links"><a class="cc-link web" href="https://milconnect.dmdc.osd.mil" target="_blank">milconnect.dmdc.osd.mil</a></div>
-          </div>
-        </div>
-      </div>
+      <div class="sh">Crisis &amp; Support</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Veterans / Military Crisis Line</span><span class="rv">988, then press 1 (24/7)</span></div>
+        <div class="row"><span class="rl">Military OneSource</span><span class="rv">1-800-342-9647 (24/7)</span></div>
+        <div class="row"><span class="rl">Domestic Abuse (SAPR)</span><span class="rv">1-877-995-5247 (24/7)</span></div>
+        <div class="row"><span class="rl">Sexual Assault (SARC)</span><span class="rv">1-877-995-5247 (24/7)</span></div>
+        <div class="row"><span class="rl">Suicide &amp; Crisis Lifeline</span><span class="rv">988 (24/7)</span></div>
+      </div></div>
 
-      <div class="contact-category">
-        <div class="cc-header">Housing & PCS <div class="cc-line"></div></div>
-        <div class="contact-card">
-          <div class="cc-item">
-            <div class="cc-title">Schedule your household goods move (HHG)</div>
-            <div class="cc-desc">Do this as early as possible — peak PCS season (May–Aug) books out weeks in advance.</div>
-            <div class="cc-links"><a class="cc-link web" href="https://www.move.mil" target="_blank">move.mil</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">On-base housing</div>
-            <div class="cc-desc">Contact the housing office at your gaining installation. Waitlists can be long — get on it the moment orders are cut.</div>
-            <div class="cc-links"><a class="cc-link web" href="https://installations.militaryonesource.mil" target="_blank">Military Installations</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">BAH rate lookup</div>
-            <div class="cc-desc">Official DoD BAH calculator — enter zip code and grade.</div>
-            <div class="cc-links"><a class="cc-link web" href="https://www.defensetravel.dod.mil/site/bahCalc.cfm" target="_blank">DTMO BAH Calculator</a></div>
-          </div>
-        </div>
-      </div>
+      <div class="sh">Legal &amp; Benefits</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Legal Assistance (JAG)</span><span class="rv">Your base legal office</span></div>
+        <div class="row"><span class="rl">VA Benefits Hotline</span><span class="rv">1-800-827-1000</span></div>
+        <div class="row"><span class="rl">VA Health Care</span><span class="rv">1-877-222-8387</span></div>
+        <div class="row"><span class="rl">GI Bill / Education (VA)</span><span class="rv">1-888-442-4551</span></div>
+        <div class="row"><span class="rl">SCRA / Legal Help</span><span class="rv">1-800-342-9647</span></div>
+      </div></div>
 
-      <div class="contact-category">
-        <div class="cc-header">Education & Tuition Assistance <div class="cc-line"></div></div>
-        <div class="contact-card">
-          <div class="cc-item">
-            <div class="cc-title">Apply for Tuition Assistance (TA)</div>
-            <div class="cc-desc">Apply before you enroll in classes — you cannot get TA retroactively.</div>
-            <div class="cc-links"><a class="cc-link web" href="https://www.marines.mil/mol" target="_blank">Marine OnLine (MOL)</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">GI Bill questions</div>
-            <div class="cc-desc">Eligibility, transferring benefits to dependents, checking your remaining months.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18884424551">1-888-442-4551</a><a class="cc-link web" href="https://www.va.gov/education" target="_blank">va.gov/education</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">MyCAA (spouse education assistance)</div>
-            <div class="cc-desc">Up to $4,000 for eligible military spouses. Apply before starting classes.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18003429647">1-800-342-9647</a><a class="cc-link web" href="https://mycaa.com" target="_blank">mycaa.com</a></div>
-          </div>
-        </div>
-      </div>
+      <div class="sh">Family &amp; Housing</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Fleet &amp; Family Support (FFSC)</span><span class="rv">Your base FFSC office</span></div>
+        <div class="row"><span class="rl">BAH / Housing Allowance</span><span class="rv">1-888-332-7411 (DFAS)</span></div>
+        <div class="row"><span class="rl">PCS / Moving (USTRANSCOM)</span><span class="rv">move.mil or 1-800-462-2176</span></div>
+        <div class="row"><span class="rl">Red Cross Emergency Messages</span><span class="rv">1-877-272-7337 (24/7)</span></div>
+        <div class="row"><span class="rl">MyCAA Spouse Scholarships</span><span class="rv">1-800-342-9647</span></div>
+      </div></div>
 
-      <div class="contact-category">
-        <div class="cc-header">VA & Transition <div class="cc-line"></div></div>
-        <div class="contact-card">
-          <div class="cc-item">
-            <div class="cc-title">File a VA disability claim</div>
-            <div class="cc-desc">Do this as soon as you separate — retroactive pay goes back to your filing date, not when the VA decides.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18008271000">1-800-827-1000</a><a class="cc-link web" href="https://www.va.gov/disability" target="_blank">va.gov/disability</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">TAP (Transition Assistance Program)</div>
-            <div class="cc-desc">Mandatory pre-separation program. Start this 12 months before EAS — don't wait until the last minute.</div>
-            <div class="cc-links"><a class="cc-link web" href="https://www.militaryonesource.mil/transition" target="_blank">Military OneSource</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-category">
-        <div class="cc-header">Family Support & Crisis <div class="cc-line"></div></div>
-        <div class="contact-card">
-          <div class="cc-item">
-            <div class="cc-title">Military OneSource (24/7 support line)</div>
-            <div class="cc-desc">Free counseling, financial help, deployment support, and referrals. Available 24/7 — use it for anything.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18009424342">1-800-342-9647</a><a class="cc-link web" href="https://www.militaryonesource.mil" target="_blank">militaryonesource.mil</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">Veterans / Military Crisis Line (24/7)</div>
-            <div class="cc-desc">For veterans, servicemembers, and their families in crisis. Confidential.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:988">Call or text 988, press 1</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">Navy Marine Corps Relief Society (NMCRS)</div>
-            <div class="cc-desc">Emergency financial assistance — interest-free loans and grants for unexpected hardships.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18663542696">1-866-354-2696</a><a class="cc-link web" href="https://www.nmcrs.org" target="_blank">nmcrs.org</a></div>
-          </div>
-          <div class="cc-item">
-            <div class="cc-title">American Red Cross (emergency messages)</div>
-            <div class="cc-desc">If there's a family emergency and you need to reach a deployed Marine, Red Cross can send an emergency message to their command.</div>
-            <div class="cc-links"><a class="cc-link phone" href="tel:18774723669">1-877-272-7337</a><a class="cc-link web" href="https://www.redcross.org/military" target="_blank">redcross.org/military</a></div>
-          </div>
-        </div>
-      </div>
-
+      <div class="sh">Recruiting &amp; Career</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Marine Corps Recruiting</span><span class="rv">1-800-627-4637</span></div>
+        <div class="row"><span class="rl">Manpower &amp; Reserve Affairs</span><span class="rv">703-784-9310</span></div>
+        <div class="row"><span class="rl">MECEP / Officer Programs</span><span class="rv">Contact your base education center</span></div>
+        <div class="row"><span class="rl">Transition Assistance (TAP)</span><span class="rv">Your base TAP office</span></div>
+      </div></div>
     </div>
 
     <!-- BASE NEWS -->
@@ -1497,24 +1012,25 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 const PAY={
 'E-1':[2407,2407,2407,2407,2407,2407,2407,2407,2407,2407,2407,2407],
 'E-2':[2698,2698,2698,2698,2698,2698,2698,2698,2698,2698,2698,2698],
-'E-3':[2837,3015,3198,3198,3198,3198,3198,3198,3198,3198,3198,3198],
-'E-4':[3142,3303,3482,3659,3815,3815,3815,3815,3815,3815,3815,3815],
-'E-5':[3343,3598,3776,3947,4110,4300,4395,4422,4422,4422,4422,4422],
-'E-6':[3401,3743,3908,4068,4236,4612,4760,5044,5131,5194,5268,5268],
-'E-7':[3932,4291,4456,4673,4844,5135,5300,5592,5835,6001,6177,6245],
-'E-8':[0,0,0,0,0,5657,5907,6062,6247,6448,6811,6995],
-'E-9':[0,0,0,0,0,0,6910,7067,7264,7496,7731,8105],
-'W-1':[4057,4494,4611,4859,5152,5585,5786,6069,6346,6565,6785,7006],
-'W-2':[4622,5059,5194,5286,5586,6052,6282,6509,6787,7005,7225,7446],
-'W-3':[5223,5441,5664,5738,5971,6431,6910,7136,7398,7666,7936,8205],
-'W-4':[5720,6152,6329,6503,6802,7098,7398,7848,8244,8620,8997,9372],
-'O-1':[4150,4320,5222,5222,5222,5222,5222,5222,5222,5222,5222,5222],
+'E-3':[2836,2836,2836,2836,2836,2836,2836,2836,2836,2836,2836,2836],
+'E-4':[3146,3146,3146,3146,3146,3146,3146,3146,3146,3146,3146,3146],
+'E-5':[3343,3516,3516,3609,3785,3785,3785,3785,3785,3785,3785,3785],
+'E-6':[3653,3791,3865,3960,4107,4229,4307,4307,4307,4307,4307,4307],
+'E-7':[4221,4609,4686,4686,4801,4929,5149,5311,5390,5390,5390,5390],
+'E-8':[5068,5068,5163,5163,5275,5378,5594,5713,5921,6032,6032,6032],
+'E-9':[6199,6199,6199,6199,6199,6354,6560,6751,6940,7241,7519,7716],
+'W-1':[3706,3968,4094,4221,4441,4620,4800,4980,5158,5337,5518,5697],
+'W-2':[4241,4507,4618,4727,4956,5182,5409,5637,5862,6090,6317,6544],
+'W-3':[4796,5063,5192,5321,5561,5799,6041,6283,6524,6764,7005,7247],
+'W-4':[5356,5628,5757,5889,6141,6397,6650,6906,7158,7413,7666,7920],
+'W-5':[6294,6294,6294,6294,7046,7046,7536,7536,7536,7536,7536,7536],
+'O-1':[4150,4320,5026,5026,5026,5026,5026,5026,5026,5026,5026,5026],
 'O-2':[4782,5446,6272,6484,6618,6618,6618,6618,6618,6618,6618,6618],
 'O-3':[5535,6273,6771,7383,7737,8125,8376,8788,9004,9004,9004,9004],
 'O-4':[6294,7286,7773,7881,8332,8816,9419,9888,10214,10402,10510,10510],
 'O-5':[7295,8219,8787,8894,9250,9462,9929,10272,10714,11392,11714,12033],
 'O-6':[8751,9614,10245,10245,10284,10725,10784,10784,11396,12480,13115,13751],
-'O-7':[11540,12076,12325,12522,12879,13232,13639,14046,14454,15736,16818,16818],
+'O-7':[11541,11541,11541,11541,11541,11541,11541,12142,12480,12823,13115,13751],
 'O-8':[13888,14344,14645,14730,15107,15736,15882,16480,16652,17166,18598,18598]};
 const YOS_IDX=[0,2,3,4,6,8,10,12,14,16,18,20];
 const BAH={
@@ -1531,23 +1047,27 @@ const BAH={
 'hawaii':{'E-1':2598,'E-2':2598,'E-3':2598,'E-4':2598,'E-5':2856,'E-6':3036,'E-7':3348,'E-8':3720,'E-9':3783,'W-1':3222,'W-2':3717,'W-3':3795,'W-4':3951,'O-1':2997,'O-2':3555,'O-3':3819,'O-4':4110,'O-5':4224,'O-6':4413},
 'hawaii_d':{'E-1':3333,'E-2':3333,'E-3':3333,'E-4':3333,'E-5':3663,'E-6':3912,'E-7':4098,'E-8':4302,'E-9':4518,'W-1':3930,'W-2':4182,'W-3':4434,'W-4':4551,'O-1':3702,'O-2':3909,'O-3':4428,'O-4':4737,'O-5':4959,'O-6':5001},
 };
-const STATION_MAP={'pendleton':['pendleton','camp pendleton'],'29palms':['29 palms','twentynine palms','29palms','stumps'],'quantico':['quantico'],'miramar':['miramar'],'lejeune':['lejeune','camp lejeune','jacksonville'],'okinawa':['okinawa','oki','butler','foster','hansen','schwab','futenma','kinser','courtney'],'hawaii':['hawaii','kaneohe','kbay','k-bay','mcbh','mcb hawaii']};
+const STATION_MAP={
+  'pendleton':['pendleton','camp pendleton','yuma','mcas yuma'],
+  '29palms':['29 palms','twentynine palms','29palms','stumps','mcagcc'],
+  'quantico':['quantico','8th and i','8th & i','marine barracks washington'],
+  'miramar':['miramar'],
+  'lejeune':['lejeune','camp lejeune','jacksonville','new river','cherry point'],
+  'okinawa':['okinawa','oki','butler','foster','hansen','schwab','futenma','kinser','courtney','iwakuni','camp blaz','blaz','guam'],
+  'hawaii':['hawaii','kaneohe','kbay','k-bay','mcbh','mcb hawaii'],
+};
 const BAS={officer:328.48,enlisted:476.95};
 let P={},msgs=[];
+// Default profile — modal will open on first load
+P={grade:'',yos:0,housing:'nodep',station:'',depcount:0};
+
 function getPayIdx(y){for(let i=YOS_IDX.length-1;i>=0;i--){if(y>=YOS_IDX[i])return i;}return 0;}
 function getBasePay(g,y){const a=PAY[g];if(!a)return 2000;return a[getPayIdx(parseInt(y)||0)]||a[0];}
 function resolveStation(s){const sl=s.toLowerCase();for(const[k,a]of Object.entries(STATION_MAP)){if(a.some(x=>sl.includes(x)))return k;}return null;}
 function getBAH(g,housing,stKey){if(housing==='barracks')return 0;if(!stKey||stKey==='okinawa')return null;const t=BAH[housing==='dep'?stKey+'_d':stKey];return t?t[g]||null:null;}
 function fmt(n){return'$'+Math.round(n).toLocaleString();}
-function launch(){const grade=document.getElementById('ob-grade').value,yos=document.getElementById('ob-yos').value,housing=document.getElementById('ob-housing').value,station=document.getElementById('ob-station').value;const depcountEl=document.getElementById('ob-depcount');const depcount=depcountEl?parseInt(depcountEl.value)||1:1;console.log('launch called - grade:',grade,'station:',station);if(!grade||!station){alert('Please select your rank and duty station.');return;}P={grade,yos:parseInt(yos)||0,housing,station,depcount:housing==='dep'?depcount:0};try{buildUI();}catch(e){console.error('buildUI error:',e);}document.getElementById('ob').style.display='none';document.getElementById('main').classList.add('on');buildSidebar();document.getElementById('ai-intro').textContent='You are a '+grade+' with '+P.yos+' years at '+station+'.';
-  // Auto-select base in facilities tab
-  const stKey=resolveStation(station);
-  const baseMap={'pendleton':'pendleton','29palms':'29palms','quantico':'quantico','lejeune':'lejeune','miramar':'miramar','hawaii':'hawaii','okinawa':'okinawa'};
-  if(stKey&&baseMap[stKey]){
-    const sel=document.getElementById('fac-base-select');
-    if(sel){sel.value=baseMap[stKey];switchBase(baseMap[stKey]);}
-  }}
-function buildUI(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&housing!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(housing==='dep'?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):housing==='barracks'?' \u00b7 barracks':' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(housing==='barracks'?'<div class="row"><span class="rl">BAH</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('ov-pay-rows').innerHTML=html;document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(housing==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'nodep',stKey),wd=getBAH(grade,'dep',stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
+
+function buildUI(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&housing!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(housing==='dep'?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):housing==='barracks'?' \u00b7 barracks':' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(housing==='barracks'?'<div class="row"><span class="rl">BAH</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('ov-pay-rows').innerHTML=html;document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;const giBah=getBAH('E-5','dep',stKey);const giEl=document.getElementById('gi-bah-rate');if(giEl)giEl.textContent=giBah?fmt(giBah)+'/mo (E-5 w/ dep, '+station+')':'Check DTMO.mil for your area';document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(housing==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'nodep',stKey),wd=getBAH(grade,'dep',stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
 function buildPayTable(ug){const grades=['E-1','E-2','E-3','E-4','E-5','E-6','E-7','E-8','E-9','W-1','W-2','W-3','O-1','O-2','O-3','O-4','O-5','O-6'],cols=[0,2,4,6,8];let h='<tr><th>Grade</th>'+cols.map(i=>'<th>'+YOS_IDX[i]+' yrs</th>').join('')+'</tr>';grades.forEach(g=>{const a=PAY[g]||[],hl=(g===ug)?'class="hl"':'';h+='<tr '+hl+'><td>'+g+'</td>'+cols.map(i=>'<td>'+(a[i]?'$'+Math.round(a[i]/100)*100/1000+'k':'--')+'</td>').join('')+'</tr>';});document.getElementById('pay-table').innerHTML=h;}
 
 function buildSidebar(){
@@ -1558,12 +1078,12 @@ function buildSidebar(){
     tricare:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="2.5" width="11" height="10" rx="1.8" stroke="currentColor" stroke-width="1.4"/><line x1="7.5" y1="5.2" x2="7.5" y2="9.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><line x1="5.2" y1="7.5" x2="9.8" y2="7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
     edu:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2L1 5.5l6.5 3.3L14 5.5 7.5 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M4 7v3.5c0 1.1 1.6 2 3.5 2s3.5-.9 3.5-2V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="14" y1="5.5" x2="14" y2="9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
     housing:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M1.5 6.8L7.5 2l6 4.8V13a.7.7 0 01-.7.7H2.2a.7.7 0 01-.7-.7V6.8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M5.5 13.7V9.2h4v4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    spouse:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="4.8" cy="4.8" r="2.1" stroke="currentColor" stroke-width="1.4"/><circle cx="10.2" cy="4.8" r="2.1" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.1 1.7-3.6 3.8-3.6S8.6 11.9 8.6 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9.8 10.6C11.5 10.8 13 12.1 13 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+    spouse:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 12.5C7.5 12.5 1.5 8.5 1.5 4.8a3 3 0 015.5-1.6h1a3 3 0 015.5 1.6c0 3.7-6 7.7-6 7.7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
     family:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="3.8" cy="4.2" r="1.8" stroke="currentColor" stroke-width="1.3"/><circle cx="11.2" cy="4.2" r="1.8" stroke="currentColor" stroke-width="1.3"/><circle cx="7.5" cy="4.7" r="1.4" stroke="currentColor" stroke-width="1.3"/><path d="M1 13.5c0-1.8 1.2-3 2.8-3H5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M14 13.5c0-1.8-1.2-3-2.8-3H10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M5.5 13.5c0-1.1.9-2 2-2s2 .9 2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
     va:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.7 4H13l-3.2 2.4 1.2 3.9-3.5-2.1-3.5 2.1 1.2-3.9L2 5.5h3.8z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>',
     deals:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M1.5 1.5h1.8l1.9 7.2h6.1l1.5-5.1H4.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.2" cy="12.2" r="1" fill="currentColor"/><circle cx="10.8" cy="12.2" r="1" fill="currentColor"/></svg>',
     facilities:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5C5.3 1.5 3.5 3.3 3.5 5.5c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="7.5" cy="5.5" r="1.4" stroke="currentColor" stroke-width="1.3"/></svg>',
-    contacts:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="3" y="1.5" width="9" height="12" rx="1.5" stroke="currentColor" stroke-width="1.4"/><line x1="5.5" y1="5" x2="9.5" y2="5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="9.5" y2="7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8" y2="10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+    contacts:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 2.5h3l1.5 3-1.8 1.2c.8 1.8 2.3 3.3 4.1 4.1L10 9l3 1.5v3C13 13.8 12 14 12 14 5 14 1 8.5 1 3c0 0 .2-1 1.5-.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
     news:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="2" width="11" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><line x1="4.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="4.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="4.5" y1="10" x2="7.5" y2="10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
   };
   var items=[
@@ -1582,15 +1102,84 @@ function buildSidebar(){
     {id:'news',label:'Base News'},
   ];
   var nav=document.getElementById('sb-nav');
-  if(!nav)return;
-  nav.innerHTML=items.map(function(it){
-    return '<div class="sb-item'+(it.id==='overview'?' on':'')+'" onclick="tab(\''+it.id+'\',this)" data-panel="'+it.id+'"><span class="si">'+(svgIcons[it.id]||'')+'</span>'+it.label+'</div>';
-  }).join('');
-  // Update user info
+  if(nav&&!nav.hasChildNodes()){
+    nav.innerHTML=items.map(function(it){
+      return '<div class="sb-item'+(it.id==='overview'?' on':'')+'" onclick="tab(\''+it.id+'\',this)" data-panel="'+it.id+'"><span class="si">'+(svgIcons[it.id]||'')+'</span>'+it.label+'</div>';
+    }).join('');
+  }
+  updateSidebarProfile();
+}
+function updateSidebarProfile(){
   var u=document.getElementById('sb-user');
-  if(u)u.textContent=P.station;
-  var sn=document.getElementById('sb-name');if(sn)sn.textContent=P.grade+' — Marine';
-  var sp=document.getElementById('sb-pay');if(sp){var bp2=getBasePay(P.grade,P.yos),stk=resolveStation(P.station),bah2=getBAH(P.grade,P.housing,stk),bas2=P.grade.startsWith('O')||P.grade.startsWith('W')?BAS.officer:BAS.enlisted;sp.textContent=fmt(bp2+(bah2||0)+bas2);}
+  if(u){
+    var depStr=P.housing==='dep'?' · '+P.depcount+' dep'+(P.depcount!==1?'s':''):P.housing==='barracks'?' · barracks':'';
+    u.textContent=P.station+depStr;
+  }
+  var sn=document.getElementById('sb-name');
+  if(sn)sn.textContent=P.grade+' \u2014 Marine';
+  var sp=document.getElementById('sb-pay');
+  if(sp){
+    var bp2=getBasePay(P.grade,P.yos);
+    var stk=resolveStation(P.station);
+    var bah2=getBAH(P.grade,P.housing,stk);
+    var bas2=P.grade.startsWith('O')||P.grade.startsWith('W')?BAS.officer:BAS.enlisted;
+    sp.textContent=fmt(bp2+(bah2||0)+bas2);
+  }
+}
+function openProfileModal(){
+  var pm=document.getElementById('pm');
+  var ov=document.getElementById('pm-overlay');
+  if(!pm||!ov)return;
+  document.getElementById('pm-grade').value=P.grade||'';
+  document.getElementById('pm-yos').value=String(P.yos||0);
+  document.getElementById('pm-housing').value=P.housing||'nodep';
+  document.getElementById('pm-station').value=P.station||'';
+  var dc=document.getElementById('pm-depcount');
+  if(dc)dc.value=String(P.depcount>=1?P.depcount:1);
+  pmToggleDep(P.housing||'nodep');
+  pm.style.display='block';
+  ov.style.display='block';
+}
+function closeProfileModal(){
+  document.getElementById('pm').style.display='none';
+  document.getElementById('pm-overlay').style.display='none';
+}
+function pmToggleDep(val){
+  var w=document.getElementById('pm-dep-wrap');
+  if(!w)return;
+  w.style.display='flex';
+  var sel=document.getElementById('pm-depcount');
+  var lbl=w.querySelector('.pm-lbl');
+  if(val==='dep'){
+    if(sel){sel.disabled=false;sel.style.opacity='1';sel.value=String(P.depcount>=1?P.depcount:1);}
+    if(lbl)lbl.style.opacity='1';
+  } else {
+    if(sel){sel.disabled=true;sel.style.opacity='0.4';sel.value='0';}
+    if(lbl)lbl.style.opacity='0.4';
+  }
+}
+function saveProfile(){
+  var grade=document.getElementById('pm-grade').value;
+  var yos=parseInt(document.getElementById('pm-yos').value)||0;
+  var housing=document.getElementById('pm-housing').value;
+  var station=document.getElementById('pm-station').value;
+  var depcount=housing==='dep'?Math.max(1,parseInt(document.getElementById('pm-depcount').value)||1):0;
+  if(!grade||!station){
+    var btn=document.getElementById('pm-save-btn');
+    if(btn){btn.textContent='Please select rank & station';btn.style.background='#c0392b';setTimeout(function(){btn.textContent='Save & Update';btn.style.background='';},2000);}
+    return;
+  }
+  P={grade,yos,housing,station,depcount};
+  // Rebuild all dynamic content
+  try{buildUI();}catch(e){console.error('buildUI error:',e);}
+  updateSidebarProfile();
+  // Update AI system prompt
+  document.getElementById('ai-intro').textContent='You are a '+grade+' with '+yos+' years at '+station+'.';
+  // Update facilities base to match new station
+  initFacilities();
+  // Update news tab
+  if(typeof renderNews==='function')renderNews();
+  closeProfileModal();
 }
 function tab(name,el){
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on');});
@@ -1624,169 +1213,253 @@ function parseMarkdown(text){
 function addMsg(text,role){const c=document.getElementById('ask-msgs'),div=document.createElement('div');div.className='msg msg-'+(role==='user'?'user':'ai');const b=document.createElement('div');b.className='msg-bubble'+(role==='ai'&&text==='...'?' typing':'');if(role==='ai'&&text!=='...'){b.innerHTML=parseMarkdown(text);}else{b.textContent=text;}div.appendChild(b);c.appendChild(div);c.scrollTop=c.scrollHeight;return b;}
 
 
-function toggleDepCount(val){
-  var wrap = document.getElementById('dep-count-wrap');
-  if(!wrap) return;
-  wrap.style.display = (val === 'dep') ? 'block' : 'none';
-}
+
 
 
 const FACILITIES = {
   pendleton: {
     name: 'Camp Pendleton, CA',
-    mapQuery: 'key+facilities+Camp+Pendleton+California',
-    mapCenter: '33.2133,-117.3897',
     facilities: [
-      { name: 'Naval Hospital Camp Pendleton', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: 'Building H-100, Camp Pendleton, CA 92055', phone: '(760) 725-1288', hours: 'Mon–Fri 0730–1630', map: 'Naval+Hospital+Camp+Pendleton+CA' },
-      { name: 'TRICARE Appointments', category: 'Healthcare', icon: '💊', bg: '#fff0f0', color: '#ef4444', addr: 'Naval Hospital Camp Pendleton', phone: '(760) 725-4357', hours: 'Mon–Fri 0730–1600', map: 'Naval+Hospital+Camp+Pendleton+CA' },
-      { name: 'DEERS / ID Cards (Mainside)', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: 'Bldg 22270, Mainside, Camp Pendleton', phone: '(760) 725-2768', hours: 'Mon–Fri 0730–1530', map: 'Camp+Pendleton+Main+Gate+ID+Office' },
-      { name: 'DEERS / ID Cards (North)', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: 'Sea Side Plaza, North Camp Pendleton', phone: '(760) 763-6476', hours: 'Mon–Fri 0730–1530', map: 'Camp+Pendleton+North+Pass+ID' },
-      { name: 'Finance / IPAC', category: 'Admin', icon: '💰', bg: '#fffbeb', color: '#d97706', addr: 'Bldg 1254, Mainside, Camp Pendleton', phone: '(760) 725-5391', hours: 'Mon–Fri 0730–1600', map: 'Camp+Pendleton+Finance+Office' },
-      { name: 'Legal Assistance (JAG)', category: 'Admin', icon: '⚖️', bg: '#fffbeb', color: '#d97706', addr: 'Bldg 1254, Mainside, Camp Pendleton', phone: '(760) 725-6558', hours: 'Mon–Fri 0800–1600', map: 'Camp+Pendleton+Legal+Office' },
-      { name: 'Commissary (Mainside)', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 20850, Vandegrift Blvd, Camp Pendleton, CA 92055', phone: '(760) 725-4012', hours: 'Tue–Sat 0900–1900, Sun 1000–1800', map: 'Camp+Pendleton+Commissary+Mainside' },
-      { name: 'Commissary (San Onofre)', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 51094, Basilone Rd, Camp Pendleton, CA 92055', phone: '(760) 847-9377', hours: 'Tue–Sat 1000–1900, Sun 1000–1800', map: 'San+Onofre+Commissary+Camp+Pendleton' },
-      { name: 'Pacific Views MCX', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Pacific Plaza, near Main Gate, Camp Pendleton', phone: '(760) 725-5175', hours: 'Mon–Sat 0900–2000, Sun 1000–1800', map: 'Pacific+Views+MCX+Camp+Pendleton' },
-      { name: 'San Onofre Marine Mart', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'San Onofre Area, Camp Pendleton', phone: '(760) 725-5175', hours: 'Daily — extended hours', map: 'San+Onofre+Marine+Mart+Camp+Pendleton' },
-      { name: 'Mainside Marine Mart', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Mainside, Camp Pendleton', phone: '(760) 725-5175', hours: 'Daily — extended hours', map: 'Mainside+Marine+Mart+Camp+Pendleton' },
-      { name: 'Fuel Stations (3 locations)', category: 'Commissary & MCX', icon: '⛽', bg: '#eff6ff', color: '#3b82f6', addr: 'Mainside, San Onofre & Las Pulgas', phone: '(760) 725-5175', hours: 'Daily — check MCX site', map: 'Camp+Pendleton+MCX+Fuel+Station' },
-      { name: '11 Area Gym / Paige Field House', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: '13th St & Vandegrift Blvd, Bldg 1110, Camp Pendleton', phone: '(760) 725-6394', hours: 'Mon–Fri 0500–2200, Sat–Sun 0700–2000', map: '11+Area+Gym+Camp+Pendleton' },
-      { name: '21 Area Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg 210750, Camp Pendleton', phone: '(760) 725-5175', hours: 'Mon–Fri 0500–2200', map: '21+Area+Fitness+Center+Camp+Pendleton' },
-      { name: '52 Area Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: '51093 Basilone Rd, Camp Pendleton North', phone: '(760) 725-7262', hours: 'Mon–Fri 0500–2100', map: '52+Area+Fitness+Center+Camp+Pendleton' },
-      { name: 'Base Library', category: 'Library', icon: '📚', bg: '#faf5ff', color: '#7c3aed', addr: 'Vandegrift Blvd, Bldg 1339 (inside Entertainment Center)', phone: '(760) 725-5304', hours: 'Mon–Thu 1000–2000, Fri–Sat 1000–1700', map: 'Camp+Pendleton+Library' },
-      { name: 'Pacific Plaza Barber Shop', category: 'Services', icon: '✂️', bg: '#f8fafc', color: '#64748b', addr: 'Pacific Plaza, Mainside, Camp Pendleton', phone: '(760) 725-5175', hours: 'Mon–Sat 0800–1800, Sun 0900–1700', map: 'Pacific+Plaza+Barber+Camp+Pendleton' },
+      {name:'Naval Hospital Camp Pendleton',category:'Healthcare',addr:'Building H-100, Camp Pendleton, CA 92055',phone:'(760) 725-1288',hours:'Mon–Fri 0730–1630',map:'Naval+Hospital+Camp+Pendleton+CA'},
+      {name:'TRICARE Appointments',category:'Healthcare',addr:'Naval Hospital Camp Pendleton',phone:'(760) 725-4357',hours:'Mon–Fri 0730–1600',map:'Naval+Hospital+Camp+Pendleton+CA'},
+      {name:'Branch Health Clinic (San Onofre)',category:'Healthcare',addr:'San Onofre Area, Camp Pendleton',phone:'(760) 725-1288',hours:'Mon–Fri 0730–1600',map:'Branch+Health+Clinic+San+Onofre+Camp+Pendleton'},
+      {name:'Mental Health / Fleet Family Support',category:'Healthcare',addr:'Bldg 1254, Mainside, Camp Pendleton',phone:'(760) 725-3524',hours:'Mon–Fri 0730–1600',map:'Camp+Pendleton+Mental+Health'},
+      {name:'DEERS / ID Cards (Mainside)',category:'Admin',addr:'Bldg 22270, Mainside, Camp Pendleton',phone:'(760) 725-2768',hours:'Mon–Fri 0730–1530',map:'Camp+Pendleton+Main+Gate+ID+Office'},
+      {name:'DEERS / ID Cards (North)',category:'Admin',addr:'Sea Side Plaza, North Camp Pendleton',phone:'(760) 763-6476',hours:'Mon–Fri 0730–1530',map:'Camp+Pendleton+North+Pass+ID'},
+      {name:'Finance / IPAC',category:'Admin',addr:'Bldg 1254, Mainside, Camp Pendleton',phone:'(760) 725-5391',hours:'Mon–Fri 0730–1600',map:'Camp+Pendleton+Finance+Office'},
+      {name:'Legal Assistance (JAG)',category:'Admin',addr:'Bldg 1254, Mainside, Camp Pendleton',phone:'(760) 725-6558',hours:'Mon–Fri 0800–1600',map:'Camp+Pendleton+Legal+Office'},
+      {name:'Housing Office (MCCS)',category:'Admin',addr:'Bldg 1140, Mainside, Camp Pendleton',phone:'(760) 725-5038',hours:'Mon–Fri 0730–1600',map:'Camp+Pendleton+Housing+Office'},
+      {name:'Education Center (TA / GI Bill)',category:'Admin',addr:'Bldg 1334, Mainside, Camp Pendleton',phone:'(760) 725-4274',hours:'Mon–Fri 0730–1600',map:'Camp+Pendleton+Education+Center'},
+      {name:'Commissary (Mainside)',category:'Commissary & MCX',addr:'Bldg 20850, Vandegrift Blvd, Camp Pendleton, CA 92055',phone:'(760) 725-4012',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Camp+Pendleton+Commissary+Mainside'},
+      {name:'Commissary (San Onofre)',category:'Commissary & MCX',addr:'Bldg 51094, Basilone Rd, Camp Pendleton, CA 92055',phone:'(760) 847-9377',hours:'Tue–Sat 1000–1900, Sun 1000–1800',map:'San+Onofre+Commissary+Camp+Pendleton'},
+      {name:'Pacific Views MCX',category:'Commissary & MCX',addr:'Pacific Plaza, near Main Gate, Camp Pendleton',phone:'(760) 725-5175',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'Pacific+Views+MCX+Camp+Pendleton'},
+      {name:'San Onofre MCX / Marine Mart',category:'Commissary & MCX',addr:'San Onofre Area, Camp Pendleton',phone:'(760) 725-5175',hours:'Daily 0700–2100',map:'San+Onofre+Marine+Mart+Camp+Pendleton'},
+      {name:'Mainside Marine Mart (Shoppette)',category:'Commissary & MCX',addr:'Mainside, Camp Pendleton',phone:'(760) 725-5175',hours:'Daily 0700–2100',map:'Mainside+Marine+Mart+Camp+Pendleton'},
+      {name:'Fuel Station (Mainside)',category:'Commissary & MCX',addr:'Near Mainside Commissary, Camp Pendleton',phone:'(760) 725-4012',hours:'Daily 0600–2200',map:'Camp+Pendleton+Gas+Station'},
+      {name:'11 Area Gym / Paige Field House',category:'Fitness',addr:'11 Area, Camp Pendleton',phone:'(760) 725-5261',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Paige+Field+House+Camp+Pendleton'},
+      {name:'21 Area Fitness Center',category:'Fitness',addr:'21 Area, Camp Pendleton',phone:'(760) 725-5261',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'21+Area+Fitness+Center+Camp+Pendleton'},
+      {name:'32 Area Fitness Center',category:'Fitness',addr:'32 Area, Camp Pendleton',phone:'(760) 725-5261',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'32+Area+Fitness+Camp+Pendleton'},
+      {name:'52 Area Fitness Center',category:'Fitness',addr:'52 Area, Camp Pendleton',phone:'(760) 725-5261',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'52+Area+Fitness+Center+Camp+Pendleton'},
+      {name:'Paige Field House (Pool)',category:'Fitness',addr:'11 Area, Camp Pendleton',phone:'(760) 725-5261',hours:'Lap swim hours vary — call ahead',map:'Paige+Field+House+Pool+Camp+Pendleton'},
+      {name:'Base Library',category:'Library & Education',addr:'Bldg 1344, Mainside, Camp Pendleton',phone:'(760) 725-6303',hours:'Mon–Fri 0900–1800, Sat 1000–1600',map:'Camp+Pendleton+Base+Library'},
+      {name:'Pacific Plaza Barber Shop',category:'Services',addr:'Pacific Plaza MCX, Camp Pendleton',phone:'(760) 725-5175',hours:'Mon–Sat 0900–1800',map:'Pacific+Views+MCX+Camp+Pendleton'},
+      {name:'Auto Skills Center',category:'Services',addr:'Mainside, Camp Pendleton',phone:'(760) 725-4756',hours:'Tue–Sat 0800–1700',map:'Camp+Pendleton+Auto+Skills'},
+      {name:'Chapel (Mainside)',category:'Services',addr:'Bldg 1154, Mainside, Camp Pendleton',phone:'(760) 725-7100',hours:'Services vary — call ahead',map:'Camp+Pendleton+Chapel'},
+      {name:'MCCS Family Services',category:'Services',addr:'Bldg 1254, Mainside, Camp Pendleton',phone:'(760) 725-3524',hours:'Mon–Fri 0730–1600',map:'Camp+Pendleton+Family+Services'},
     ]
   },
   '29palms': {
     name: '29 Palms (MCAGCC), CA',
-    mapQuery: 'MCAGCC+29+Palms+California',
-    mapCenter: '34.1339,-116.0633',
     facilities: [
-      { name: 'Naval Hospital Twentynine Palms', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: '1521 Sturgis Road, Twentynine Palms, CA 92278', phone: '(760) 830-7500', hours: 'Mon–Fri 0730–1600', map: 'Naval+Hospital+Twentynine+Palms+CA' },
-      { name: 'TRICARE Nurse Advice Line', category: 'Healthcare', icon: '💊', bg: '#fff0f0', color: '#ef4444', addr: 'Available 24/7 by phone', phone: '1-800-600-1600', hours: '24/7', map: 'Naval+Hospital+Twentynine+Palms+CA' },
-      { name: 'DEERS / ID Card Office', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: '1551 Fourth Street, Bldg 1551, Twentynine Palms, CA', phone: '(760) 830-5365', hours: 'Mon–Fri 0730–1530', map: 'DEERS+ID+Card+29+Palms+MCAGCC' },
-      { name: 'Finance Office', category: 'Admin', icon: '💰', bg: '#fffbeb', color: '#d97706', addr: '1521 Fourth Street, Bldg 1521, Twentynine Palms', phone: '(760) 830-7342', hours: 'Mon–Fri 0730–1600', map: 'Finance+Office+29+Palms+MCAGCC' },
-      { name: 'Commissary', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: 'Del Valle Drive, Bldg 1025, Twentynine Palms, CA', phone: '(760) 830-7578', hours: 'Tue–Sat 0900–1900, Sun 1000–1800', map: 'Commissary+29+Palms+MCAGCC' },
-      { name: 'Marine Corps Exchange (MCX)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 1024, Del Valle St, Twentynine Palms', phone: '(760) 830-6163', hours: 'Mon–Sat 0900–2000, Sun 1000–1800', map: 'MCX+29+Palms+MCAGCC' },
-      { name: '7 Day Store (Shoppette)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 1025, Main Exchange Complex, Twentynine Palms', phone: '(760) 830-7572', hours: 'Daily — extended hours', map: 'Twentynine+Palms+MCAGCC+Shoppette' },
-      { name: 'East Gym', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: '1588 Fourth Street, MCAGCC, Twentynine Palms, CA', phone: '(760) 830-6440', hours: 'Mon–Fri 0500–2200, Sat–Sun 0700–2000', map: 'East+Gym+29+Palms+MCAGCC' },
-      { name: 'West Gym', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg 1518, MCAGCC, Twentynine Palms, CA', phone: '(760) 830-6451', hours: 'Mon–Fri 0500–2200, Sat–Sun 0700–2000', map: 'West+Gym+29+Palms+MCAGCC' },
-      { name: 'Wilburn Gym (Strength & Conditioning)', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg 1533, MCAGCC, Twentynine Palms, CA', phone: '(760) 830-4070', hours: 'Mon–Fri 0500–2100', map: 'Wilburn+Gym+29+Palms+MCAGCC' },
-      { name: 'Community Center Gym', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg 1004, Cottontail Road, Twentynine Palms, CA', phone: '(760) 830-3910', hours: '24/7 with key card access ($39/yr)', map: 'Community+Center+Gym+29+Palms' },
-      { name: 'Camp Wilson Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg 5411, MCAGCC, Twentynine Palms, CA', phone: '(760) 830-4353', hours: 'Call for hours — 24/7 during exercises', map: 'Camp+Wilson+Fitness+Center+29+Palms' },
-      { name: 'Base Library', category: 'Library', icon: '📚', bg: '#faf5ff', color: '#7c3aed', addr: 'Bldg 1573, MCAGCC, Twentynine Palms, CA', phone: '(760) 830-6735', hours: 'Mon–Thu 1000–1900, Fri 1000–1700', map: '29+Palms+MCAGCC+Library' },
+      {name:'Naval Hospital Twentynine Palms',category:'Healthcare',addr:'1145 Sturgis Rd, Twentynine Palms, CA 92278',phone:'(760) 830-2190',hours:'Mon–Fri 0730–1630',map:'Naval+Hospital+Twentynine+Palms+CA'},
+      {name:'TRICARE / Nurse Advice Line',category:'Healthcare',addr:'Naval Hospital Twentynine Palms',phone:'(800) 874-2273',hours:'24/7 Nurse Line',map:'Naval+Hospital+Twentynine+Palms+CA'},
+      {name:'Branch Health Clinic (BHC)',category:'Healthcare',addr:'MCAGCC, Twentynine Palms, CA',phone:'(760) 830-2190',hours:'Mon–Fri 0730–1600',map:'Branch+Health+Clinic+29+Palms'},
+      {name:'Mental Health / FFSC',category:'Healthcare',addr:'MCAGCC Family Support, 29 Palms',phone:'(760) 830-6735',hours:'Mon–Fri 0730–1600',map:'FFSC+29+Palms+Marine+Corps'},
+      {name:'DEERS / ID Card Office',category:'Admin',addr:'Bldg 1400, MCAGCC, Twentynine Palms',phone:'(760) 830-5046',hours:'Mon–Fri 0730–1530',map:'DEERS+ID+Cards+29+Palms+Marine+Corps'},
+      {name:'Finance / IPAC',category:'Admin',addr:'Bldg 1400, MCAGCC, Twentynine Palms',phone:'(760) 830-5200',hours:'Mon–Fri 0730–1600',map:'Finance+Office+29+Palms+Marine+Corps'},
+      {name:'Legal Assistance (JAG)',category:'Admin',addr:'Bldg 1400, MCAGCC, Twentynine Palms',phone:'(760) 830-6329',hours:'Mon–Fri 0800–1600',map:'Legal+Office+MCAGCC+29+Palms'},
+      {name:'Housing Office',category:'Admin',addr:'MCAGCC, Twentynine Palms',phone:'(760) 830-6558',hours:'Mon–Fri 0730–1600',map:'Housing+Office+29+Palms+Marine+Corps'},
+      {name:'Education Center',category:'Admin',addr:'Bldg 1600, MCAGCC, Twentynine Palms',phone:'(760) 830-6670',hours:'Mon–Fri 0730–1600',map:'Education+Center+MCAGCC+29+Palms'},
+      {name:'Commissary',category:'Commissary & MCX',addr:'Bldg 1620, MCAGCC, Twentynine Palms, CA 92278',phone:'(760) 361-4125',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Commissary+Twentynine+Palms+Marine+Corps'},
+      {name:'Marine Corps Exchange (MCX)',category:'Commissary & MCX',addr:'Bldg 1621, MCAGCC, Twentynine Palms',phone:'(760) 361-4000',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'MCX+Twentynine+Palms+Marine+Corps'},
+      {name:'7-Day Store / Shoppette',category:'Commissary & MCX',addr:'MCAGCC, Twentynine Palms',phone:'(760) 361-4000',hours:'Daily 0700–2100',map:'Marine+Mart+Shoppette+29+Palms'},
+      {name:'Fuel Station',category:'Commissary & MCX',addr:'Near MCX, MCAGCC, 29 Palms',phone:'(760) 361-4000',hours:'Daily 0600–2200',map:'Gas+Station+MCAGCC+Twentynine+Palms'},
+      {name:'East Gym (Building 1585)',category:'Fitness',addr:'Bldg 1585, MCAGCC, Twentynine Palms',phone:'(760) 830-6437',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'East+Gym+MCAGCC+29+Palms'},
+      {name:'West Gym',category:'Fitness',addr:'West Area, MCAGCC, Twentynine Palms',phone:'(760) 830-6437',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'West+Gym+MCAGCC+29+Palms'},
+      {name:'Wilburn Gym (Strength & Conditioning)',category:'Fitness',addr:'MCAGCC, Twentynine Palms',phone:'(760) 830-6437',hours:'Mon–Fri 0500–2100',map:'Wilburn+Gym+29+Palms+Marine+Corps'},
+      {name:'Base Pool',category:'Fitness',addr:'MCAGCC, Twentynine Palms',phone:'(760) 830-6437',hours:'Seasonal — call ahead',map:'Swimming+Pool+MCAGCC+29+Palms'},
+      {name:'Base Library',category:'Library & Education',addr:'Bldg 1640, MCAGCC, Twentynine Palms',phone:'(760) 830-6418',hours:'Mon–Fri 0900–1800, Sat 1000–1600',map:'Base+Library+MCAGCC+Twentynine+Palms'},
+      {name:'MCX Barber Shop',category:'Services',addr:'MCX Building, MCAGCC, 29 Palms',phone:'(760) 361-4000',hours:'Mon–Sat 0900–1800',map:'MCX+Twentynine+Palms+Marine+Corps'},
+      {name:'Auto Skills Center',category:'Services',addr:'MCAGCC, Twentynine Palms',phone:'(760) 830-6437',hours:'Tue–Sat 0800–1700',map:'Auto+Skills+Center+29+Palms+Marine+Corps'},
+      {name:'Chapel',category:'Services',addr:'Bldg 1400 Area, MCAGCC, Twentynine Palms',phone:'(760) 830-6216',hours:'Services vary — call ahead',map:'Chapel+MCAGCC+29+Palms'},
     ]
   },
   quantico: {
     name: 'MCB Quantico, VA',
-    mapQuery: 'MCB+Quantico+Virginia',
-    mapCenter: '38.5218,-77.3756',
     facilities: [
-      { name: 'Naval Health Clinic Quantico', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: '3259 Catlin Ave, Quantico, VA 22134', phone: '(703) 784-1725', hours: 'Mon–Fri 0730–1600', map: 'Naval+Health+Clinic+Quantico+VA' },
-      { name: 'DEERS / ID Card Center', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: '2034 Barnett Ave, Suite 102, Quantico, VA 22134', phone: '(703) 784-2758', hours: 'Mon–Fri 0700–1440 (appt recommended)', map: 'DEERS+ID+Card+Quantico+VA' },
-      { name: 'Finance Office', category: 'Admin', icon: '💰', bg: '#fffbeb', color: '#d97706', addr: 'MCB Quantico, VA 22134', phone: '(703) 784-2400', hours: 'Mon–Fri 0730–1600', map: 'Finance+Office+Quantico+VA' },
-      { name: 'Legal Assistance (JAG)', category: 'Admin', icon: '⚖️', bg: '#fffbeb', color: '#d97706', addr: 'MCB Quantico, VA 22134', phone: '(703) 784-3122', hours: 'Mon–Fri 0800–1600', map: 'Legal+Assistance+Quantico+VA' },
-      { name: 'Commissary', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: '3400 Russell Road, Quantico, VA 22134', phone: '(703) 784-2233', hours: 'Mon–Fri 0900–2000, Sat 0900–1900, Sun 0900–1800', map: 'Commissary+Quantico+VA' },
-      { name: 'Marine Corps Exchange (MCX)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: '3500 Russell Road, Quantico, VA 22134', phone: '(703) 432-8800', hours: 'Mon–Sat 0900–1930, Sun 0900–1800', map: 'MCX+Quantico+VA' },
-      { name: 'Marine Mart', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 3048, Bordelon Street, Quantico, VA 22134', phone: '(703) 640-6497', hours: 'Daily — extended hours', map: 'Marine+Mart+Quantico+VA' },
-      { name: 'Barber Physical Activity Center (BPAC)', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: '2073 Barnett Ave, Bldg 2073, Quantico, VA 22134', phone: '(703) 432-0590', hours: 'Mon–Fri 0500–2100, Sat–Sun 0700–1900', map: 'Barber+Physical+Activity+Center+Quantico' },
-      { name: 'Russell-Knox Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Russell-Knox Building, Quantico, VA 22134', phone: '(703) 784-2003', hours: 'Mon–Fri 0600–1800', map: 'Russell+Knox+Building+Quantico+VA' },
-      { name: 'Base Library', category: 'Library', icon: '📚', bg: '#faf5ff', color: '#7c3aed', addr: 'MCB Quantico, VA 22134', phone: '(703) 784-3951', hours: 'Mon–Thu 0900–2000, Fri–Sat 0900–1700', map: 'Quantico+Marine+Corps+Base+Library' },
-      { name: 'MCX Barber Shop', category: 'Services', icon: '✂️', bg: '#f8fafc', color: '#64748b', addr: '3500 Russell Road (inside MCX), Quantico, VA', phone: '(703) 432-8840', hours: 'Mon–Sat 0900–1830, Sun 0900–1730', map: 'MCX+Barber+Shop+Quantico+VA' },
+      {name:'Naval Health Clinic Quantico',category:'Healthcare',addr:'3260 Catlin Ave, Quantico, VA 22134',phone:'(703) 784-1377',hours:'Mon–Fri 0730–1630',map:'Naval+Health+Clinic+Quantico+VA'},
+      {name:'TRICARE / Nurse Advice Line',category:'Healthcare',addr:'Naval Health Clinic Quantico',phone:'(800) 874-2273',hours:'24/7 Nurse Line',map:'Naval+Health+Clinic+Quantico+VA'},
+      {name:'Mental Health / Fleet Family Support',category:'Healthcare',addr:'FFSC Quantico, Bldg 3465',phone:'(703) 784-2530',hours:'Mon–Fri 0730–1600',map:'FFSC+Quantico+Marine+Corps'},
+      {name:'DEERS / ID Card Center',category:'Admin',addr:'Bldg 2014, MCB Quantico, VA 22134',phone:'(703) 784-2217',hours:'Mon–Fri 0730–1530',map:'DEERS+ID+Cards+Quantico+Marine+Corps'},
+      {name:'Finance Office',category:'Admin',addr:'Bldg 2014, MCB Quantico, VA',phone:'(703) 784-3424',hours:'Mon–Fri 0730–1600',map:'Finance+Office+MCB+Quantico'},
+      {name:'Legal Assistance (JAG)',category:'Admin',addr:'Bldg 2028, MCB Quantico, VA',phone:'(703) 784-4649',hours:'Mon–Fri 0800–1600',map:'Legal+Office+MCB+Quantico'},
+      {name:'Housing Office',category:'Admin',addr:'Bldg 2034, MCB Quantico, VA',phone:'(703) 784-2720',hours:'Mon–Fri 0730–1600',map:'Housing+Office+MCB+Quantico'},
+      {name:'Education Center (TA / GI Bill)',category:'Admin',addr:'Bldg 2014, MCB Quantico, VA',phone:'(703) 784-3044',hours:'Mon–Fri 0730–1600',map:'Education+Center+MCB+Quantico'},
+      {name:'Commissary',category:'Commissary & MCX',addr:'3250 Barnett Ave, Quantico, VA 22134',phone:'(703) 784-2800',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Commissary+MCB+Quantico+VA'},
+      {name:'Marine Corps Exchange (MCX)',category:'Commissary & MCX',addr:'3256 Barnett Ave, Quantico, VA 22134',phone:'(703) 784-3300',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'MCX+Quantico+Marine+Corps+VA'},
+      {name:'Marine Mart (Shoppette)',category:'Commissary & MCX',addr:'MCB Quantico, VA',phone:'(703) 784-3300',hours:'Daily 0700–2100',map:'Marine+Mart+Quantico+Virginia'},
+      {name:'Fuel Station',category:'Commissary & MCX',addr:'Near MCX, MCB Quantico, VA',phone:'(703) 784-3300',hours:'Daily 0600–2200',map:'Gas+Station+MCB+Quantico+VA'},
+      {name:'Barber Physical Activity Center (BPAC)',category:'Fitness',addr:'Bldg 2025, MCB Quantico, VA',phone:'(703) 784-2578',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Barber+Physical+Activity+Center+Quantico'},
+      {name:'Russell-Knox Fitness Center',category:'Fitness',addr:'Bldg 2165, MCB Quantico, VA',phone:'(703) 784-2578',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Russell+Knox+Fitness+Center+Quantico'},
+      {name:'Officer Club Pool',category:'Fitness',addr:'MCB Quantico, VA',phone:'(703) 784-2578',hours:'Seasonal — call ahead',map:'Pool+MCB+Quantico+Marine+Corps'},
+      {name:'Base Library (Gray Research Center)',category:'Library & Education',addr:'2040 Broadway St, Quantico, VA 22134',phone:'(703) 784-4411',hours:'Mon–Fri 0800–2000, Sat 1000–1800',map:'Gray+Research+Center+Library+Quantico'},
+      {name:'MCX Barber Shop',category:'Services',addr:'MCX Building, Quantico, VA',phone:'(703) 784-3300',hours:'Mon–Sat 0900–1800',map:'MCX+Quantico+Marine+Corps+VA'},
+      {name:'Auto Skills Center',category:'Services',addr:'MCB Quantico, VA',phone:'(703) 784-2578',hours:'Tue–Sat 0800–1700',map:'Auto+Skills+Center+Quantico+Marine+Corps'},
+      {name:'Chapel',category:'Services',addr:'Bldg 2054, MCB Quantico, VA',phone:'(703) 784-2207',hours:'Services vary — call ahead',map:'Chapel+MCB+Quantico+Virginia'},
     ]
   },
   lejeune: {
     name: 'Camp Lejeune, NC',
-    mapQuery: 'Camp+Lejeune+North+Carolina',
-    mapCenter: '34.6963,-77.3402',
     facilities: [
-      { name: 'Naval Hospital Camp Lejeune', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: 'Hospital Corps Blvd, Camp Lejeune, NC 28547', phone: '(910) 450-4300', hours: 'Mon–Fri 0730–1600', map: 'Naval+Hospital+Camp+Lejeune+NC' },
-      { name: 'TRICARE / HELP Line', category: 'Healthcare', icon: '💊', bg: '#fff0f0', color: '#ef4444', addr: 'Naval Hospital Camp Lejeune', phone: '(910) 450-4357', hours: 'Mon–Fri 0730–1600', map: 'Naval+Hospital+Camp+Lejeune+NC' },
-      { name: 'DEERS / ID Card Office', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: 'Building 59, Molly Pitcher Road, Camp Lejeune, NC 28542', phone: '(910) 451-2727', hours: 'Mon–Fri 0730–1600', map: 'DEERS+ID+Card+Camp+Lejeune+NC' },
-      { name: 'Finance Office', category: 'Admin', icon: '💰', bg: '#fffbeb', color: '#d97706', addr: 'Camp Lejeune, NC 28547', phone: '(910) 451-2147', hours: 'Mon–Fri 0730–1600', map: 'Finance+Office+Camp+Lejeune+NC' },
-      { name: 'Commissary (Holcomb Blvd)', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: '1230 Holcomb Blvd, Camp Lejeune, NC 28547', phone: '(910) 451-5071', hours: 'Mon–Sat 0900–1900, Sun 1000–1800', map: 'Commissary+Camp+Lejeune+Holcomb' },
-      { name: 'Marine Corps Exchange Mall (MCX)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 84, Holcomb Blvd, Hadnot Point Plaza, Camp Lejeune', phone: '(910) 451-2120', hours: 'Mon–Sat 0900–2000, Sun 1000–1800', map: 'MCX+Camp+Lejeune+NC' },
-      { name: 'Micro Mart (Education Bldg)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 825, Stone St, Camp Lejeune, NC 28540', phone: '(910) 451-2120', hours: 'Mon–Fri 0730–1700', map: 'Camp+Lejeune+Education+Building+NC' },
-      { name: 'Wallace Creek Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg WC1, Birch St, Camp Lejeune, NC 28547', phone: '(910) 450-7649', hours: 'Nearly 24/7 — check ahead', map: 'Wallace+Creek+Fitness+Center+Camp+Lejeune' },
-      { name: 'Courthouse Bay Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg BB2, off Horn Rd, Camp Lejeune, NC 28547', phone: '(910) 450-5584', hours: 'Mon–Fri 0500–2100, Sat–Sun 0700–1900', map: 'Courthouse+Bay+Fitness+Camp+Lejeune' },
-      { name: 'Hospital Point Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg H-1, Hospital Point, Camp Lejeune, NC 28547', phone: '(910) 450-5584', hours: 'Mon–Fri 0500–2100', map: 'Hospital+Point+Fitness+Camp+Lejeune' },
-      { name: 'Tarawa Terrace Fitness Center', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg TT-2455C, Tarawa Terrace, NC 28543', phone: '(910) 450-5584', hours: 'Mon–Fri 0500–2100, Sat–Sun 0700–1900', map: 'Tarawa+Terrace+Fitness+Camp+Lejeune' },
-      { name: 'Base Library', category: 'Library', icon: '📚', bg: '#faf5ff', color: '#7c3aed', addr: 'Bldg 825, Stone St, Camp Lejeune, NC 28540', phone: '(910) 451-3722', hours: 'Mon–Thu 0900–2000, Fri–Sat 0900–1700', map: 'Camp+Lejeune+Base+Library+NC' },
+      {name:'Naval Hospital Camp Lejeune',category:'Healthcare',addr:'100 Brewster Blvd, Camp Lejeune, NC 28547',phone:'(910) 450-4300',hours:'Emergency 24/7; Clinic Mon–Fri 0730–1630',map:'Naval+Hospital+Camp+Lejeune+NC'},
+      {name:'TRICARE / Appointments',category:'Healthcare',addr:'Naval Hospital Camp Lejeune',phone:'(910) 450-4300',hours:'Mon–Fri 0730–1600',map:'Naval+Hospital+Camp+Lejeune+NC'},
+      {name:'Branch Health Clinic (Courthouse Bay)',category:'Healthcare',addr:'Courthouse Bay, Camp Lejeune, NC',phone:'(910) 450-4300',hours:'Mon–Fri 0730–1600',map:'Branch+Health+Clinic+Courthouse+Bay+Lejeune'},
+      {name:'Mental Health / Fleet Family Support',category:'Healthcare',addr:'FFSC Bldg AS-225, Camp Lejeune',phone:'(910) 451-4612',hours:'Mon–Fri 0730–1600',map:'FFSC+Camp+Lejeune+NC'},
+      {name:'DEERS / ID Card Office',category:'Admin',addr:'Bldg AS-121, Stone St, Camp Lejeune, NC',phone:'(910) 451-2490',hours:'Mon–Fri 0730–1530',map:'DEERS+ID+Cards+Camp+Lejeune+NC'},
+      {name:'Finance / IPAC',category:'Admin',addr:'Bldg AS-121, Camp Lejeune, NC',phone:'(910) 451-5321',hours:'Mon–Fri 0730–1600',map:'Finance+Office+Camp+Lejeune+NC'},
+      {name:'Legal Assistance (JAG)',category:'Admin',addr:'Bldg AS-121, Camp Lejeune, NC',phone:'(910) 451-5338',hours:'Mon–Fri 0800–1600',map:'Legal+Office+Camp+Lejeune+NC'},
+      {name:'Housing Office',category:'Admin',addr:'Bldg 1. Stone St, Camp Lejeune, NC',phone:'(910) 451-2839',hours:'Mon–Fri 0730–1600',map:'Housing+Office+Camp+Lejeune+NC'},
+      {name:'Education Center',category:'Admin',addr:'Bldg AS-121, Camp Lejeune, NC',phone:'(910) 451-3386',hours:'Mon–Fri 0730–1600',map:'Education+Center+Camp+Lejeune+NC'},
+      {name:'Commissary (Holcomb Blvd)',category:'Commissary & MCX',addr:'1 Holcomb Blvd, Camp Lejeune, NC 28547',phone:'(910) 451-2680',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Commissary+Camp+Lejeune+NC'},
+      {name:'Marine Corps Exchange (MCX Mall)',category:'Commissary & MCX',addr:'1 Holcomb Blvd, Camp Lejeune, NC 28547',phone:'(910) 451-3242',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'MCX+Mall+Camp+Lejeune+NC'},
+      {name:'Marine Mart (Shoppette)',category:'Commissary & MCX',addr:'Various locations, Camp Lejeune',phone:'(910) 451-3242',hours:'Daily 0700–2100',map:'Marine+Mart+Camp+Lejeune+NC'},
+      {name:'Fuel Station',category:'Commissary & MCX',addr:'Near MCX, Camp Lejeune, NC',phone:'(910) 451-3242',hours:'Daily 0600–2200',map:'Gas+Station+Camp+Lejeune+NC'},
+      {name:'Wallace Creek Fitness Center',category:'Fitness',addr:'Wallace Creek Area, Camp Lejeune, NC',phone:'(910) 451-5724',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Wallace+Creek+Fitness+Center+Camp+Lejeune'},
+      {name:'Courthouse Bay Fitness Center',category:'Fitness',addr:'Courthouse Bay, Camp Lejeune, NC',phone:'(910) 451-5724',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Courthouse+Bay+Fitness+Camp+Lejeune'},
+      {name:'Hospital Point Fitness Center',category:'Fitness',addr:'Hospital Point, Camp Lejeune, NC',phone:'(910) 451-5724',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Hospital+Point+Fitness+Camp+Lejeune'},
+      {name:'Tarawa Terrace Fitness Center',category:'Fitness',addr:'Tarawa Terrace, Camp Lejeune, NC',phone:'(910) 451-5724',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Tarawa+Terrace+Fitness+Camp+Lejeune'},
+      {name:'Base Pool (Lejeune Pool)',category:'Fitness',addr:'Camp Lejeune, NC',phone:'(910) 451-5724',hours:'Seasonal — call ahead',map:'Pool+Camp+Lejeune+NC'},
+      {name:'Base Library',category:'Library & Education',addr:'Bldg AS-1424, Camp Lejeune, NC',phone:'(910) 451-5724',hours:'Mon–Fri 0900–1800, Sat 1000–1600',map:'Base+Library+Camp+Lejeune+NC'},
+      {name:'MCX Barber Shop',category:'Services',addr:'MCX Mall, Camp Lejeune, NC',phone:'(910) 451-3242',hours:'Mon–Sat 0900–1800',map:'MCX+Mall+Camp+Lejeune+NC'},
+      {name:'Auto Skills Center',category:'Services',addr:'Camp Lejeune, NC',phone:'(910) 451-5724',hours:'Tue–Sat 0800–1700',map:'Auto+Skills+Center+Camp+Lejeune+NC'},
+      {name:'Chapel (Main Side)',category:'Services',addr:'Bldg AS-1408, Camp Lejeune, NC',phone:'(910) 451-5274',hours:'Services vary — call ahead',map:'Chapel+Camp+Lejeune+NC'},
     ]
   },
   miramar: {
     name: 'MCAS Miramar, CA',
-    mapQuery: 'MCAS+Miramar+San+Diego+California',
-    mapCenter: '32.8683,-117.1428',
     facilities: [
-      { name: 'Branch Health Clinic Miramar', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: 'MCAS Miramar, San Diego, CA 92145', phone: '(619) 532-9000', hours: 'Mon–Fri 0730–1600', map: 'Branch+Health+Clinic+MCAS+Miramar' },
-      { name: 'Naval Medical Center San Diego (Balboa)', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: '34800 Bob Wilson Dr, San Diego, CA 92134', phone: '(619) 532-9000', hours: '24/7 Emergency', map: 'Naval+Medical+Center+San+Diego+Balboa' },
-      { name: 'DEERS / ID Cards', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: 'MCAS Miramar, San Diego, CA 92145', phone: '(858) 577-9100', hours: 'Mon–Fri 0730–1530', map: 'DEERS+ID+Card+MCAS+Miramar' },
-      { name: 'Commissary', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: 'MCAS Miramar, San Diego, CA 92145', phone: '(858) 577-9400', hours: 'Tue–Sat 0900–1900, Sun 1000–1800', map: 'Commissary+MCAS+Miramar+San+Diego' },
-      { name: 'Marine Corps Exchange (MCX)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'MCAS Miramar, San Diego, CA 92145', phone: '(858) 577-9200', hours: 'Mon–Sat 0900–2000, Sun 1000–1800', map: 'MCX+MCAS+Miramar+San+Diego' },
-      { name: 'Semper Fit Gym', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'MCAS Miramar, San Diego, CA 92145', phone: '(858) 577-6480', hours: 'Mon–Fri 0500–2100, Sat–Sun 0700–1900', map: 'Semper+Fit+Gym+MCAS+Miramar' },
-      { name: 'Base Library', category: 'Library', icon: '📚', bg: '#faf5ff', color: '#7c3aed', addr: 'MCAS Miramar, San Diego, CA 92145', phone: '(858) 577-6480', hours: 'Mon–Thu 1000–1900, Fri–Sat 1000–1700', map: 'MCAS+Miramar+Library+San+Diego' },
+      {name:'Branch Health Clinic Miramar',category:'Healthcare',addr:'Bldg 2204, MCAS Miramar, San Diego, CA 92145',phone:'(858) 577-8900',hours:'Mon–Fri 0730–1630',map:'Branch+Health+Clinic+MCAS+Miramar'},
+      {name:'Naval Medical Center San Diego (Balboa)',category:'Healthcare',addr:'34800 Bob Wilson Dr, San Diego, CA 92134',phone:'(619) 532-6400',hours:'Emergency 24/7; Clinic Mon–Fri 0730–1630',map:'Naval+Medical+Center+San+Diego+Balboa'},
+      {name:'TRICARE / Nurse Advice Line',category:'Healthcare',addr:'Branch Health Clinic Miramar',phone:'(800) 874-2273',hours:'24/7 Nurse Line',map:'Branch+Health+Clinic+MCAS+Miramar'},
+      {name:'Mental Health / Fleet Family Support',category:'Healthcare',addr:'FFSC Miramar, Bldg 2259',phone:'(858) 577-6400',hours:'Mon–Fri 0730–1600',map:'FFSC+MCAS+Miramar'},
+      {name:'DEERS / ID Cards',category:'Admin',addr:'Bldg 2259, MCAS Miramar, CA 92145',phone:'(858) 577-1110',hours:'Mon–Fri 0730–1530',map:'DEERS+ID+Cards+MCAS+Miramar'},
+      {name:'Finance / IPAC',category:'Admin',addr:'Bldg 2259, MCAS Miramar, CA',phone:'(858) 577-4037',hours:'Mon–Fri 0730–1600',map:'Finance+Office+MCAS+Miramar'},
+      {name:'Legal Assistance (JAG)',category:'Admin',addr:'Bldg 2259, MCAS Miramar, CA',phone:'(858) 577-1835',hours:'Mon–Fri 0800–1600',map:'Legal+Office+MCAS+Miramar'},
+      {name:'Housing Office',category:'Admin',addr:'Bldg 2259, MCAS Miramar, CA',phone:'(858) 577-4037',hours:'Mon–Fri 0730–1600',map:'Housing+Office+MCAS+Miramar'},
+      {name:'Education Center',category:'Admin',addr:'Bldg 2259, MCAS Miramar, CA',phone:'(858) 577-1943',hours:'Mon–Fri 0730–1600',map:'Education+Center+MCAS+Miramar'},
+      {name:'Commissary',category:'Commissary & MCX',addr:'Bldg 2225, MCAS Miramar, San Diego, CA 92145',phone:'(858) 693-0694',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Commissary+MCAS+Miramar+San+Diego'},
+      {name:'Marine Corps Exchange (MCX)',category:'Commissary & MCX',addr:'Bldg 2220, MCAS Miramar, CA 92145',phone:'(858) 695-9697',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'MCX+MCAS+Miramar+San+Diego'},
+      {name:'Marine Mart (Shoppette)',category:'Commissary & MCX',addr:'MCAS Miramar, CA',phone:'(858) 695-9697',hours:'Daily 0700–2100',map:'Marine+Mart+MCAS+Miramar'},
+      {name:'Fuel Station',category:'Commissary & MCX',addr:'Near MCX, MCAS Miramar, CA',phone:'(858) 695-9697',hours:'Daily 0600–2200',map:'Gas+Station+MCAS+Miramar'},
+      {name:'Semper Fit Gym (Main)',category:'Fitness',addr:'Bldg 2204, MCAS Miramar, CA',phone:'(858) 577-6400',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Semper+Fit+Gym+MCAS+Miramar'},
+      {name:'Hangar Gym',category:'Fitness',addr:'Flight Line Area, MCAS Miramar, CA',phone:'(858) 577-6400',hours:'Mon–Fri 0500–2100',map:'Gym+MCAS+Miramar+San+Diego'},
+      {name:'Base Pool',category:'Fitness',addr:'MCAS Miramar, CA',phone:'(858) 577-6400',hours:'Seasonal — call ahead',map:'Pool+MCAS+Miramar+California'},
+      {name:'Base Library',category:'Library & Education',addr:'Bldg 2259, MCAS Miramar, CA',phone:'(858) 577-6490',hours:'Mon–Fri 0900–1800, Sat 1000–1600',map:'Base+Library+MCAS+Miramar'},
+      {name:'MCX Barber Shop',category:'Services',addr:'MCX Building, MCAS Miramar, CA',phone:'(858) 695-9697',hours:'Mon–Sat 0900–1800',map:'MCX+MCAS+Miramar+San+Diego'},
+      {name:'Auto Skills Center',category:'Services',addr:'MCAS Miramar, CA',phone:'(858) 577-6400',hours:'Tue–Sat 0800–1700',map:'Auto+Skills+Center+MCAS+Miramar'},
+      {name:'Chapel',category:'Services',addr:'Bldg 2140, MCAS Miramar, CA',phone:'(858) 577-1316',hours:'Services vary — call ahead',map:'Chapel+MCAS+Miramar+California'},
     ]
   },
   hawaii: {
     name: 'MCB Hawaii (K-Bay), HI',
-    mapQuery: 'MCB+Hawaii+Kaneohe+Bay',
-    mapCenter: '21.4488,-157.7628',
     facilities: [
-      { name: 'Naval Health Clinic Kaneohe Bay', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: 'D Street, Bldg 3089, MCBH, HI 96863', phone: '(808) 257-3365', hours: 'Mon–Fri 0715–1600', map: 'Naval+Health+Clinic+Kaneohe+Bay+Hawaii' },
-      { name: 'Tripler Army Medical Center (ER)', category: 'Healthcare', icon: '🚑', bg: '#fff0f0', color: '#ef4444', addr: '1 Jarrett White Rd, Honolulu, HI 96859', phone: '(808) 433-9000', hours: '24/7 Emergency', map: 'Tripler+Army+Medical+Center+Honolulu' },
-      { name: 'DEERS / ID Card Center', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: 'Bldg 1044, Third St & Selden St, MCBH, HI 96863', phone: '(808) 257-3346', hours: 'Mon–Fri 0700–1440 (walk-ins 0700–0900 only)', map: 'DEERS+ID+Card+MCB+Hawaii+Kaneohe' },
-      { name: 'DMO / PCS Moves', category: 'Admin', icon: '📦', bg: '#fffbeb', color: '#d97706', addr: 'Bldg 209, Second St & C St, MCBH, HI 96734', phone: '(808) 257-3566', hours: 'Mon–Fri 0800–1600', map: 'DMO+MCB+Hawaii+PCS+Moves' },
-      { name: 'Commissary', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 6088, Mokapu Road, MCBH, HI 96863', phone: '(808) 257-1465', hours: 'Tue–Sat 0900–1900, Sun 0900–1800, Mon closed', map: 'Commissary+MCB+Hawaii+Kaneohe+Bay' },
-      { name: 'Marine Corps Exchange (MCX)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Bldg 6109, Cushman Ave, MCBH, HI 96863', phone: '(808) 254-3890', hours: 'Mon–Fri 0900–2030, Sat–Sun 0900–1830', map: 'MCX+MCB+Hawaii+Kaneohe+Bay' },
-      { name: 'MCX Annex (Selden St Marine Mart)', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Selden Street Marine Mart Complex, MCBH, HI 96734', phone: '(808) 254-3890', hours: 'Daily — extended hours', map: 'Marine+Mart+MCB+Hawaii+Selden+Street' },
-      { name: 'Semper Fit Center (Main Gym)', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Mokapu Road, Bldg 3037, MCBH, HI 96863', phone: '(808) 254-7597', hours: 'Mon–Fri 0500–2100, Sat–Sun 0700–1900', map: 'Semper+Fit+Center+MCB+Hawaii+Kaneohe' },
-      { name: 'Base Library', category: 'Library', icon: '📚', bg: '#faf5ff', color: '#7c3aed', addr: 'Bldg 219, Selden Street, MCBH, HI 96734', phone: '(808) 257-2237', hours: 'Mon–Thu 1000–1900, Fri–Sat 1000–1700', map: 'MCB+Hawaii+Library+Kaneohe+Bay' },
-      { name: 'Mokapu Mall Barber Shop', category: 'Services', icon: '✂️', bg: '#f8fafc', color: '#64748b', addr: 'Bldg 6477, Mokapu Road, MCBH, HI 96734', phone: '(808) 254-6588', hours: 'Mon 0600–1900, Tue–Sun 0700–2000', map: 'Mokapu+Mall+Barber+Shop+MCB+Hawaii' },
+      {name:'Naval Health Clinic Kaneohe Bay',category:'Healthcare',addr:'Bldg 290, MCB Hawaii, Kaneohe, HI 96863',phone:'(808) 257-3396',hours:'Mon–Fri 0730–1630',map:'Naval+Health+Clinic+Kaneohe+Bay+Hawaii'},
+      {name:'Tripler Army Medical Center (ER)',category:'Healthcare',addr:'1 Jarrett White Rd, Honolulu, HI 96859',phone:'(808) 433-6661',hours:'Emergency 24/7',map:'Tripler+Army+Medical+Center+Honolulu'},
+      {name:'TRICARE / Nurse Advice Line',category:'Healthcare',addr:'Naval Health Clinic Kaneohe Bay',phone:'(800) 874-2273',hours:'24/7 Nurse Line',map:'Naval+Health+Clinic+Kaneohe+Bay+Hawaii'},
+      {name:'Mental Health / Fleet Family Support',category:'Healthcare',addr:'FFSC MCB Hawaii, Bldg 1094',phone:'(808) 257-7780',hours:'Mon–Fri 0730–1600',map:'FFSC+MCB+Hawaii+Kaneohe'},
+      {name:'DEERS / ID Card Center',category:'Admin',addr:'Bldg 1094, MCB Hawaii, Kaneohe, HI',phone:'(808) 257-8008',hours:'Mon–Fri 0730–1530',map:'DEERS+ID+Cards+MCB+Hawaii'},
+      {name:'Finance / IPAC',category:'Admin',addr:'Bldg 1094, MCB Hawaii, Kaneohe, HI',phone:'(808) 257-8082',hours:'Mon–Fri 0730–1600',map:'Finance+Office+MCB+Hawaii'},
+      {name:'Legal Assistance (JAG)',category:'Admin',addr:'Bldg 1094, MCB Hawaii, Kaneohe, HI',phone:'(808) 257-1435',hours:'Mon–Fri 0800–1600',map:'Legal+Office+MCB+Hawaii'},
+      {name:'Housing Office',category:'Admin',addr:'Bldg 219, MCB Hawaii, Kaneohe, HI',phone:'(808) 257-2240',hours:'Mon–Fri 0730–1600',map:'Housing+Office+MCB+Hawaii'},
+      {name:'Education Center',category:'Admin',addr:'Bldg 1094, MCB Hawaii, Kaneohe, HI',phone:'(808) 257-8082',hours:'Mon–Fri 0730–1600',map:'Education+Center+MCB+Hawaii'},
+      {name:'Commissary',category:'Commissary & MCX',addr:'Mokapu Rd, MCB Hawaii, Kaneohe, HI 96863',phone:'(808) 254-7634',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Commissary+MCB+Hawaii+Kaneohe'},
+      {name:'Marine Corps Exchange (MCX)',category:'Commissary & MCX',addr:'Mokapu Mall, MCB Hawaii, Kaneohe, HI',phone:'(808) 247-7500',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'Mokapu+Mall+MCX+MCB+Hawaii'},
+      {name:'MCX Annex / Marine Mart',category:'Commissary & MCX',addr:'Selden St, MCB Hawaii, Kaneohe, HI',phone:'(808) 247-7500',hours:'Daily 0700–2100',map:'Marine+Mart+MCB+Hawaii+Kaneohe'},
+      {name:'Fuel Station',category:'Commissary & MCX',addr:'Near MCX, MCB Hawaii, Kaneohe, HI',phone:'(808) 247-7500',hours:'Daily 0600–2200',map:'Gas+Station+MCB+Hawaii+Kaneohe'},
+      {name:'Semper Fit Center (Main Gym)',category:'Fitness',addr:'Bldg 1094 Area, MCB Hawaii, Kaneohe',phone:'(808) 257-8380',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Semper+Fit+Center+MCB+Hawaii'},
+      {name:'Base Pool',category:'Fitness',addr:'MCB Hawaii, Kaneohe Bay, HI',phone:'(808) 257-8380',hours:'Lap swim hours vary — call ahead',map:'Pool+MCB+Hawaii+Kaneohe'},
+      {name:'Beach & Water Sports (Pyramid Rock)',category:'Fitness',addr:'Pyramid Rock Beach, MCB Hawaii',phone:'(808) 257-7788',hours:'Daily — daylight hours',map:'Pyramid+Rock+Beach+MCB+Hawaii'},
+      {name:'Base Library',category:'Library & Education',addr:'Bldg 216, MCB Hawaii, Kaneohe, HI',phone:'(808) 257-8226',hours:'Mon–Fri 0900–1800, Sat 1000–1600',map:'Base+Library+MCB+Hawaii+Kaneohe'},
+      {name:'Mokapu Mall Barber Shop',category:'Services',addr:'Mokapu Mall MCX, MCB Hawaii',phone:'(808) 247-7500',hours:'Mon–Sat 0900–1800',map:'Mokapu+Mall+MCX+MCB+Hawaii'},
+      {name:'Auto Skills Center',category:'Services',addr:'MCB Hawaii, Kaneohe, HI',phone:'(808) 257-8380',hours:'Tue–Sat 0800–1700',map:'Auto+Skills+Center+MCB+Hawaii'},
+      {name:'Chapel',category:'Services',addr:'Bldg 1094 Area, MCB Hawaii, Kaneohe',phone:'(808) 257-8388',hours:'Services vary — call ahead',map:'Chapel+MCB+Hawaii+Kaneohe'},
     ]
   },
   okinawa: {
     name: 'MCB Camp Butler, Okinawa',
-    mapQuery: 'Camp+Foster+Okinawa+Japan',
-    mapCenter: '26.2744,127.7358',
     facilities: [
-      { name: 'U.S. Naval Hospital Okinawa', category: 'Healthcare', icon: '🏥', bg: '#fff0f0', color: '#ef4444', addr: 'Bldg 960, Tarawa Road, Camp Foster, Okinawa', phone: '098-971-7555', hours: '24/7', map: 'US+Naval+Hospital+Okinawa+Camp+Foster' },
-      { name: 'TRICARE / Appointments', category: 'Healthcare', icon: '💊', bg: '#fff0f0', color: '#ef4444', addr: 'Naval Hospital Okinawa, Camp Foster', phone: '098-971-9355', hours: 'Mon–Fri 0730–1600', map: 'US+Naval+Hospital+Okinawa+Camp+Foster' },
-      { name: 'DEERS / ID Card Center (Foster)', category: 'Admin', icon: '🪪', bg: '#fffbeb', color: '#d97706', addr: 'Bldg 5831, Camp Foster, Okinawa', phone: 'DSN 645-7219', hours: 'Mon–Fri 0730–1600', map: 'Camp+Foster+DEERS+ID+Card+Okinawa' },
-      { name: 'IPAC Okinawa', category: 'Admin', icon: '💰', bg: '#fffbeb', color: '#d97706', addr: 'Camp Foster, Okinawa', phone: 'DSN 645-7219', hours: 'Mon–Fri 0730–1600', map: 'IPAC+Camp+Foster+Okinawa' },
-      { name: 'Commissary — Camp Foster', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: 'Camp Foster, Okinawa (main commissary)', phone: 'DSN 645-7219', hours: 'Tue–Sat 0900–1900, Sun 1000–1800', map: 'Commissary+Camp+Foster+Okinawa' },
-      { name: 'Commissary — Camp Kinser', category: 'Commissary & MCX', icon: '🛒', bg: '#eff6ff', color: '#3b82f6', addr: 'Camp Kinser, Okinawa', phone: 'DSN 637-2321', hours: 'Tue–Sat 0900–1900, Sun 1000–1800', map: 'Commissary+Camp+Kinser+Okinawa' },
-      { name: 'MCX — Camp Foster', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Camp Foster, Okinawa', phone: 'DSN 645-7219', hours: 'Mon–Sat 0900–2000, Sun 1000–1800', map: 'MCX+Camp+Foster+Okinawa' },
-      { name: 'MCX — Camp Courtney', category: 'Commissary & MCX', icon: '🏪', bg: '#eff6ff', color: '#3b82f6', addr: 'Camp Courtney, Okinawa', phone: 'DSN 622-6202', hours: 'Mon–Sat 0900–2000, Sun 1000–1800', map: 'MCX+Camp+Courtney+Okinawa' },
-      { name: 'Foster Athletics Gym', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Bldg 1, Camp Foster, Okinawa', phone: 'DSN 645-7219', hours: 'Mon–Fri 0500–2200, Sat–Sun 0700–2000', map: 'Foster+Athletics+Gym+Okinawa' },
-      { name: 'Devil Dog Gym (Camp Courtney)', category: 'Fitness', icon: '💪', bg: '#f0fdf4', color: '#16a34a', addr: 'Camp Courtney, Okinawa', phone: 'DSN 622-6202', hours: 'Mon–Fri 0500–2100 (CAC required)', map: 'Devil+Dog+Gym+Camp+Courtney+Okinawa' },
-      { name: 'Foster Base Library', category: 'Library', icon: '📚', bg: '#faf5ff', color: '#7c3aed', addr: 'Camp Foster, Okinawa', phone: 'DSN 645-7219', hours: 'Mon–Thu 1000–1900, Fri–Sat 1000–1700', map: 'Camp+Foster+Library+Okinawa' },
+      {name:'U.S. Naval Hospital Okinawa',category:'Healthcare',addr:'PSC 482, Box 1000, FPO AP 96362 (Camp Foster)',phone:'DSN 646-7555 / (011-81) 98-966-7555',hours:'Emergency 24/7; Clinic Mon–Fri 0730–1630',map:'US+Naval+Hospital+Okinawa+Camp+Foster'},
+      {name:'TRICARE / Nurse Advice Line',category:'Healthcare',addr:'Naval Hospital Okinawa',phone:'(800) 874-2273',hours:'24/7 Nurse Line',map:'US+Naval+Hospital+Okinawa+Camp+Foster'},
+      {name:'Branch Health Clinic (Camp Kinser)',category:'Healthcare',addr:'Camp Kinser, Okinawa, Japan',phone:'DSN 637-1800',hours:'Mon–Fri 0730–1600',map:'Camp+Kinser+Okinawa+Japan'},
+      {name:'Mental Health / Fleet Family Support',category:'Healthcare',addr:'FFSC Camp Foster, Okinawa',phone:'DSN 645-0325',hours:'Mon–Fri 0730–1600',map:'FFSC+Camp+Foster+Okinawa'},
+      {name:'DEERS / ID Card Center (Foster)',category:'Admin',addr:'Bldg 5841, Camp Foster, Okinawa',phone:'DSN 645-7416',hours:'Mon–Fri 0730–1530',map:'Camp+Foster+Okinawa+Japan'},
+      {name:'DEERS / ID Card Center (Kinser)',category:'Admin',addr:'Camp Kinser, Okinawa, Japan',phone:'DSN 637-3087',hours:'Mon–Fri 0730–1530',map:'Camp+Kinser+Okinawa+Japan'},
+      {name:'Finance / IPAC (Foster)',category:'Admin',addr:'Bldg 5841, Camp Foster, Okinawa',phone:'DSN 645-7213',hours:'Mon–Fri 0730–1600',map:'Camp+Foster+Okinawa+Japan'},
+      {name:'Legal Assistance (JAG, Foster)',category:'Admin',addr:'Bldg 5841, Camp Foster, Okinawa',phone:'DSN 645-7419',hours:'Mon–Fri 0800–1600',map:'Camp+Foster+Okinawa+Japan'},
+      {name:'Housing Office',category:'Admin',addr:'Camp Foster, Okinawa',phone:'DSN 645-7050',hours:'Mon–Fri 0730–1600',map:'Camp+Foster+Okinawa+Japan'},
+      {name:'Education Center',category:'Admin',addr:'Camp Foster, Okinawa',phone:'DSN 645-2257',hours:'Mon–Fri 0730–1600',map:'Camp+Foster+Okinawa+Japan'},
+      {name:'Commissary — Camp Foster',category:'Commissary & MCX',addr:'Camp Foster, Okinawa, Japan',phone:'DSN 645-7322',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Commissary+Camp+Foster+Okinawa'},
+      {name:'Commissary — Camp Kinser',category:'Commissary & MCX',addr:'Camp Kinser, Okinawa, Japan',phone:'DSN 637-4600',hours:'Tue–Sat 0900–1900, Sun 1000–1800',map:'Commissary+Camp+Kinser+Okinawa'},
+      {name:'MCX — Camp Foster',category:'Commissary & MCX',addr:'Camp Foster, Okinawa, Japan',phone:'DSN 645-7322',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'MCX+Camp+Foster+Okinawa+Japan'},
+      {name:'MCX — Camp Courtney',category:'Commissary & MCX',addr:'Camp Courtney, Okinawa, Japan',phone:'DSN 622-5374',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'MCX+Camp+Courtney+Okinawa+Japan'},
+      {name:'MCX — Camp Kinser',category:'Commissary & MCX',addr:'Camp Kinser, Okinawa, Japan',phone:'DSN 637-4600',hours:'Mon–Sat 0900–2000, Sun 1000–1800',map:'MCX+Camp+Kinser+Okinawa+Japan'},
+      {name:'Marine Mart / Shoppette (Foster)',category:'Commissary & MCX',addr:'Camp Foster, Okinawa',phone:'DSN 645-7322',hours:'Daily 0700–2100',map:'Camp+Foster+Okinawa+Japan'},
+      {name:'Foster Athletics Gym',category:'Fitness',addr:'Camp Foster, Okinawa, Japan',phone:'DSN 645-7400',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Foster+Athletics+Gym+Okinawa'},
+      {name:'Devil Dog Gym (Camp Courtney)',category:'Fitness',addr:'Camp Courtney, Okinawa, Japan',phone:'DSN 622-5374',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Devil+Dog+Gym+Camp+Courtney+Okinawa'},
+      {name:'Kinser Fitness Center',category:'Fitness',addr:'Camp Kinser, Okinawa, Japan',phone:'DSN 637-1800',hours:'Mon–Fri 0500–2200, Sat–Sun 0700–2000',map:'Kinser+Fitness+Center+Okinawa'},
+      {name:'Pool (Camp Foster)',category:'Fitness',addr:'Camp Foster, Okinawa, Japan',phone:'DSN 645-7400',hours:'Seasonal — call ahead',map:'Pool+Camp+Foster+Okinawa'},
+      {name:'Foster Base Library',category:'Library & Education',addr:'Camp Foster, Okinawa, Japan',phone:'DSN 645-7214',hours:'Mon–Fri 0900–1800, Sat 1000–1600',map:'Library+Camp+Foster+Okinawa+Japan'},
+      {name:'MCX Barber Shop (Foster)',category:'Services',addr:'MCX Camp Foster, Okinawa',phone:'DSN 645-7322',hours:'Mon–Sat 0900–1800',map:'MCX+Camp+Foster+Okinawa+Japan'},
+      {name:'Auto Skills Center (Foster)',category:'Services',addr:'Camp Foster, Okinawa, Japan',phone:'DSN 645-7400',hours:'Tue–Sat 0800–1700',map:'Auto+Skills+Center+Camp+Foster+Okinawa'},
+      {name:'Chapel (Camp Foster)',category:'Services',addr:'Camp Foster, Okinawa, Japan',phone:'DSN 645-7164',hours:'Services vary — call ahead',map:'Chapel+Camp+Foster+Okinawa'},
     ]
-  }
+  },
 };
 
 // Auto-select base matching user's duty station on load
-function initFacilities() {
-  if (!P.station) return;
-  const s = P.station.toLowerCase();
-  let baseKey = 'pendleton';
-  if (s.includes('29') || s.includes('palms') || s.includes('stumps')) baseKey = '29palms';
-  else if (s.includes('quantico')) baseKey = 'quantico';
-  else if (s.includes('lejeune') || s.includes('jacksonville')) baseKey = 'lejeune';
-  else if (s.includes('miramar')) baseKey = 'miramar';
-  else if (s.includes('hawaii') || s.includes('kaneohe') || s.includes('kbay')) baseKey = 'hawaii';
-  else if (s.includes('okinawa') || s.includes('butler') || s.includes('oki')) baseKey = 'okinawa';
-  const sel = document.getElementById('fac-base-select');
-  if (sel) sel.value = baseKey;
+function initFacilities(){
+  if(!P.station)return;
+  var baseKey=resolveStation(P.station)||'pendleton';
+  var sel=document.getElementById('fac-base-select');
+  if(sel)sel.value=baseKey;
   switchBase(baseKey);
 }
 
 
 function switchBase(val){
-  document.querySelectorAll('.base-content').forEach(el=>el.classList.remove('on'));
-  const target=document.getElementById('fac-'+val);
-  if(target)target.classList.add('on');
+  var base=FACILITIES[val];
+  if(!base)return;
+  var cats={};
+  base.facilities.forEach(function(f){
+    if(!cats[f.category])cats[f.category]=[];
+    cats[f.category].push(f);
+  });
+  var catIcons={
+    'Healthcare':'<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2.5" width="12" height="11" rx="2" stroke="#ef4444" stroke-width="1.4"/><line x1="8" y1="5.5" x2="8" y2="10" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round"/><line x1="5.5" y1="7.8" x2="10.5" y2="7.8" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    'Admin':'<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1.5" stroke="#d97706" stroke-width="1.4"/><line x1="5.5" y1="5.5" x2="10.5" y2="5.5" stroke="#d97706" stroke-width="1.3" stroke-linecap="round"/><line x1="5.5" y1="8" x2="10.5" y2="8" stroke="#d97706" stroke-width="1.3" stroke-linecap="round"/><line x1="5.5" y1="10.5" x2="8.5" y2="10.5" stroke="#d97706" stroke-width="1.3" stroke-linecap="round"/></svg>',
+    'Commissary & MCX':'<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 1.5h1.8l1.9 7.2h6.1l1.5-5.1H4.8" stroke="#3b82f6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.2" cy="12.2" r="1" fill="#3b82f6"/><circle cx="10.8" cy="12.2" r="1" fill="#3b82f6"/></svg>',
+    'Fitness':'<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="7" width="2.5" height="4" rx="1" stroke="#10b981" stroke-width="1.3"/><rect x="4.5" y="5" width="7" height="6" rx="1" stroke="#10b981" stroke-width="1.3"/><rect x="12.5" y="7" width="2.5" height="4" rx="1" stroke="#10b981" stroke-width="1.3"/><line x1="3.5" y1="9" x2="4.5" y2="9" stroke="#10b981" stroke-width="1.3"/><line x1="11.5" y1="9" x2="12.5" y2="9" stroke="#10b981" stroke-width="1.3"/></svg>',
+    'Library & Education':'<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="#8b5cf6" stroke-width="1.3"/><line x1="4.5" y1="5.5" x2="11.5" y2="5.5" stroke="#8b5cf6" stroke-width="1.2" stroke-linecap="round"/><line x1="4.5" y1="8" x2="11.5" y2="8" stroke="#8b5cf6" stroke-width="1.2" stroke-linecap="round"/><line x1="4.5" y1="10.5" x2="8" y2="10.5" stroke="#8b5cf6" stroke-width="1.2" stroke-linecap="round"/></svg>',
+    'Services':'<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="2.5" stroke="#6b7280" stroke-width="1.3"/><path d="M3 14c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="#6b7280" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  };
+  var catColors={'Healthcare':'#fef2f2','Admin':'#fffbeb','Commissary & MCX':'#eff6ff','Fitness':'#f0fdf4','Library & Education':'#f5f3ff','Services':'#f9fafb'};
+  var html='';
+  Object.keys(cats).forEach(function(cat){
+    html+='<div class="sh" style="display:flex;align-items:center;gap:8px;">'+(catIcons[cat]||'')+'<span>'+cat+'</span></div>';
+    html+='<div class="fac-grid">';
+    cats[cat].forEach(function(f){
+      var url='https://maps.google.com/maps?q='+f.map;
+      html+='<div class="fac-card" onclick="window.open(\''+url+'\',\'_blank\')">';
+      html+='<div class="fac-name">'+f.name+'</div>';
+      html+='<div class="fac-addr">'+f.addr+'</div>';
+      html+='<div class="fac-phone">'+f.phone+'</div>';
+      html+='<div class="fac-hours">'+f.hours+'</div>';
+      html+='</div>';
+    });
+    html+='</div>';
+  });
+  document.getElementById('fac-rendered').innerHTML=html;
+  var sel=document.getElementById('fac-base-select');
+  if(sel)sel.value=val;
 }
 
+window.addEventListener('DOMContentLoaded', function(){
+  buildUI();
+  buildSidebar();
+  switchBase('pendleton');
+  // Show profile modal on first visit
+  openProfileModal();
+});
 function filterAcro(q){
   const items=document.querySelectorAll('.acro-item');
   const ql=q.toLowerCase();
