@@ -1394,7 +1394,8 @@ function sendSuggest(el){document.getElementById('ask-input').value=el.textConte
 function inputKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
 function parseMarkdown(text){
   text=text.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
-text=text.replace(/\*([^*\n]+?)\*/g,'<em>$1</em>');  var lines=text.split('\n'),html='',inList=false;
+  text=text.replace(/\*([^*\n]+?)\*/g,'<em>$1</em>');
+  var lines=text.split('\n'),html='',inList=false;
   for(var i=0;i<lines.length;i++){
     var line=lines[i];
     var bm=line.match(/^[-\u2022]\s+(.+)/);
@@ -1482,35 +1483,33 @@ const FACILITIES = {
   }
 };
 
-function renderFacilities(baseKey) {
-  var base = FACILITIES[baseKey];
-  if (!base) return;
-  var mapFrame = document.getElementById('fac-map');
-  var firstFac = base.facilities[0];
-  mapFrame.src = 'https://maps.google.com/maps?q=' + firstFac.map + '&output=embed&z=14';
-  document.getElementById('map-label').textContent = 'Showing: ' + base.name + ' key facilities';
-  var list = document.getElementById('fac-list');
-  var seen = [];
-  var categories = base.facilities.map(function(f){return f.category;}).filter(function(c,i,a){return a.indexOf(c)===i;});
-  var html = '';
-  categories.forEach(function(cat) {
-    var facs = base.facilities.filter(function(f){return f.category===cat;});
-    html += '<div><div class="sh">' + cat + '</div><div class="fac-grid">';
-    facs.forEach(function(f) {
-      var url = 'https://maps.google.com/maps?q=' + f.map;
-      html += '<div class="fac-card" onclick="window.open('' + url + '','_blank')">';
-      html += '<div class="fac-icon" style="background:' + f.bg + ';"><span style="font-size:18px;">' + f.icon + '</span></div>';
-      html += '<div class="fac-name">' + f.name + '</div>';
-      html += '<div class="fac-addr">' + f.addr + '</div>';
-      html += '<div class="fac-phone">' + f.phone + '</div>';
-      html += '<div class="fac-hours">' + f.hours + '</div>';
-      html += '</div>';
+function renderFacilities(baseKey){
+  var base=FACILITIES[baseKey];
+  if(!base)return;
+  var mapFrame=document.getElementById('fac-map');
+  var firstFac=base.facilities[0];
+  mapFrame.src='https://maps.google.com/maps?q='+firstFac.map+'&output=embed&z=14';
+  document.getElementById('map-label').textContent='Showing: '+base.name+' key facilities';
+  var list=document.getElementById('fac-list');
+  var categories=base.facilities.map(function(f){return f.category;}).filter(function(c,i,a){return a.indexOf(c)===i;});
+  var html='';
+  categories.forEach(function(cat){
+    var facs=base.facilities.filter(function(f){return f.category===cat;});
+    html+='<div><div class="sh">'+cat+'</div><div class="fac-grid">';
+    facs.forEach(function(f){
+      var url='https://maps.google.com/maps?q='+f.map;
+      html+='<div class="fac-card" onclick="window.open(\x27'+url+'\x27,\x27_blank\x27)">';
+      html+='<div class="fac-icon" style="background:'+f.bg+';"><span style="font-size:18px;">'+f.icon+'</span></div>';
+      html+='<div class="fac-name">'+f.name+'</div>';
+      html+='<div class="fac-addr">'+f.addr+'</div>';
+      html+='<div class="fac-phone">'+f.phone+'</div>';
+      html+='<div class="fac-hours">'+f.hours+'</div>';
+      html+='</div>';
     });
-    html += '</div></div>';
+    html+='</div></div>';
   });
-  list.innerHTML = html;
+  list.innerHTML=html;
 }
-
 // Auto-select base matching user's duty station on load
 function initFacilities() {
   if (!P.station) return;
@@ -1544,6 +1543,5 @@ function filterAcro(q){
 
 async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});try{const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();const reply=data.content?.[0]?.text||'Something went wrong. Try again.';bubble.classList.remove('typing');bubble.innerHTML=parseMarkdown(reply);msgs.push({role:'assistant',content:reply});}catch(e){bubble.classList.remove('typing');bubble.textContent='Connection error. Try again.';}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
 </script>
-    <script src="/fix.js"></script>
 </body>
 </html>
