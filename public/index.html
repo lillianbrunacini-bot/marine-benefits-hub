@@ -403,8 +403,13 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
     <div class="tab" onclick="tab('tricare',this)">Healthcare</div>
     <div class="tab" onclick="tab('edu',this)">Education</div>
     <div class="tab" onclick="tab('housing',this)">Housing</div>
-    <div class="tab" onclick="tab('spouse',this)">Spouse &amp; Family</div>
-    <div class="tab" onclick="tab('va',this)">VA</div><div class="tab" onclick="tab('deals',this)">Deals &amp; Discounts</div><div class="tab" onclick="tab('dictionary',this)">Spouse Dictionary <span class="tab-dot"></span></div><div class="tab" onclick="tab('facilities',this)">Base Facilities</div><div class="tab" onclick="tab('contacts',this)">Who To Call</div><div class="tab" onclick="tab('news',this)">Base News</div><div class="tab" onclick="tab('community',this)">Spouse Community</div><div class="tab" onclick="tab('schools',this)">Schools</div></div>
+    <div class="tab" onclick="tab('spouse',this)">Spouse</div>
+    <div class="tab" onclick="tab('family',this)">Family</div>
+    <div class="tab" onclick="tab('va',this)">VA</div>
+    <div class="tab" onclick="tab('deals',this)">Deals &amp; Discounts</div>
+    <div class="tab" onclick="tab('facilities',this)">Base Facilities</div>
+    <div class="tab" onclick="tab('contacts',this)">Who To Call</div>
+    <div class="tab" onclick="tab('news',this)">Base News</div></div>
 
   <div class="body">
 
@@ -547,8 +552,11 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
       <div class="ib"><div class="ib-t">Going overseas? It's called OHA instead</div><div class="ib-b">OCONUS stations use Overseas Housing Allowance (OHA) instead of BAH. It covers your actual rent up to a local cap, plus a utilities allowance. Rates vary a lot by country &mdash; ask the AI tab for your specific location.</div></div>
     </div>
 
-    <!-- SPOUSE & FAMILY -->
+    <!-- SPOUSE -->
     <div class="panel" id="p-spouse">
+      <div class="ib"><div class="ib-t">Everything a military spouse needs to know</div><div class="ib-b">Pay changes, deployment finances, community, career, and your own benefits — all in one place.</div></div>
+
+      <div class="sh">How BAH changes</div>
       <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>This section is for military families.</strong> Discounts, BAH changes, and everything you need to know when life changes.</div></div>
 
       <div><div class="sh">How BAH changes</div>
@@ -593,27 +601,123 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         </div></div>
       </div>
 
-      <div><div class="sh">Discounts for military families</div>
-        <div class="disc-grid">
-          <div class="dc"><div class="dc-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#3b82f6" stroke-width="1.5"/></svg></div><div class="dc-name">Commissary</div><div class="dc-desc">~30% below retail. Use it every week.</div><div class="dc-badge" style="background:#eff6ff;color:#3b82f6;">~30% off groceries</div></div>
-          <div class="dc"><div class="dc-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#10b981" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="dc-name">Amazon Prime</div><div class="dc-desc">Free with military verification via ID.me.</div><div class="dc-badge" style="background:#ecfdf5;color:#10b981;">Free Prime</div></div>
-          <div class="dc"><div class="dc-icon" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c0 0-7 4-7 9a7 7 0 0014 0c0-5-7-9-7-9z" stroke="#5a7a3a" stroke-width="1.5"/></svg></div><div class="dc-name">Disney Parks</div><div class="dc-desc">$50–80 off per day for military families.</div><div class="dc-badge" style="background:#fff0f0;color:#5a7a3a;">$50–80 / day off</div></div>
-          <div class="dc"><div class="dc-icon" style="background:#fffbeb;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 7h14M3 10h14M3 13h14" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="dc-name">National Parks</div><div class="dc-desc">America the Beautiful pass — free annual access to all national parks.</div><div class="dc-badge" style="background:#fffbeb;color:#f59e0b;">Free annual pass</div></div>
-          <div class="dc"><div class="dc-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="6" width="14" height="10" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M7 6V5a3 3 0 016 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div><div class="dc-name">USAA</div><div class="dc-desc">Banking and insurance. Spouses are eligible too.</div><div class="dc-badge" style="background:#f5f3ff;color:#8b5cf6;">Spouses eligible</div></div>
-          <div class="dc"><div class="dc-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="dc-name">Lowe's &amp; Home Depot</div><div class="dc-desc">10% off in-store with military ID.</div><div class="dc-badge" style="background:#f0fdfa;color:#0d9488;">10% off</div></div>
-        </div>
+      <div>
 
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Best times to shop &amp; save</div><div class="ct-d">Seasonal deals worth knowing about</div></div></div><div class="div"></div>
-          <div class="rows">
-            <div class="row"><span class="rl">Military Appreciation Month</span><span class="rv" style="color:var(--coral);">May &mdash; widest discount window</span></div>
-            <div class="row"><span class="rl">Veterans Day (Nov 11)</span><span class="rv g">Free meals + dozens of deals</span></div>
-            <div class="row"><span class="rl">Commissary case lot sales</span><span class="rv dim">Spring &amp; Fall annually</span></div>
-            <div class="row"><span class="rl">Exchange tax-free weekends</span><span class="rv dim">Varies by state / base</span></div>
-            <div class="row"><span class="rl">MWR on base</span><span class="rv g">Tickets, trips, gear rental</span></div>
-          </div>
-        </div>
-        <div class="ib"><div class="ib-t">How to verify for most discounts</div><div class="ib-b">Most places use ID.me or SheerID for online verification, or you can show your military ID in person. Spouse discounts usually require enrollment in DEERS. Ask the AI tab to help find a specific discount.</div></div>
-      </div>
+      <div class="sh">Your benefits as a spouse</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">TRICARE Prime</span><span class="rv">Free healthcare coverage — enroll through DEERS</span></div>
+        <div class="row"><span class="rl">MyCAA Scholarship</span><span class="rv">Up to $4,000 for education if your Marine is O-1 to O-3, W-1 to W-2, or E-1 to E-5</span></div>
+        <div class="row"><span class="rl">Commissary &amp; MCX access</span><span class="rv">Shop tax-free on base — bring your dependent ID</span></div>
+        <div class="row"><span class="rl">MWR programs</span><span class="rv">Fitness classes, discounted tickets, trips, and events — open to families</span></div>
+        <div class="row"><span class="rl">Space-A travel</span><span class="rv">Free flights on military aircraft when seats are available</span></div>
+        <div class="row"><span class="rl">Legal assistance</span><span class="rv">Free legal help for families at base JAG office — wills, POA, housing disputes</span></div>
+        <div class="row"><span class="rl">Military OneSource</span><span class="rv">Free counseling, financial coaching, and referrals — 1-800-342-9647</span></div>
+      </div></div>
+
+      <div class="sh">Rank &amp; unit guide</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Pvt – LCpl (E-1 to E-3)</span><span class="rv">Junior enlisted. New Marines figuring it out.</span></div>
+        <div class="row"><span class="rl">Cpl – Sgt (E-4 to E-5)</span><span class="rv">NCOs. First real leadership roles. Your Marine is getting serious.</span></div>
+        <div class="row"><span class="rl">SSgt – SgtMaj (E-6 to E-9)</span><span class="rv">Senior NCOs and Staff. Experience level goes up, so does responsibility.</span></div>
+        <div class="row"><span class="rl">2ndLt – Capt (O-1 to O-3)</span><span class="rv">Junior officers. Lead platoons and companies.</span></div>
+        <div class="row"><span class="rl">Maj and above (O-4+)</span><span class="rv">Field grade officers. Staff roles, battalion command and above.</span></div>
+        <div class="row"><span class="rl">CO</span><span class="rv">Commanding Officer — the boss of the unit. Has a lot of authority over your Marine's daily life.</span></div>
+        <div class="row"><span class="rl">1stSgt / SgtMaj</span><span class="rv">Senior enlisted leader of a company or battalion. Handles Marines' welfare directly.</span></div>
+        <div class="row"><span class="rl">FRO</span><span class="rv">Family Readiness Officer — your first call during deployment or emergencies. Get their number now.</span></div>
+      </div></div>
+
+      <div class="sh">Key acronyms</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">BAH</span><span class="rv">Basic Allowance for Housing — monthly tax-free housing payment</span></div>
+        <div class="row"><span class="rl">BAS</span><span class="rv">Basic Allowance for Subsistence — monthly food allowance</span></div>
+        <div class="row"><span class="rl">PCS</span><span class="rv">Permanent Change of Station — moving to a new base</span></div>
+        <div class="row"><span class="rl">TAD / TDY</span><span class="rv">Temporary duty away from home base — not a full PCS, they come back</span></div>
+        <div class="row"><span class="rl">LES</span><span class="rv">Leave and Earnings Statement — your Marine's monthly pay stub</span></div>
+        <div class="row"><span class="rl">DEERS</span><span class="rv">Defense enrollment database — must be enrolled to use any benefits</span></div>
+        <div class="row"><span class="rl">UA</span><span class="rv">Unauthorized Absence — serious offense, affects pay and career</span></div>
+        <div class="row"><span class="rl">MOL</span><span class="rv">Marine OnLine — internal admin portal for leave, TA, records</span></div>
+        <div class="row"><span class="rl">SCRA</span><span class="rv">Servicemembers Civil Relief Act — caps pre-service debt at 6% APR</span></div>
+        <div class="row"><span class="rl">MTF</span><span class="rv">Military Treatment Facility — the hospital or clinic on base</span></div>
+        <div class="row"><span class="rl">MOS</span><span class="rv">Military Occupational Specialty — your Marine's job code</span></div>
+        <div class="row"><span class="rl">FRG</span><span class="rv">Family Readiness Group — spouse and family community for your unit</span></div>
+      </div></div>
+
+      <div class="sh">Community &amp; support</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/movingthemillieway" target="_blank" style="color:var(--coral);">Moving the Millie Way</a></span><span class="rv">PCS planning and relocation support group</span></div>
+        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/militarywifemom" target="_blank" style="color:var(--coral);">Military Wife and Mom Community</a></span><span class="rv">General support, deployment advice, daily mil-life</span></div>
+        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/careermilitaryspouses" target="_blank" style="color:var(--coral);">Career Military Spouses</a></span><span class="rv">Jobs, portable careers, remote work</span></div>
+        <div class="row"><span class="rl">Your unit FRG page</span><span class="rv">Search your unit name + FRG on Facebook</span></div>
+        <div class="row"><span class="rl"><a href="https://www.uso.org/milspouse" target="_blank" style="color:var(--coral);">USO Spouse Programs</a></span><span class="rv">Coffee Connections, virtual events, community</span></div>
+        <div class="row"><span class="rl"><a href="https://www.militaryspouseadvocacynetwork.org" target="_blank" style="color:var(--coral);">Military Spouse Advocacy Network</a></span><span class="rv">Free toolkits, webinars, finance, career, mental health</span></div>
+        <div class="row"><span class="rl"><a href="https://www.hireheroesusa.org" target="_blank" style="color:var(--coral);">Hire Heroes USA</a></span><span class="rv">Free career coaching and resume help</span></div>
+      </div></div>
+
+      <div class="sh">Mental health &amp; deployment support</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Military Crisis Line</span><span class="rv">Call or text 988, press 1 — 24/7 for families too</span></div>
+        <div class="row"><span class="rl">Military OneSource Counseling</span><span class="rv">Up to 12 free sessions · 1-800-342-9647</span></div>
+        <div class="row"><span class="rl"><a href="https://www.redcross.org/military" target="_blank" style="color:var(--coral);">Red Cross Emergency Messages</a></span><span class="rv">Reach a deployed Marine for family emergencies · 1-877-272-7337</span></div>
+        <div class="row"><span class="rl">FOCUS Program</span><span class="rv">Free family resilience training — ask your FRO to connect you</span></div>
+        <div class="row"><span class="rl"><a href="https://www.nmcrs.org" target="_blank" style="color:var(--coral);">Navy Marine Corps Relief Society</a></span><span class="rv">Emergency financial assistance and interest-free loans</span></div>
+      </div></div>
+    </div>
+
+    <!-- FAMILY -->
+    <div class="panel" id="p-family">
+      <div class="ib"><div class="ib-t">For military families with kids</div><div class="ib-b">Schools, healthcare for newborns, PCS with children, and everything that changes when your family grows.</div></div>
+
+      <div class="sh">PCS checklist — don't leave money on the table</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Household goods (HHG)</span><span class="rv">Full weight allowance paid by the government. Schedule at move.mil.</span></div>
+        <div class="row"><span class="rl">PPM / DITY move</span><span class="rv">Move yourself and get paid 95% of what it would've cost the government.</span></div>
+        <div class="row"><span class="rl">Vehicle shipment</span><span class="rv">One vehicle shipped at government expense.</span></div>
+        <div class="row"><span class="rl">TLE — Temporary Lodging Expense</span><span class="rv">Up to 10 days of temp housing covered at both ends of the move.</span></div>
+        <div class="row"><span class="rl">Per diem for travel days</span><span class="rv">Every family member counts. Don't forget to claim it.</span></div>
+        <div class="row"><span class="rl">Mileage reimbursement</span><span class="rv">Reimbursed at the IRS rate per mile driven.</span></div>
+      </div></div>
+
+      <div class="sh">Adding a new dependent</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">BAH rate change kicks in</span><span class="rv g">Day of the event — not end of month</span></div>
+        <div class="row"><span class="rl">Update DEERS within</span><span class="rv c">60 days</span></div>
+        <div class="row"><span class="rl">New baby TRICARE coverage</span><span class="rv g">Auto for first 60 days — then must enroll</span></div>
+        <div class="row"><span class="rl">Submit paperwork to</span><span class="rv">Your S-1</span></div>
+        <div class="row"><span class="rl">Marriage — update DEERS</span><span class="rv c">Do this first — benefits don't start until enrolled</span></div>
+      </div></div>
+
+      <div class="sh">Kids &amp; healthcare (TRICARE)</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">Newborn coverage</span><span class="rv">Automatic for 60 days — must enroll in DEERS to continue</span></div>
+        <div class="row"><span class="rl">Well-child visits</span><span class="rv">Free under TRICARE Prime at base clinic</span></div>
+        <div class="row"><span class="rl">Dental for kids</span><span class="rv">Enroll in FEDVIP — not automatic, separate from TRICARE</span></div>
+        <div class="row"><span class="rl">Special needs (EFMP)</span><span class="rv">Exceptional Family Member Program — mandatory enrollment, coordinates care across PCS moves</span></div>
+        <div class="row"><span class="rl">Mental health for kids</span><span class="rv">Free at base MTF · Military OneSource also offers family counseling</span></div>
+      </div></div>
+
+      <div class="sh">Schools near USMC bases</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl">How it works</span><span class="rv">Most CONUS bases use local public schools. OCONUS (Okinawa, Iwakuni) use DoDEA — free, on-base, no language barrier.</span></div>
+        <div class="row"><span class="rl">Interstate Compact (MIC3)</span><span class="rv">All 50 states protect military kids during mid-year transfers — grades and credits transfer</span></div>
+        <div class="row"><span class="rl">IEP / Special needs</span><span class="rv">Schools must honor existing IEPs — EFMP coordinates support</span></div>
+        <div class="row"><span class="rl">School liaison officer</span><span class="rv">Free help with enrollment, IEPs, and credits at every base — ask your unit</span></div>
+        <div class="row"><span class="rl">Camp Pendleton</span><span class="rv">Oceanside USD · Vista USD · Capistrano USD (north gate) · SLO: (760) 725-9853</span></div>
+        <div class="row"><span class="rl">29 Palms</span><span class="rv">Morongo Unified School District · (760) 367-9191 · SLO: (760) 830-7954</span></div>
+        <div class="row"><span class="rl">Quantico</span><span class="rv">DoDEA on base (K–12) + Prince William County Schools · SLO: (703) 784-2333</span></div>
+        <div class="row"><span class="rl">Camp Lejeune</span><span class="rv">DoDEA on base + Onslow County Schools · (910) 455-2211 · SLO: (910) 451-5835</span></div>
+        <div class="row"><span class="rl">MCAS Miramar</span><span class="rv">San Diego USD · (619) 725-8000 · SLO: (858) 577-1730</span></div>
+        <div class="row"><span class="rl">MCB Hawaii</span><span class="rv">Mokapu Elementary (DoDEA, on-base K–5) + Hawaii DOE · SLO: (808) 257-7794</span></div>
+        <div class="row"><span class="rl">Okinawa</span><span class="rv">All DoDEA — Bob Hope Primary, Amelia Earhart Intermediate, Kubasaki High · pac.dodea.edu</span></div>
+      </div></div>
+
+      <div class="sh">Resources for military kids</div>
+      <div class="card"><div class="rows">
+        <div class="row"><span class="rl"><a href="https://www.dodea.edu" target="_blank" style="color:var(--coral);">DoDEA School Finder</a></span><span class="rv">Find all on-base schools worldwide</span></div>
+        <div class="row"><span class="rl"><a href="https://mic3.net" target="_blank" style="color:var(--coral);">MIC3 Interstate Compact</a></span><span class="rv">Your rights when transferring schools mid-year</span></div>
+        <div class="row"><span class="rl"><a href="https://www.militarychild.org" target="_blank" style="color:var(--coral);">Military Child Education Coalition</a></span><span class="rv">Advocacy, transition resources, and school guides</span></div>
+        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/milkidsed" target="_blank" style="color:var(--coral);">MilKids Ed Facebook Group</a></span><span class="rv">School resources, IEPs, and military kid transitions</span></div>
+        <div class="row"><span class="rl">EFMP</span><span class="rv">Exceptional Family Member Program — for kids with special medical or educational needs · ask your S-1</span></div>
+      </div></div>
     </div>
 
     <!-- VA -->
@@ -701,107 +805,6 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         <div class="row"><span class="rl">In person</span><span class="rv">CAC or military ID works at nearly every retailer</span></div>
         <div class="row"><span class="rl">Spouse discounts</span><span class="rv">Usually require DEERS enrollment — update DEERS first</span></div>
       </div></div>
-    </div>
-
-    <!-- SPOUSE DICTIONARY -->
-    <div class="panel" id="p-dictionary"><div class="ib"><div class="ib-t">Your field guide to Marine Corps life</div><div class="ib-b">Ranks, acronyms, and how it all fits together. Bookmark this tab for the first few months.</div></div>
-
-      <!-- RANK GUIDE -->
-      <div>
-        <div class="sh">Enlisted ranks — E-1 to E-9</div>
-        <div class="rank-grid">
-          <div class="rank-card"><div class="rank-ins" style="background:#f1f5f9;color:#475569;">Pvt</div><div class="rank-info"><div class="rank-grade">E-1</div><div class="rank-title">Private</div><div class="rank-aka">Brand new. Just out of boot camp.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#f1f5f9;color:#475569;">PFC</div><div class="rank-info"><div class="rank-grade">E-2</div><div class="rank-title">Private First Class</div><div class="rank-aka">Usually after a few months of service.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#e0f2fe;color:#0369a1;">LCpl</div><div class="rank-info"><div class="rank-grade">E-3</div><div class="rank-title">Lance Corporal</div><div class="rank-aka">First rank with a leadership role. Very common rank to marry into.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#e0f2fe;color:#0369a1;">Cpl</div><div class="rank-info"><div class="rank-grade">E-4</div><div class="rank-title">Corporal</div><div class="rank-aka">First NCO rank. Leads a small team (fire team). Huge step up in responsibility.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#166534;">Sgt</div><div class="rank-info"><div class="rank-grade">E-5</div><div class="rank-title">Sergeant</div><div class="rank-aka">Leads a squad (~13 Marines). Career is getting serious here.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#166534;">SSgt</div><div class="rank-info"><div class="rank-grade">E-6</div><div class="rank-title">Staff Sergeant</div><div class="rank-aka">Senior NCO. Advises platoon commanders. Typically 6–10 years in.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#854d0e;">GySgt</div><div class="rank-info"><div class="rank-grade">E-7</div><div class="rank-title">Gunnery Sergeant</div><div class="rank-aka">"Gunny." One of the most respected ranks in the Corps. Technical expert.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#854d0e;">MSgt</div><div class="rank-info"><div class="rank-grade">E-8</div><div class="rank-title">Master Sergeant / First Sergeant</div><div class="rank-aka">1stSgt is the senior enlisted of a company — your Marine's direct boss if they're enlisted.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#fae8ff;color:#7e22ce;">SgtMaj</div><div class="rank-info"><div class="rank-grade">E-9</div><div class="rank-title">Sergeant Major / Master Gunnery Sgt</div><div class="rank-aka">Top of the enlisted ranks. SgtMaj of the Marine Corps advises the Commandant.</div></div></div>
-        </div>
-      </div>
-
-      <div>
-        <div class="sh">Officer ranks — O-1 to O-10</div>
-        <div class="rank-grid">
-          <div class="rank-card"><div class="rank-ins" style="background:#f0fdf4;color:#166534;">2ndLt</div><div class="rank-info"><div class="rank-grade">O-1</div><div class="rank-title">Second Lieutenant</div><div class="rank-aka">Fresh out of OCS or NROTC. Leads a platoon (~40 Marines). Learning the ropes.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#f0fdf4;color:#166534;">1stLt</div><div class="rank-info"><div class="rank-grade">O-2</div><div class="rank-title">First Lieutenant</div><div class="rank-aka">Usually ~18 months in. Takes on more responsibilities, often exec of a platoon.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#14532d;">Capt</div><div class="rank-info"><div class="rank-grade">O-3</div><div class="rank-title">Captain</div><div class="rank-aka">Commands a company (~180 Marines). First real command. Big deal.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#dcfce7;color:#14532d;">Maj</div><div class="rank-info"><div class="rank-grade">O-4</div><div class="rank-title">Major</div><div class="rank-aka">Staff officer level. Works at battalion or regiment headquarters.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#78350f;">LtCol</div><div class="rank-info"><div class="rank-grade">O-5</div><div class="rank-title">Lieutenant Colonel</div><div class="rank-aka">Commands a battalion (~800 Marines). This is serious seniority.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#fef9c3;color:#78350f;">Col</div><div class="rank-info"><div class="rank-grade">O-6</div><div class="rank-title">Colonel</div><div class="rank-aka">Commands a regiment or large installation. 20+ years typically.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#fae8ff;color:#6b21a8;">BGen</div><div class="rank-info"><div class="rank-grade">O-7</div><div class="rank-title">Brigadier General</div><div class="rank-aka">First general officer rank. One star. Less than 1% of officers reach this.</div></div></div>
-          <div class="rank-card"><div class="rank-ins" style="background:#fae8ff;color:#6b21a8;">Gen</div><div class="rank-info"><div class="rank-grade">O-10</div><div class="rank-title">General / Commandant</div><div class="rank-aka">The Commandant of the Marine Corps is the highest-ranking Marine. Four stars.</div></div></div>
-        </div>
-      </div>
-
-      <!-- ORG CHART -->
-      <div>
-        <div class="sh">How a Marine unit is organized</div>
-        <div class="card"><div style="padding:16px;">
-          <div class="org-node" style="max-width:200px;margin:0 auto;border-color:var(--coral);background:var(--coral-light);"><div class="org-title">Marine Corps</div><div class="org-sub">~180,000 active duty</div></div>
-          <div class="org-line"></div>
-          <div class="org-row">
-            <div class="org-node"><div class="org-title">Division</div><div class="org-sub">~19,000 Marines · commanded by a MajGen (O-8)</div></div>
-          </div>
-          <div class="org-line"></div>
-          <div class="org-row">
-            <div class="org-node"><div class="org-title">Regiment</div><div class="org-sub">~3,000 Marines · Col (O-6)</div></div>
-          </div>
-          <div class="org-line"></div>
-          <div class="org-row">
-            <div class="org-node"><div class="org-title">Battalion</div><div class="org-sub">~800 Marines · LtCol (O-5)</div></div>
-          </div>
-          <div class="org-line"></div>
-          <div class="org-row">
-            <div class="org-node"><div class="org-title">Company</div><div class="org-sub">~180 Marines · Capt (O-3)</div></div>
-          </div>
-          <div class="org-line"></div>
-          <div class="org-row">
-            <div class="org-node"><div class="org-title">Platoon</div><div class="org-sub">~40 Marines · 2ndLt or 1stLt</div></div>
-          </div>
-          <div class="org-line"></div>
-          <div class="org-row">
-            <div class="org-node"><div class="org-title">Squad</div><div class="org-sub">~13 Marines · Sgt (E-5)</div></div>
-            <div class="org-node"><div class="org-title">Squad</div><div class="org-sub">~13 Marines · Sgt (E-5)</div></div>
-            <div class="org-node"><div class="org-title">Squad</div><div class="org-sub">~13 Marines · Sgt (E-5)</div></div>
-          </div>
-          <div class="org-line"></div>
-          <div class="org-row">
-            <div class="org-node highlight"><div class="org-title">Fire Team</div><div class="org-sub">4 Marines · Cpl (E-4)</div></div>
-          </div>
-        </div></div>
-      </div>
-
-      <!-- ACRONYM DICTIONARY -->
-      <div>
-        <div class="sh">Acronym dictionary</div>
-        <input class="dict-search" id="dict-search" type="text" placeholder="Search acronyms... e.g. BAH, PCS, MOS" oninput="filterAcro(this.value)"/>
-        <div class="card"><div class="rows" id="acro-list" style="gap:0;">
-          <div class="acro-item" data-terms="BAH basic allowance housing rent"><div class="acro-abbr">BAH</div><div><div class="acro-full">Basic Allowance for Housing</div><div class="acro-desc">Monthly tax-free payment to cover rent. Based on rank and duty station. If you rent for less than your BAH, you keep the difference.</div></div></div>
-          <div class="acro-item" data-terms="BAS basic allowance subsistence food"><div class="acro-abbr">BAS</div><div><div class="acro-full">Basic Allowance for Subsistence</div><div class="acro-desc">Monthly tax-free food allowance. Officers get $311/mo, enlisted get $460/mo (2026). You get it regardless of whether you eat in the chow hall.</div></div></div>
-          <div class="acro-item" data-terms="PCS permanent change station move orders"><div class="acro-abbr">PCS</div><div><div class="acro-full">Permanent Change of Station</div><div class="acro-desc">When your Marine gets orders to move to a new base. Usually happens every 2–3 years. The government pays for your move.</div></div></div>
-          <div class="acro-item" data-terms="MOS military occupational specialty job"><div class="acro-abbr">MOS</div><div><div class="acro-full">Military Occupational Specialty</div><div class="acro-desc">Your Marine's job. Every job in the Corps has a 4-digit code. 0302 = Infantry Officer. 0311 = Rifleman. 6174 = Helicopter mechanic.</div></div></div>
-          <div class="acro-item" data-terms="LES leave earnings statement paycheck"><div class="acro-abbr">LES</div><div><div class="acro-full">Leave and Earnings Statement</div><div class="acro-desc">Your Marine's monthly pay stub. Shows base pay, all allowances, deductions, and leave balance. Available on MyPay.dfas.mil.</div></div></div>
-          <div class="acro-item" data-terms="DEERS defense enrollment eligibility reporting system ID card"><div class="acro-abbr">DEERS</div><div><div class="acro-full">Defense Enrollment Eligibility Reporting System</div><div class="acro-desc">The military's database of who's eligible for benefits. You must be enrolled in DEERS to use TRICARE, get an ID card, or access base. Do this first thing after marriage or birth.</div></div></div>
-          <div class="acro-item" data-terms="NCO non commissioned officer sergeant corporal"><div class="acro-abbr">NCO</div><div><div class="acro-full">Non-Commissioned Officer</div><div class="acro-desc">Enlisted leaders — Corporal (E-4) through Sergeant Major (E-9). They're promoted from within the enlisted ranks, not commissioned from college/OCS.</div></div></div>
-          <div class="acro-item" data-terms="OCS officer candidate school commissioning"><div class="acro-abbr">OCS</div><div><div class="acro-full">Officer Candidate School</div><div class="acro-desc">Where civilians become Marine officers. 10 weeks in Quantico, VA. If your Marine went to college and joined as an officer, they went through OCS or NROTC.</div></div></div>
-          <div class="acro-item" data-terms="TDY TAD temporary duty away travel"><div class="acro-abbr">TAD / TDY</div><div><div class="acro-full">Temporary Additional Duty</div><div class="acro-desc">Short-term assignment away from home base for training, schools, or missions. Not a full PCS — they come back. BAH stays the same.</div></div></div>
-          <div class="acro-item" data-terms="CO commanding officer boss unit leader"><div class="acro-abbr">CO</div><div><div class="acro-full">Commanding Officer</div><div class="acro-desc">The boss of a unit — company, battalion, or regiment. What civilians would call the CEO of that unit. Has a lot of authority over your Marine's daily life.</div></div></div>
-          <div class="acro-item" data-terms="XO executive officer second in command"><div class="acro-abbr">XO</div><div><div class="acro-full">Executive Officer</div><div class="acro-desc">Second in command of a unit. Handles the admin and day-to-day operations so the CO can focus on leadership and mission.</div></div></div>
-          <div class="acro-item" data-terms="SNCO staff nco senior noncommissioned"><div class="acro-abbr">SNCO</div><div><div class="acro-full">Staff Non-Commissioned Officer</div><div class="acro-desc">Staff Sergeant (E-6) and above. More experienced NCOs who serve in staff or advisory roles rather than directly leading small teams.</div></div></div>
-          <div class="acro-item" data-terms="FRO family readiness officer spouse support"><div class="acro-abbr">FRO</div><div><div class="acro-full">Family Readiness Officer</div><div class="acro-desc">The unit's designated contact for military families. Your first call when you can't reach your Marine, need info about deployment, or need help navigating resources. Get this number early.</div></div></div>
-          <div class="acro-item" data-terms="FRG family readiness group spouses community"><div class="acro-abbr">FRG</div><div><div class="acro-full">Family Readiness Group</div><div class="acro-desc">The spouse and family community for a unit. Hosts events, shares info during deployments, and is a great way to meet other military spouses. Some are very active, others less so.</div></div></div>
-          <div class="acro-item" data-terms="USMC marine corps branch service"><div class="acro-abbr">USMC</div><div><div class="acro-full">United States Marine Corps</div><div class="acro-desc">One of the six branches of the U.S. Armed Forces. Known for infantry and expeditionary warfare. Administratively part of the Department of the Navy.</div></div></div>
-          <div class="acro-item" data-terms="UA unauthorized absence AWOL missing"><div class="acro-abbr">UA</div><div><div class="acro-full">Unauthorized Absence</div><div class="acro-desc">The Marine equivalent of AWOL (Absent Without Leave). Missing a formation or duty without permission. A serious offense that can affect pay and career.</div></div></div>
-          <div class="acro-item" data-terms="TLE temporary lodging expense hotel PCS move"><div class="acro-abbr">TLE</div><div><div class="acro-full">Temporary Lodging Expense</div><div class="acro-desc">Reimbursement for hotel/temp housing during a PCS move. Up to 10 days covered. Claim it — most people forget.</div></div></div>
-          <div class="acro-item" data-terms="SCRA servicemembers civil relief act interest debt"><div class="acro-abbr">SCRA</div><div><div class="acro-full">Servicemembers Civil Relief Act</div><div class="acro-desc">A federal law that protects active duty military financially. Caps interest rates at 6% on pre-service debt, protects against eviction, and more. Very useful during deployment.</div></div></div>
-          <div class="acro-item" data-terms="MTF military treatment facility base hospital clinic"><div class="acro-abbr">MTF</div><div><div class="acro-full">Military Treatment Facility</div><div class="acro-desc">The hospital or clinic on base. TRICARE is free here. If you have a choice, always use the MTF first before going off-base.</div></div></div>
-          <div class="acro-item" data-terms="MOL marine online portal admin"><div class="acro-abbr">MOL</div><div><div class="acro-full">Marine OnLine</div><div class="acro-desc">The Marine Corps' internal admin portal. Where Marines apply for Tuition Assistance, check leave balances, and manage personal records.</div></div></div>
-        </div></div>
-      </div>
-
     </div>
 
     <!-- BASE FACILITIES -->
@@ -1442,138 +1445,6 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 
       <div class="ib"><div class="ib-t">For gate closures specifically</div><div class="ib-b">Gate status changes are posted on each base's official Facebook page — usually within minutes of a closure. Turn on notifications for your base's page. For urgent base emergencies, call the Provost Marshal's Office (PMO) through your base directory.</div></div>
     </div>
-
-    <!-- SPOUSE COMMUNITY -->
-    <div class="panel" id="p-community">
-      <div class="ib"><div class="ib-t">You don't have to figure this out alone</div><div class="ib-b">Military spouse life comes with a learning curve — PCS moves, deployments, DEERS paperwork, building community from scratch. These groups and organizations exist to help.</div></div>
-
-      <div class="sh">Facebook Groups to Join First</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/movingthemillieway" target="_blank" style="color:var(--coral);">Moving the Millie Way</a></span><span class="rv">PCS planning, housing tips, and relocation support</span></div>
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/militarywifemom" target="_blank" style="color:var(--coral);">Military Wife and Mom Community</a></span><span class="rv">General support, deployment advice, daily mil-life</span></div>
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/careermilitaryspouses" target="_blank" style="color:var(--coral);">Career Military Spouses</a></span><span class="rv">Jobs, portable careers, remote work, and licensing</span></div>
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/militaryspousenetworking" target="_blank" style="color:var(--coral);">Military Spouse Networking</a></span><span class="rv">Jobs and professional connections across all branches</span></div>
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/milkidsed" target="_blank" style="color:var(--coral);">MilKids Ed K–12 Parent Support</a></span><span class="rv">School resources, IEPs, transitions for military kids</span></div>
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/spaceaworld" target="_blank" style="color:var(--coral);">Space-A World</a></span><span class="rv">Tips and planning for Space-A military air travel</span></div>
-        <div class="row"><span class="rl">Your Unit FRG Page</span><span class="rv">Search your unit name + FRG on Facebook — most have private groups for spouses</span></div>
-      </div></div>
-
-      <div class="sh">Base-Specific Spouse Groups (Camp Pendleton)</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/campPendletonspouses" target="_blank" style="color:var(--coral);">Camp Pendleton Military Spouses</a></span><span class="rv">Local tips, vendor recs, buy/sell, base life</span></div>
-        <div class="row"><span class="rl"><a href="https://www.facebook.com/groups/pendletonmilspouses" target="_blank" style="color:var(--coral);">Pendleton Milspouse Network</a></span><span class="rv">Active spouse community for Pendleton area</span></div>
-        <div class="row"><span class="rl">MCCS Pendleton Family Events</span><span class="rv">Check <a href="https://pendleton.usmc-mccs.org" target="_blank" style="color:var(--coral);">pendleton.usmc-mccs.org</a> for FRO events and spouse programs</span></div>
-      </div></div>
-
-      <div class="sh">National Organizations & Resources</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl"><a href="https://www.militaryonesource.mil" target="_blank" style="color:var(--coral);">Military OneSource</a></span><span class="rv">Free 24/7 counseling, financial coaching, referrals — 1-800-342-9647</span></div>
-        <div class="row"><span class="rl"><a href="https://www.uso.org/milspouse" target="_blank" style="color:var(--coral);">USO Spouse Programs</a></span><span class="rv">Coffee Connections, baby showers, virtual events, community</span></div>
-        <div class="row"><span class="rl"><a href="https://www.militaryspouseadvocacynetwork.org" target="_blank" style="color:var(--coral);">Military Spouse Advocacy Network (MSAN)</a></span><span class="rv">Free toolkits, webinars, finance, career, mental health resources</span></div>
-        <div class="row"><span class="rl"><a href="https://missionmilspouse.org" target="_blank" style="color:var(--coral);">Mission: MilSpouse</a></span><span class="rv">501(c)(3) nonprofit · resources, news, and spouse empowerment</span></div>
-        <div class="row"><span class="rl"><a href="https://www.nmcrs.org" target="_blank" style="color:var(--coral);">Navy Marine Corps Relief Society</a></span><span class="rv">Emergency financial assistance, interest-free loans · 1-866-354-2696</span></div>
-        <div class="row"><span class="rl"><a href="https://mycaa.com" target="_blank" style="color:var(--coral);">MyCAA Scholarship</a></span><span class="rv">Up to $4,000 for eligible spouse education · apply before enrolling</span></div>
-      </div></div>
-
-      <div class="sh">Employment & Career</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl"><a href="https://www.militaryspouse.com/jobs" target="_blank" style="color:var(--coral);">Military Spouse Job Board</a></span><span class="rv">Remote and portable job listings for military spouses</span></div>
-        <div class="row"><span class="rl"><a href="https://www.hireheroesusa.org" target="_blank" style="color:var(--coral);">Hire Heroes USA</a></span><span class="rv">Free career coaching and resume help for spouses and veterans</span></div>
-        <div class="row"><span class="rl">Military Spouse Employment Partnership</span><span class="rv">600+ employers committed to hiring military spouses — search at <a href="https://msepjobs.militaryonesource.mil" target="_blank" style="color:var(--coral);">msepjobs.militaryonesource.mil</a></span></div>
-        <div class="row"><span class="rl">LinkedIn Military Community</span><span class="rv">Search "military spouse" on LinkedIn groups — active hiring and networking community</span></div>
-      </div></div>
-
-      <div class="sh">Mental Health & Deployment Support</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">Military Crisis Line</span><span class="rv">Call or text 988, press 1 — for service members, veterans, and families</span></div>
-        <div class="row"><span class="rl">Military OneSource Counseling</span><span class="rv">Up to 12 free non-medical counseling sessions · 1-800-342-9647</span></div>
-        <div class="row"><span class="rl"><a href="https://www.redcross.org/military" target="_blank" style="color:var(--coral);">Red Cross Emergency Messages</a></span><span class="rv">Reach a deployed Marine for family emergencies · 1-877-272-7337</span></div>
-        <div class="row"><span class="rl">FOCUS Program</span><span class="rv">Free family resilience training for military families — ask your FRO</span></div>
-      </div></div>
-    </div>
-
-    <!-- SCHOOLS -->
-    <div class="panel" id="p-schools">
-      <div class="ib"><div class="ib-t">Schools near USMC installations</div><div class="ib-b">Moving with school-age kids? Here's what you need to know about schools near major USMC bases — including DoDEA schools (on-base), public school districts, and finding the right fit fast.</div></div>
-
-      <div class="sh">How military school enrollment works</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">DoDEA schools</span><span class="rv">On-base schools run by DoD — tuition free, PCS-friendly, on OCONUS bases and some CONUS</span></div>
-        <div class="row"><span class="rl">Public school enrollment</span><span class="rv">Most CONUS bases use local public school districts — enrollment opens year-round for military</span></div>
-        <div class="row"><span class="rl">Interstate Compact (MIC3)</span><span class="rv">All 50 states agreed to ease military kid school transitions — records transfer, grades protected</span></div>
-        <div class="row"><span class="rl">IEP / Special needs</span><span class="rv">Schools must honor existing IEPs — contact EFMP at your installation for support</span></div>
-        <div class="row"><span class="rl">School liaison officer</span><span class="rv">Every base has one — free help navigating enrollment, IEPs, and credits · ask your unit</span></div>
-      </div></div>
-
-      <div class="sh">Camp Pendleton, CA</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">School District</span><span class="rv">Oceanside USD, Vista USD, or Fallbrook USD depending on where you live</span></div>
-        <div class="row"><span class="rl">Oceanside USD</span><span class="rv"><a href="https://www.oceanside.k12.ca.us" target="_blank" style="color:var(--coral);">oceanside.k12.ca.us</a> · (760) 966-4000</span></div>
-        <div class="row"><span class="rl">Vista USD</span><span class="rv"><a href="https://www.vistausd.org" target="_blank" style="color:var(--coral);">vistausd.org</a> · (760) 726-2170</span></div>
-        <div class="row"><span class="rl">San Clemente area (north gate)</span><span class="rv">Capistrano USD · <a href="https://www.capousd.org" target="_blank" style="color:var(--coral);">capousd.org</a> · (949) 234-9200</span></div>
-        <div class="row"><span class="rl">School Liaison Officer</span><span class="rv">(760) 725-9853 · pendleton.marines.mil</span></div>
-        <div class="row"><span class="rl">On-base elementary (Las Flores)</span><span class="rv">Las Flores Elementary — Oceanside USD · on-base housing area</span></div>
-      </div></div>
-
-      <div class="sh">29 Palms (MCAGCC), CA</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">School District</span><span class="rv">Morongo Unified School District</span></div>
-        <div class="row"><span class="rl">Morongo USD</span><span class="rv"><a href="https://www.morongo.k12.ca.us" target="_blank" style="color:var(--coral);">morongo.k12.ca.us</a> · (760) 367-9191</span></div>
-        <div class="row"><span class="rl">Twentynine Palms Jr/Sr High</span><span class="rv">73400 Joe Davis Drive, Twentynine Palms, CA 92277</span></div>
-        <div class="row"><span class="rl">Condor Elementary</span><span class="rv">Main base school serving military families</span></div>
-        <div class="row"><span class="rl">School Liaison Officer</span><span class="rv">(760) 830-7954</span></div>
-      </div></div>
-
-      <div class="sh">MCB Quantico, VA</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">DoDEA School on base</span><span class="rv">Quantico Middle/High School · DoDEA · on-base · K–12</span></div>
-        <div class="row"><span class="rl">Prince William County Schools</span><span class="rv"><a href="https://www.pwcs.edu" target="_blank" style="color:var(--coral);">pwcs.edu</a> · (703) 791-8000</span></div>
-        <div class="row"><span class="rl">Stafford County Schools</span><span class="rv"><a href="https://www.staffordschools.net" target="_blank" style="color:var(--coral);">staffordschools.net</a> · (540) 658-6000</span></div>
-        <div class="row"><span class="rl">School Liaison Officer</span><span class="rv">(703) 784-2333</span></div>
-      </div></div>
-
-      <div class="sh">Camp Lejeune, NC</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">DoDEA Schools on base</span><span class="rv">Lejeune High, Tarawa Terrace Elementary, Brewster Middle · DoDEA</span></div>
-        <div class="row"><span class="rl">Onslow County Schools</span><span class="rv"><a href="https://www.onslow.k12.nc.us" target="_blank" style="color:var(--coral);">onslow.k12.nc.us</a> · (910) 455-2211</span></div>
-        <div class="row"><span class="rl">School Liaison Officer</span><span class="rv">(910) 451-5835</span></div>
-      </div></div>
-
-      <div class="sh">MCAS Miramar, CA</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">School District</span><span class="rv">San Diego Unified School District</span></div>
-        <div class="row"><span class="rl">San Diego USD</span><span class="rv"><a href="https://www.sandi.net" target="_blank" style="color:var(--coral);">sandi.net</a> · (619) 725-8000</span></div>
-        <div class="row"><span class="rl">Poway USD (north of base)</span><span class="rv"><a href="https://www.powayusd.com" target="_blank" style="color:var(--coral);">powayusd.com</a> · (858) 521-2800</span></div>
-        <div class="row"><span class="rl">School Liaison Officer</span><span class="rv">(858) 577-1730</span></div>
-      </div></div>
-
-      <div class="sh">MCB Hawaii (K-Bay), HI</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">DoDEA School on base</span><span class="rv">Mokapu Elementary · DoDEA · K–5 · on-base</span></div>
-        <div class="row"><span class="rl">Hawaii DOE (public schools)</span><span class="rv"><a href="https://www.hawaiipublicschools.org" target="_blank" style="color:var(--coral);">hawaiipublicschools.org</a> · (808) 586-3230</span></div>
-        <div class="row"><span class="rl">Kailua area schools</span><span class="rv">Kailua Elementary, Kailua Middle, Kailua High · Hawaii DOE</span></div>
-        <div class="row"><span class="rl">School Liaison Officer</span><span class="rv">(808) 257-7794</span></div>
-      </div></div>
-
-      <div class="sh">MCB Camp Butler, Okinawa</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">DoDEA Pacific — all on-base</span><span class="rv">Okinawa schools are all DoDEA · free · no Japanese language needed</span></div>
-        <div class="row"><span class="rl">Amelia Earhart Intermediate</span><span class="rv">Camp Foster · Grades 6–8</span></div>
-        <div class="row"><span class="rl">Kubasaki High School</span><span class="rv">Camp Foster · Grades 9–12 · <a href="https://www.ku.pac.dodea.edu" target="_blank" style="color:var(--coral);">ku.pac.dodea.edu</a></span></div>
-        <div class="row"><span class="rl">Bob Hope Primary School</span><span class="rv">Camp Foster · PreK–5</span></div>
-        <div class="row"><span class="rl">Other DoDEA Okinawa schools</span><span class="rv">Ryukyu Middle, Zukeran Elementary, Lester Middle · across camps</span></div>
-        <div class="row"><span class="rl">DoDEA Pacific</span><span class="rv"><a href="https://www.pac.dodea.edu" target="_blank" style="color:var(--coral);">pac.dodea.edu</a> · DSN 315-645-2975</span></div>
-      </div></div>
-
-      <div class="sh">Useful resources for every PCS with kids</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl"><a href="https://www.dodea.edu" target="_blank" style="color:var(--coral);">DoDEA School Finder</a></span><span class="rv">Find all on-base schools worldwide at dodea.edu</span></div>
-        <div class="row"><span class="rl"><a href="https://mic3.net" target="_blank" style="color:var(--coral);">Interstate Compact (MIC3)</a></span><span class="rv">Your rights when transferring schools mid-year</span></div>
-        <div class="row"><span class="rl">EFMP</span><span class="rv">Exceptional Family Member Program — for kids with special needs · ask your S-1</span></div>
-        <div class="row"><span class="rl"><a href="https://www.militarychild.org" target="_blank" style="color:var(--coral);">Military Child Education Coalition</a></span><span class="rv">Advocacy, transition resources, and school guides</span></div>
-      </div></div>
-    </div>
-
 
 <script>
 const PAY={'E-1':[1833,1833,1833,1833,1833,1833,1833,1833,1833,1833,1833,1833],'E-2':[2055,2055,2055,2055,2055,2055,2055,2055,2055,2055,2055,2055],'E-3':[2161,2161,2272,2272,2272,2272,2272,2272,2272,2272,2272,2272],'E-4':[2393,2393,2531,2645,2745,2745,2745,2745,2745,2745,2745,2745],'E-5':[2610,2610,2730,2880,3014,3134,3213,3213,3213,3213,3213,3213],'E-6':[2848,2848,2979,3090,3213,3389,3494,3566,3566,3566,3566,3566],'E-7':[3294,3294,3408,3530,3671,3836,3969,4104,4245,4342,4447,4561],'E-8':[4739,4739,4883,5033,5183,5278,5416,5557,5695,5795,5878,5878],'E-9':[5789,5789,5789,5961,6133,6307,6482,6655,6827,7001,7174,7348],'W-1':[3399,3546,3628,3711,3837,3964,4090,4219,4346,4473,4601,4730],'W-2':[3868,4052,4181,4311,4440,4570,4699,4829,4958,5088,5217,5347],'W-3':[4381,4563,4694,4824,4955,5085,5215,5346,5476,5607,5736,5867],'W-4':[4783,4969,5099,5229,5359,5489,5619,5749,5879,6009,6139,6269],'O-1':[3637,3758,3898,3898,3898,3898,3898,3898,3898,3898,3898,3898],'O-2':[4187,4772,5503,5503,5503,5503,5503,5503,5503,5503,5503,5503],'O-3':[4862,5503,5932,6218,6503,6800,6986,6986,6986,6986,6986,6986],'O-4':[5553,6431,6858,7155,7407,7655,7990,8238,8381,8381,8381,8381],'O-5':[6432,7264,7752,8018,8248,8490,8665,9059,9313,9517,9617,9617],'O-6':[7733,8493,9058,9058,9165,9544,9597,9597,9852,10331,10636,10936],'O-7':[10014,10476,10680,10873,11171,11562,11835,12107,12380,12652,13198,13744],'O-8':[12131,12523,12797,13063,13340,13834,14183,14535,14797,15296,15592,15888]};
