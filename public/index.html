@@ -4,273 +4,495 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marine Benefits Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0d1b2e;--navy2:#162236;--navy3:#1e3050;--navy4:#243860;--gold:#c8a84b;--gold-light:#e8cc7a;--gold-dim:rgba(200,168,75,0.15);--blue-light:#3d8bc4;--text:#f0f4f8;--text2:#8fa8c0;--text3:#5a7590;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.08);--green:#3aaa6e;--green-bg:rgba(58,170,110,0.12);--amber:#e8a030;--amber-bg:rgba(232,160,48,0.12);--r:10px;--rlg:14px;}
+:root{
+  --white:#ffffff;--off:#f8f7f5;--off2:#f0ede8;
+  --ink:#1a1714;--ink2:#6b6560;--ink3:#a8a29e;
+  --coral:#ff6b6b;--coral-light:#fff0f0;--coral-mid:#ffd5d5;
+  --teal:#0d9488;--teal-light:#f0fdfa;--teal-mid:#99f6e4;
+  --sky:#3b82f6;--sky-light:#eff6ff;
+  --amber:#f59e0b;--amber-light:#fffbeb;
+  --lavender:#8b5cf6;--lavender-light:#f5f3ff;
+  --green:#10b981;--green-light:#ecfdf5;
+  --border:#e8e4df;--border2:#d4cfc9;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.08),0 2px 4px rgba(0,0,0,0.04);
+  --r:12px;--rlg:16px;--rxl:20px;
+}
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);font-size:14px;}
+html,body{height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:var(--off);color:var(--ink);font-size:14px;-webkit-font-smoothing:antialiased;}
 #app{height:100%;display:flex;flex-direction:column;}
-.ob{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;min-height:580px;}
-.ob-logo{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
-.ob-mark{width:42px;height:42px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;}
-.ob-mark svg{width:22px;height:22px;}
-.ob-brand{font-size:20px;font-weight:600;}
-.ob-brand em{color:var(--gold);font-style:normal;}
-.ob-headline{font-size:24px;font-weight:600;text-align:center;line-height:1.3;margin-bottom:8px;}
-.ob-sub{font-size:13px;color:var(--text2);text-align:center;margin-bottom:32px;line-height:1.6;max-width:320px;}
-.ob-eagle{font-size:11px;font-weight:500;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;text-align:center;margin-bottom:24px;display:flex;align-items:center;gap:8px;}
-.ob-eagle::before,.ob-eagle::after{content:'';flex:1;height:0.5px;background:rgba(200,168,75,0.3);}
-.ob-form{width:100%;max-width:380px;display:flex;flex-direction:column;gap:13px;}
-.ob-lbl{font-size:11px;font-weight:500;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px;}
-.ob-sel,.ob-inp{width:100%;background:var(--surface2);border:0.5px solid var(--border2);border-radius:var(--r);padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;appearance:none;-webkit-appearance:none;transition:border-color .15s;}
-.ob-sel:focus,.ob-inp:focus{border-color:var(--gold);}
-.ob-sel option{background:#1e3050;color:var(--text);}
-.ob-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
-.ob-btn{background:var(--gold);color:var(--navy);border:none;border-radius:var(--r);padding:13px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px;}
-.ob-btn:hover{background:var(--gold-light);}
-.ob-note{font-size:11px;color:var(--text3);text-align:center;margin-top:10px;}
-.main{display:none;flex-direction:column;height:100%;min-height:560px;}
+
+/* ONBOARD */
+.ob{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;background:var(--white);min-height:600px;}
+.ob-logo{display:flex;align-items:center;gap:10px;margin-bottom:40px;}
+.ob-mark{width:38px;height:38px;background:var(--coral);border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.ob-mark svg{width:20px;height:20px;}
+.ob-brand{font-size:18px;font-weight:700;color:var(--ink);}
+.ob-brand em{color:var(--coral);font-style:normal;}
+.ob-headline{font-family:'Instrument Serif',serif;font-size:30px;text-align:center;line-height:1.25;margin-bottom:10px;color:var(--ink);}
+.ob-headline em{color:var(--coral);font-style:italic;}
+.ob-sub{font-size:14px;color:var(--ink2);text-align:center;margin-bottom:36px;line-height:1.7;max-width:300px;}
+.ob-form{width:100%;max-width:380px;display:flex;flex-direction:column;gap:14px;}
+.ob-lbl{font-size:11px;font-weight:600;color:var(--ink2);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:5px;}
+.ob-sel,.ob-inp{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:var(--r);padding:11px 13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;appearance:none;-webkit-appearance:none;transition:border-color .15s,box-shadow .15s;}
+.ob-sel:focus,.ob-inp:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,107,107,0.12);}
+.ob-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.ob-btn{background:var(--coral);color:white;border:none;border-radius:var(--r);padding:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .15s,transform .1s;margin-top:4px;letter-spacing:0.01em;}
+.ob-btn:hover{background:#ff5252;}
+.ob-btn:active{transform:scale(.98);}
+.ob-note{font-size:11px;color:var(--ink3);text-align:center;margin-top:12px;}
+.ob-divider{display:flex;align-items:center;gap:12px;margin:4px 0;}
+.ob-divider::before,.ob-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.ob-divider span{font-size:11px;color:var(--ink3);}
+
+/* MAIN */
+.main{display:none;flex-direction:column;height:100%;min-height:560px;background:var(--off);}
 .main.on{display:flex;}
-.topbar{background:var(--navy2);border-bottom:0.5px solid var(--border);padding:11px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+
+.topbar{background:var(--white);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 .tb-l{display:flex;align-items:center;gap:9px;}
-.tb-mark{width:28px;height:28px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tb-mark{width:28px;height:28px;background:var(--coral);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .tb-mark svg{width:14px;height:14px;}
-.tb-brand{font-size:13px;font-weight:600;}
-.tb-brand em{color:var(--gold);font-style:normal;}
+.tb-brand{font-size:13px;font-weight:700;color:var(--ink);}
+.tb-brand em{color:var(--coral);font-style:normal;}
 .tb-r{display:flex;align-items:center;gap:8px;}
-.chip{background:var(--gold-dim);border:0.5px solid rgba(200,168,75,0.3);color:var(--gold);font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;font-family:'DM Mono',monospace;}
-.ava{width:28px;height:28px;border-radius:50%;background:var(--navy3);border:0.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(--text2);}
-.hero{background:var(--navy2);padding:16px 16px 0;flex-shrink:0;}
-.hero-row{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:13px;gap:12px;}
-.hero-g{font-size:11px;color:var(--text3);margin-bottom:2px;}
-.hero-n{font-size:17px;font-weight:600;margin-bottom:3px;}
-.hero-m{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;}
-.pay-badge{background:var(--green-bg);border:0.5px solid rgba(58,170,110,0.25);border-radius:var(--r);padding:7px 12px;text-align:right;flex-shrink:0;}
-.pb-lbl{font-size:10px;color:var(--text3);margin-bottom:1px;}
-.pb-amt{font-size:17px;font-weight:600;color:var(--green);font-family:'DM Mono',monospace;}
-.pb-sub{font-size:10px;color:var(--text3);}
-.tabs{background:var(--navy2);border-bottom:0.5px solid var(--border);display:flex;overflow-x:auto;padding:0 16px;flex-shrink:0;scrollbar-width:none;}
+.chip{background:var(--coral-light);border:1px solid var(--coral-mid);color:var(--coral);font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;}
+.ava{width:30px;height:30px;border-radius:50%;background:var(--coral-light);border:1.5px solid var(--coral-mid);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--coral);}
+
+.hero{background:var(--white);padding:18px 18px 0;flex-shrink:0;border-bottom:1px solid var(--border);}
+.hero-row{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:12px;}
+.hero-g{font-size:12px;color:var(--ink3);margin-bottom:3px;}
+.hero-n{font-family:'Instrument Serif',serif;font-size:20px;color:var(--ink);margin-bottom:3px;}
+.hero-m{font-size:11px;color:var(--ink3);}
+.pay-badge{background:var(--green-light);border:1.5px solid #a7f3d0;border-radius:var(--r);padding:9px 14px;text-align:right;flex-shrink:0;}
+.pb-lbl{font-size:10px;color:var(--ink3);margin-bottom:2px;}
+.pb-amt{font-size:19px;font-weight:700;color:var(--green);}
+.pb-sub{font-size:10px;color:var(--ink3);}
+
+.tabs{background:var(--white);display:flex;overflow-x:auto;padding:0 18px;flex-shrink:0;scrollbar-width:none;gap:2px;}
 .tabs::-webkit-scrollbar{display:none;}
-.tab{padding:11px 14px;font-size:12.5px;color:var(--text3);white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;position:relative;}
-.tab.on{color:var(--gold);border-bottom-color:var(--gold);}
-.tab-dot{width:5px;height:5px;border-radius:50%;background:var(--amber);position:absolute;top:9px;right:5px;}
-.body{flex:1;overflow-y:auto;padding:14px 16px 28px;display:flex;flex-direction:column;gap:14px;}
-.panel{display:none;flex-direction:column;gap:13px;}
+.tab{padding:12px 14px;font-size:13px;font-weight:500;color:var(--ink3);white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;position:relative;}
+.tab:hover{color:var(--ink2);}
+.tab.on{color:var(--coral);border-bottom-color:var(--coral);font-weight:600;}
+.tab-dot{width:5px;height:5px;border-radius:50%;background:var(--coral);position:absolute;top:10px;right:5px;}
+
+.body{flex:1;overflow-y:auto;padding:16px 18px 36px;display:flex;flex-direction:column;gap:16px;}
+.panel{display:none;flex-direction:column;gap:14px;}
 .panel.on{display:flex;}
-.alert{background:var(--amber-bg);border:0.5px solid rgba(232,160,48,0.25);border-radius:var(--r);padding:10px 13px;display:flex;gap:9px;align-items:flex-start;}
-.a-dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:4px;}
-.a-txt{font-size:12px;color:#d4a44a;line-height:1.5;}
+
+/* COMPONENTS */
+.alert{background:var(--amber-light);border:1.5px solid #fde68a;border-radius:var(--r);padding:11px 14px;display:flex;gap:10px;align-items:flex-start;}
+.a-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:4px;}
+.a-txt{font-size:12.5px;color:#92400e;line-height:1.6;}
 .a-txt strong{font-weight:600;}
-.sh{font-size:10px;font-weight:500;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
-.card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--rlg);overflow:hidden;}
-.ch{padding:13px 15px 11px;display:flex;align-items:flex-start;gap:11px;}
-.ci{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+.sh{font-size:11px;font-weight:700;color:var(--ink2);letter-spacing:.07em;text-transform:uppercase;margin-bottom:9px;}
+
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden;box-shadow:var(--shadow);}
+.ch{padding:14px 16px 12px;display:flex;align-items:flex-start;gap:12px;}
+.ci{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .ct{flex:1;min-width:0;}
-.ct-t{font-size:13px;font-weight:600;margin-bottom:2px;}
-.ct-d{font-size:11px;color:var(--text3);line-height:1.4;}
-.pill{font-size:10px;font-weight:500;padding:3px 8px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
-.p-g{background:var(--green-bg);color:var(--green);border:0.5px solid rgba(58,170,110,0.25);}
-.div{height:0.5px;background:var(--border);margin:0 15px;}
-.rows{padding:11px 15px;display:flex;flex-direction:column;gap:8px;}
+.ct-t{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.ct-d{font-size:12px;color:var(--ink3);line-height:1.4;}
+.pill{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.p-g{background:var(--green-light);color:var(--green);border:1px solid #a7f3d0;}
+.p-a{background:var(--amber-light);color:var(--amber);border:1px solid #fde68a;}
+.p-c{background:var(--coral-light);color:var(--coral);border:1px solid var(--coral-mid);}
+.div{height:1px;background:var(--border);margin:0 16px;}
+.rows{padding:12px 16px;display:flex;flex-direction:column;gap:9px;}
 .row{display:flex;justify-content:space-between;align-items:center;gap:8px;}
-.rl{font-size:12px;color:var(--text3);flex:1;}
-.rv{font-size:12px;font-weight:500;color:var(--text);font-family:'DM Mono',monospace;text-align:right;}
+.rl{font-size:13px;color:var(--ink2);flex:1;line-height:1.4;}
+.rv{font-size:13px;font-weight:600;color:var(--ink);text-align:right;}
 .rv.g{color:var(--green);}
-.rv.dim{color:var(--text3);}
-.cf{padding:9px 15px 13px;}
-.cbtn{width:100%;background:transparent;border:0.5px solid var(--border2);border-radius:var(--r);padding:9px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--text2);cursor:pointer;}
-.cbtn:hover{background:var(--surface2);color:var(--text);}
-.ib{background:var(--surface);border:0.5px solid var(--border);border-left:2px solid var(--blue-light);border-radius:0 var(--r) var(--r) 0;padding:11px 13px;}
-.ib-t{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:3px;}
-.ib-b{font-size:12px;color:var(--text3);line-height:1.6;}
-.qg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
-.qc{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--r);padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;}
-.qc:hover{background:var(--surface2);border-color:var(--border2);}
-.qi{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
-.ql{font-size:11px;color:var(--text2);text-align:center;line-height:1.4;}
-.ask-wrap{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--rlg);overflow:hidden;display:flex;flex-direction:column;}
-.ask-header{padding:12px 15px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:9px;}
-.ask-icon{width:28px;height:28px;background:var(--gold-dim);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.ask-title{font-size:13px;font-weight:600;}
-.ask-sub{font-size:11px;color:var(--text3);}
-.ask-msgs{padding:12px 15px;display:flex;flex-direction:column;gap:10px;min-height:60px;max-height:280px;overflow-y:auto;}
+.rv.c{color:var(--coral);}
+.rv.dim{color:var(--ink3);font-weight:400;}
+.cf{padding:10px 16px 14px;}
+.cbtn{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:var(--r);padding:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:500;color:var(--ink2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
+.cbtn:hover{background:var(--coral-light);border-color:var(--coral-mid);color:var(--coral);}
+
+.ib{background:var(--sky-light);border:1px solid #bfdbfe;border-left:3px solid var(--sky);border-radius:0 var(--r) var(--r) 0;padding:12px 14px;}
+.ib-t{font-size:12px;font-weight:700;color:#1e40af;margin-bottom:3px;}
+.ib-b{font-size:12px;color:#3b5bdb;line-height:1.6;opacity:.85;}
+
+.qg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;}
+.qc{background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);padding:14px 8px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .1s;box-shadow:var(--shadow);}
+.qc:hover{border-color:var(--coral-mid);box-shadow:var(--shadow-md);transform:translateY(-1px);}
+.qi{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.ql{font-size:11px;font-weight:600;color:var(--ink2);text-align:center;line-height:1.4;}
+
+/* AI CHAT */
+.ask-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);}
+.ask-header{padding:13px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.ask-icon{width:30px;height:30px;background:var(--coral-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ask-title{font-size:14px;font-weight:700;color:var(--ink);}
+.ask-sub{font-size:11px;color:var(--ink3);}
+.ask-msgs{padding:14px 16px;display:flex;flex-direction:column;gap:11px;min-height:70px;max-height:260px;overflow-y:auto;}
 .msg{display:flex;flex-direction:column;gap:3px;}
 .msg-user{align-items:flex-end;}
 .msg-ai{align-items:flex-start;}
-.msg-bubble{padding:9px 12px;border-radius:10px;font-size:12.5px;line-height:1.6;max-width:92%;}
-.msg-user .msg-bubble{background:var(--navy4);color:var(--text);border:0.5px solid var(--border2);}
-.msg-ai .msg-bubble{background:var(--gold-dim);border:0.5px solid rgba(200,168,75,0.2);color:var(--text2);}
-.msg-ai .msg-bubble.typing{color:var(--text3);font-style:italic;}
-.ask-input-row{padding:10px 12px;border-top:0.5px solid var(--border);display:flex;gap:9px;align-items:flex-end;}
-.ask-input{flex:1;background:var(--surface2);border:0.5px solid var(--border2);border-radius:8px;padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;resize:none;min-height:38px;max-height:100px;}
-.ask-input:focus{border-color:var(--gold);}
-.ask-send{background:var(--gold);border:none;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
-.ask-send:hover{background:var(--gold-light);}
-.ask-send:disabled{background:var(--surface2);cursor:not-allowed;}
+.msg-bubble{padding:10px 13px;border-radius:12px;font-size:13px;line-height:1.6;max-width:90%;}
+.msg-user .msg-bubble{background:var(--coral);color:white;}
+.msg-ai .msg-bubble{background:var(--off);border:1px solid var(--border);color:var(--ink2);}
+.msg-ai .msg-bubble.typing{color:var(--ink3);font-style:italic;}
+.ask-input-row{padding:10px 12px;border-top:1px solid var(--border);display:flex;gap:9px;align-items:flex-end;}
+.ask-input{flex:1;background:var(--off);border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;resize:none;min-height:38px;max-height:100px;transition:border-color .15s;}
+.ask-input:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,107,107,0.1);}
+.ask-send{background:var(--coral);border:none;border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s,transform .1s;}
+.ask-send:hover{background:#ff5252;}
+.ask-send:active{transform:scale(.95);}
+.ask-send:disabled{background:var(--border);cursor:not-allowed;}
 .ask-send svg{width:15px;height:15px;}
-.suggest-row{display:flex;gap:7px;flex-wrap:wrap;padding:0 15px 11px;}
-.suggest{font-size:11px;background:var(--surface2);border:0.5px solid var(--border2);border-radius:20px;padding:5px 11px;color:var(--text3);cursor:pointer;white-space:nowrap;}
-.suggest:hover{color:var(--text2);border-color:var(--gold);}
-.pay-tbl{width:100%;border-collapse:collapse;font-size:11.5px;}
-.pay-tbl th{padding:6px 8px;text-align:left;color:var(--text3);font-weight:500;border-bottom:0.5px solid var(--border2);font-size:10px;letter-spacing:.05em;text-transform:uppercase;}
-.pay-tbl td{padding:6px 8px;border-bottom:0.5px solid var(--border);color:var(--text2);font-family:'DM Mono',monospace;font-size:11px;}
+.suggest-row{display:flex;gap:7px;flex-wrap:wrap;padding:0 16px 12px;}
+.suggest{font-size:11px;font-weight:500;background:var(--off);border:1.5px solid var(--border);border-radius:20px;padding:5px 12px;color:var(--ink2);cursor:pointer;transition:all .15s;white-space:nowrap;}
+.suggest:hover{background:var(--coral-light);border-color:var(--coral-mid);color:var(--coral);}
+
+/* PAY TABLE */
+.pay-tbl{width:100%;border-collapse:collapse;font-size:12px;}
+.pay-tbl th{padding:7px 9px;text-align:left;color:var(--ink3);font-weight:600;border-bottom:1.5px solid var(--border2);font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+.pay-tbl td{padding:7px 9px;border-bottom:1px solid var(--border);color:var(--ink2);font-size:12px;}
 .pay-tbl tr:last-child td{border-bottom:none;}
-.pay-tbl tr.hl td{color:var(--gold);}
-.pay-tbl td:first-child{color:var(--text);font-weight:500;}
-.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
-.pc{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--r);padding:13px;}
-.pc.rec{border-color:rgba(200,168,75,0.4);background:rgba(200,168,75,0.04);}
-.pc-n{font-size:13px;font-weight:600;margin-bottom:4px;}
-.pc-tag{font-size:10px;background:var(--gold-dim);color:var(--gold);padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:7px;}
-.pc-d{font-size:11px;color:var(--text3);line-height:1.5;}
+.pay-tbl tr.hl td{color:var(--coral);font-weight:600;background:var(--coral-light);}
+.pay-tbl td:first-child{color:var(--ink);font-weight:600;}
+
+/* PLAN GRID */
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.pc{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:14px;box-shadow:var(--shadow);}
+.pc.rec{border-color:var(--teal);background:var(--teal-light);}
+.pc-n{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px;}
+.pc-tag{font-size:10px;font-weight:600;background:var(--teal-mid);color:var(--teal);padding:2px 9px;border-radius:20px;display:inline-block;margin-bottom:8px;}
+.pc-d{font-size:11px;color:var(--ink2);line-height:1.5;}
+
+/* CHECKLIST */
+.chk-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);}
+.chk-item:last-child{border-bottom:none;}
+.chk-box{width:20px;height:20px;border-radius:6px;background:var(--green-light);border:1.5px solid #a7f3d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.chk-box svg{width:11px;height:11px;}
+.chk-t{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;}
+.chk-d{font-size:11px;color:var(--ink3);line-height:1.5;}
+
+/* DISCOUNT CARDS */
+.disc-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.dc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:13px;box-shadow:var(--shadow);}
+.dc-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.dc-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.dc-desc{font-size:11px;color:var(--ink3);line-height:1.5;}
+.dc-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;margin-top:6px;}
 </style>
 </head>
 <body>
 <div id="app">
+
+<!-- ONBOARD -->
 <div class="ob" id="ob">
-  <div class="ob-logo"><div class="ob-mark"><svg viewBox="0 0 22 22" fill="none"><polygon points="11,1 20,6.5 20,15.5 11,21 2,15.5 2,6.5" fill="none" stroke="#0d1b2e" stroke-width="1.5"/><line x1="11" y1="1" x2="11" y2="21" stroke="#0d1b2e" stroke-width="1"/><line x1="2" y1="6.5" x2="20" y2="15.5" stroke="#0d1b2e" stroke-width="0.8"/><line x1="20" y1="6.5" x2="2" y2="15.5" stroke="#0d1b2e" stroke-width="0.8"/></svg></div><div class="ob-brand">Marine <em>Benefits</em> Hub</div></div>
-  <div class="ob-headline">Your benefits,<br>plain English.</div>
-  <div class="ob-sub">No PDFs. No 1-800 numbers. Just the information you've earned, personalized to your situation.</div>
-  <div class="ob-eagle">United States Marine Corps</div>
+  <div class="ob-logo">
+    <div class="ob-mark"><svg viewBox="0 0 20 20" fill="none"><polygon points="10,2 18,6.5 18,13.5 10,18 2,13.5 2,6.5" fill="white"/></svg></div>
+    <div class="ob-brand">Marine <em>Benefits</em> Hub</div>
+  </div>
+  <div class="ob-headline">Know what you've<br><em>actually</em> earned.</div>
+  <div class="ob-sub">Plain English. Real numbers. No PDFs, no 1-800 numbers, no runaround.</div>
   <div class="ob-form">
-    <div><div class="ob-lbl">Pay grade</div><select class="ob-sel" id="ob-grade"><option value="">Select grade</option><optgroup label="Enlisted"><option>E-1</option><option>E-2</option><option>E-3</option><option>E-4</option><option>E-5</option><option>E-6</option><option>E-7</option><option>E-8</option><option>E-9</option></optgroup><optgroup label="Warrant Officer"><option>W-1</option><option>W-2</option><option>W-3</option><option>W-4</option><option>W-5</option></optgroup><optgroup label="Officer"><option>O-1</option><option>O-2</option><option>O-3</option><option>O-4</option><option>O-5</option><option>O-6</option><option>O-7</option><option>O-8</option></optgroup></select></div>
-    <div class="ob-grid"><div><div class="ob-lbl">Years of service</div><select class="ob-sel" id="ob-yos"><option value="0">Under 2 yrs</option><option value="2">2 yrs</option><option value="3">3 yrs</option><option value="4">4 yrs</option><option value="6">6 yrs</option><option value="8">8 yrs</option><option value="10">10 yrs</option><option value="12">12 yrs</option><option value="14">14 yrs</option><option value="16">16 yrs</option><option value="18">18 yrs</option><option value="20">20+ yrs</option></select></div><div><div class="ob-lbl">Housing</div><select class="ob-sel" id="ob-housing"><option value="nodep">Without dependents</option><option value="dep">With dependents</option><option value="barracks">In barracks</option></select></div></div>
-    <div><div class="ob-lbl">Duty station</div><input class="ob-inp" id="ob-station" type="text" placeholder="e.g. Camp Pendleton, 29 Palms, Quantico"/></div>
+    <div><div class="ob-lbl">Pay grade</div>
+      <select class="ob-sel" id="ob-grade">
+        <option value="">Select your grade</option>
+        <optgroup label="Enlisted"><option>E-1</option><option>E-2</option><option>E-3</option><option>E-4</option><option>E-5</option><option>E-6</option><option>E-7</option><option>E-8</option><option>E-9</option></optgroup>
+        <optgroup label="Warrant Officer"><option>W-1</option><option>W-2</option><option>W-3</option><option>W-4</option><option>W-5</option></optgroup>
+        <optgroup label="Officer"><option>O-1</option><option>O-2</option><option>O-3</option><option>O-4</option><option>O-5</option><option>O-6</option><option>O-7</option><option>O-8</option></optgroup>
+      </select>
+    </div>
+    <div class="ob-grid">
+      <div><div class="ob-lbl">Years of service</div>
+        <select class="ob-sel" id="ob-yos">
+          <option value="0">Under 2 yrs</option><option value="2">2 yrs</option><option value="3">3 yrs</option><option value="4">4 yrs</option><option value="6">6 yrs</option><option value="8">8 yrs</option><option value="10">10 yrs</option><option value="12">12 yrs</option><option value="14">14 yrs</option><option value="16">16 yrs</option><option value="18">18 yrs</option><option value="20">20+ yrs</option>
+        </select>
+      </div>
+      <div><div class="ob-lbl">Housing</div>
+        <select class="ob-sel" id="ob-housing">
+          <option value="nodep">Without dependents</option>
+          <option value="dep">With dependents</option>
+          <option value="barracks">In barracks / on base</option>
+        </select>
+      </div>
+    </div>
+    <div><div class="ob-lbl">Duty station</div>
+      <input class="ob-inp" id="ob-station" type="text" placeholder="e.g. Camp Pendleton, 29 Palms, Quantico"/>
+    </div>
     <button class="ob-btn" onclick="launch()">Show my benefits &rarr;</button>
-    <div class="ob-note">No account needed. Info stays on your device.</div>
+    <div class="ob-note">No account needed &middot; Your info stays on this device</div>
   </div>
 </div>
+
+<!-- MAIN APP -->
 <div class="main" id="main">
-  <div class="topbar"><div class="tb-l"><div class="tb-mark"><svg viewBox="0 0 16 16" fill="none"><polygon points="8,1 15,4.5 15,11.5 8,15 1,11.5 1,4.5" fill="#0d1b2e"/></svg></div><div class="tb-brand">Marine <em>Benefits</em> Hub</div></div><div class="tb-r"><div class="chip">USMC</div><div class="ava" id="ava">-</div></div></div>
-  <div class="hero"><div class="hero-row"><div><div class="hero-g">Welcome,</div><div class="hero-n" id="h-name">Marine</div><div class="hero-m" id="h-meta">-</div></div><div class="pay-badge"><div class="pb-lbl">Est. monthly</div><div class="pb-amt" id="h-pay">-</div><div class="pb-sub">base + allowances</div></div></div><div style="height:13px;"></div></div>
-  <div class="tabs"><div class="tab on" onclick="tab('overview',this)">Overview</div><div class="tab" onclick="tab('ask',this)">Ask AI<span class="tab-dot"></span></div><div class="tab" onclick="tab('pay',this)">Pay &amp; Allowances</div><div class="tab" onclick="tab('tricare',this)">Healthcare</div><div class="tab" onclick="tab('edu',this)">Education</div><div class="tab" onclick="tab('housing',this)">Housing (BAH)</div><div class="tab" onclick="tab('va',this)">VA &amp; Transition</div><div class="tab" onclick="tab('spouse',this)">Spouse &amp; Family<span class="tab-dot"></span></div></div>
+  <div class="topbar">
+    <div class="tb-l">
+      <div class="tb-mark"><svg viewBox="0 0 16 16" fill="none"><polygon points="8,1.5 14,5 14,11 8,14.5 2,11 2,5" fill="white"/></svg></div>
+      <div class="tb-brand">Marine <em>Benefits</em> Hub</div>
+    </div>
+    <div class="tb-r">
+      <div class="chip">USMC</div>
+      <div class="ava" id="ava">?</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-row">
+      <div>
+        <div class="hero-g">Hey there,</div>
+        <div class="hero-n" id="h-name">Marine</div>
+        <div class="hero-m" id="h-meta">&nbsp;</div>
+      </div>
+      <div class="pay-badge">
+        <div class="pb-lbl">Est. monthly take-home</div>
+        <div class="pb-amt" id="h-pay">--</div>
+        <div class="pb-sub">base pay + allowances</div>
+      </div>
+    </div>
+    <div style="height:14px;"></div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab on" onclick="tab('overview',this)">Home</div>
+    <div class="tab" onclick="tab('ask',this)">Ask AI <span class="tab-dot"></span></div>
+    <div class="tab" onclick="tab('pay',this)">Pay</div>
+    <div class="tab" onclick="tab('tricare',this)">Healthcare</div>
+    <div class="tab" onclick="tab('edu',this)">Education</div>
+    <div class="tab" onclick="tab('housing',this)">Housing</div>
+    <div class="tab" onclick="tab('spouse',this)">Spouse &amp; Family</div>
+    <div class="tab" onclick="tab('va',this)">VA</div>
+  </div>
+
   <div class="body">
+
+    <!-- HOME -->
     <div class="panel on" id="p-overview">
-      <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>2026 rates in effect.</strong> BAH updated Jan 1. Use the Ask AI tab to get personalized answers to any benefits question.</div></div>
-      <div><div class="sh">Quick access</div><div class="qg"><div class="qc" onclick="tab('pay',document.querySelectorAll('.tab')[2])"><div class="qi" style="background:rgba(42,100,150,.2)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#3d8bc4" stroke-width="1.4"/><line x1="6" y1="9" x2="14" y2="9" stroke="#3d8bc4" stroke-width="1.4"/></svg></div><div class="ql">Pay &amp; LES</div></div><div class="qc" onclick="tab('tricare',document.querySelectorAll('.tab')[3])"><div class="qi" style="background:rgba(58,170,110,.15)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#3aaa6e" stroke-width="1.4"/></svg></div><div class="ql">TRICARE</div></div><div class="qc" onclick="tab('housing',document.querySelectorAll('.tab')[5])"><div class="qi" style="background:rgba(200,168,75,.15)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 10l7-7 7 7" stroke="#c8a84b" stroke-width="1.4" stroke-linecap="round"/><path d="M5 8.5V16h4v-3h2v3h4V8.5" stroke="#c8a84b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ql">BAH</div></div><div class="qc" onclick="tab('edu',document.querySelectorAll('.tab')[4])"><div class="qi" style="background:rgba(138,100,200,.15)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 4L18 8l-8 4L2 8z" stroke="#9b7be0" stroke-width="1.4" stroke-linejoin="round"/></svg></div><div class="ql">Education</div></div><div class="qc" onclick="tab('va',document.querySelectorAll('.tab')[6])"><div class="qi" style="background:rgba(232,160,48,.15)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="7" width="14" height="10" rx="2" stroke="#e8a030" stroke-width="1.4"/><path d="M7 7V5a3 3 0 016 0v2" stroke="#e8a030" stroke-width="1.4"/></svg></div><div class="ql">VA</div></div><div class="qc" onclick="tab('ask',document.querySelectorAll('.tab')[1])"><div class="qi" style="background:rgba(200,168,75,.1)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#c8a84b" stroke-width="1.4"/><path d="M8 8c0-1.1.9-2 2-2s2 .9 2 2c0 1-1 1.5-1.5 2S10 11 10 11" stroke="#c8a84b" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="14" r=".8" fill="#c8a84b"/></svg></div><div class="ql">Ask AI</div></div></div></div>
-      <div><div class="sh">Your snapshot</div><div class="card"><div class="ch"><div class="ci" style="background:rgba(42,100,150,.2)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#3d8bc4" stroke-width="1.4"/><line x1="6" y1="9" x2="14" y2="9" stroke="#3d8bc4" stroke-width="1.4"/></svg></div><div class="ct"><div class="ct-t">Monthly compensation</div><div class="ct-d">Your 2026 rates</div></div><div class="pill p-g">Live</div></div><div class="div"></div><div class="rows" id="ov-pay-rows"></div><div class="cf"><button class="cbtn" onclick="tab('pay',document.querySelectorAll('.tab')[2])">Full pay breakdown &rarr;</button></div></div></div>
+      <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>2026 rates are in effect.</strong> Pay and BAH updated January 1st. Tap the AI tab if you have questions about anything.</div></div>
+
+      <div><div class="sh">Jump to</div>
+        <div class="qg">
+          <div class="qc" onclick="tab('pay',document.querySelectorAll('.tab')[2])">
+            <div class="qi" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#3b82f6" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#3b82f6" stroke-width="1.5"/></svg></div>
+            <div class="ql">My Pay</div>
+          </div>
+          <div class="qc" onclick="tab('tricare',document.querySelectorAll('.tab')[3])">
+            <div class="qi" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c3.5 0 6 2.5 6 5.5 0 4-6 9-6 9S4 12.5 4 8.5C4 5.5 6.5 3 10 3z" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="10.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="8.5" x2="12" y2="8.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="ql">Healthcare</div>
+          </div>
+          <div class="qc" onclick="tab('housing',document.querySelectorAll('.tab')[5])">
+            <div class="qi" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 10l7-7 7 7" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/><path d="M5 8.5V16h4v-3h2v3h4V8.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ql">Housing</div>
+          </div>
+          <div class="qc" onclick="tab('edu',document.querySelectorAll('.tab')[4])">
+            <div class="qi" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 4L18 8l-8 4L2 8z" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 10v5c0 0 2 2 5 2s5-2 5-2v-5" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="ql">Education</div>
+          </div>
+          <div class="qc" onclick="tab('spouse',document.querySelectorAll('.tab')[6])">
+            <div class="qi" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M13 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="#ff6b6b" stroke-width="1.5"/><path d="M5 17c0-3 2-5 5-5s5 2 5 5" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="ql">Spouse &amp; Family</div>
+          </div>
+          <div class="qc" onclick="tab('ask',document.querySelectorAll('.tab')[1])">
+            <div class="qi" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#10b981" stroke-width="1.5"/><path d="M8 8.5c0-1.1.9-2 2-2s2 .9 2 2c0 1-1 1.5-1.5 2S10 11.5 10 11.5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="14" r=".8" fill="#10b981"/></svg></div>
+            <div class="ql">Ask AI</div>
+          </div>
+        </div>
+      </div>
+
+      <div><div class="sh">Your snapshot</div>
+        <div class="card">
+          <div class="ch">
+            <div class="ci" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#3b82f6" stroke-width="1.5"/></svg></div>
+            <div class="ct"><div class="ct-t">Monthly compensation</div><div class="ct-d">Your 2026 personalized breakdown</div></div>
+            <div class="pill p-g">Live</div>
+          </div>
+          <div class="div"></div>
+          <div class="rows" id="ov-pay-rows"></div>
+          <div class="cf"><button class="cbtn" onclick="tab('pay',document.querySelectorAll('.tab')[2])">See full pay breakdown &rarr;</button></div>
+        </div>
+      </div>
     </div>
+
+    <!-- ASK AI -->
     <div class="panel" id="p-ask">
-      <div class="ib"><div class="ib-t">AI-powered benefits assistant</div><div class="ib-b">Ask anything about USMC pay, TRICARE, BAH, GI Bill, VA benefits, PCS, or special pays. Answers are personalized to your profile and use 2026 rates.</div></div>
+      <div class="ib"><div class="ib-t">Your personal benefits assistant</div><div class="ib-b">Ask anything — BAH changes during deployment, what discounts your spouse qualifies for, how to use TA, what happens to pay during PCS. I know your profile already.</div></div>
       <div class="ask-wrap">
-        <div class="ask-header"><div class="ask-icon"><svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#c8a84b" stroke-width="1.4"/><path d="M8 8c0-1.1.9-2 2-2s2 .9 2 2c0 1-1 1.5-1.5 2S10 11 10 11" stroke="#c8a84b" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="14" r=".8" fill="#c8a84b"/></svg></div><div><div class="ask-title">Ask anything</div><div class="ask-sub">Powered by Claude &middot; USMC-focused</div></div></div>
-        <div class="ask-msgs" id="ask-msgs"><div class="msg msg-ai"><div class="msg-bubble">Hey Marine. Ask me anything about your pay, benefits, healthcare, or entitlements. I know your profile &mdash; <span id="ai-intro">go ahead.</span></div></div></div>
-        <div class="suggest-row" id="suggests"><div class="suggest" onclick="sendSuggest(this)">What's my BAH if I PCS to Okinawa?</div><div class="suggest" onclick="sendSuggest(this)">How does TRICARE dental work?</div><div class="suggest" onclick="sendSuggest(this)">When can I use Tuition Assistance?</div><div class="suggest" onclick="sendSuggest(this)">What special pays might I qualify for?</div></div>
-        <div class="ask-input-row"><textarea class="ask-input" id="ask-input" placeholder="Ask about pay, benefits, TRICARE, BAH..." rows="1" onkeydown="inputKey(event)"></textarea><button class="ask-send" id="ask-send" onclick="sendMsg()"><svg viewBox="0 0 16 16" fill="none"><path d="M14 8L2 14l2.5-6L2 2l12 6z" fill="#0d1b2e"/></svg></button></div>
+        <div class="ask-header">
+          <div class="ask-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#ff6b6b" stroke-width="1.5"/><path d="M8 8.5c0-1.1.9-2 2-2s2 .9 2 2c0 1-1 1.5-1.5 2S10 11.5 10 11.5" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="14" r=".8" fill="#ff6b6b"/></svg></div>
+          <div><div class="ask-title">Ask anything</div><div class="ask-sub">Powered by Claude &middot; USMC-focused &middot; 2026 rates</div></div>
+        </div>
+        <div class="ask-msgs" id="ask-msgs">
+          <div class="msg msg-ai"><div class="msg-bubble">Hey! I know your profile already. Ask me anything about your pay, benefits, healthcare, housing, or entitlements &mdash; <span id="ai-intro">I've got you.</span></div></div>
+        </div>
+        <div class="suggest-row" id="suggests">
+          <div class="suggest" onclick="sendSuggest(this)">Does BAH stop during deployment?</div>
+          <div class="suggest" onclick="sendSuggest(this)">What's my BAH if I PCS to Okinawa?</div>
+          <div class="suggest" onclick="sendSuggest(this)">What discounts can my spouse use?</div>
+          <div class="suggest" onclick="sendSuggest(this)">How does TRICARE dental work?</div>
+        </div>
+        <div class="ask-input-row">
+          <textarea class="ask-input" id="ask-input" placeholder="Ask about pay, TRICARE, BAH, discounts..." rows="1" onkeydown="inputKey(event)"></textarea>
+          <button class="ask-send" id="ask-send" onclick="sendMsg()"><svg viewBox="0 0 16 16" fill="none"><path d="M14 8L2 14l2.5-6L2 2l12 6z" fill="white"/></svg></button>
+        </div>
       </div>
     </div>
+
+    <!-- PAY -->
     <div class="panel" id="p-pay">
-      <div class="ib"><div class="ib-t">BAH and BAS are tax-free</div><div class="ib-b">Base pay is taxable. BAH and BAS are not. This significantly increases your effective compensation vs. the base pay number alone.</div></div>
+      <div class="ib"><div class="ib-t">BAH and BAS are completely tax-free</div><div class="ib-b">Only base pay gets taxed. BAH (housing) and BAS (food) come out untouched, which makes your real compensation much higher than it looks on paper.</div></div>
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Your monthly breakdown</div><div class="ct-d" id="pay-desc">2026 rates</div></div></div><div class="div"></div><div class="rows" id="pay-rows"></div></div>
-      <div class="sh">2026 USMC base pay table</div>
-      <div class="card" style="overflow-x:auto;"><div style="padding:12px 15px;"><table class="pay-tbl" id="pay-table"></table></div></div>
-      <div class="ib"><div class="ib-t">Special pays you may qualify for</div><div class="ib-b">Hostile fire ($225/mo), Jump pay ($150/mo), Sea pay (varies), SDAP (SSgt+), FLPP (foreign language), Diving pay. Ask the AI tab for your specific situation.</div></div>
+      <div class="sh">Full 2026 USMC pay table</div>
+      <div class="card" style="overflow-x:auto;"><div style="padding:13px 16px;"><table class="pay-tbl" id="pay-table"></table></div></div>
+      <div class="ib"><div class="ib-t">Extra pays you might qualify for</div><div class="ib-b">Hostile fire ($225/mo), Airborne/Jump ($150/mo), Sea pay (varies), SDAP for SSgt+, Foreign Language Pay, Diving pay. Ask the AI tab what applies to your situation.</div></div>
     </div>
+
+    <!-- TRICARE -->
     <div class="panel" id="p-tricare">
-      <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>Active duty members pay $0</strong> for TRICARE coverage itself. Dependents may have copays depending on plan.</div></div>
-      <div class="sh">Choose your plan</div>
-      <div class="plan-grid"><div class="pc rec"><div class="pc-n">TRICARE Prime</div><div class="pc-tag">Recommended for AD</div><div class="pc-d">HMO-style. PCM manages all care. $0 copay at MTF.</div></div><div class="pc"><div class="pc-n">TRICARE Select</div><div class="pc-d">PPO-style. See any authorized provider without referral. Higher out-of-pocket.</div></div><div class="pc"><div class="pc-n">Direct Care</div><div class="pc-d">MTF only. Free but limited by base clinic availability.</div></div><div class="pc"><div class="pc-n">TRICARE Overseas</div><div class="pc-d">For OCONUS assignments. Covers host-nation and overseas MTF care.</div></div></div>
-      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">TRICARE Prime copays &mdash; Active duty 2026</div></div></div><div class="div"></div><div class="rows"><div class="row"><span class="rl">Primary care (MTF or civilian in-network)</span><span class="rv g">$0</span></div><div class="row"><span class="rl">Specialist (w/ referral)</span><span class="rv g">$0</span></div><div class="row"><span class="rl">ER (MTF)</span><span class="rv g">$0</span></div><div class="row"><span class="rl">ER (civilian)</span><span class="rv">$30</span></div><div class="row"><span class="rl">Mental health (outpatient)</span><span class="rv g">$0</span></div><div class="row"><span class="rl">Prescription (MTF or mail generic)</span><span class="rv g">$0</span></div><div class="row"><span class="rl">Prescription (mail brand, 90-day)</span><span class="rv">$14</span></div><div class="row"><span class="rl">Annual out-of-pocket max</span><span class="rv g">$1,000</span></div></div></div>
-      <div class="ib"><div class="ib-t">Dental &amp; vision are separate</div><div class="ib-b">Enroll in FEDVIP for dental. Base dental clinics cover readiness care. Vision requires its own plan. Ask your S-1 for enrollment steps.</div></div>
+      <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>Good news:</strong> Active duty members pay $0 for TRICARE. Your coverage is automatic and free.</div></div>
+      <div class="sh">Pick your plan</div>
+      <div class="plan-grid">
+        <div class="pc rec"><div class="pc-n">TRICARE Prime</div><div class="pc-tag">Best for most</div><div class="pc-d">Like an HMO. One primary doctor who refers you everywhere. Free at base clinic, tiny copay off-base.</div></div>
+        <div class="pc"><div class="pc-n">TRICARE Select</div><div class="pc-d">Like a PPO. See any authorized doctor without a referral. More flexibility, slightly higher cost.</div></div>
+        <div class="pc"><div class="pc-n">Direct Care</div><div class="pc-d">Base clinic only. Totally free, but you're limited to what's available at your installation.</div></div>
+        <div class="pc"><div class="pc-n">TRICARE Overseas</div><div class="pc-d">For OCONUS assignments. Works at host-country facilities and overseas military clinics.</div></div>
+      </div>
+      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">What you'll actually pay (2026)</div><div class="ct-d">TRICARE Prime &middot; Active duty</div></div></div><div class="div"></div>
+        <div class="rows">
+          <div class="row"><span class="rl">Doctor visit (base clinic)</span><span class="rv g">Free</span></div>
+          <div class="row"><span class="rl">Doctor visit (off-base, in-network)</span><span class="rv g">Free</span></div>
+          <div class="row"><span class="rl">Specialist (with referral)</span><span class="rv g">Free</span></div>
+          <div class="row"><span class="rl">ER at base</span><span class="rv g">Free</span></div>
+          <div class="row"><span class="rl">ER off-base</span><span class="rv">$30</span></div>
+          <div class="row"><span class="rl">Therapy / mental health</span><span class="rv g">Free</span></div>
+          <div class="row"><span class="rl">Prescriptions at base pharmacy</span><span class="rv g">Free</span></div>
+          <div class="row"><span class="rl">Mail-order prescriptions (generic)</span><span class="rv g">Free</span></div>
+          <div class="row"><span class="rl">Mail-order prescriptions (brand)</span><span class="rv">$14 for 90 days</span></div>
+          <div class="row"><span class="rl">Annual out-of-pocket max</span><span class="rv g">$1,000</span></div>
+        </div>
+      </div>
+      <div class="ib"><div class="ib-t">Dental and vision are separate</div><div class="ib-b">Sign up for FEDVIP for dental coverage. Base dental takes care of readiness stuff for free. Vision needs its own plan. Your S-1 can help with enrollment.</div></div>
     </div>
+
+    <!-- EDUCATION -->
     <div class="panel" id="p-edu">
-      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Tuition Assistance (TA)</div><div class="ct-d">Use while on active duty &mdash; doesn't touch your GI Bill</div></div><div class="pill p-g">Available</div></div><div class="div"></div><div class="rows"><div class="row"><span class="rl">Annual cap</span><span class="rv g">$4,500 / yr</span></div><div class="row"><span class="rl">Per credit hour max</span><span class="rv">$250 / hr</span></div><div class="row"><span class="rl">Undergrad &amp; grad eligible</span><span class="rv g">Yes</span></div><div class="row"><span class="rl">Service obligation</span><span class="rv">2 years per degree</span></div><div class="row"><span class="rl">Apply via</span><span class="rv dim">Marine OnLine (MOL)</span></div></div></div>
-      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Post-9/11 GI Bill (Chapter 33)</div><div class="ct-d">Save for after service &mdash; most powerful education benefit</div></div></div><div class="div"></div><div class="rows"><div class="row"><span class="rl">Tuition (public in-state)</span><span class="rv g">100%</span></div><div class="row"><span class="rl">Private / out-of-state cap</span><span class="rv">$28,937 / yr</span></div><div class="row"><span class="rl">Monthly housing allowance</span><span class="rv g">E-5 w/dep BAH rate</span></div><div class="row"><span class="rl">Books &amp; supplies</span><span class="rv g">Up to $1,000 / yr</span></div><div class="row"><span class="rl">Total months</span><span class="rv">36 months</span></div><div class="row"><span class="rl">Transferable to dependents</span><span class="rv">Yes (4-yr obligation)</span></div></div></div>
-      <div class="ib"><div class="ib-t">MyCAA for spouses</div><div class="ib-b">Spouses of O-1 to O-3, W-1 to W-2, and E-1 to E-5 qualify for up to $4,000. Apply at MyCAA.com before your spouse starts a program.</div></div>
+      <div class="card"><div class="ch"><div class="ci" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 4L18 8l-8 4L2 8z" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 10v5c0 0 2 2 5 2s5-2 5-2v-5" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="ct"><div class="ct-t">Tuition Assistance (TA)</div><div class="ct-d">Free college money you can use right now</div></div><div class="pill p-g">Available now</div></div><div class="div"></div>
+        <div class="rows">
+          <div class="row"><span class="rl">How much per year</span><span class="rv g">$4,500</span></div>
+          <div class="row"><span class="rl">Per credit hour max</span><span class="rv">$250</span></div>
+          <div class="row"><span class="rl">Works for undergrad and grad</span><span class="rv g">Yes</span></div>
+          <div class="row"><span class="rl">Does it touch your GI Bill?</span><span class="rv g">Nope</span></div>
+          <div class="row"><span class="rl">Commitment after using it</span><span class="rv">2 extra years of service</span></div>
+          <div class="row"><span class="rl">How to apply</span><span class="rv dim">Marine OnLine (MOL)</span></div>
+        </div>
+      </div>
+      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Post-9/11 GI Bill</div><div class="ct-d">Save this for after you get out &mdash; it's your most powerful benefit</div></div></div><div class="div"></div>
+        <div class="rows">
+          <div class="row"><span class="rl">Tuition at a public in-state school</span><span class="rv g">100% covered</span></div>
+          <div class="row"><span class="rl">Private / out-of-state school cap</span><span class="rv">$28,937 / yr</span></div>
+          <div class="row"><span class="rl">Monthly housing stipend</span><span class="rv g">E-5 w/ dependents BAH rate</span></div>
+          <div class="row"><span class="rl">Books and supplies</span><span class="rv g">Up to $1,000 / yr</span></div>
+          <div class="row"><span class="rl">Total time available</span><span class="rv">36 months</span></div>
+          <div class="row"><span class="rl">Can you give it to your kids?</span><span class="rv">Yes (4-yr commitment)</span></div>
+        </div>
+      </div>
+      <div class="ib"><div class="ib-t">MyCAA for spouses</div><div class="ib-b">If you're O-1 to O-3, W-1 to W-2, or E-1 to E-5, your spouse can get up to $4,000 for education through MyCAA. Apply at MyCAA.com before they start any program.</div></div>
     </div>
+
+    <!-- HOUSING -->
     <div class="panel" id="p-housing">
-      <div class="ib"><div class="ib-t">BAH is yours to keep</div><div class="ib-b">If your rent is less than your BAH rate, you keep the difference tax-free. BAH covers median local housing costs &mdash; not a ceiling on your budget.</div></div>
-      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Your BAH estimate</div><div class="ct-d" id="bah-desc">Based on grade and duty station</div></div></div><div class="div"></div><div class="rows" id="bah-rows"></div></div>
-      <div class="ib"><div class="ib-t">OHA for OCONUS</div><div class="ib-b">Stationed overseas? BAH is replaced by Overseas Housing Allowance (OHA), which covers actual rent up to a local cap plus utilities. Ask the AI tab for your specific location.</div></div>
-    </div>
-    <div class="panel" id="p-va">
-      <div class="ib"><div class="ib-t">Document everything now</div><div class="ib-b">A VA disability rating depends on a documented service connection. Record every injury, exposure, and medical event on active duty. Don't wait until separation.</div></div>
-      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">VA disability compensation (2026)</div><div class="ct-d">Tax-free monthly &mdash; veteran only, no dependents</div></div></div><div class="div"></div><div class="rows"><div class="row"><span class="rl">10%</span><span class="rv">$175.51 / mo</span></div><div class="row"><span class="rl">20%</span><span class="rv">$346.95 / mo</span></div><div class="row"><span class="rl">30%</span><span class="rv">$524.31 / mo</span></div><div class="row"><span class="rl">50%</span><span class="rv">$1,075.16 / mo</span></div><div class="row"><span class="rl">70%</span><span class="rv">$1,716.28 / mo</span></div><div class="row"><span class="rl">100%</span><span class="rv g">$3,737.85 / mo</span></div></div></div>
-      <div class="ib"><div class="ib-t">PACT Act expanded eligibility</div><div class="ib-b">Deployed near burn pits or toxic exposures? File a PACT Act claim. The VA must now prove you're NOT eligible. Appeals are always an option.</div></div>
+      <div class="ib"><div class="ib-t">You keep what you don't spend</div><div class="ib-b">BAH is based on median rent in your area. If you find a place cheaper than your BAH rate, the leftover is yours to keep &mdash; tax-free. It's not a use-it-or-lose-it thing.</div></div>
+      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Your BAH rate</div><div class="ct-d" id="bah-desc">Based on your grade and duty station</div></div></div><div class="div"></div><div class="rows" id="bah-rows"></div></div>
+      <div class="ib"><div class="ib-t">Going overseas? It's called OHA instead</div><div class="ib-b">OCONUS stations use Overseas Housing Allowance (OHA) instead of BAH. It covers your actual rent up to a local cap, plus a utilities allowance. Rates vary a lot by country &mdash; ask the AI tab for your specific location.</div></div>
     </div>
 
+    <!-- SPOUSE & FAMILY -->
     <div class="panel" id="p-spouse">
-      <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>This section is for military spouses &amp; families.</strong> Benefits, discounts, and what to expect when things change.</div></div>
+      <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>This section is for military families.</strong> Discounts, BAH changes, and everything you need to know when life changes.</div></div>
 
-      <div><div class="sh">BAH changes — what spouses need to know</div>
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">During deployment</div><div class="ct-d">BAH does NOT stop during deployment</div></div><div class="pill p-g">Common myth</div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">BAH continues during deployment</span><span class="rv g">Yes — full rate</span></div>
-          <div class="row"><span class="rl">Changes if spouse moves off base</span><span class="rv">Rate stays the same</span></div>
-          <div class="row"><span class="rl">Unaccompanied orders (no family)</span><span class="rv">Reduced rate applies</span></div>
-          <div class="row"><span class="rl">Family stays at home of record</span><span class="rv g">Full w/ dep rate paid</span></div>
-        </div></div>
+      <div><div class="sh">How BAH changes</div>
 
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">During a PCS move</div><div class="ct-d">The transition period catches people off guard</div></div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">Rate while at losing installation</span><span class="rv">Old duty station rate</span></div>
-          <div class="row"><span class="rl">Rate switches to new installation</span><span class="rv">On reporting date</span></div>
-          <div class="row"><span class="rl">TLE (Temporary Lodging Expense)</span><span class="rv g">Up to 10 days covered</span></div>
-          <div class="row"><span class="rl">Per diem during travel days</span><span class="rv g">Paid for family</span></div>
-          <div class="row"><span class="rl">MIHA (overseas housing add-on)</span><span class="rv">Applies OCONUS</span></div>
-        </div></div>
+        <div class="card"><div class="ch"><div class="ci" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#10b981" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ct"><div class="ct-t">During deployment</div><div class="ct-d">BAH does NOT stop when your Marine deploys</div></div><div class="pill p-g">Common myth</div></div><div class="div"></div>
+          <div class="rows">
+            <div class="row"><span class="rl">BAH keeps coming during deployment</span><span class="rv g">Yes, full rate</span></div>
+            <div class="row"><span class="rl">Does it matter where spouse lives?</span><span class="rv g">Rate stays the same</span></div>
+            <div class="row"><span class="rl">Exception: unaccompanied orders</span><span class="rv c">Reduced rate applies</span></div>
+            <div class="row"><span class="rl">Family stays home of record</span><span class="rv g">Full w/ dependents rate</span></div>
+          </div>
+        </div>
 
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Adding a new dependent</div><div class="ct-d">Marriage, birth, or adoption</div></div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">BAH rate change effective</span><span class="rv g">Date of qualifying event</span></div>
-          <div class="row"><span class="rl">Not end of month — immediately</span><span class="rv g">Yes</span></div>
-          <div class="row"><span class="rl">Submit via</span><span class="rv dim">S-1 / DEERS update</span></div>
-          <div class="row"><span class="rl">DEERS enrollment deadline</span><span class="rv">Within 60 days</span></div>
-          <div class="row"><span class="rl">TRICARE coverage for newborn</span><span class="rv g">Automatic for 60 days</span></div>
+        <div class="card"><div class="ch"><div class="ci" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 10l7-7 7 7" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/><path d="M5 8.5V16h4v-3h2v3h4V8.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ct"><div class="ct-t">During a PCS move</div><div class="ct-d">The part that trips everyone up</div></div></div><div class="div"></div>
+          <div class="rows">
+            <div class="row"><span class="rl">Rate while still at old base</span><span class="rv">Old base rate</span></div>
+            <div class="row"><span class="rl">Rate switches when</span><span class="rv">On official reporting date</span></div>
+            <div class="row"><span class="rl">TLE (temp lodging covered)</span><span class="rv g">Up to 10 days</span></div>
+            <div class="row"><span class="rl">Per diem during travel</span><span class="rv g">Paid for whole family</span></div>
+          </div>
+        </div>
+
+        <div class="card"><div class="ch"><div class="ci" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 6v4l3 3" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="#ff6b6b" stroke-width="1.5"/></svg></div><div class="ct"><div class="ct-t">Adding a new dependent</div><div class="ct-d">Baby, marriage, or adoption</div></div></div><div class="div"></div>
+          <div class="rows">
+            <div class="row"><span class="rl">BAH rate change kicks in</span><span class="rv g">Day of the event</span></div>
+            <div class="row"><span class="rl">Not end of month &mdash; immediately</span><span class="rv g">Correct</span></div>
+            <div class="row"><span class="rl">Update DEERS within</span><span class="rv">60 days</span></div>
+            <div class="row"><span class="rl">New baby TRICARE coverage</span><span class="rv g">Auto for first 60 days</span></div>
+            <div class="row"><span class="rl">Submit paperwork to</span><span class="rv dim">Your S-1</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div><div class="sh">PCS checklist &mdash; don't leave money on the table</div>
+        <div class="card"><div style="padding:13px 16px;">
+          <div class="chk-item"><div class="chk-box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="chk-t">Household goods shipment (HHG)</div><div class="chk-d">Full weight allowance paid by the government. Schedule at move.mil.</div></div></div>
+          <div class="chk-item"><div class="chk-box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="chk-t">PPM / DITY move</div><div class="chk-d">Move yourself and get paid 95% of what it would've cost the government. Easy money.</div></div></div>
+          <div class="chk-item"><div class="chk-box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="chk-t">Vehicle shipment</div><div class="chk-d">One vehicle shipped at government expense.</div></div></div>
+          <div class="chk-item"><div class="chk-box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="chk-t">TLE &mdash; Temporary Lodging Expense</div><div class="chk-d">Up to 10 days of temp housing covered at both ends of your move.</div></div></div>
+          <div class="chk-item"><div class="chk-box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="chk-t">Per diem for travel days</div><div class="chk-d">Everyone in your family counts. Don't forget to claim it.</div></div></div>
+          <div class="chk-item"><div class="chk-box"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="chk-t">Mileage reimbursement</div><div class="chk-d">Reimbursed at the IRS rate per mile driven.</div></div></div>
         </div></div>
       </div>
 
-      <div><div class="sh">PCS entitlements checklist</div>
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">What you're entitled to on a PCS</div><div class="ct-d">Most families leave money on the table — know what to claim</div></div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">Household goods shipment (HHG)</span><span class="rv g">Full weight allowance</span></div>
-          <div class="row"><span class="rl">PPM / DITY move incentive</span><span class="rv g">95% of gov't cost</span></div>
-          <div class="row"><span class="rl">POV shipment (1 vehicle)</span><span class="rv g">Paid by gov't</span></div>
-          <div class="row"><span class="rl">TLE (temp lodging)</span><span class="rv g">Up to 10 days</span></div>
-          <div class="row"><span class="rl">Per diem (travel days)</span><span class="rv g">Per person in family</span></div>
-          <div class="row"><span class="rl">Mileage reimbursement</span><span class="rv g">IRS rate per mile</span></div>
-          <div class="row"><span class="rl">DPS (Defense Personal Property)</span><span class="rv dim">Schedule at move.mil</span></div>
-          <div class="row"><span class="rl">BAH overlap (old + new)</span><span class="rv">Not applicable — switches on report date</span></div>
-        </div></div>
-      </div>
+      <div><div class="sh">Discounts for military families</div>
+        <div class="disc-grid">
+          <div class="dc"><div class="dc-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#3b82f6" stroke-width="1.5"/></svg></div><div class="dc-name">Commissary</div><div class="dc-desc">~30% below retail. Use it every week.</div><div class="dc-badge" style="background:#eff6ff;color:#3b82f6;">~30% off groceries</div></div>
+          <div class="dc"><div class="dc-icon" style="background:#ecfdf5;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#10b981" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="dc-name">Amazon Prime</div><div class="dc-desc">Free with military verification via ID.me.</div><div class="dc-badge" style="background:#ecfdf5;color:#10b981;">Free Prime</div></div>
+          <div class="dc"><div class="dc-icon" style="background:#fff0f0;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3c0 0-7 4-7 9a7 7 0 0014 0c0-5-7-9-7-9z" stroke="#ff6b6b" stroke-width="1.5"/></svg></div><div class="dc-name">Disney Parks</div><div class="dc-desc">$50–80 off per day for military families.</div><div class="dc-badge" style="background:#fff0f0;color:#ff6b6b;">$50–80 / day off</div></div>
+          <div class="dc"><div class="dc-icon" style="background:#fffbeb;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 7h14M3 10h14M3 13h14" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="dc-name">National Parks</div><div class="dc-desc">America the Beautiful pass — free annual access to all national parks.</div><div class="dc-badge" style="background:#fffbeb;color:#f59e0b;">Free annual pass</div></div>
+          <div class="dc"><div class="dc-icon" style="background:#f5f3ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="6" width="14" height="10" rx="2" stroke="#8b5cf6" stroke-width="1.5"/><path d="M7 6V5a3 3 0 016 0v1" stroke="#8b5cf6" stroke-width="1.5"/></svg></div><div class="dc-name">USAA</div><div class="dc-desc">Banking and insurance. Spouses are eligible too.</div><div class="dc-badge" style="background:#f5f3ff;color:#8b5cf6;">Spouses eligible</div></div>
+          <div class="dc"><div class="dc-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="dc-name">Lowe's &amp; Home Depot</div><div class="dc-desc">10% off in-store with military ID.</div><div class="dc-badge" style="background:#f0fdfa;color:#0d9488;">10% off</div></div>
+        </div>
 
-      <div><div class="sh">Military spouse discounts</div>
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Retail &amp; shopping</div></div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">Exchange (MCX / PX / BX)</span><span class="rv g">Tax-free, lower prices</span></div>
-          <div class="row"><span class="rl">Commissary</span><span class="rv g">~30% below retail avg</span></div>
-          <div class="row"><span class="rl">Amazon Military</span><span class="rv g">Free Prime w/ ID.me</span></div>
-          <div class="row"><span class="rl">Apple</span><span class="rv g">~8% off devices</span></div>
-          <div class="row"><span class="rl">Dell</span><span class="rv g">10–15% off</span></div>
-          <div class="row"><span class="rl">Lowe's / Home Depot</span><span class="rv g">10% off</span></div>
-        </div></div>
-
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Travel &amp; entertainment</div></div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">Disney Parks</span><span class="rv g">~$50–80 off / day</span></div>
-          <div class="row"><span class="rl">Universal Studios</span><span class="rv g">Discounted tickets</span></div>
-          <div class="row"><span class="rl">National Parks (America the Beautiful)</span><span class="rv g">Free annual pass</span></div>
-          <div class="row"><span class="rl">Hotels (Marriott, Hilton, IHG)</span><span class="rv g">Military rate available</span></div>
-          <div class="row"><span class="rl">Airlines (United, Delta, AA)</span><span class="rv g">Free checked bags</span></div>
-          <div class="row"><span class="rl">Amtrak</span><span class="rv g">10% off</span></div>
-        </div></div>
-
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Financial &amp; insurance</div></div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">USAA (banking + insurance)</span><span class="rv g">Spouses eligible</span></div>
-          <div class="row"><span class="rl">Navy Federal Credit Union</span><span class="rv g">Spouses eligible</span></div>
-          <div class="row"><span class="rl">SGLI spouse coverage</span><span class="rv g">Up to $100k / $27/mo</span></div>
-          <div class="row"><span class="rl">SCRA interest rate cap</span><span class="rv g">6% on pre-service debt</span></div>
-          <div class="row"><span class="rl">TurboTax / H&amp;R Block</span><span class="rv g">Free federal filing</span></div>
-        </div></div>
-
-        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Seasonal &amp; recurring deals</div></div></div><div class="div"></div><div class="rows">
-          <div class="row"><span class="rl">Commissary case lot sales</span><span class="rv dim">Spring &amp; Fall annually</span></div>
-          <div class="row"><span class="rl">Exchange tax-free weekends</span><span class="rv dim">Varies by state / base</span></div>
-          <div class="row"><span class="rl">Veterans Day (Nov 11)</span><span class="rv g">Dozens of free meals &amp; deals</span></div>
-          <div class="row"><span class="rl">Military Appreciation Month (May)</span><span class="rv g">Widest discount window</span></div>
-          <div class="row"><span class="rl">MWR programs on base</span><span class="rv g">Tickets, trips, gear rental</span></div>
-        </div></div>
-
-        <div class="ib"><div class="ib-t">Verify with ID.me or your military ID</div><div class="ib-b">Most discounts require verification through ID.me, SheerID, or showing a military ID in person. Spouse discounts typically require the servicemember's ID or enrollment in DEERS. Ask the AI tab for help finding a specific discount.</div></div>
+        <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Best times to shop &amp; save</div><div class="ct-d">Seasonal deals worth knowing about</div></div></div><div class="div"></div>
+          <div class="rows">
+            <div class="row"><span class="rl">Military Appreciation Month</span><span class="rv" style="color:var(--coral);">May &mdash; widest discount window</span></div>
+            <div class="row"><span class="rl">Veterans Day (Nov 11)</span><span class="rv g">Free meals + dozens of deals</span></div>
+            <div class="row"><span class="rl">Commissary case lot sales</span><span class="rv dim">Spring &amp; Fall annually</span></div>
+            <div class="row"><span class="rl">Exchange tax-free weekends</span><span class="rv dim">Varies by state / base</span></div>
+            <div class="row"><span class="rl">MWR on base</span><span class="rv g">Tickets, trips, gear rental</span></div>
+          </div>
+        </div>
+        <div class="ib"><div class="ib-t">How to verify for most discounts</div><div class="ib-b">Most places use ID.me or SheerID for online verification, or you can show your military ID in person. Spouse discounts usually require enrollment in DEERS. Ask the AI tab to help find a specific discount.</div></div>
       </div>
     </div>
+
+    <!-- VA -->
+    <div class="panel" id="p-va">
+      <div class="ib"><div class="ib-t">Start documenting injuries now, not later</div><div class="ib-b">VA disability is based on proving a service connection. Every injury, exposure, or medical issue you document while on active duty makes a future claim stronger. Don't wait until you're separating.</div></div>
+      <div class="card"><div class="ch"><div class="ct"><div class="ct-t">VA disability pay (2026)</div><div class="ct-d">Tax-free monthly payment based on your disability rating</div></div></div><div class="div"></div>
+        <div class="rows">
+          <div class="row"><span class="rl">10% rating</span><span class="rv">$175.51 / mo</span></div>
+          <div class="row"><span class="rl">20% rating</span><span class="rv">$346.95 / mo</span></div>
+          <div class="row"><span class="rl">30% rating</span><span class="rv">$524.31 / mo</span></div>
+          <div class="row"><span class="rl">50% rating</span><span class="rv">$1,075.16 / mo</span></div>
+          <div class="row"><span class="rl">70% rating</span><span class="rv">$1,716.28 / mo</span></div>
+          <div class="row"><span class="rl">100% rating</span><span class="rv g">$3,737.85 / mo</span></div>
+        </div>
+      </div>
+      <div class="ib"><div class="ib-t">PACT Act &mdash; burn pit exposure</div><div class="ib-b">If you were near burn pits or had toxic exposures, file a claim under the PACT Act. The burden of proof has flipped &mdash; the VA now has to prove you're NOT eligible. Always worth filing.</div></div>
+    </div>
+
   </div>
 </div>
 </div>
+
 <script>
 const PAY={'E-1':[1833,1833,1833,1833,1833,1833,1833,1833,1833,1833,1833,1833],'E-2':[2055,2055,2055,2055,2055,2055,2055,2055,2055,2055,2055,2055],'E-3':[2161,2161,2272,2272,2272,2272,2272,2272,2272,2272,2272,2272],'E-4':[2393,2393,2531,2645,2745,2745,2745,2745,2745,2745,2745,2745],'E-5':[2610,2610,2730,2880,3014,3134,3213,3213,3213,3213,3213,3213],'E-6':[2848,2848,2979,3090,3213,3389,3494,3566,3566,3566,3566,3566],'E-7':[3294,3294,3408,3530,3671,3836,3969,4104,4245,4342,4447,4561],'E-8':[4739,4739,4883,5033,5183,5278,5416,5557,5695,5795,5878,5878],'E-9':[5789,5789,5789,5961,6133,6307,6482,6655,6827,7001,7174,7348],'W-1':[3399,3546,3628,3711,3837,3964,4090,4219,4346,4473,4601,4730],'W-2':[3868,4052,4181,4311,4440,4570,4699,4829,4958,5088,5217,5347],'W-3':[4381,4563,4694,4824,4955,5085,5215,5346,5476,5607,5736,5867],'W-4':[4783,4969,5099,5229,5359,5489,5619,5749,5879,6009,6139,6269],'O-1':[3637,3758,3898,3898,3898,3898,3898,3898,3898,3898,3898,3898],'O-2':[4187,4772,5503,5503,5503,5503,5503,5503,5503,5503,5503,5503],'O-3':[4862,5503,5932,6218,6503,6800,6986,6986,6986,6986,6986,6986],'O-4':[5553,6431,6858,7155,7407,7655,7990,8238,8381,8381,8381,8381],'O-5':[6432,7264,7752,8018,8248,8490,8665,9059,9313,9517,9617,9617],'O-6':[7733,8493,9058,9058,9165,9544,9597,9597,9852,10331,10636,10936],'O-7':[10014,10476,10680,10873,11171,11562,11835,12107,12380,12652,13198,13744],'O-8':[12131,12523,12797,13063,13340,13834,14183,14535,14797,15296,15592,15888]};
 const YOS_IDX=[0,2,3,4,6,8,10,12,14,16,18,20];
@@ -284,17 +506,15 @@ function resolveStation(s){const sl=s.toLowerCase();for(const[k,a]of Object.entr
 function getBAH(g,housing,stKey){if(housing==='barracks')return 0;if(!stKey||stKey==='okinawa')return null;const t=BAH[housing==='dep'?stKey+'_d':stKey];return t?t[g]||null:null;}
 function fmt(n){return'$'+Math.round(n).toLocaleString();}
 function launch(){const grade=document.getElementById('ob-grade').value,yos=document.getElementById('ob-yos').value,housing=document.getElementById('ob-housing').value,station=document.getElementById('ob-station').value.trim();if(!grade||!station){alert('Please select a pay grade and enter your duty station.');return;}P={grade,yos:parseInt(yos)||0,housing,station};buildUI();document.getElementById('ob').style.display='none';document.getElementById('main').classList.add('on');document.getElementById('ai-intro').textContent='You are a '+grade+' with '+P.yos+' years at '+station+'.';}
-function buildUI(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&housing!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' - Marine';document.getElementById('h-meta').textContent=station+(housing==='dep'?' - with dependents':housing==='barracks'?' - barracks':' - without dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(housing==='barracks'?'<div class="row"><span class="rl">BAH</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo - tax-free</span></div>':'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv dim">See DTMO.mil or ask AI</span></div>')+'<div class="row"><span class="rl">BAS</span><span class="rv g">'+fmt(bas)+'/mo - tax-free</span></div><div class="row" style="border-top:0.5px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:500;color:var(--text2)">Estimated total</span><span class="rv g">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('ov-pay-rows').innerHTML=html;document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' - '+yos+' yrs - '+station;document.getElementById('bah-desc').textContent=grade+' - '+station;const br=document.getElementById('bah-rows');if(housing==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks - BAH waived</span><span class="rv dim">-</span></div>';}else if(bahKnown){const nd=getBAH(grade,'nodep',stKey),wd=getBAH(grade,'dep',stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'-')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'-')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask AI</span></div>';}buildPayTable(grade);}
-function buildPayTable(ug){const grades=['E-1','E-2','E-3','E-4','E-5','E-6','E-7','E-8','E-9','W-1','W-2','W-3','O-1','O-2','O-3','O-4','O-5','O-6'],cols=[0,2,4,6,8];let h='<tr><th>Grade</th>'+cols.map(i=>'<th>'+YOS_IDX[i]+(i===10?'+':'')+' yrs</th>').join('')+'</tr>';grades.forEach(g=>{const a=PAY[g]||[],hl=(g===ug)?'class="hl"':'';h+='<tr '+hl+'><td>'+g+'</td>'+cols.map(i=>'<td>'+(a[i]?'$'+Math.round(a[i]/100)*100/1000+'k':'-')+'</td>').join('')+'</tr>';});document.getElementById('pay-table').innerHTML=h;}
+function buildUI(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&housing!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(housing==='dep'?' \u00b7 with dependents':housing==='barracks'?' \u00b7 barracks':' \u00b7 without dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(housing==='barracks'?'<div class="row"><span class="rl">BAH</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('ov-pay-rows').innerHTML=html;document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(housing==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'nodep',stKey),wd=getBAH(grade,'dep',stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
+function buildPayTable(ug){const grades=['E-1','E-2','E-3','E-4','E-5','E-6','E-7','E-8','E-9','W-1','W-2','W-3','O-1','O-2','O-3','O-4','O-5','O-6'],cols=[0,2,4,6,8];let h='<tr><th>Grade</th>'+cols.map(i=>'<th>'+YOS_IDX[i]+' yrs</th>').join('')+'</tr>';grades.forEach(g=>{const a=PAY[g]||[],hl=(g===ug)?'class="hl"':'';h+='<tr '+hl+'><td>'+g+'</td>'+cols.map(i=>'<td>'+(a[i]?'$'+Math.round(a[i]/100)*100/1000+'k':'--')+'</td>').join('')+'</tr>';});document.getElementById('pay-table').innerHTML=h;}
 function tab(name,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));if(el)el.classList.add('on');const p=document.getElementById('p-'+name);if(p)p.classList.add('on');}
-function buildSys(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted;return 'You are a knowledgeable USMC benefits assistant. Be direct, plain-English, under 200 words. Marine profile: Grade: '+grade+', YOS: '+yos+', Station: '+station+', Housing: '+housing+', Base pay: $'+bp+'/mo, BAH: '+(bah?'$'+bah:bah===0?'waived':'unknown')+', BAS: $'+Math.round(bas)+'/mo. Answer questions about USMC pay, BAH, TRICARE, GI Bill, TA, VA, PCS, special pays, SCRA. Use 2026 rates. No filler phrases. Be direct like a knowledgeable fellow Marine.';}
+function buildSys(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted;return 'You are a friendly, knowledgeable USMC benefits assistant. Be warm, direct, plain-English, under 200 words. No jargon without explanation. Marine profile: Grade: '+grade+', YOS: '+yos+', Station: '+station+', Housing: '+housing+', Base pay: $'+bp+'/mo, BAH: '+(bah?'$'+bah:bah===0?'waived':'unknown')+', BAS: $'+Math.round(bas)+'/mo. Answer questions about USMC pay, BAH, TRICARE, GI Bill, TA, VA, PCS, special pays, military spouse benefits, discounts. Use 2026 rates. Be friendly and approachable.';}
 async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text||!P.grade)return;inp.value='';addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
 function sendSuggest(el){document.getElementById('ask-input').value=el.textContent;sendMsg();}
 function inputKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
 function addMsg(text,role){const c=document.getElementById('ask-msgs'),div=document.createElement('div');div.className='msg msg-'+(role==='user'?'user':'ai');const b=document.createElement('div');b.className='msg-bubble'+(role==='ai'&&text==='...'?' typing':'');b.textContent=text;div.appendChild(b);c.appendChild(div);c.scrollTop=c.scrollHeight;return b;}
-async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});try{
-// Calls /api/chat — serverless function on Vercel — API key never exposed to browser
-const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();const reply=data.content?.[0]?.text||'Something went wrong. Try again.';bubble.classList.remove('typing');bubble.textContent=reply;msgs.push({role:'assistant',content:reply});}catch(e){bubble.classList.remove('typing');bubble.textContent='Connection error. Try again.';}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
+async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});try{const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();const reply=data.content?.[0]?.text||'Something went wrong. Try again.';bubble.classList.remove('typing');bubble.textContent=reply;msgs.push({role:'assistant',content:reply});}catch(e){bubble.classList.remove('typing');bubble.textContent='Connection error. Try again.';}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
 </script>
 </body>
 </html>
