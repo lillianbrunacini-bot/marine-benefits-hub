@@ -308,16 +308,17 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         </select>
       </div>
     </div>
-    <div id="dep-count-wrap" style="display:none;padding:0;">
-      <div class="ob-lbl">Number of dependents</div>
+    <div id="dep-count-wrap" style="display:none;">
+      <div class="ob-lbl">How many dependents?</div>
       <select class="ob-sel" id="ob-depcount">
-        <option value="1">1 dependent</option>
-        <option value="2">2 dependents</option>
-        <option value="3">3 dependents</option>
-        <option value="4">4 dependents</option>
-        <option value="5">5 dependents</option>
-        <option value="6">6+ dependents</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6+</option>
       </select>
+      <p style="font-size:11px;color:var(--ink3);margin-top:6px;">Includes spouse, children, and anyone else claimed for BAH.</p>
     </div>
     <div><div class="ob-lbl">Duty station</div>
       <select class="ob-sel" id="ob-station">
@@ -399,8 +400,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
     <div class="tab" onclick="tab('edu',this)">Education</div>
     <div class="tab" onclick="tab('housing',this)">Housing</div>
     <div class="tab" onclick="tab('spouse',this)">Spouse &amp; Family</div>
-    <div class="tab" onclick="tab('va',this)">VA</div><div class="tab" onclick="tab('deals',this)">Deals &amp; Discounts</div><div class="tab" onclick="tab('dictionary',this)">Spouse Dictionary <span class="tab-dot"></span></div><div class="tab" onclick="tab('facilities',this)">Base Facilities</div><div class="tab" onclick="tab('contacts',this)">Who To Call</div><div class="tab" onclick="tab('facilities',this)">Base Facilities</div><div class="tab" onclick="tab('contacts',this)">Who To Call</div>
-  </div>
+    <div class="tab" onclick="tab('va',this)">VA</div><div class="tab" onclick="tab('deals',this)">Deals &amp; Discounts</div><div class="tab" onclick="tab('dictionary',this)">Spouse Dictionary <span class="tab-dot"></span></div><div class="tab" onclick="tab('facilities',this)">Base Facilities</div><div class="tab" onclick="tab('contacts',this)">Who To Call</div></div>
 
   <div class="body">
 
@@ -1497,9 +1497,9 @@ function addMsg(text,role){const c=document.getElementById('ask-msgs'),div=docum
 
 
 function toggleDepCount(val){
-  const wrap = document.getElementById('dep-count-wrap');
+  var wrap = document.getElementById('dep-count-wrap');
   if(!wrap) return;
-  wrap.setAttribute('style', val === 'dep' ? 'display:block;padding:0;' : 'display:none;padding:0;');
+  wrap.style.display = (val === 'dep') ? 'block' : 'none';
 }
 
 
