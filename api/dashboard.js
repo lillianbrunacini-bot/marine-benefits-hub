@@ -16,7 +16,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const WEEK_MS = 7 * DAY_MS;
 
 module.exports = async function handler(req, res) {
-  if (req.query.pw !== "semper") {
+  if (req.query.pw !== "oorah") {
     return res.status(401).send(`<!DOCTYPE html><html><body style="font-family:sans-serif;padding:40px;color:#333">
       <h2 style="color:${GREEN}">Semper Sorted Analytics</h2>
       <p>Enter the dashboard password to continue.</p>
