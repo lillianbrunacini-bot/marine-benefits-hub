@@ -172,6 +172,21 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .rank-grade{font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px;}
 .rank-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px;line-height:1.3;}
 .rank-aka{font-size:11px;color:var(--ink3);line-height:1.4;}
+.rank-role{font-size:11px;color:var(--ink2);line-height:1.4;margin-top:2px;}
+.rank-group-label{font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin:16px 0 8px;}
+.org-tree{display:flex;flex-direction:column;align-items:center;}
+.org-node{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:11px 24px;text-align:center;min-width:220px;box-shadow:var(--shadow);}
+.org-node-name{font-size:13px;font-weight:700;color:var(--ink);}
+.org-node-size{font-size:11px;color:var(--ink2);margin:2px 0;}
+.org-node-leader{font-size:11px;font-weight:600;color:var(--coral);}
+.org-connector{width:2px;height:16px;background:var(--coral);margin:0 auto;}
+.acro-search{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;background:var(--off);margin-bottom:12px;transition:border-color .15s;box-sizing:border-box;}
+.acro-search:focus{border-color:var(--coral);}
+.acro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px;}
+.acro-pill{background:var(--coral-light);border:1px solid var(--coral-mid);border-radius:10px;padding:10px 14px;}
+.acro-pill.hidden{display:none;}
+.acro-term{font-size:12px;font-weight:700;color:var(--coral);margin-bottom:3px;}
+.acro-def{font-size:12px;color:var(--ink2);line-height:1.4;}
 .acro-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
 .acro-item:last-child{border-bottom:none;}
 .acro-abbr{font-size:13px;font-weight:700;color:var(--coral);min-width:70px;flex-shrink:0;font-family:'Instrument Serif',serif;}
@@ -733,33 +748,70 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         <div class="row"><span class="rl">Military OneSource</span><span class="rv">Free counseling, financial coaching, and referrals — 1-800-342-9647</span></div>
       </div></div>
 
-      <div class="sh">Rank &amp; unit guide</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">Pvt – LCpl (E-1 to E-3)</span><span class="rv">Junior enlisted. New Marines figuring it out.</span></div>
-        <div class="row"><span class="rl">Cpl – Sgt (E-4 to E-5)</span><span class="rv">NCOs. First real leadership roles. Your Marine is getting serious.</span></div>
-        <div class="row"><span class="rl">SSgt – SgtMaj (E-6 to E-9)</span><span class="rv">Senior NCOs and Staff. Experience level goes up, so does responsibility.</span></div>
-        <div class="row"><span class="rl">2ndLt – Capt (O-1 to O-3)</span><span class="rv">Junior officers. Lead platoons and companies.</span></div>
-        <div class="row"><span class="rl">Maj and above (O-4+)</span><span class="rv">Field grade officers. Staff roles, battalion command and above.</span></div>
-        <div class="row"><span class="rl">CO</span><span class="rv">Commanding Officer — the boss of the unit. Has a lot of authority over your Marine's daily life.</span></div>
-        <div class="row"><span class="rl">1stSgt / SgtMaj</span><span class="rv">Senior enlisted leader of a company or battalion. Handles Marines' welfare directly.</span></div>
-        <div class="row"><span class="rl">FRO</span><span class="rv">Family Readiness Officer — your first call during deployment or emergencies. Get their number now.</span></div>
-      </div></div>
+      <div class="sh">Unit structure</div>
+      <div class="org-tree">
+        <div class="org-node"><div class="org-node-name">Regiment</div><div class="org-node-size">3,000 – 5,000 Marines</div><div class="org-node-leader">Led by a Colonel</div></div>
+        <div class="org-connector"></div>
+        <div class="org-node"><div class="org-node-name">Battalion</div><div class="org-node-size">800 – 1,200 Marines</div><div class="org-node-leader">Led by a Lt Colonel</div></div>
+        <div class="org-connector"></div>
+        <div class="org-node"><div class="org-node-name">Company</div><div class="org-node-size">180 – 200 Marines</div><div class="org-node-leader">Led by a Captain</div></div>
+        <div class="org-connector"></div>
+        <div class="org-node"><div class="org-node-name">Platoon</div><div class="org-node-size">40 – 50 Marines</div><div class="org-node-leader">Led by a Lieutenant</div></div>
+        <div class="org-connector"></div>
+        <div class="org-node"><div class="org-node-name">Squad</div><div class="org-node-size">13 Marines</div><div class="org-node-leader">Led by a Staff Sergeant</div></div>
+        <div class="org-connector"></div>
+        <div class="org-node"><div class="org-node-name">Fire Team</div><div class="org-node-size">4 Marines</div><div class="org-node-leader">Led by a Corporal</div></div>
+      </div>
 
-      <div class="sh">Key acronyms</div>
-      <div class="card"><div class="rows">
-        <div class="row"><span class="rl">BAH</span><span class="rv">Basic Allowance for Housing — monthly tax-free housing payment</span></div>
-        <div class="row"><span class="rl">BAS</span><span class="rv">Basic Allowance for Subsistence — monthly food allowance</span></div>
-        <div class="row"><span class="rl">PCS</span><span class="rv">Permanent Change of Station — moving to a new base</span></div>
-        <div class="row"><span class="rl">TAD / TDY</span><span class="rv">Temporary duty away from home base — not a full PCS, they come back</span></div>
-        <div class="row"><span class="rl">LES</span><span class="rv">Leave and Earnings Statement — your Marine's monthly pay stub</span></div>
-        <div class="row"><span class="rl">DEERS</span><span class="rv">Defense enrollment database — must be enrolled to use any benefits</span></div>
-        <div class="row"><span class="rl">UA</span><span class="rv">Unauthorized Absence — serious offense, affects pay and career</span></div>
-        <div class="row"><span class="rl">MOL</span><span class="rv">Marine OnLine — internal admin portal for leave, TA, records</span></div>
-        <div class="row"><span class="rl">SCRA</span><span class="rv">Servicemembers Civil Relief Act — caps pre-service debt at 6% APR</span></div>
-        <div class="row"><span class="rl">MTF</span><span class="rv">Military Treatment Facility — the hospital or clinic on base</span></div>
-        <div class="row"><span class="rl">MOS</span><span class="rv">Military Occupational Specialty — your Marine's job code</span></div>
-        <div class="row"><span class="rl">FRG</span><span class="rv">Family Readiness Group — spouse and family community for your unit</span></div>
-      </div></div>
+      <div class="sh" style="margin-top:24px;">Ranks</div>
+      <div class="rank-group-label">Enlisted</div>
+      <div class="rank-grid">
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-1</div><div class="rank-info"><div class="rank-grade">E-1</div><div class="rank-title">Private</div><div class="rank-role">Brand new Marine, starting from scratch</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-2</div><div class="rank-info"><div class="rank-grade">E-2</div><div class="rank-title">Private First Class</div><div class="rank-role">Settling in, building the basics</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-3</div><div class="rank-info"><div class="rank-grade">E-3</div><div class="rank-title">Lance Corporal</div><div class="rank-role">First promotion, still learning the ropes</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-4</div><div class="rank-info"><div class="rank-grade">E-4</div><div class="rank-title">Corporal</div><div class="rank-role">First NCO rank — leads a fire team of 4</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-5</div><div class="rank-info"><div class="rank-grade">E-5</div><div class="rank-title">Sergeant</div><div class="rank-role">Leads a squad, backbone of the Corps</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-6</div><div class="rank-info"><div class="rank-grade">E-6</div><div class="rank-title">Staff Sergeant</div><div class="rank-role">Senior NCO, squad leader and mentor</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-7</div><div class="rank-info"><div class="rank-grade">E-7</div><div class="rank-title">Gunnery Sergeant</div><div class="rank-role">Technical expert, shapes junior Marines</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-8</div><div class="rank-info"><div class="rank-grade">E-8</div><div class="rank-title">Master Sgt / First Sgt</div><div class="rank-role">Senior company advisor or master of craft</div></div></div>
+        <div class="rank-card" style="grid-column:1/-1;"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-9</div><div class="rank-info"><div class="rank-grade">E-9</div><div class="rank-title">SgtMaj / Master GySgt</div><div class="rank-role">Highest enlisted — sets the culture of the Corps</div></div></div>
+      </div>
+      <div class="rank-group-label">Warrant Officers</div>
+      <div class="rank-grid">
+        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-1</div><div class="rank-info"><div class="rank-grade">W-1</div><div class="rank-title">Warrant Officer 1</div><div class="rank-role">Technical specialist, newly commissioned</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-2</div><div class="rank-info"><div class="rank-grade">W-2</div><div class="rank-title">Chief Warrant Officer 2</div><div class="rank-role">Growing expertise in their specialty</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-3</div><div class="rank-info"><div class="rank-grade">W-3</div><div class="rank-title">Chief Warrant Officer 3</div><div class="rank-role">Recognized subject matter expert</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-4</div><div class="rank-info"><div class="rank-grade">W-4</div><div class="rank-title">Chief Warrant Officer 4</div><div class="rank-role">Senior technical authority</div></div></div>
+        <div class="rank-card" style="grid-column:1/-1;"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-5</div><div class="rank-info"><div class="rank-grade">W-5</div><div class="rank-title">Chief Warrant Officer 5</div><div class="rank-role">Pinnacle of technical mastery</div></div></div>
+      </div>
+      <div class="rank-group-label">Officers</div>
+      <div class="rank-grid">
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-1</div><div class="rank-info"><div class="rank-grade">O-1</div><div class="rank-title">2nd Lieutenant</div><div class="rank-role">Newest officer — leads a platoon</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-2</div><div class="rank-info"><div class="rank-grade">O-2</div><div class="rank-title">1st Lieutenant</div><div class="rank-role">Building experience, platoon leader</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-3</div><div class="rank-info"><div class="rank-grade">O-3</div><div class="rank-title">Captain</div><div class="rank-role">Commands a company of ~180</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-4</div><div class="rank-info"><div class="rank-grade">O-4</div><div class="rank-title">Major</div><div class="rank-role">Staff officer, battalion advisor</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-5</div><div class="rank-info"><div class="rank-grade">O-5</div><div class="rank-title">Lt Colonel</div><div class="rank-role">Commands a battalion of 800–1,200</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-6</div><div class="rank-info"><div class="rank-grade">O-6</div><div class="rank-title">Colonel</div><div class="rank-role">Commands a regiment of 3,000–5,000</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-7</div><div class="rank-info"><div class="rank-grade">O-7</div><div class="rank-title">Brigadier General</div><div class="rank-role">One-star general, senior leadership</div></div></div>
+        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-8</div><div class="rank-info"><div class="rank-grade">O-8</div><div class="rank-title">Major General</div><div class="rank-role">Two-star, commands a division</div></div></div>
+      </div>
+
+      <div class="sh" style="margin-top:24px;">Acronym glossary</div>
+      <input class="acro-search" type="text" placeholder="Search acronyms — try BAH, MOS, PCS..." oninput="filterAcro(this.value)"/>
+      <div class="acro-grid" id="acro-grid">
+        <div class="acro-pill"><div class="acro-term">BAH</div><div class="acro-def">Basic Allowance for Housing — monthly tax-free housing payment</div></div>
+        <div class="acro-pill"><div class="acro-term">BAS</div><div class="acro-def">Basic Allowance for Subsistence — monthly food allowance</div></div>
+        <div class="acro-pill"><div class="acro-term">PCS</div><div class="acro-def">Permanent Change of Station — moving to a new base</div></div>
+        <div class="acro-pill"><div class="acro-term">TAD / TDY</div><div class="acro-def">Temporary duty away from home base — not a full PCS, they come back</div></div>
+        <div class="acro-pill"><div class="acro-term">LES</div><div class="acro-def">Leave and Earnings Statement — your Marine's monthly pay stub</div></div>
+        <div class="acro-pill"><div class="acro-term">DEERS</div><div class="acro-def">Defense enrollment database — must be enrolled to use any benefits</div></div>
+        <div class="acro-pill"><div class="acro-term">UA</div><div class="acro-def">Unauthorized Absence — serious offense, affects pay and career</div></div>
+        <div class="acro-pill"><div class="acro-term">MOL</div><div class="acro-def">Marine OnLine — internal admin portal for leave, TA, records</div></div>
+        <div class="acro-pill"><div class="acro-term">SCRA</div><div class="acro-def">Servicemembers Civil Relief Act — caps pre-service debt at 6% APR</div></div>
+        <div class="acro-pill"><div class="acro-term">MTF</div><div class="acro-def">Military Treatment Facility — the hospital or clinic on base</div></div>
+        <div class="acro-pill"><div class="acro-term">MOS</div><div class="acro-def">Military Occupational Specialty — your Marine's job code</div></div>
+        <div class="acro-pill"><div class="acro-term">FRG</div><div class="acro-def">Family Readiness Group — spouse and family community for your unit</div></div>
+      </div>
 
       <div class="sh">Community &amp; support</div>
       <div class="card"><div class="rows">
@@ -1199,6 +1251,7 @@ function tab(name,el){
 }
 
 function buildSys(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted;return 'You are a friendly, knowledgeable USMC benefits assistant built into the Semper Sorted app. Be warm, direct, and plain-English. Keep answers under 200 words. Avoid jargon — if you must use a military term, explain it in plain English immediately after.\n\nFormatting rules:\n- Use **bold** for key numbers, dollar amounts, and important terms\n- Use bullet points (- ) when listing 3 or more items\n- Use short paragraphs — never one giant wall of text\n- Lead with the direct answer, then explain\n- End with one actionable next step when relevant\n\nMarine profile: Grade: '+grade+', Years of service: '+yos+', Station: '+station+', Housing: '+housing+', Dependents: '+(P.depcount||0)+', Base pay: $'+bp+'/mo, BAH: '+(bah?'$'+bah:bah===0?'waived (barracks)':'unknown for this station')+', BAS: $'+Math.round(bas)+'/mo.\n\nYou can answer questions about: USMC pay, BAH, BAS, TRICARE, GI Bill, Tuition Assistance, VA disability, PCS entitlements, special pays, SCRA, military spouse benefits, discounts, DEERS, base resources, and general military life questions. Always use 2026 rates. Never make up numbers — if unsure, say so and direct them to the official source.';}
+function filterAcro(q){const s=q.toLowerCase().trim();document.querySelectorAll('#acro-grid .acro-pill').forEach(function(p){const t=p.querySelector('.acro-term').textContent.toLowerCase(),d=p.querySelector('.acro-def').textContent.toLowerCase();p.classList.toggle('hidden',!!(s&&!t.includes(s)&&!d.includes(s)));});}
 function updateCharCount(){const inp=document.getElementById('ask-input'),el=document.getElementById('ask-char-count'),len=inp.value.length;el.textContent=len+'/500';el.classList.toggle('warn',len>=400);}
 async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text||!P.grade)return;if(text.length>500){addMsg('Your message is too long (max 500 characters). Please shorten it and try again.','ai');return;}inp.value='';updateCharCount();addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
 function sendSuggest(el){document.getElementById('ask-input').value=el.textContent;sendMsg();}
