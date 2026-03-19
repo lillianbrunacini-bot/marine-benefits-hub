@@ -180,8 +180,10 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .org-node-size{font-size:11px;color:var(--ink2);margin:2px 0;}
 .org-node-leader{font-size:11px;font-weight:600;color:var(--coral);}
 .org-connector{width:2px;height:16px;background:var(--coral);margin:0 auto;}
-.acro-search{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;background:var(--off);margin-bottom:12px;transition:border-color .15s;box-sizing:border-box;}
-.acro-search:focus{border-color:var(--coral);}
+.acro-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.acro-btn{padding:4px 9px;font-size:11px;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;border:1.5px solid var(--border);border-radius:6px;background:var(--white);color:var(--ink2);cursor:pointer;transition:all .15s;line-height:1.6;}
+.acro-btn:hover{border-color:var(--coral);color:var(--coral);}
+.acro-btn.active{background:#5a7a3a;border-color:#5a7a3a;color:white;}
 .acro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px;}
 .acro-pill{background:var(--coral-light);border:1px solid var(--coral-mid);border-radius:10px;padding:10px 14px;}
 .acro-pill.hidden{display:none;}
@@ -824,20 +826,66 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
       </div>
 
       <div class="sh" style="margin-top:24px;">Acronym glossary</div>
-      <input class="acro-search" type="text" placeholder="Search acronyms — try BAH, MOS, PCS..." oninput="filterAcro(this.value)"/>
+      <div class="acro-filter">
+        <button class="acro-btn active" onclick="filterAcro('ALL',this)">All</button>
+        <button class="acro-btn" onclick="filterAcro('A',this)">A</button>
+        <button class="acro-btn" onclick="filterAcro('B',this)">B</button>
+        <button class="acro-btn" onclick="filterAcro('C',this)">C</button>
+        <button class="acro-btn" onclick="filterAcro('D',this)">D</button>
+        <button class="acro-btn" onclick="filterAcro('E',this)">E</button>
+        <button class="acro-btn" onclick="filterAcro('F',this)">F</button>
+        <button class="acro-btn" onclick="filterAcro('G',this)">G</button>
+        <button class="acro-btn" onclick="filterAcro('I',this)">I</button>
+        <button class="acro-btn" onclick="filterAcro('J',this)">J</button>
+        <button class="acro-btn" onclick="filterAcro('L',this)">L</button>
+        <button class="acro-btn" onclick="filterAcro('M',this)">M</button>
+        <button class="acro-btn" onclick="filterAcro('N',this)">N</button>
+        <button class="acro-btn" onclick="filterAcro('O',this)">O</button>
+        <button class="acro-btn" onclick="filterAcro('P',this)">P</button>
+        <button class="acro-btn" onclick="filterAcro('S',this)">S</button>
+        <button class="acro-btn" onclick="filterAcro('T',this)">T</button>
+        <button class="acro-btn" onclick="filterAcro('U',this)">U</button>
+        <button class="acro-btn" onclick="filterAcro('V',this)">V</button>
+        <button class="acro-btn" onclick="filterAcro('X',this)">X</button>
+      </div>
       <div class="acro-grid" id="acro-grid">
-        <div class="acro-pill"><div class="acro-term">BAH</div><div class="acro-def">Basic Allowance for Housing — monthly tax-free housing payment</div></div>
-        <div class="acro-pill"><div class="acro-term">BAS</div><div class="acro-def">Basic Allowance for Subsistence — monthly food allowance</div></div>
-        <div class="acro-pill"><div class="acro-term">PCS</div><div class="acro-def">Permanent Change of Station — moving to a new base</div></div>
-        <div class="acro-pill"><div class="acro-term">TAD / TDY</div><div class="acro-def">Temporary duty away from home base — not a full PCS, they come back</div></div>
-        <div class="acro-pill"><div class="acro-term">LES</div><div class="acro-def">Leave and Earnings Statement — your Marine's monthly pay stub</div></div>
-        <div class="acro-pill"><div class="acro-term">DEERS</div><div class="acro-def">Defense enrollment database — must be enrolled to use any benefits</div></div>
-        <div class="acro-pill"><div class="acro-term">UA</div><div class="acro-def">Unauthorized Absence — serious offense, affects pay and career</div></div>
-        <div class="acro-pill"><div class="acro-term">MOL</div><div class="acro-def">Marine OnLine — internal admin portal for leave, TA, records</div></div>
-        <div class="acro-pill"><div class="acro-term">SCRA</div><div class="acro-def">Servicemembers Civil Relief Act — caps pre-service debt at 6% APR</div></div>
-        <div class="acro-pill"><div class="acro-term">MTF</div><div class="acro-def">Military Treatment Facility — the hospital or clinic on base</div></div>
-        <div class="acro-pill"><div class="acro-term">MOS</div><div class="acro-def">Military Occupational Specialty — your Marine's job code</div></div>
-        <div class="acro-pill"><div class="acro-term">FRG</div><div class="acro-def">Family Readiness Group — spouse and family community for your unit</div></div>
+        <div class="acro-pill" data-letter="A"><div class="acro-term">ASVAB</div><div class="acro-def">Armed Services Vocational Aptitude Battery — the entry test used for enlistment and MOS assignment</div></div>
+        <div class="acro-pill" data-letter="B"><div class="acro-term">BAH</div><div class="acro-def">Basic Allowance for Housing — monthly tax-free housing payment</div></div>
+        <div class="acro-pill" data-letter="B"><div class="acro-term">BAS</div><div class="acro-def">Basic Allowance for Subsistence — monthly food allowance</div></div>
+        <div class="acro-pill" data-letter="B"><div class="acro-term">BCT</div><div class="acro-def">Basic Combat Training — entry-level training; USMC equivalent is Recruit Training (boot camp)</div></div>
+        <div class="acro-pill" data-letter="C"><div class="acro-term">CAC</div><div class="acro-def">Common Access Card — your military ID and digital credential card</div></div>
+        <div class="acro-pill" data-letter="C"><div class="acro-term">CO</div><div class="acro-def">Commanding Officer — the boss of the unit, with major authority over your Marine's daily life</div></div>
+        <div class="acro-pill" data-letter="C"><div class="acro-term">COLA</div><div class="acro-def">Cost of Living Allowance — extra pay for high-cost areas, especially overseas assignments</div></div>
+        <div class="acro-pill" data-letter="C"><div class="acro-term">CONUS</div><div class="acro-def">Continental United States — the 48 contiguous states, excluding Alaska, Hawaii, and overseas</div></div>
+        <div class="acro-pill" data-letter="D"><div class="acro-term">DD214</div><div class="acro-def">Certificate of Release or Discharge — the document proving military service; guard it carefully</div></div>
+        <div class="acro-pill" data-letter="D"><div class="acro-term">DEERS</div><div class="acro-def">Defense Enrollment Eligibility Reporting System — must be enrolled to use any military benefits</div></div>
+        <div class="acro-pill" data-letter="E"><div class="acro-term">EAS</div><div class="acro-def">End of Active Service — the date your Marine's enlistment contract expires</div></div>
+        <div class="acro-pill" data-letter="E"><div class="acro-term">EGA</div><div class="acro-def">Eagle, Globe, and Anchor — the official emblem of the United States Marine Corps</div></div>
+        <div class="acro-pill" data-letter="F"><div class="acro-term">FRG</div><div class="acro-def">Family Readiness Group — spouse and family community for your unit</div></div>
+        <div class="acro-pill" data-letter="G"><div class="acro-term">GTC</div><div class="acro-def">Government Travel Card — the card used for official travel expenses; must be paid promptly</div></div>
+        <div class="acro-pill" data-letter="I"><div class="acro-term">IOC</div><div class="acro-def">Infantry Officer Course — advanced training required for Marine infantry officers</div></div>
+        <div class="acro-pill" data-letter="J"><div class="acro-term">JAG</div><div class="acro-def">Judge Advocate General — military lawyers who provide free legal assistance on base</div></div>
+        <div class="acro-pill" data-letter="L"><div class="acro-term">LES</div><div class="acro-def">Leave and Earnings Statement — your Marine's monthly pay stub, available on myPay</div></div>
+        <div class="acro-pill" data-letter="M"><div class="acro-term">MCX</div><div class="acro-def">Marine Corps Exchange — the on-base retail store, tax-free with negotiated pricing</div></div>
+        <div class="acro-pill" data-letter="M"><div class="acro-term">MCRD</div><div class="acro-def">Marine Corps Recruit Depot — where enlisted Marines go for boot camp (San Diego or Parris Island)</div></div>
+        <div class="acro-pill" data-letter="M"><div class="acro-term">MOL</div><div class="acro-def">Marine OnLine — internal admin portal for leave requests, Tuition Assistance, and records</div></div>
+        <div class="acro-pill" data-letter="M"><div class="acro-term">MOS</div><div class="acro-def">Military Occupational Specialty — your Marine's job code and career field</div></div>
+        <div class="acro-pill" data-letter="M"><div class="acro-term">MTF</div><div class="acro-def">Military Treatment Facility — the hospital or clinic on base for TRICARE Prime enrollees</div></div>
+        <div class="acro-pill" data-letter="N"><div class="acro-term">NCO</div><div class="acro-def">Non-Commissioned Officer — enlisted leaders from Corporal (E-4) through Sergeant Major (E-9)</div></div>
+        <div class="acro-pill" data-letter="O"><div class="acro-term">OCONUS</div><div class="acro-def">Outside the Continental United States — Hawaii, Alaska, and all overseas assignments</div></div>
+        <div class="acro-pill" data-letter="O"><div class="acro-term">OCS</div><div class="acro-def">Officer Candidates School — the path to becoming a commissioned Marine officer</div></div>
+        <div class="acro-pill" data-letter="P"><div class="acro-term">PCS</div><div class="acro-def">Permanent Change of Station — an official move to a new duty station</div></div>
+        <div class="acro-pill" data-letter="P"><div class="acro-term">POA</div><div class="acro-def">Power of Attorney — legal authority for a spouse to act on a Marine's behalf during deployment</div></div>
+        <div class="acro-pill" data-letter="P"><div class="acro-term">POV</div><div class="acro-def">Privately Owned Vehicle — your personal car; one may be shipped at government expense during PCS</div></div>
+        <div class="acro-pill" data-letter="P"><div class="acro-term">PTAD</div><div class="acro-def">Permissive Temporary Additional Duty — authorized absence without pay, used for house-hunting trips</div></div>
+        <div class="acro-pill" data-letter="S"><div class="acro-term">SCRA</div><div class="acro-def">Servicemembers Civil Relief Act — caps pre-service debt interest at 6% APR; call your lenders now</div></div>
+        <div class="acro-pill" data-letter="S"><div class="acro-term">SRB</div><div class="acro-def">Selective Reenlistment Bonus — cash bonus for reenlisting in a high-demand MOS</div></div>
+        <div class="acro-pill" data-letter="T"><div class="acro-term">TAD / TDY</div><div class="acro-def">Temporary Additional Duty — a short assignment away from home base; not a permanent PCS move</div></div>
+        <div class="acro-pill" data-letter="T"><div class="acro-term">TRICARE</div><div class="acro-def">Military health insurance program covering active duty, retirees, and their families</div></div>
+        <div class="acro-pill" data-letter="U"><div class="acro-term">UA</div><div class="acro-def">Unauthorized Absence — serious disciplinary offense that affects pay, rank, and career</div></div>
+        <div class="acro-pill" data-letter="V"><div class="acro-term">VA</div><div class="acro-def">Department of Veterans Affairs — manages veteran benefits, healthcare, disability, and education</div></div>
+        <div class="acro-pill" data-letter="V"><div class="acro-term">VGLI</div><div class="acro-def">Veterans' Group Life Insurance — life insurance coverage you can keep after leaving active service</div></div>
+        <div class="acro-pill" data-letter="X"><div class="acro-term">XO</div><div class="acro-def">Executive Officer — second-in-command of a unit, directly below the CO</div></div>
       </div>
     </div>
 
@@ -1259,7 +1307,7 @@ function tab(name,el){
 }
 
 function buildSys(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted;return 'You are a friendly, knowledgeable USMC benefits assistant built into the Semper Sorted app. Be warm, direct, and plain-English. Keep answers under 200 words. Avoid jargon — if you must use a military term, explain it in plain English immediately after.\n\nFormatting rules:\n- Use **bold** for key numbers, dollar amounts, and important terms\n- Use bullet points (- ) when listing 3 or more items\n- Use short paragraphs — never one giant wall of text\n- Lead with the direct answer, then explain\n- End with one actionable next step when relevant\n\nMarine profile: Grade: '+grade+', Years of service: '+yos+', Station: '+station+', Housing: '+housing+', Dependents: '+(P.depcount||0)+', Base pay: $'+bp+'/mo, BAH: '+(bah?'$'+bah:bah===0?'waived (barracks)':'unknown for this station')+', BAS: $'+Math.round(bas)+'/mo.\n\nYou can answer questions about: USMC pay, BAH, BAS, TRICARE, GI Bill, Tuition Assistance, VA disability, PCS entitlements, special pays, SCRA, military spouse benefits, discounts, DEERS, base resources, and general military life questions. Always use 2026 rates. Never make up numbers — if unsure, say so and direct them to the official source.';}
-function filterAcro(q){const s=q.toLowerCase().trim();document.querySelectorAll('#acro-grid .acro-pill').forEach(function(p){const t=p.querySelector('.acro-term').textContent.toLowerCase(),d=p.querySelector('.acro-def').textContent.toLowerCase();p.classList.toggle('hidden',!!(s&&!t.includes(s)&&!d.includes(s)));});}
+function filterAcro(letter,btn){document.querySelectorAll('.acro-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');document.querySelectorAll('#acro-grid .acro-pill').forEach(function(p){p.classList.toggle('hidden',letter!=='ALL'&&p.dataset.letter!==letter);});}
 function updateCharCount(){const inp=document.getElementById('ask-input'),el=document.getElementById('ask-char-count'),len=inp.value.length;el.textContent=len+'/500';el.classList.toggle('warn',len>=400);}
 async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text||!P.grade)return;if(text.length>500){addMsg('Your message is too long (max 500 characters). Please shorten it and try again.','ai');return;}inp.value='';updateCharCount();addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
 function sendSuggest(el){document.getElementById('ask-input').value=el.textContent;sendMsg();}
