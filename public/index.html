@@ -294,11 +294,35 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .content{flex:1;overflow-y:auto;height:100vh;display:flex;flex-direction:column;min-width:0;}
 .main-inner{flex:1;padding:32px 48px 60px;width:100%;}
 .hero-row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;}
+/* Mobile header — hidden on desktop */
+#mob-header{display:none;}
+#sb-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:199;}
+#sb-backdrop.visible{display:block;}
+.mob-hamburger{background:none;border:none;color:white;font-size:22px;cursor:pointer;padding:0 4px;min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center;line-height:1;}
+.mob-brand{font-family:'Courier New',Courier,monospace;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:white;}
+.mob-brand em{color:rgba(255,255,255,.75);font-style:italic;}
+.mob-profile-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:8px;color:white;font-size:12px;font-weight:600;padding:0 14px;cursor:pointer;min-height:36px;white-space:nowrap;}
+
 @media(max-width:768px){
-  .sidebar{display:none;}
-  .main-inner{padding:20px 16px 40px;}
-  .hero{margin:-20px -16px 24px;padding:24px 20px;}
+  #mob-header{display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;height:56px;background:var(--coral);padding:0 16px;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+  .sidebar{position:fixed;top:0;left:0;height:100vh;z-index:210;transform:translateX(-100%);transition:transform .25s ease;box-shadow:4px 0 20px rgba(0,0,0,.15);}
+  .sidebar.open{transform:translateX(0);}
+  .content{padding-top:56px;}
+  .main-inner{padding:16px 16px 40px;}
+  .hero{margin:-16px -16px 20px;padding:20px 16px;}
+  .hero-brand-name{font-size:22px;}
+  .hero-brand-sub{font-size:12px;}
   .pb-amt{font-size:22px;}
+  .pb-block{text-align:left;}
+  .qg{grid-template-columns:repeat(2,1fr);}
+  .plan-grid,.disc-grid,.rank-grid,.fac-grid{grid-template-columns:1fr;}
+  .acro-grid{grid-template-columns:1fr 1fr;}
+  .pm-grid{grid-template-columns:1fr;}
+  .sb-item{min-height:44px;}
+  .acro-btn,.cbtn{min-height:44px;}
+  .sh{font-size:12px;}
+  .ask-wrap{border-radius:8px;}
+  .org-node{min-width:160px;padding:10px 16px;}
 }
 
 .pb-lbl{font-size:10px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}
@@ -419,6 +443,13 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 </div>
 
 <!-- MAIN APP -->
+<div id="mob-header">
+  <button class="mob-hamburger" onclick="toggleSidebar()" aria-label="Open menu">&#9776;</button>
+  <span class="mob-brand">Semper <em>Sorted</em></span>
+  <button class="mob-profile-btn" onclick="openProfileModal()">Profile</button>
+</div>
+<div id="sb-backdrop" onclick="toggleSidebar()"></div>
+
 <div class="main" id="main">
   <!-- SIDEBAR -->
   <div class="sidebar">
@@ -1293,6 +1324,7 @@ function saveProfile(){
   if(typeof renderNews==='function')renderNews();
   closeProfileModal();
 }
+function toggleSidebar(){var sb=document.querySelector('.sidebar'),bd=document.getElementById('sb-backdrop');sb.classList.toggle('open');bd.classList.toggle('visible');}
 function tab(name,el){
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('on');});
   document.querySelectorAll('.sb-item').forEach(function(t){t.classList.remove('on');});
@@ -1304,6 +1336,7 @@ function tab(name,el){
   if(name==='facilities')initFacilities();
   if(name==='news')renderNews();
   track('tab_click',{tab:name});
+  if(window.innerWidth<=768){var sb=document.querySelector('.sidebar');if(sb.classList.contains('open'))toggleSidebar();}
 }
 
 function buildSys(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted;return 'You are a friendly, knowledgeable USMC benefits assistant built into the Semper Sorted app. Be warm, direct, and plain-English. Keep answers under 200 words. Avoid jargon — if you must use a military term, explain it in plain English immediately after.\n\nFormatting rules:\n- Use **bold** for key numbers, dollar amounts, and important terms\n- Use bullet points (- ) when listing 3 or more items\n- Use short paragraphs — never one giant wall of text\n- Lead with the direct answer, then explain\n- End with one actionable next step when relevant\n\nMarine profile: Grade: '+grade+', Years of service: '+yos+', Station: '+station+', Housing: '+housing+', Dependents: '+(P.depcount||0)+', Base pay: $'+bp+'/mo, BAH: '+(bah?'$'+bah:bah===0?'waived (barracks)':'unknown for this station')+', BAS: $'+Math.round(bas)+'/mo.\n\nYou can answer questions about: USMC pay, BAH, BAS, TRICARE, GI Bill, Tuition Assistance, VA disability, PCS entitlements, special pays, SCRA, military spouse benefits, discounts, DEERS, base resources, and general military life questions. Always use 2026 rates. Never make up numbers — if unsure, say so and direct them to the official source.';}
