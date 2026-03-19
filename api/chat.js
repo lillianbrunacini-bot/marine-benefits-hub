@@ -1,6 +1,16 @@
-const rateLimitStore = {};
+const { createClient } = require("redis");
 const LIMIT = 50;
-const DAY_MS = 24 * 60 * 60 * 1000;
+const DAY_S = 24 * 60 * 60;
+
+let redisClient;
+async function getRedis() {
+  if (!redisClient) {
+    redisClient = createClient({ url: process.env.REDIS_URL });
+    redisClient.on("error", (err) => console.error("Redis error:", err));
+    await redisClient.connect();
+  }
+  return redisClient;
+}
 
 module.exports = async function handler(req, res) {
   // Only allow POST
@@ -8,18 +18,19 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  // Rate limiting: 50 requests per IP per day
+  // Rate limiting: 50 requests per IP per day (persistent via Redis)
   const ip = req.headers["x-forwarded-for"]?.split(",")[0] || req.socket?.remoteAddress || "unknown";
-  const now = Date.now();
-  const record = rateLimitStore[ip];
-
-  if (record && now < record.resetAt) {
-    if (record.count >= LIMIT) {
+  const key = `rate:${ip}`;
+  try {
+    const redis = await getRedis();
+    const count = await redis.incr(key);
+    if (count === 1) await redis.expire(key, DAY_S);
+    if (count > LIMIT) {
       return res.status(429).json({ error: "You've reached the daily limit for AI questions. Check back tomorrow!" });
     }
-    record.count++;
-  } else {
-    rateLimitStore[ip] = { count: 1, resetAt: now + DAY_MS };
+  } catch (redisErr) {
+    console.error("Redis rate limit error:", redisErr);
+    // Fail open — allow the request if Redis is unavailable
   }
 
   const { messages, system } = req.body;
