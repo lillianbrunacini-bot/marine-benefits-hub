@@ -1,7 +1,25 @@
+const rateLimitStore = {};
+const LIMIT = 50;
+const DAY_MS = 24 * 60 * 60 * 1000;
+
 module.exports = async function handler(req, res) {
   // Only allow POST
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  // Rate limiting: 50 requests per IP per day
+  const ip = req.headers["x-forwarded-for"]?.split(",")[0] || req.socket?.remoteAddress || "unknown";
+  const now = Date.now();
+  const record = rateLimitStore[ip];
+
+  if (record && now < record.resetAt) {
+    if (record.count >= LIMIT) {
+      return res.status(429).json({ error: "You've reached the daily limit for AI questions. Check back tomorrow!" });
+    }
+    record.count++;
+  } else {
+    rateLimitStore[ip] = { count: 1, resetAt: now + DAY_MS };
   }
 
   const { messages, system } = req.body;
