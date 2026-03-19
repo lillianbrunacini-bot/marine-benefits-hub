@@ -308,6 +308,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
   .sidebar{position:fixed;top:0;left:0;height:100vh;width:100vw;z-index:210;transform:translateX(-100%);transition:transform .25s ease;}
   .sidebar.open{transform:translateX(0);}
   .sb-hero{padding:8px 16px;}
+  .sb-edit-btn{min-width:44px;min-height:44px;padding:10px;}
   .sb-greeting{display:none;}
   .sb-pay-row{display:none;}
   .sb-station{display:none;}
@@ -1281,6 +1282,8 @@ function openProfileModal(){
   var pm=document.getElementById('pm');
   var ov=document.getElementById('pm-overlay');
   if(!pm||!ov)return;
+  // Close sidebar first on mobile so modal is visible
+  if(window.innerWidth<=768){var sb=document.querySelector('.sidebar');if(sb&&sb.classList.contains('open'))toggleSidebar();}
   document.getElementById('pm-grade').value=P.grade||'';
   document.getElementById('pm-yos').value=String(P.yos||0);
   document.getElementById('pm-housing').value=P.housing||'nodep';
