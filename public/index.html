@@ -1575,14 +1575,6 @@ window.addEventListener('DOMContentLoaded', function(){
   // Show profile modal on first visit
   openProfileModal();
 });
-function filterAcro(q){
-  const items=document.querySelectorAll('.acro-item');
-  const ql=q.toLowerCase();
-  items.forEach(item=>{
-    const terms=(item.dataset.terms||'')+item.textContent;
-    item.style.display=terms.toLowerCase().includes(ql)?'':'none';
-  });
-}
 
 function track(event,data){try{fetch('/api/analytics',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({event,data:data||{}})});}catch(_){}}
 async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});track('ai_question',{ts:Date.now()});const FRIENDLY_ERR="Looks like the AI assistant is taking a quick break. Try again in a moment \u2014 if it keeps happening, the service may be temporarily down.";try{const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();if(!res.ok){const errMsg=typeof data.error==='string'?data.error:FRIENDLY_ERR;bubble.classList.remove('typing');bubble.textContent=res.status===429?errMsg:FRIENDLY_ERR;msgs.pop();track('ai_error',{status:res.status});}else{const reply=data.content?.[0]?.text||FRIENDLY_ERR;bubble.classList.remove('typing');bubble.innerHTML=parseMarkdown(reply);msgs.push({role:'assistant',content:reply});}}catch(e){bubble.classList.remove('typing');bubble.textContent=FRIENDLY_ERR;msgs.pop();track('ai_error',{status:'network'});}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
