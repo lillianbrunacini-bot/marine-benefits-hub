@@ -124,6 +124,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .ask-send:active{transform:scale(.95);}
 .ask-send:disabled{background:var(--border);cursor:not-allowed;}
 .ask-send svg{width:15px;height:15px;}
+.ask-char-count{font-size:11px;color:var(--ink2);text-align:right;padding:2px 12px 6px;}.ask-char-count.warn{color:#c0392b;font-weight:600;}
 .suggest-row{display:flex;gap:7px;flex-wrap:wrap;padding:0 16px 12px;}
 .suggest{font-size:11px;font-weight:500;background:var(--off);border:1.5px solid var(--border);border-radius:20px;padding:5px 12px;color:var(--ink2);cursor:pointer;transition:all .15s;white-space:nowrap;}
 .suggest:hover{background:var(--coral-light);border-color:var(--coral-mid);color:var(--coral);}
@@ -527,9 +528,10 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
           <div class="suggest" onclick="sendSuggest(this)">How does TRICARE dental work?</div>
         </div>
         <div class="ask-input-row">
-          <textarea class="ask-input" id="ask-input" placeholder="Ask about pay, TRICARE, BAH, discounts..." rows="1" onkeydown="inputKey(event)"></textarea>
+          <textarea class="ask-input" id="ask-input" placeholder="Ask about pay, TRICARE, BAH, discounts..." rows="1" onkeydown="inputKey(event)" oninput="updateCharCount()"></textarea>
           <button class="ask-send" id="ask-send" onclick="sendMsg()"><svg viewBox="0 0 16 16" fill="none"><path d="M14 8L2 14l2.5-6L2 2l12 6z" fill="white"/></svg></button>
         </div>
+        <div class="ask-char-count" id="ask-char-count">0/500</div>
       </div>
     </div>
 
@@ -1194,7 +1196,8 @@ function tab(name,el){
 }
 
 function buildSys(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted;return 'You are a friendly, knowledgeable USMC benefits assistant built into the Semper Sorted app. Be warm, direct, and plain-English. Keep answers under 200 words. Avoid jargon — if you must use a military term, explain it in plain English immediately after.\n\nFormatting rules:\n- Use **bold** for key numbers, dollar amounts, and important terms\n- Use bullet points (- ) when listing 3 or more items\n- Use short paragraphs — never one giant wall of text\n- Lead with the direct answer, then explain\n- End with one actionable next step when relevant\n\nMarine profile: Grade: '+grade+', Years of service: '+yos+', Station: '+station+', Housing: '+housing+', Dependents: '+(P.depcount||0)+', Base pay: $'+bp+'/mo, BAH: '+(bah?'$'+bah:bah===0?'waived (barracks)':'unknown for this station')+', BAS: $'+Math.round(bas)+'/mo.\n\nYou can answer questions about: USMC pay, BAH, BAS, TRICARE, GI Bill, Tuition Assistance, VA disability, PCS entitlements, special pays, SCRA, military spouse benefits, discounts, DEERS, base resources, and general military life questions. Always use 2026 rates. Never make up numbers — if unsure, say so and direct them to the official source.';}
-async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text||!P.grade)return;inp.value='';addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
+function updateCharCount(){const inp=document.getElementById('ask-input'),el=document.getElementById('ask-char-count'),len=inp.value.length;el.textContent=len+'/500';el.classList.toggle('warn',len>=400);}
+async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text||!P.grade)return;if(text.length>500){addMsg('Your message is too long (max 500 characters). Please shorten it and try again.','ai');return;}inp.value='';updateCharCount();addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
 function sendSuggest(el){document.getElementById('ask-input').value=el.textContent;sendMsg();}
 function inputKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}}
 function parseMarkdown(text){

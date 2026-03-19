@@ -28,6 +28,11 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: "Missing messages or system prompt" });
   }
 
+  const lastUserMsg = [...messages].reverse().find(m => m.role === "user");
+  if (lastUserMsg && lastUserMsg.content.length > 500) {
+    return res.status(400).json({ error: "Message exceeds 500 character limit." });
+  }
+
   try {
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
