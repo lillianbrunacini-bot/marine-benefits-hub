@@ -125,6 +125,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .ask-send:disabled{background:var(--border);cursor:not-allowed;}
 .ask-send svg{width:15px;height:15px;}
 .ask-char-count{font-size:11px;color:var(--ink2);text-align:right;padding:2px 12px 6px;}.ask-char-count.warn{color:#c0392b;font-weight:600;}
+.ask-disclosure{font-size:10px;color:var(--ink3);text-align:center;padding:0 12px 8px;}
 .suggest-row{display:flex;gap:7px;flex-wrap:wrap;padding:0 16px 12px;}
 .suggest{font-size:11px;font-weight:500;background:var(--off);border:1.5px solid var(--border);border-radius:20px;padding:5px 12px;color:var(--ink2);cursor:pointer;transition:all .15s;white-space:nowrap;}
 .suggest:hover{background:var(--coral-light);border-color:var(--coral-mid);color:var(--coral);}
@@ -532,6 +533,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
           <button class="ask-send" id="ask-send" onclick="sendMsg()"><svg viewBox="0 0 16 16" fill="none"><path d="M14 8L2 14l2.5-6L2 2l12 6z" fill="white"/></svg></button>
         </div>
         <div class="ask-char-count" id="ask-char-count">0/500</div>
+        <p class="ask-disclosure">Conversations may be logged anonymously to improve this service.</p>
       </div>
     </div>
 
@@ -1193,6 +1195,7 @@ function tab(name,el){
   if(body)body.scrollTop=0;
   if(name==='facilities')initFacilities();
   if(name==='news')renderNews();
+  track('tab_click',{tab:name});
 }
 
 function buildSys(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted;return 'You are a friendly, knowledgeable USMC benefits assistant built into the Semper Sorted app. Be warm, direct, and plain-English. Keep answers under 200 words. Avoid jargon — if you must use a military term, explain it in plain English immediately after.\n\nFormatting rules:\n- Use **bold** for key numbers, dollar amounts, and important terms\n- Use bullet points (- ) when listing 3 or more items\n- Use short paragraphs — never one giant wall of text\n- Lead with the direct answer, then explain\n- End with one actionable next step when relevant\n\nMarine profile: Grade: '+grade+', Years of service: '+yos+', Station: '+station+', Housing: '+housing+', Dependents: '+(P.depcount||0)+', Base pay: $'+bp+'/mo, BAH: '+(bah?'$'+bah:bah===0?'waived (barracks)':'unknown for this station')+', BAS: $'+Math.round(bas)+'/mo.\n\nYou can answer questions about: USMC pay, BAH, BAS, TRICARE, GI Bill, Tuition Assistance, VA disability, PCS entitlements, special pays, SCRA, military spouse benefits, discounts, DEERS, base resources, and general military life questions. Always use 2026 rates. Never make up numbers — if unsure, say so and direct them to the official source.';}
@@ -1472,7 +1475,8 @@ function filterAcro(q){
   });
 }
 
-async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});const FRIENDLY_ERR="Looks like the AI assistant is taking a quick break. Try again in a moment \u2014 if it keeps happening, the service may be temporarily down.";try{const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();if(!res.ok){const errMsg=typeof data.error==='string'?data.error:FRIENDLY_ERR;bubble.classList.remove('typing');bubble.textContent=res.status===429?errMsg:FRIENDLY_ERR;msgs.pop();}else{const reply=data.content?.[0]?.text||FRIENDLY_ERR;bubble.classList.remove('typing');bubble.innerHTML=parseMarkdown(reply);msgs.push({role:'assistant',content:reply});}}catch(e){bubble.classList.remove('typing');bubble.textContent=FRIENDLY_ERR;msgs.pop();}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
+function track(event,data){try{fetch('/api/analytics',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({event,data:data||{}})});}catch(_){}}
+async function callAI(userMsg){const btn=document.getElementById('ask-send');btn.disabled=true;const bubble=addMsg('...','ai');msgs.push({role:'user',content:userMsg});track('ai_question',{ts:Date.now()});const FRIENDLY_ERR="Looks like the AI assistant is taking a quick break. Try again in a moment \u2014 if it keeps happening, the service may be temporarily down.";try{const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:msgs.slice(-10),system:buildSys()})});const data=await res.json();if(!res.ok){const errMsg=typeof data.error==='string'?data.error:FRIENDLY_ERR;bubble.classList.remove('typing');bubble.textContent=res.status===429?errMsg:FRIENDLY_ERR;msgs.pop();track('ai_error',{status:res.status});}else{const reply=data.content?.[0]?.text||FRIENDLY_ERR;bubble.classList.remove('typing');bubble.innerHTML=parseMarkdown(reply);msgs.push({role:'assistant',content:reply});}}catch(e){bubble.classList.remove('typing');bubble.textContent=FRIENDLY_ERR;msgs.pop();track('ai_error',{status:'network'});}btn.disabled=false;document.getElementById('ask-msgs').scrollTop=9999;}
 
 const BASE_NEWS = {
   pendleton: {
