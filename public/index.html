@@ -369,6 +369,16 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .sb-pay-amt{font-size:22px;font-weight:700;color:white;}
 .sb-logo-large{display:flex;flex-direction:column;align-items:center;}
 .sb-logo-large img{max-width:130px;}
+
+/* DISCLAIMER BANNER */
+.disclaimer{background:var(--coral-light);border:1px solid var(--coral-mid);border-left:3px solid var(--coral);border-radius:0 var(--r) var(--r) 0;padding:10px 14px;font-size:12px;color:var(--ink2);line-height:1.6;margin-bottom:14px;}
+
+/* FOOTER */
+.site-footer{padding:14px 48px;border-top:1px solid var(--border);font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.site-footer a{color:var(--ink3);text-decoration:none;cursor:pointer;}
+.site-footer a:hover{color:var(--coral);text-decoration:underline;}
+.site-footer .sep{color:var(--border2);}
+@media(max-width:768px){.site-footer{padding:14px 16px;flex-wrap:wrap;gap:6px;}}
 </style>
 </head>
 <body>
@@ -448,6 +458,72 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
   </div>
   <div class="pm-footer">
     <button class="pm-save" id="pm-save-btn" onclick="saveProfile()">Save &amp; Update</button>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY MODAL -->
+<div class="pm-overlay" id="privacy-overlay" onclick="closePrivacyModal()" style="display:none;"></div>
+<div class="pm" id="privacy-modal" style="display:none;">
+  <div class="pm-header">
+    <div class="pm-title">Privacy Policy</div>
+    <button class="pm-close" onclick="closePrivacyModal()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="2" y1="2" x2="12" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="12" y1="2" x2="2" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="pm-body" style="gap:18px;">
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">No personal data collected</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">Semper Sorted does not collect, store, or transmit any personally identifiable information. Your profile (rank, years of service, station, and housing status) is held only in your browser session and is never sent to any server. Closing or refreshing the page clears it.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">Anonymous analytics</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">We log anonymous usage events (e.g. which tab was viewed) to understand how the app is used. These events contain no profile data, no names, and no identifiers that could be tied to an individual.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">IP-based rate limiting</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">To prevent abuse, the AI chat feature enforces a daily limit using your IP address. IP addresses are used solely for rate-limit enforcement and are not logged, stored, or associated with any activity beyond request counting.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">AI (Anthropic Claude)</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">AI responses are powered by Anthropic's Claude API. Messages you send to the AI chat are transmitted to Anthropic's servers for processing. Do not include sensitive personal information (SSN, account numbers, etc.) in AI chat messages. Anthropic's privacy policy governs data handling on their end.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">Cookies</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">This app does not use cookies or local storage for tracking. No third-party advertising or tracking scripts are loaded.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS OF USE MODAL -->
+<div class="pm-overlay" id="terms-overlay" onclick="closeTermsModal()" style="display:none;"></div>
+<div class="pm" id="terms-modal" style="display:none;">
+  <div class="pm-header">
+    <div class="pm-title">Terms of Use</div>
+    <button class="pm-close" onclick="closeTermsModal()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><line x1="2" y1="2" x2="12" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="12" y1="2" x2="2" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="pm-body" style="gap:18px;">
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">Unofficial — not affiliated with USMC or DoD</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">Semper Sorted is an independent tool and is not affiliated with, endorsed by, or operated by the United States Marine Corps, the Department of Defense, DFAS, the VA, or any government agency. Use of the USMC name and related terminology is for descriptive purposes only.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">Informational use only</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">All pay, benefits, and entitlement information is provided for general informational purposes only. It is not legal, financial, or professional military advice. Always verify figures with your command, your unit S-1/IPAC, DFAS (dfas.mil), or VA.gov before making financial decisions.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">No warranty or liability</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">This app is provided "as is" without warranty of any kind. We make reasonable efforts to keep data current and accurate, but rates, rules, and entitlements change. Semper Sorted is not liable for any errors, omissions, or decisions made based on information presented here.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">AI responses may contain errors</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">The AI chat feature is powered by a large language model and may produce incorrect, outdated, or incomplete information. Do not rely solely on AI responses for pay, benefits, or entitlement decisions. Always confirm with an authoritative source.</div>
+    </div>
+    <div>
+      <div class="pm-lbl" style="margin-bottom:6px;">Data accuracy</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.7;">Pay tables and BAH rates reflect 2026 official published figures as of the last update. Rates are subject to change. Verify current figures at dfas.mil or with your command finance office.</div>
+    </div>
   </div>
 </div>
 
@@ -597,6 +673,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 
     <!-- PAY -->
     <div class="panel" id="p-pay">
+      <div class="disclaimer">Data reflects 2026 official rates. Always verify current figures with your command or at dfas.mil.</div>
       <div class="ib"><div class="ib-t">BAH and BAS are completely tax-free</div><div class="ib-b">Only base pay gets taxed. BAH (housing) and BAS (food) come out untouched, which makes your real compensation much higher than it looks on paper.</div></div>
 
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Your monthly breakdown</div><div class="ct-d" id="pay-desc">2026 rates</div></div></div><div class="div"></div><div class="rows" id="pay-rows"></div></div>
@@ -694,6 +771,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 
     <!-- HOUSING -->
     <div class="panel" id="p-housing">
+      <div class="disclaimer">Data reflects 2026 official rates. Always verify current figures with your command or at dfas.mil.</div>
       <div class="ib"><div class="ib-t">You keep what you don't spend</div><div class="ib-b">BAH is based on median rent in your area. If you find a place cheaper than your BAH rate, the leftover is yours to keep — tax-free. It's not a use-it-or-lose-it thing.</div></div>
 
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">Your BAH rate</div><div class="ct-d" id="bah-desc">Based on your grade and duty station</div></div></div><div class="div"></div><div class="rows" id="bah-rows"></div></div>
@@ -988,6 +1066,7 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 
     <!-- VA -->
     <div class="panel" id="p-va">
+      <div class="disclaimer">Data reflects 2026 official rates. Always verify current figures with your command or at dfas.mil.</div>
       <div class="ib"><div class="ib-t">Start documenting injuries now, not later</div><div class="ib-b">VA disability is based on proving a service connection. Every injury, exposure, or medical issue you document while on active duty makes a future claim stronger. Don't wait until you're separating.</div></div>
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">VA disability pay (2026)</div><div class="ct-d">Tax-free monthly payment based on your disability rating</div></div></div><div class="div"></div>
         <div class="rows">
@@ -1156,6 +1235,13 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
       <div id="news-content"></div>
     </div>
     </div><!-- /main-inner -->
+    <footer class="site-footer">
+      <span>&copy; 2026 Semper Sorted</span>
+      <span class="sep">&middot;</span>
+      <a onclick="openPrivacyModal()">Privacy Policy</a>
+      <span class="sep">&middot;</span>
+      <a onclick="openTermsModal()">Terms of Use</a>
+    </footer>
   </div><!-- /content -->
 
 <script>
@@ -1297,6 +1383,22 @@ function openProfileModal(){
 function closeProfileModal(){
   document.getElementById('pm').style.display='none';
   document.getElementById('pm-overlay').style.display='none';
+}
+function openPrivacyModal(){
+  document.getElementById('privacy-modal').style.display='block';
+  document.getElementById('privacy-overlay').style.display='block';
+}
+function closePrivacyModal(){
+  document.getElementById('privacy-modal').style.display='none';
+  document.getElementById('privacy-overlay').style.display='none';
+}
+function openTermsModal(){
+  document.getElementById('terms-modal').style.display='block';
+  document.getElementById('terms-overlay').style.display='block';
+}
+function closeTermsModal(){
+  document.getElementById('terms-modal').style.display='none';
+  document.getElementById('terms-overlay').style.display='none';
 }
 function pmToggleDep(val){
   var w=document.getElementById('pm-dep-wrap');
