@@ -618,47 +618,35 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
       <span id="h-pay" style="display:none"></span>
       <div class="alert"><div class="a-dot"></div><div class="a-txt"><strong>2026 rates are in effect.</strong> Pay and BAH updated January 1st. Tap the AI tab if you have questions about anything.</div></div>
 
-      <div class="stat-tiles">
-        <div class="stat-tile" onclick="tab('pay',document.querySelectorAll('.tab')[2])">
-          <div class="stat-num" id="ov-total">—</div>
-          <div class="stat-lbl">Monthly take-home</div>
-        </div>
-        <div class="stat-tile" onclick="tab('va',document.querySelectorAll('.tab')[9])">
-          <div class="stat-num">5%</div>
-          <div class="stat-lbl">BRS match · Gov't matches up to 5%</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-num">$477</div>
-          <div class="stat-lbl">BAS (food)</div>
+      <div class="card" style="margin-bottom:20px;">
+        <div class="ch" style="align-items:center;">
+          <div class="ci" style="background:var(--coral-light);"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M14 3a1.4 1.4 0 012 2l-9 9-3 1 1-3 9-9z" stroke="#5a7a3a" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <div class="ct" style="flex:1;">
+            <div class="ct-t" id="ov-profile-name">Your profile</div>
+            <div class="ct-d" id="ov-profile-meta">Set your grade, station &amp; housing to personalise every tab</div>
+          </div>
+          <button class="cbtn" onclick="openProfileModal()" style="white-space:nowrap;flex-shrink:0;">Edit profile &rarr;</button>
         </div>
       </div>
 
-      <div class="sh" style="margin-top:4px;">Quick access</div>
+      <div class="sh" style="margin-top:4px;">Explore</div>
       <div class="qc2-grid">
         <div class="qc2" onclick="tab('pay',document.querySelectorAll('.tab')[2])">
           <div class="qc2-icon" style="background:#eff6ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#3b82f6" stroke-width="1.5"/><line x1="6" y1="9" x2="14" y2="9" stroke="#3b82f6" stroke-width="1.5"/><line x1="6" y1="12" x2="10" y2="12" stroke="#3b82f6" stroke-width="1.5"/></svg></div>
-          <div><div class="qc2-title">Pay</div><div class="qc2-sub">Full pay breakdown</div><div class="qc2-sub" id="ov-pay-sub" style="color:var(--coral);font-weight:600;"></div></div>
+          <div><div class="qc2-title">Pay</div><div class="qc2-sub">Base pay, BAH &amp; BAS breakdown</div></div>
         </div>
         <div class="qc2" onclick="tab('tricare',document.querySelectorAll('.tab')[3])">
           <div class="qc2-icon" style="background:#f0fdfa;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#0d9488" stroke-width="1.5"/><line x1="10" y1="6.5" x2="10" y2="13.5" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/><line x1="6.5" y1="10" x2="13.5" y2="10" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div><div class="qc2-title">Healthcare</div><div class="qc2-sub">TRICARE coverage</div><div class="qc2-sub" id="ov-hc-sub" style="color:var(--coral);font-weight:600;"></div></div>
+          <div><div class="qc2-title">Healthcare</div><div class="qc2-sub">TRICARE coverage &amp; options</div></div>
         </div>
         <div class="qc2" onclick="tab('housing',document.querySelectorAll('.tab')[5])">
           <div class="qc2-icon" style="background:#fff7ed;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 10l7-7 7 7" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/><path d="M5 8.5V16h4v-3h2v3h4V8.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div><div class="qc2-title">BAH</div><div class="qc2-sub">Housing allowance</div><div class="qc2-sub" style="color:var(--ink3);">Updated Jan 2026</div></div>
+          <div><div class="qc2-title">Housing</div><div class="qc2-sub">BAH rates &amp; on-base options</div></div>
         </div>
         <div class="qc2" onclick="tab('deals',document.querySelectorAll('.tab')[10])">
           <div class="qc2-icon" style="background:#fdf4ff;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M2 2h2.5l2.5 9.5h7.5l2-6.5H6" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="15.5" r="1.2" fill="#a855f7"/><circle cx="13.5" cy="15.5" r="1.2" fill="#a855f7"/></svg></div>
-          <div><div class="qc2-title">Deals</div><div class="qc2-sub">Discounts &amp; savings</div><div class="qc2-sub" style="color:var(--ink3);">Military exclusives</div></div>
+          <div><div class="qc2-title">Deals</div><div class="qc2-sub">Discounts &amp; military exclusives</div></div>
         </div>
-      </div>
-
-      <div class="tip-banner">
-        <div class="tip-banner-text">
-          <div class="tip-banner-hed">PCS season is here</div>
-          <div class="tip-banner-sub">Check your BAH for a new duty station</div>
-        </div>
-        <button class="tip-btn" onclick="tab('housing',document.querySelectorAll('.tab')[5])">Check BAH &rarr;</button>
       </div>
     </div>
 
@@ -1321,7 +1309,7 @@ function resolveStation(s){const sl=s.toLowerCase();for(const[k,a]of Object.entr
 function getBAH(g,housing,stKey){if(housing==='barracks')return 0;if(!stKey||stKey==='okinawa')return null;const t=BAH[housing==='dep'?stKey+'_d':stKey];return t?t[g]||null:null;}
 function fmt(n){return'$'+Math.round(n).toLocaleString();}
 
-function buildUI(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&housing!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(housing==='dep'?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):housing==='barracks'?' \u00b7 barracks':' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');document.getElementById('ov-total').textContent=fmt(total)+(bahKnown?'':'+');document.getElementById('ov-pay-sub').textContent=grade+' · '+station;document.getElementById('ov-hc-sub').textContent='Prime · '+station;const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(housing==='barracks'?'<div class="row"><span class="rl">BAH</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;const giBah=getBAH('E-5','dep',stKey);const giEl=document.getElementById('gi-bah-rate');if(giEl)giEl.textContent=giBah?fmt(giBah)+'/mo (E-5 w/ dep, '+station+')':'Check DTMO.mil for your area';document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(housing==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'nodep',stKey),wd=getBAH(grade,'dep',stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
+function buildUI(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&housing!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(housing==='dep'?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):housing==='barracks'?' \u00b7 barracks':' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');document.getElementById('ov-profile-name').textContent=grade+' · '+yos+' yrs · '+station;document.getElementById('ov-profile-meta').textContent=housing==='barracks'?'Barracks · no BAH':housing==='dep'?P.depcount+' dependent'+(P.depcount!==1?'s':''):'No dependents';const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(housing==='barracks'?'<div class="row"><span class="rl">BAH</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">BAH ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;const giBah=getBAH('E-5','dep',stKey);const giEl=document.getElementById('gi-bah-rate');if(giEl)giEl.textContent=giBah?fmt(giBah)+'/mo (E-5 w/ dep, '+station+')':'Check DTMO.mil for your area';document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(housing==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'nodep',stKey),wd=getBAH(grade,'dep',stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
 function buildPayTable(ug){const grades=['E-1','E-2','E-3','E-4','E-5','E-6','E-7','E-8','E-9','W-1','W-2','W-3','O-1','O-2','O-3','O-4','O-5','O-6'],cols=[0,2,4,6,8];let h='<tr><th>Grade</th>'+cols.map(i=>'<th>'+YOS_IDX[i]+' yrs</th>').join('')+'</tr>';grades.forEach(g=>{const a=PAY[g]||[],hl=(g===ug)?'class="hl"':'';h+='<tr '+hl+'><td>'+g+'</td>'+cols.map(i=>'<td>'+(a[i]?'$'+Math.round(a[i]/100)*100/1000+'k':'--')+'</td>').join('')+'</tr>';});document.getElementById('pay-table').innerHTML=h;}
 
 function buildSidebar(){
