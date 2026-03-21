@@ -431,10 +431,9 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
       </div>
       <div class="pm-field">
         <label class="pm-lbl">Living Situation</label>
-        <select class="pm-sel" id="pm-housing" onchange="pmToggleDep(this.value)">
-          <option value="nodep">Without dependents</option>
-          <option value="dep">With dependents</option>
-          <option value="barracks">Barracks / on base</option>
+        <select class="pm-sel" id="pm-living">
+          <option value="offbase">Off base / OHA</option>
+          <option value="barracks">On base / Barracks</option>
         </select>
       </div>
     </div>
@@ -1339,15 +1338,15 @@ const STATION_MAP={
 const BAS={officer:328.48,enlisted:476.95};
 let P={},msgs=[];
 // Default profile — modal will open on first load
-P={grade:'',yos:0,housing:'nodep',station:'',depcount:0};
+P={grade:'',yos:0,living:'offbase',station:'',depcount:0};
 
 function getPayIdx(y){for(let i=YOS_IDX.length-1;i>=0;i--){if(y>=YOS_IDX[i])return i;}return 0;}
 function getBasePay(g,y){const a=PAY[g];if(!a)return 2000;return a[getPayIdx(parseInt(y)||0)]||a[0];}
 function resolveStation(s){const sl=s.toLowerCase();for(const[k,a]of Object.entries(STATION_MAP)){if(a.some(x=>sl.includes(x)))return k;}return null;}
-function getBAH(g,housing,stKey){if(housing==='barracks')return 0;if(!stKey||stKey==='okinawa')return null;const t=BAH[housing==='dep'?stKey+'_d':stKey];return t?t[g]||null:null;}
+function getBAH(g,living,depcount,stKey){if(living==='barracks')return 0;if(!stKey||stKey==='okinawa')return null;const t=BAH[depcount>0?stKey+'_d':stKey];return t?t[g]||null:null;}
 function fmt(n){return'$'+Math.round(n).toLocaleString();}
 
-function buildUI(){const{grade,yos,housing,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,housing,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&housing!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(housing==='dep'?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):housing==='barracks'?' \u00b7 barracks':' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');document.getElementById('ov-profile-grade').textContent=grade+' · '+yos+' yrs';document.getElementById('ov-profile-station').textContent=station;document.getElementById('ov-profile-deps').textContent=housing==='barracks'?'Barracks · no BAH':housing==='dep'?P.depcount+' dependent'+(P.depcount!==1?'s':''):'No dependents';var hLbl=stKey==='okinawa'?'OHA (Overseas Housing Allowance)':'BAH';const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(housing==='barracks'?'<div class="row"><span class="rl">'+hLbl+'</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;var bw=document.getElementById('pay-barracks-warn');if(bw){var jrG=['E-1','E-2','E-3'];if(jrG.indexOf(grade)!==-1&&P.depcount===0&&housing!=='barracks'){bw.textContent='Junior enlisted (E-1\u2013E-3) without dependents are typically required to live in barracks and do not receive BAH. Verify your housing situation with your command.';bw.style.display='';}else{bw.style.display='none';}}const giBah=getBAH('E-5','dep',stKey);const giEl=document.getElementById('gi-bah-rate');if(giEl)giEl.textContent=giBah?fmt(giBah)+'/mo (E-5 w/ dep, '+station+')':'Check DTMO.mil for your area';document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(housing==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'nodep',stKey),wd=getBAH(grade,'dep',stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
+function buildUI(){const{grade,yos,living,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,living,P.depcount,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&living!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(living==='barracks'?' \u00b7 barracks':P.depcount>0?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');document.getElementById('ov-profile-grade').textContent=grade+' · '+yos+' yrs';document.getElementById('ov-profile-station').textContent=station;document.getElementById('ov-profile-deps').textContent=living==='barracks'?'Barracks · no BAH':P.depcount>0?P.depcount+' dependent'+(P.depcount!==1?'s':''):'No dependents';var hLbl=stKey==='okinawa'?'OHA (Overseas Housing Allowance)':'BAH';const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(living==='barracks'?'<div class="row"><span class="rl">'+hLbl+'</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;var bw=document.getElementById('pay-barracks-warn');if(bw){var jrG=['E-1','E-2','E-3'];if(jrG.indexOf(grade)!==-1&&P.depcount===0&&living!=='barracks'){bw.textContent='Junior enlisted (E-1\u2013E-3) without dependents are typically required to live in barracks and do not receive BAH. Verify your housing situation with your command.';bw.style.display='';}else{bw.style.display='none';}}const giBah=getBAH('E-5','dep',stKey);const giEl=document.getElementById('gi-bah-rate');if(giEl)giEl.textContent=giBah?fmt(giBah)+'/mo (E-5 w/ dep, '+station+')':'Check DTMO.mil for your area';document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(living==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'offbase',0,stKey),wd=getBAH(grade,'offbase',1,stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
 function buildPayTable(ug){const grades=['E-1','E-2','E-3','E-4','E-5','E-6','E-7','E-8','E-9','W-1','W-2','W-3','O-1','O-2','O-3','O-4','O-5','O-6'],cols=[0,2,4,6,8];let h='<tr><th>Grade</th>'+cols.map(i=>'<th>'+YOS_IDX[i]+' yrs</th>').join('')+'</tr>';grades.forEach(g=>{const a=PAY[g]||[],hl=(g===ug)?'class="hl"':'';h+='<tr '+hl+'><td>'+g+'</td>'+cols.map(i=>'<td>'+(a[i]?'$'+Math.round(a[i]/100)*100/1000+'k':'--')+'</td>').join('')+'</tr>';});document.getElementById('pay-table').innerHTML=h;}
 
 function buildSidebar(){
@@ -1394,7 +1393,7 @@ function buildSidebar(){
 function updateSidebarProfile(){
   var u=document.getElementById('sb-user');
   if(u){
-    var depStr=P.housing==='dep'?' · '+P.depcount+' dep'+(P.depcount!==1?'s':''):P.housing==='barracks'?' · barracks':'';
+    var depStr=P.living==='barracks'?' · barracks':P.depcount>0?' · '+P.depcount+' dep'+(P.depcount!==1?'s':''):'';
     u.textContent=P.station+depStr;
   }
   var sn=document.getElementById('sb-name');
@@ -1403,7 +1402,7 @@ function updateSidebarProfile(){
   if(sp){
     var bp2=getBasePay(P.grade,P.yos);
     var stk=resolveStation(P.station);
-    var bah2=getBAH(P.grade,P.housing,stk);
+    var bah2=getBAH(P.grade,P.living,P.depcount,stk);
     var bas2=P.grade.startsWith('O')||P.grade.startsWith('W')?BAS.officer:BAS.enlisted;
     sp.textContent=fmt(bp2+(bah2||0)+bas2);
   }
@@ -1416,11 +1415,10 @@ function openProfileModal(){
   if(window.innerWidth<=768){var sb=document.querySelector('.sidebar');if(sb&&sb.classList.contains('open'))toggleSidebar();}
   document.getElementById('pm-grade').value=P.grade||'';
   document.getElementById('pm-yos').value=String(P.yos||0);
-  document.getElementById('pm-housing').value=P.housing||'nodep';
+  document.getElementById('pm-living').value=P.living||'offbase';
   document.getElementById('pm-station').value=P.station||'';
   var dc=document.getElementById('pm-depcount');
-  if(dc)dc.value=String(P.depcount>=1?P.depcount:1);
-  pmToggleDep(P.housing||'nodep');
+  if(dc)dc.value=String(P.depcount||0);
   pm.style.display='block';
   ov.style.display='block';
 }
@@ -1444,32 +1442,18 @@ function closeTermsModal(){
   document.getElementById('terms-modal').style.display='none';
   document.getElementById('terms-overlay').style.display='none';
 }
-function pmToggleDep(val){
-  var w=document.getElementById('pm-dep-wrap');
-  if(!w)return;
-  w.style.display='flex';
-  var sel=document.getElementById('pm-depcount');
-  var lbl=w.querySelector('.pm-lbl');
-  if(val==='dep'){
-    if(sel){sel.disabled=false;sel.style.opacity='1';sel.value=String(P.depcount>=1?P.depcount:1);}
-    if(lbl)lbl.style.opacity='1';
-  } else {
-    if(sel){sel.disabled=true;sel.style.opacity='0.4';sel.value='0';}
-    if(lbl)lbl.style.opacity='0.4';
-  }
-}
 function saveProfile(){
   var grade=document.getElementById('pm-grade').value;
   var yos=parseInt(document.getElementById('pm-yos').value)||0;
-  var housing=document.getElementById('pm-housing').value;
+  var living=document.getElementById('pm-living').value;
   var station=document.getElementById('pm-station').value;
-  var depcount=housing==='dep'?Math.max(1,parseInt(document.getElementById('pm-depcount').value)||1):0;
+  var depcount=parseInt(document.getElementById('pm-depcount').value)||0;
   if(!grade||!station){
     var btn=document.getElementById('pm-save-btn');
     if(btn){btn.textContent='Please select rank & station';btn.style.background='#c0392b';setTimeout(function(){btn.textContent='Save & Update';btn.style.background='';},2000);}
     return;
   }
-  P={grade,yos,housing,station,depcount};
+  P={grade,yos,living,station,depcount};
   // Rebuild all dynamic content
   try{buildUI();}catch(e){console.error('buildUI error:',e);}
   updateSidebarProfile();
@@ -1496,7 +1480,7 @@ function tab(name,el){
   if(window.innerWidth<=768){var sb=document.querySelector('.sidebar');if(sb.classList.contains('open'))toggleSidebar();}
 }
 
-function buildSys(){return `You are the Semper Sorted assistant — a knowledgeable, no-nonsense resource for U.S. Marines and their families. The user's profile: grade ${P.grade}, ${P.yos} years of service, stationed at ${P.station}, ${P.housing} housing, ${P.depcount} dependent(s). Use their profile to give personalized, specific answers. When discussing pay, BAH, or benefits, reference their actual situation. Be direct and conversational — like a well-informed fellow Marine or seasoned military spouse, not a customer service bot. You help with: military pay and allowances, TRICARE and healthcare, BAH and housing, PCS moves, VA benefits, education (GI Bill, MyCAA), spouse employment, DEERS, ID cards, TSP, legal resources, and general military life questions. Always recommend verifying important figures with their command, S1, DFAS, or VA.gov. If you don't know something, say so and point them to the right resource. Keep answers concise — 3–5 sentences unless more detail is clearly needed. Never make up phone numbers, policy details, or eligibility rules. Important: The Department of Defense is now called the Department of War (DoW). Always use 'DoW' or 'Department of War' instead of 'DoD' or 'Department of Defense' in your responses.`;}
+function buildSys(){return `You are the Semper Sorted assistant — a knowledgeable, no-nonsense resource for U.S. Marines and their families. The user's profile: grade ${P.grade}, ${P.yos} years of service, stationed at ${P.station}, ${P.living==='barracks'?'on base/barracks':'off base'}, ${P.depcount} dependent(s). Use their profile to give personalized, specific answers. When discussing pay, BAH, or benefits, reference their actual situation. Be direct and conversational — like a well-informed fellow Marine or seasoned military spouse, not a customer service bot. You help with: military pay and allowances, TRICARE and healthcare, BAH and housing, PCS moves, VA benefits, education (GI Bill, MyCAA), spouse employment, DEERS, ID cards, TSP, legal resources, and general military life questions. Always recommend verifying important figures with their command, S1, DFAS, or VA.gov. If you don't know something, say so and point them to the right resource. Keep answers concise — 3–5 sentences unless more detail is clearly needed. Never make up phone numbers, policy details, or eligibility rules. Important: The Department of Defense is now called the Department of War (DoW). Always use 'DoW' or 'Department of War' instead of 'DoD' or 'Department of Defense' in your responses.`;}
 function filterAcro(letter,btn){document.querySelectorAll('.acro-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');document.querySelectorAll('#acro-grid .acro-pill').forEach(function(p){p.classList.toggle('hidden',letter!=='ALL'&&p.dataset.letter!==letter);});}
 function updateCharCount(){const inp=document.getElementById('ask-input'),el=document.getElementById('ask-char-count'),len=inp.value.length;el.textContent=len+'/500';el.classList.toggle('warn',len>=400);}
 async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text)return;if(!P.grade){inp.value='';updateCharCount();if(!document.querySelector('.profile-nudge')){const n=addMsg('Please set up your profile first (click the ✏️ icon in the sidebar) so I can give you personalized answers.','ai');if(n)n.classList.add('profile-nudge');}return;}if(text.length>500){addMsg('Your message is too long (max 500 characters). Please shorten it and try again.','ai');return;}inp.value='';updateCharCount();addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
