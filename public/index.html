@@ -197,6 +197,18 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .org-node-size{font-size:11px;color:var(--ink2);margin:2px 0;}
 .org-node-leader{font-size:11px;font-weight:600;color:var(--coral);}
 .org-connector{width:2px;height:16px;background:var(--coral);margin:0 auto;}
+.fm-section{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:12px;}
+.fm-section-header{width:100%;background:var(--white);border:none;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.fm-section-header:hover{background:var(--off);}
+.fm-chevron{transition:transform .25s ease;color:var(--ink3);flex-shrink:0;}
+.fm-section.closed .fm-chevron{transform:rotate(-90deg);}
+.fm-section-body{padding:0 14px 14px;}
+.fm-section.closed .fm-section-body{display:none;}
+.deploy-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+.deploy-card-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.deploy-card-body{font-size:13px;color:var(--ink2);line-height:1.6;}
+.deploy-card-body ul{margin:4px 0 0 16px;padding:0;}
+.deploy-card-body li{margin-bottom:3px;}
 .acro-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
 .acro-btn{padding:4px 9px;font-size:11px;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;border:1.5px solid var(--border);border-radius:6px;background:var(--white);color:var(--ink2);cursor:pointer;transition:all .15s;line-height:1.6;}
 .acro-btn:hover{border-color:var(--coral);color:var(--coral);}
@@ -290,6 +302,37 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
 .cc-link.phone{background:var(--green-light);color:var(--green);}
 .cc-link.web{background:var(--sky-light);color:var(--sky);}
 .cc-link.app{background:var(--lavender-light);color:var(--lavender);}
+
+/* COMMUNITY TIPS */
+.tips-filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.tips-filter-select{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:8px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink2);cursor:pointer;outline:none;transition:border-color .15s;flex:1;min-width:140px;}
+.tips-filter-select:focus{border-color:var(--coral);}
+.tip-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:var(--shadow);}
+.tip-card-header{display:flex;align-items:flex-start;gap:7px;margin-bottom:9px;flex-wrap:wrap;}
+.tip-cat-pill{font-size:10px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.tip-station-pill{font-size:10px;font-weight:600;padding:2px 9px;border-radius:20px;background:var(--sky-light);color:#2563eb;border:1px solid #bfdbfe;white-space:nowrap;flex-shrink:0;}
+.tip-text{font-size:13px;color:var(--ink);line-height:1.6;margin-bottom:10px;}
+.tip-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+.tip-submitter{font-size:11px;color:var(--ink3);}
+.tip-votes{display:flex;align-items:center;gap:6px;}
+.tip-vote-btn{background:var(--off);border:1.5px solid var(--border);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;color:var(--ink2);transition:all .15s;font-family:'Plus Jakarta Sans',sans-serif;}
+.tip-vote-btn:hover{border-color:var(--coral-mid);color:var(--coral);background:var(--coral-light);}
+.tip-vote-btn.voted{background:var(--coral-light);border-color:var(--coral);color:var(--coral);}
+.tips-empty{text-align:center;padding:40px 16px;color:var(--ink3);font-size:13px;}
+.tips-loading{text-align:center;padding:30px;color:var(--ink3);font-size:13px;}
+.tip-form{background:var(--white);border:1px solid var(--border);border-radius:var(--rlg);padding:18px;box-shadow:var(--shadow);margin-bottom:16px;}
+.tip-form-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px;}
+.tf-row{margin-bottom:12px;}
+.tf-label{font-size:12px;font-weight:600;color:var(--ink2);margin-bottom:4px;display:block;}
+.tf-input,.tf-select,.tf-textarea{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:var(--r);padding:9px 12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .15s;}
+.tf-input:focus,.tf-select:focus,.tf-textarea:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(90,122,58,.1);}
+.tf-textarea{resize:vertical;min-height:80px;line-height:1.5;}
+.tf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.tf-submit{background:var(--coral);border:none;border-radius:var(--r);padding:11px 20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:#fff;cursor:pointer;width:100%;transition:background .15s;}
+.tf-submit:hover{background:#4a6830;}
+.tf-submit:disabled{background:var(--border);cursor:not-allowed;color:var(--ink3);}
+.tips-toggle-form-btn{background:var(--coral-light);border:1.5px solid var(--coral-mid);border-radius:var(--r);padding:10px 18px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;color:var(--coral);cursor:pointer;margin-bottom:16px;width:100%;transition:background .15s;}
+.tips-toggle-form-btn:hover{background:#dde9c8;}
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .sidebar{width:220px;min-width:220px;background:var(--white);border-right:1px solid var(--border);height:100vh;display:flex;flex-direction:column;position:sticky;top:0;overflow-y:auto;}
@@ -607,7 +650,8 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
     <div class="tab" onclick="tab('deals',this)">Deals &amp; Discounts</div>
     <div class="tab" onclick="tab('facilities',this)">Base Facilities</div>
     <div class="tab" onclick="tab('contacts',this)">Who To Call</div>
-    <div class="tab" onclick="tab('news',this)">Base News</div></div>
+    <div class="tab" onclick="tab('news',this)">Base News</div>
+    <div class="tab" onclick="tab('tips',this)">Community Tips</div></div>
 
   <div class="main-inner"><div class="body">
 
@@ -682,6 +726,10 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         <div class="qc2" onclick="tab('news',document.querySelector('.sb-item[data-panel=\'news\']'))">
           <div class="qc2-icon" style="background:#f8fafc;color:#475569;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="2" width="11" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><line x1="4.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="4.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="4.5" y1="10" x2="7.5" y2="10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
           <div><div class="qc2-title">Base News</div><div class="qc2-sub">Updates from your base</div></div>
+        </div>
+        <div class="qc2" onclick="tab('tips',document.querySelector('.sb-item[data-panel=\'tips\']'))">
+          <div class="qc2-icon" style="background:#fef9c3;color:#b45309;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5C5 1.5 3 3.3 3 5.7c0 1.5.8 2.8 2 3.6V11h5V9.3c1.2-.8 2-2.1 2-3.6 0-2.4-2-4.2-4.5-4.2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="5.5" y1="12.5" x2="9.5" y2="12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+          <div><div class="qc2-title">Community Tips</div><div class="qc2-sub">Tips from Marines</div></div>
         </div>
       </div>
     </div>
@@ -938,115 +986,204 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
     <div class="panel" id="p-field">
       <div class="ib"><div class="ib-t">Your quick-reference guide to USMC structure</div><div class="ib-b">How units are organized, what every rank means, and the acronyms you'll hear constantly. Bookmark this tab.</div></div>
 
-      <div class="sh">Unit structure</div>
-      <div class="org-tree">
-        <div class="org-node"><div class="org-node-name">Regiment</div><div class="org-node-size">3,000 – 5,000 Marines</div><div class="org-node-leader">Led by a Colonel</div></div>
-        <div class="org-connector"></div>
-        <div class="org-node"><div class="org-node-name">Battalion</div><div class="org-node-size">800 – 1,200 Marines</div><div class="org-node-leader">Led by a Lt Colonel</div></div>
-        <div class="org-connector"></div>
-        <div class="org-node"><div class="org-node-name">Company</div><div class="org-node-size">180 – 200 Marines</div><div class="org-node-leader">Led by a Captain</div></div>
-        <div class="org-connector"></div>
-        <div class="org-node"><div class="org-node-name">Platoon</div><div class="org-node-size">40 – 50 Marines</div><div class="org-node-leader">Led by a Lieutenant</div></div>
-        <div class="org-connector"></div>
-        <div class="org-node"><div class="org-node-name">Squad</div><div class="org-node-size">13 Marines</div><div class="org-node-leader">Led by a Staff Sergeant</div></div>
-        <div class="org-connector"></div>
-        <div class="org-node"><div class="org-node-name">Fire Team</div><div class="org-node-size">4 Marines</div><div class="org-node-leader">Led by a Corporal</div></div>
+      <!-- UNIT STRUCTURE -->
+      <div class="fm-section" id="fms-structure">
+        <button class="fm-section-header" onclick="toggleFMSection('structure')">
+          <span>Unit Structure</span>
+          <svg class="fm-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 8,11 13,6"/></svg>
+        </button>
+        <div class="fm-section-body" id="fmb-structure">
+          <div class="org-tree">
+            <div class="org-node"><div class="org-node-name">Regiment</div><div class="org-node-size">3,000 – 5,000 Marines</div><div class="org-node-leader">Led by a Colonel</div></div>
+            <div class="org-connector"></div>
+            <div class="org-node"><div class="org-node-name">Battalion</div><div class="org-node-size">800 – 1,200 Marines</div><div class="org-node-leader">Led by a Lt Colonel</div></div>
+            <div class="org-connector"></div>
+            <div class="org-node"><div class="org-node-name">Company</div><div class="org-node-size">180 – 200 Marines</div><div class="org-node-leader">Led by a Captain</div></div>
+            <div class="org-connector"></div>
+            <div class="org-node"><div class="org-node-name">Platoon</div><div class="org-node-size">40 – 50 Marines</div><div class="org-node-leader">Led by a Lieutenant</div></div>
+            <div class="org-connector"></div>
+            <div class="org-node"><div class="org-node-name">Squad</div><div class="org-node-size">13 Marines</div><div class="org-node-leader">Led by a Staff Sergeant</div></div>
+            <div class="org-connector"></div>
+            <div class="org-node"><div class="org-node-name">Fire Team</div><div class="org-node-size">4 Marines</div><div class="org-node-leader">Led by a Corporal</div></div>
+          </div>
+        </div>
       </div>
 
-      <div class="sh" style="margin-top:24px;">Ranks</div>
-      <div class="rank-group-label">Enlisted</div>
-      <div class="rank-grid">
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-1</div><div class="rank-info"><div class="rank-grade">E-1</div><div class="rank-title">Private</div><div class="rank-role">Brand new Marine, starting from scratch</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-2</div><div class="rank-info"><div class="rank-grade">E-2</div><div class="rank-title">Private First Class</div><div class="rank-role">Settling in, building the basics</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-3</div><div class="rank-info"><div class="rank-grade">E-3</div><div class="rank-title">Lance Corporal</div><div class="rank-role">First promotion, still learning the ropes</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-4</div><div class="rank-info"><div class="rank-grade">E-4</div><div class="rank-title">Corporal</div><div class="rank-role">First NCO rank — leads a fire team of 4</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-5</div><div class="rank-info"><div class="rank-grade">E-5</div><div class="rank-title">Sergeant</div><div class="rank-role">Leads a squad, backbone of the Corps</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-6</div><div class="rank-info"><div class="rank-grade">E-6</div><div class="rank-title">Staff Sergeant</div><div class="rank-role">Senior NCO, squad leader and mentor</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-7</div><div class="rank-info"><div class="rank-grade">E-7</div><div class="rank-title">Gunnery Sergeant</div><div class="rank-role">Technical expert, shapes junior Marines</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-8</div><div class="rank-info"><div class="rank-grade">E-8</div><div class="rank-title">Master Sgt / First Sgt</div><div class="rank-role">Senior company advisor or master of craft</div></div></div>
-        <div class="rank-card" style="grid-column:1/-1;"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);">E-9</div><div class="rank-info"><div class="rank-grade">E-9</div><div class="rank-title">SgtMaj / Master GySgt</div><div class="rank-role">Highest enlisted — sets the culture of the Corps</div></div></div>
-      </div>
-      <div class="rank-group-label">Warrant Officers</div>
-      <div class="rank-grid">
-        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-1</div><div class="rank-info"><div class="rank-grade">W-1</div><div class="rank-title">Warrant Officer 1</div><div class="rank-role">Technical specialist, newly commissioned</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-2</div><div class="rank-info"><div class="rank-grade">W-2</div><div class="rank-title">Chief Warrant Officer 2</div><div class="rank-role">Growing expertise in their specialty</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-3</div><div class="rank-info"><div class="rank-grade">W-3</div><div class="rank-title">Chief Warrant Officer 3</div><div class="rank-role">Recognized subject matter expert</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-4</div><div class="rank-info"><div class="rank-grade">W-4</div><div class="rank-title">Chief Warrant Officer 4</div><div class="rank-role">Senior technical authority</div></div></div>
-        <div class="rank-card" style="grid-column:1/-1;"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);">W-5</div><div class="rank-info"><div class="rank-grade">W-5</div><div class="rank-title">Chief Warrant Officer 5</div><div class="rank-role">Pinnacle of technical mastery</div></div></div>
-      </div>
-      <div class="rank-group-label">Officers</div>
-      <div class="rank-grid">
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-1</div><div class="rank-info"><div class="rank-grade">O-1</div><div class="rank-title">2nd Lieutenant</div><div class="rank-role">Newest officer — leads a platoon</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-2</div><div class="rank-info"><div class="rank-grade">O-2</div><div class="rank-title">1st Lieutenant</div><div class="rank-role">Building experience, platoon leader</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-3</div><div class="rank-info"><div class="rank-grade">O-3</div><div class="rank-title">Captain</div><div class="rank-role">Commands a company of ~180</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-4</div><div class="rank-info"><div class="rank-grade">O-4</div><div class="rank-title">Major</div><div class="rank-role">Staff officer, battalion advisor</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-5</div><div class="rank-info"><div class="rank-grade">O-5</div><div class="rank-title">Lt Colonel</div><div class="rank-role">Commands a battalion of 800–1,200</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-6</div><div class="rank-info"><div class="rank-grade">O-6</div><div class="rank-title">Colonel</div><div class="rank-role">Commands a regiment of 3,000–5,000</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-7</div><div class="rank-info"><div class="rank-grade">O-7</div><div class="rank-title">Brigadier General</div><div class="rank-role">One-star general, senior leadership</div></div></div>
-        <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;">O-8</div><div class="rank-info"><div class="rank-grade">O-8</div><div class="rank-title">Major General</div><div class="rank-role">Two-star, commands a division</div></div></div>
+      <!-- RANKS -->
+      <div class="fm-section" id="fms-ranks">
+        <button class="fm-section-header" onclick="toggleFMSection('ranks')">
+          <span>Ranks</span>
+          <svg class="fm-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 8,11 13,6"/></svg>
+        </button>
+        <div class="fm-section-body" id="fmb-ranks">
+          <div class="rank-group-label" style="margin-top:8px;">Enlisted</div>
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="4" fill="currentColor" opacity="0.4"/></svg></div><div class="rank-info"><div class="rank-grade">E-1</div><div class="rank-title">Private</div><div class="rank-role">Brand new Marine, starting from scratch</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="6,28 20,14 34,28" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="rank-info"><div class="rank-grade">E-2</div><div class="rank-title">Private First Class</div><div class="rank-role">Settling in, building the basics</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="8" x2="32" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="32" y1="8" x2="8" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">E-3</div><div class="rank-title">Lance Corporal</div><div class="rank-role">First promotion, crossed rifles insignia</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="6,21 20,8 34,21" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,32 20,19 34,32" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="rank-info"><div class="rank-grade">E-4</div><div class="rank-title">Corporal</div><div class="rank-role">First NCO rank — leads a fire team of 4</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="6,17 20,5 34,17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,25 20,13 34,25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,33 20,21 34,33" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="rank-info"><div class="rank-grade">E-5</div><div class="rank-title">Sergeant</div><div class="rank-role">Leads a squad, backbone of the Corps</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="6,14 20,4 34,14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,21 20,11 34,21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,28 20,18 34,28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7,35 Q20,42 33,35" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div><div class="rank-info"><div class="rank-grade">E-6</div><div class="rank-title">Staff Sergeant</div><div class="rank-role">Senior NCO, squad leader and mentor</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="6,12 20,3 34,12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,19 20,10 34,19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,26 20,17 34,26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7,31 Q20,38 33,31" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M6,37 Q20,44 34,37" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><div class="rank-info"><div class="rank-grade">E-7</div><div class="rank-title">Gunnery Sergeant</div><div class="rank-role">Technical expert, shapes junior Marines</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="6,11 20,3 34,11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,17 20,9 34,17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,23 20,15 34,23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="26.5" r="2" fill="currentColor"/><path d="M7,31 Q20,38 33,31" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M6,37 Q20,44 34,37" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><div class="rank-info"><div class="rank-grade">E-8</div><div class="rank-title">Master Sgt / First Sgt</div><div class="rank-role">Senior company advisor or master of craft</div></div></div>
+            <div class="rank-card" style="grid-column:1/-1;"><div class="rank-ins" style="background:var(--coral-light);color:var(--coral);"><svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="6,9 20,2 34,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,15 20,8 34,15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6,21 20,14 34,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polygon points="20,23.5 21.2,27 24.8,27 22,29.2 23.2,32.7 20,30.5 16.8,32.7 18,29.2 15.2,27 18.8,27" fill="currentColor"/><path d="M6,35 Q20,41 34,35" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M5,39.5 Q20,45.5 35,39.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M4,44 Q20,50 36,44" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><div class="rank-info"><div class="rank-grade">E-9</div><div class="rank-title">SgtMaj / Master GySgt</div><div class="rank-role">Highest enlisted — sets the culture of the Corps</div></div></div>
+          </div>
+
+          <div class="rank-group-label">Warrant Officers</div>
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="17" width="28" height="7" rx="2" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">W-1</div><div class="rank-title">Warrant Officer 1</div><div class="rank-role">Technical specialist, newly commissioned</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="17" width="28" height="7" rx="2" fill="currentColor"/><rect x="11" y="19" width="18" height="3" rx="1" fill="white" opacity="0.45"/></svg></div><div class="rank-info"><div class="rank-grade">W-2</div><div class="rank-title">Chief Warrant Officer 2</div><div class="rank-role">Growing expertise in their specialty</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="12" width="28" height="6" rx="2" fill="currentColor"/><rect x="6" y="22" width="28" height="6" rx="2" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">W-3</div><div class="rank-title">Chief Warrant Officer 3</div><div class="rank-role">Recognized subject matter expert</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="12" width="28" height="6" rx="2" fill="currentColor"/><rect x="6" y="22" width="28" height="6" rx="2" fill="currentColor"/><rect x="11" y="24" width="18" height="2" rx="1" fill="white" opacity="0.45"/></svg></div><div class="rank-info"><div class="rank-grade">W-4</div><div class="rank-title">Chief Warrant Officer 4</div><div class="rank-role">Senior technical authority</div></div></div>
+            <div class="rank-card" style="grid-column:1/-1;"><div class="rank-ins" style="background:var(--off2);color:var(--ink2);"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="8" width="28" height="6" rx="2" fill="currentColor"/><rect x="6" y="17" width="28" height="6" rx="2" fill="currentColor"/><rect x="6" y="26" width="28" height="6" rx="2" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">W-5</div><div class="rank-title">Chief Warrant Officer 5</div><div class="rank-role">Pinnacle of technical mastery</div></div></div>
+          </div>
+
+          <div class="rank-group-label">Officers</div>
+          <div class="rank-grid">
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="16" width="28" height="8" rx="2" fill="#c9a227"/></svg></div><div class="rank-info"><div class="rank-grade">O-1</div><div class="rank-title">2nd Lieutenant</div><div class="rank-role">Newest officer — leads a platoon</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="16" width="28" height="8" rx="2" fill="#a0a8bc"/></svg></div><div class="rank-info"><div class="rank-grade">O-2</div><div class="rank-title">1st Lieutenant</div><div class="rank-role">Building experience, platoon leader</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="12" width="28" height="6" rx="2" fill="#a0a8bc"/><rect x="6" y="22" width="28" height="6" rx="2" fill="#a0a8bc"/></svg></div><div class="rank-info"><div class="rank-grade">O-3</div><div class="rank-title">Captain</div><div class="rank-role">Commands a company of ~180</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M20,4 Q34,12 34,20 Q34,28 20,36 Q6,28 6,20 Q6,12 20,4 Z" fill="#c9a227"/><line x1="20" y1="4" x2="20" y2="36" stroke="#8a6e10" stroke-width="1.2" opacity="0.5"/></svg></div><div class="rank-info"><div class="rank-grade">O-4</div><div class="rank-title">Major</div><div class="rank-role">Staff officer, battalion advisor</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M20,4 Q34,12 34,20 Q34,28 20,36 Q6,28 6,20 Q6,12 20,4 Z" fill="#a0a8bc"/><line x1="20" y1="4" x2="20" y2="36" stroke="#6a7090" stroke-width="1.2" opacity="0.5"/></svg></div><div class="rank-info"><div class="rank-grade">O-5</div><div class="rank-title">Lt Colonel</div><div class="rank-role">Commands a battalion of 800–1,200</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="17" rx="7" ry="5" fill="#a0a8bc"/><path d="M5,17 Q12,11 20,13 Q28,11 35,17" stroke="#a0a8bc" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M5,17 Q12,23 20,21 Q28,23 35,17" stroke="#a0a8bc" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="16" y="25" width="8" height="10" rx="1.5" fill="#a0a8bc"/></svg></div><div class="rank-info"><div class="rank-grade">O-6</div><div class="rank-title">Colonel</div><div class="rank-role">Commands a regiment of 3,000–5,000</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><polygon points="20,10 22.4,16.8 29.5,16.9 23.8,21.2 25.9,28.1 20,24 14.1,28.1 16.2,21.2 10.5,16.9 17.6,16.8" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">O-7</div><div class="rank-title">Brigadier General</div><div class="rank-role">One-star general, senior leadership</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><polygon points="12,13 13.65,17.74 18.66,17.84 14.66,20.87 16.12,25.66 12,22.8 7.88,25.66 9.34,20.87 5.34,17.84 10.35,17.74" fill="currentColor"/><polygon points="28,13 29.65,17.74 34.66,17.84 30.66,20.87 32.12,25.66 28,22.8 23.88,25.66 25.34,20.87 21.34,17.84 26.35,17.74" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">O-8</div><div class="rank-title">Major General</div><div class="rank-role">Two-star, commands a division</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><polygon points="7,15 8.18,18.38 11.76,18.46 8.9,20.62 9.94,24.05 7,22 4.06,24.05 5.1,20.62 2.24,18.46 5.82,18.38" fill="currentColor"/><polygon points="20,15 21.18,18.38 24.76,18.46 21.9,20.62 22.94,24.05 20,22 17.06,24.05 18.1,20.62 15.24,18.46 18.82,18.38" fill="currentColor"/><polygon points="33,15 34.18,18.38 37.76,18.46 34.9,20.62 35.94,24.05 33,22 30.06,24.05 31.1,20.62 28.24,18.46 31.82,18.38" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">O-9</div><div class="rank-title">Lieutenant General</div><div class="rank-role">Three-star, commands a Marine Expeditionary Force</div></div></div>
+            <div class="rank-card"><div class="rank-ins" style="background:#eef2ff;color:#4f63a3;"><svg viewBox="0 0 40 40" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><polygon points="5.5,15.5 6.56,18.54 9.78,18.61 7.21,20.56 8.15,23.64 5.5,21.8 2.85,23.64 3.79,20.56 1.22,18.61 4.44,18.54" fill="currentColor"/><polygon points="15.5,15.5 16.56,18.54 19.78,18.61 17.21,20.56 18.15,23.64 15.5,21.8 12.85,23.64 13.79,20.56 11.22,18.61 14.44,18.54" fill="currentColor"/><polygon points="24.5,15.5 25.56,18.54 28.78,18.61 26.21,20.56 27.15,23.64 24.5,21.8 21.85,23.64 22.79,20.56 20.22,18.61 23.44,18.54" fill="currentColor"/><polygon points="34.5,15.5 35.56,18.54 38.78,18.61 36.21,20.56 37.15,23.64 34.5,21.8 31.85,23.64 32.79,20.56 29.22,18.61 33.44,18.54" fill="currentColor"/></svg></div><div class="rank-info"><div class="rank-grade">O-10</div><div class="rank-title">General</div><div class="rank-role">Four-star, Commandant of the Marine Corps</div></div></div>
+          </div>
+        </div>
       </div>
 
-      <div class="sh" style="margin-top:24px;">Acronym glossary</div>
-      <div class="acro-filter">
-        <button class="acro-btn active" onclick="filterAcro('ALL',this)">All</button>
-        <button class="acro-btn" onclick="filterAcro('A',this)">A</button>
-        <button class="acro-btn" onclick="filterAcro('B',this)">B</button>
-        <button class="acro-btn" onclick="filterAcro('C',this)">C</button>
-        <button class="acro-btn" onclick="filterAcro('D',this)">D</button>
-        <button class="acro-btn" onclick="filterAcro('E',this)">E</button>
-        <button class="acro-btn" onclick="filterAcro('F',this)">F</button>
-        <button class="acro-btn" onclick="filterAcro('G',this)">G</button>
-        <button class="acro-btn" onclick="filterAcro('I',this)">I</button>
-        <button class="acro-btn" onclick="filterAcro('J',this)">J</button>
-        <button class="acro-btn" onclick="filterAcro('L',this)">L</button>
-        <button class="acro-btn" onclick="filterAcro('M',this)">M</button>
-        <button class="acro-btn" onclick="filterAcro('N',this)">N</button>
-        <button class="acro-btn" onclick="filterAcro('O',this)">O</button>
-        <button class="acro-btn" onclick="filterAcro('P',this)">P</button>
-        <button class="acro-btn" onclick="filterAcro('S',this)">S</button>
-        <button class="acro-btn" onclick="filterAcro('T',this)">T</button>
-        <button class="acro-btn" onclick="filterAcro('U',this)">U</button>
-        <button class="acro-btn" onclick="filterAcro('V',this)">V</button>
-        <button class="acro-btn" onclick="filterAcro('X',this)">X</button>
+      <!-- ACRONYM GLOSSARY -->
+      <div class="fm-section" id="fms-acronyms">
+        <button class="fm-section-header" onclick="toggleFMSection('acronyms')">
+          <span>Acronym Glossary</span>
+          <svg class="fm-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 8,11 13,6"/></svg>
+        </button>
+        <div class="fm-section-body" id="fmb-acronyms">
+          <div class="acro-filter">
+            <button class="acro-btn active" onclick="filterAcro('ALL',this)">All</button>
+            <button class="acro-btn" onclick="filterAcro('A',this)">A</button>
+            <button class="acro-btn" onclick="filterAcro('B',this)">B</button>
+            <button class="acro-btn" onclick="filterAcro('C',this)">C</button>
+            <button class="acro-btn" onclick="filterAcro('D',this)">D</button>
+            <button class="acro-btn" onclick="filterAcro('E',this)">E</button>
+            <button class="acro-btn" onclick="filterAcro('F',this)">F</button>
+            <button class="acro-btn" onclick="filterAcro('G',this)">G</button>
+            <button class="acro-btn" onclick="filterAcro('I',this)">I</button>
+            <button class="acro-btn" onclick="filterAcro('J',this)">J</button>
+            <button class="acro-btn" onclick="filterAcro('L',this)">L</button>
+            <button class="acro-btn" onclick="filterAcro('M',this)">M</button>
+            <button class="acro-btn" onclick="filterAcro('N',this)">N</button>
+            <button class="acro-btn" onclick="filterAcro('O',this)">O</button>
+            <button class="acro-btn" onclick="filterAcro('P',this)">P</button>
+            <button class="acro-btn" onclick="filterAcro('S',this)">S</button>
+            <button class="acro-btn" onclick="filterAcro('T',this)">T</button>
+            <button class="acro-btn" onclick="filterAcro('U',this)">U</button>
+            <button class="acro-btn" onclick="filterAcro('V',this)">V</button>
+            <button class="acro-btn" onclick="filterAcro('X',this)">X</button>
+          </div>
+          <div class="acro-grid" id="acro-grid">
+            <div class="acro-pill" data-letter="A"><div class="acro-term">ASVAB</div><div class="acro-def">Armed Services Vocational Aptitude Battery — the entry test used for enlistment and MOS assignment</div></div>
+            <div class="acro-pill" data-letter="B"><div class="acro-term">BAH</div><div class="acro-def">Basic Allowance for Housing — monthly tax-free housing payment</div></div>
+            <div class="acro-pill" data-letter="B"><div class="acro-term">BAS</div><div class="acro-def">Basic Allowance for Subsistence — monthly food allowance</div></div>
+            <div class="acro-pill" data-letter="B"><div class="acro-term">BCT</div><div class="acro-def">Basic Combat Training — entry-level training; USMC equivalent is Recruit Training (boot camp)</div></div>
+            <div class="acro-pill" data-letter="C"><div class="acro-term">CAC</div><div class="acro-def">Common Access Card — your military ID and digital credential card</div></div>
+            <div class="acro-pill" data-letter="C"><div class="acro-term">CO</div><div class="acro-def">Commanding Officer — the boss of the unit, with major authority over your Marine's daily life</div></div>
+            <div class="acro-pill" data-letter="C"><div class="acro-term">COLA</div><div class="acro-def">Cost of Living Allowance — extra pay for high-cost areas, especially overseas assignments</div></div>
+            <div class="acro-pill" data-letter="C"><div class="acro-term">CONUS</div><div class="acro-def">Continental United States — the 48 contiguous states, excluding Alaska, Hawaii, and overseas</div></div>
+            <div class="acro-pill" data-letter="D"><div class="acro-term">DD214</div><div class="acro-def">Certificate of Release or Discharge — the document proving military service; guard it carefully</div></div>
+            <div class="acro-pill" data-letter="D"><div class="acro-term">DEERS</div><div class="acro-def">Defense Enrollment Eligibility Reporting System — must be enrolled to use any military benefits</div></div>
+            <div class="acro-pill" data-letter="E"><div class="acro-term">EAS</div><div class="acro-def">End of Active Service — the date your Marine's enlistment contract expires</div></div>
+            <div class="acro-pill" data-letter="E"><div class="acro-term">EGA</div><div class="acro-def">Eagle, Globe, and Anchor — the official emblem of the United States Marine Corps</div></div>
+            <div class="acro-pill" data-letter="F"><div class="acro-term">FRG</div><div class="acro-def">Family Readiness Group — spouse and family community for your unit</div></div>
+            <div class="acro-pill" data-letter="G"><div class="acro-term">GTC</div><div class="acro-def">Government Travel Card — the card used for official travel expenses; must be paid promptly</div></div>
+            <div class="acro-pill" data-letter="I"><div class="acro-term">IOC</div><div class="acro-def">Infantry Officer Course — advanced training required for Marine infantry officers</div></div>
+            <div class="acro-pill" data-letter="J"><div class="acro-term">JAG</div><div class="acro-def">Judge Advocate General — military lawyers who provide free legal assistance on base</div></div>
+            <div class="acro-pill" data-letter="L"><div class="acro-term">LES</div><div class="acro-def">Leave and Earnings Statement — your Marine's monthly pay stub, available on myPay</div></div>
+            <div class="acro-pill" data-letter="M"><div class="acro-term">MCX</div><div class="acro-def">Marine Corps Exchange — the on-base retail store, tax-free with negotiated pricing</div></div>
+            <div class="acro-pill" data-letter="M"><div class="acro-term">MCRD</div><div class="acro-def">Marine Corps Recruit Depot — where enlisted Marines go for boot camp (San Diego or Parris Island)</div></div>
+            <div class="acro-pill" data-letter="M"><div class="acro-term">MOL</div><div class="acro-def">Marine OnLine — internal admin portal for leave requests, Tuition Assistance, and records</div></div>
+            <div class="acro-pill" data-letter="M"><div class="acro-term">MOS</div><div class="acro-def">Military Occupational Specialty — your Marine's job code and career field</div></div>
+            <div class="acro-pill" data-letter="M"><div class="acro-term">MTF</div><div class="acro-def">Military Treatment Facility — the hospital or clinic on base for TRICARE Prime enrollees</div></div>
+            <div class="acro-pill" data-letter="N"><div class="acro-term">NCO</div><div class="acro-def">Non-Commissioned Officer — enlisted leaders from Corporal (E-4) through Sergeant Major (E-9)</div></div>
+            <div class="acro-pill" data-letter="O"><div class="acro-term">OCONUS</div><div class="acro-def">Outside the Continental United States — Hawaii, Alaska, and all overseas assignments</div></div>
+            <div class="acro-pill" data-letter="O"><div class="acro-term">OCS</div><div class="acro-def">Officer Candidates School — the path to becoming a commissioned Marine officer</div></div>
+            <div class="acro-pill" data-letter="P"><div class="acro-term">PCS</div><div class="acro-def">Permanent Change of Station — an official move to a new duty station</div></div>
+            <div class="acro-pill" data-letter="P"><div class="acro-term">POA</div><div class="acro-def">Power of Attorney — legal authority for a spouse to act on a Marine's behalf during deployment</div></div>
+            <div class="acro-pill" data-letter="P"><div class="acro-term">POV</div><div class="acro-def">Privately Owned Vehicle — your personal car; one may be shipped at government expense during PCS</div></div>
+            <div class="acro-pill" data-letter="P"><div class="acro-term">PTAD</div><div class="acro-def">Permissive Temporary Additional Duty — authorized absence without pay, used for house-hunting trips</div></div>
+            <div class="acro-pill" data-letter="S"><div class="acro-term">SCRA</div><div class="acro-def">Servicemembers Civil Relief Act — caps pre-service debt interest at 6% APR; call your lenders now</div></div>
+            <div class="acro-pill" data-letter="S"><div class="acro-term">SRB</div><div class="acro-def">Selective Reenlistment Bonus — cash bonus for reenlisting in a high-demand MOS</div></div>
+            <div class="acro-pill" data-letter="T"><div class="acro-term">TAD / TDY</div><div class="acro-def">Temporary Additional Duty — a short assignment away from home base; not a permanent PCS move</div></div>
+            <div class="acro-pill" data-letter="T"><div class="acro-term">TRICARE</div><div class="acro-def">Military health insurance program covering active duty, retirees, and their families</div></div>
+            <div class="acro-pill" data-letter="U"><div class="acro-term">UA</div><div class="acro-def">Unauthorized Absence — serious disciplinary offense that affects pay, rank, and career</div></div>
+            <div class="acro-pill" data-letter="V"><div class="acro-term">VA</div><div class="acro-def">Department of Veterans Affairs — manages veteran benefits, healthcare, disability, and education</div></div>
+            <div class="acro-pill" data-letter="V"><div class="acro-term">VGLI</div><div class="acro-def">Veterans' Group Life Insurance — life insurance coverage you can keep after leaving active service</div></div>
+            <div class="acro-pill" data-letter="X"><div class="acro-term">XO</div><div class="acro-def">Executive Officer — second-in-command of a unit, directly below the CO</div></div>
+          </div>
+        </div>
       </div>
-      <div class="acro-grid" id="acro-grid">
-        <div class="acro-pill" data-letter="A"><div class="acro-term">ASVAB</div><div class="acro-def">Armed Services Vocational Aptitude Battery — the entry test used for enlistment and MOS assignment</div></div>
-        <div class="acro-pill" data-letter="B"><div class="acro-term">BAH</div><div class="acro-def">Basic Allowance for Housing — monthly tax-free housing payment</div></div>
-        <div class="acro-pill" data-letter="B"><div class="acro-term">BAS</div><div class="acro-def">Basic Allowance for Subsistence — monthly food allowance</div></div>
-        <div class="acro-pill" data-letter="B"><div class="acro-term">BCT</div><div class="acro-def">Basic Combat Training — entry-level training; USMC equivalent is Recruit Training (boot camp)</div></div>
-        <div class="acro-pill" data-letter="C"><div class="acro-term">CAC</div><div class="acro-def">Common Access Card — your military ID and digital credential card</div></div>
-        <div class="acro-pill" data-letter="C"><div class="acro-term">CO</div><div class="acro-def">Commanding Officer — the boss of the unit, with major authority over your Marine's daily life</div></div>
-        <div class="acro-pill" data-letter="C"><div class="acro-term">COLA</div><div class="acro-def">Cost of Living Allowance — extra pay for high-cost areas, especially overseas assignments</div></div>
-        <div class="acro-pill" data-letter="C"><div class="acro-term">CONUS</div><div class="acro-def">Continental United States — the 48 contiguous states, excluding Alaska, Hawaii, and overseas</div></div>
-        <div class="acro-pill" data-letter="D"><div class="acro-term">DD214</div><div class="acro-def">Certificate of Release or Discharge — the document proving military service; guard it carefully</div></div>
-        <div class="acro-pill" data-letter="D"><div class="acro-term">DEERS</div><div class="acro-def">Defense Enrollment Eligibility Reporting System — must be enrolled to use any military benefits</div></div>
-        <div class="acro-pill" data-letter="E"><div class="acro-term">EAS</div><div class="acro-def">End of Active Service — the date your Marine's enlistment contract expires</div></div>
-        <div class="acro-pill" data-letter="E"><div class="acro-term">EGA</div><div class="acro-def">Eagle, Globe, and Anchor — the official emblem of the United States Marine Corps</div></div>
-        <div class="acro-pill" data-letter="F"><div class="acro-term">FRG</div><div class="acro-def">Family Readiness Group — spouse and family community for your unit</div></div>
-        <div class="acro-pill" data-letter="G"><div class="acro-term">GTC</div><div class="acro-def">Government Travel Card — the card used for official travel expenses; must be paid promptly</div></div>
-        <div class="acro-pill" data-letter="I"><div class="acro-term">IOC</div><div class="acro-def">Infantry Officer Course — advanced training required for Marine infantry officers</div></div>
-        <div class="acro-pill" data-letter="J"><div class="acro-term">JAG</div><div class="acro-def">Judge Advocate General — military lawyers who provide free legal assistance on base</div></div>
-        <div class="acro-pill" data-letter="L"><div class="acro-term">LES</div><div class="acro-def">Leave and Earnings Statement — your Marine's monthly pay stub, available on myPay</div></div>
-        <div class="acro-pill" data-letter="M"><div class="acro-term">MCX</div><div class="acro-def">Marine Corps Exchange — the on-base retail store, tax-free with negotiated pricing</div></div>
-        <div class="acro-pill" data-letter="M"><div class="acro-term">MCRD</div><div class="acro-def">Marine Corps Recruit Depot — where enlisted Marines go for boot camp (San Diego or Parris Island)</div></div>
-        <div class="acro-pill" data-letter="M"><div class="acro-term">MOL</div><div class="acro-def">Marine OnLine — internal admin portal for leave requests, Tuition Assistance, and records</div></div>
-        <div class="acro-pill" data-letter="M"><div class="acro-term">MOS</div><div class="acro-def">Military Occupational Specialty — your Marine's job code and career field</div></div>
-        <div class="acro-pill" data-letter="M"><div class="acro-term">MTF</div><div class="acro-def">Military Treatment Facility — the hospital or clinic on base for TRICARE Prime enrollees</div></div>
-        <div class="acro-pill" data-letter="N"><div class="acro-term">NCO</div><div class="acro-def">Non-Commissioned Officer — enlisted leaders from Corporal (E-4) through Sergeant Major (E-9)</div></div>
-        <div class="acro-pill" data-letter="O"><div class="acro-term">OCONUS</div><div class="acro-def">Outside the Continental United States — Hawaii, Alaska, and all overseas assignments</div></div>
-        <div class="acro-pill" data-letter="O"><div class="acro-term">OCS</div><div class="acro-def">Officer Candidates School — the path to becoming a commissioned Marine officer</div></div>
-        <div class="acro-pill" data-letter="P"><div class="acro-term">PCS</div><div class="acro-def">Permanent Change of Station — an official move to a new duty station</div></div>
-        <div class="acro-pill" data-letter="P"><div class="acro-term">POA</div><div class="acro-def">Power of Attorney — legal authority for a spouse to act on a Marine's behalf during deployment</div></div>
-        <div class="acro-pill" data-letter="P"><div class="acro-term">POV</div><div class="acro-def">Privately Owned Vehicle — your personal car; one may be shipped at government expense during PCS</div></div>
-        <div class="acro-pill" data-letter="P"><div class="acro-term">PTAD</div><div class="acro-def">Permissive Temporary Additional Duty — authorized absence without pay, used for house-hunting trips</div></div>
-        <div class="acro-pill" data-letter="S"><div class="acro-term">SCRA</div><div class="acro-def">Servicemembers Civil Relief Act — caps pre-service debt interest at 6% APR; call your lenders now</div></div>
-        <div class="acro-pill" data-letter="S"><div class="acro-term">SRB</div><div class="acro-def">Selective Reenlistment Bonus — cash bonus for reenlisting in a high-demand MOS</div></div>
-        <div class="acro-pill" data-letter="T"><div class="acro-term">TAD / TDY</div><div class="acro-def">Temporary Additional Duty — a short assignment away from home base; not a permanent PCS move</div></div>
-        <div class="acro-pill" data-letter="T"><div class="acro-term">TRICARE</div><div class="acro-def">Military health insurance program covering active duty, retirees, and their families</div></div>
-        <div class="acro-pill" data-letter="U"><div class="acro-term">UA</div><div class="acro-def">Unauthorized Absence — serious disciplinary offense that affects pay, rank, and career</div></div>
-        <div class="acro-pill" data-letter="V"><div class="acro-term">VA</div><div class="acro-def">Department of Veterans Affairs — manages veteran benefits, healthcare, disability, and education</div></div>
-        <div class="acro-pill" data-letter="V"><div class="acro-term">VGLI</div><div class="acro-def">Veterans' Group Life Insurance — life insurance coverage you can keep after leaving active service</div></div>
-        <div class="acro-pill" data-letter="X"><div class="acro-term">XO</div><div class="acro-def">Executive Officer — second-in-command of a unit, directly below the CO</div></div>
+
+      <!-- DEPLOYMENT -->
+      <div class="fm-section" id="fms-deployment">
+        <button class="fm-section-header" onclick="toggleFMSection('deployment')">
+          <span>Deployment</span>
+          <svg class="fm-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 8,11 13,6"/></svg>
+        </button>
+        <div class="fm-section-body" id="fmb-deployment">
+          <div class="deploy-card">
+            <div class="deploy-card-title">Deployment Lifecycle</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>Pre-deployment:</strong> Update DEERS, set up a POA, ensure SGLI is current, brief your family on allotments and bill pay. Attend the pre-deployment brief — it covers key contacts and emergency procedures.</li>
+                <li><strong>During deployment:</strong> Stay on top of LES via myPay. FSA and HFP/IDP should appear automatically — verify with S1 if missing after 30 days.</li>
+                <li><strong>Homecoming &amp; reintegration:</strong> Budget for an adjustment period — physically and financially. MCCS offers free reintegration workshops. Don't skip them.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">Communication Basics</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>EMCON:</strong> Emissions Control — your Marine may go silent without warning. It's operational, not personal.</li>
+                <li><strong>OPSEC:</strong> Don't post locations, unit movements, or return dates on social media. Ever.</li>
+                <li><strong>Approved contact methods:</strong> MWR phone lines, email (when available), Garmin inReach satellite messenger, and care packages via APO/FPO mail.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">Family Readiness Resources</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>FRO (Family Readiness Officer):</strong> Your first call for unit-specific info. Get their contact before deployment begins.</li>
+                <li><strong>Key Volunteer Network (KVN):</strong> Spouse-led support network embedded in your unit. Connects families to each other and to official resources.</li>
+                <li><strong>Marine Corps Family Services:</strong> Counseling, financial assistance, and emergency help available on most installations.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">Pay &amp; Benefits During Deployment</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>Family Separation Allowance (FSA):</strong> $250/month when separated from dependents for 30+ days.</li>
+                <li><strong>Hostile Fire / Imminent Danger Pay (HFP/IDP):</strong> $225/month for qualifying combat zones.</li>
+                <li><strong>SCRA:</strong> Interest on pre-service debts (credit cards, auto loans) capped at 6% APR. Call your lenders and invoke it.</li>
+                <li><strong>Allotments:</strong> Set up automatic pay splits via myPay before deployment — don't leave your family manually managing transfers.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">Emotional &amp; Mental Health</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>Military OneSource:</strong> Free counseling (up to 12 sessions) for service members and families. Available 24/7 by phone or online — no referral needed.</li>
+                <li><strong>DSTRESS Line:</strong> 1-877-476-7734 — Marines-specific, confidential, 24/7. Staffed by counselors who understand military culture.</li>
+                <li><strong>For families:</strong> Deployment is a marathon, not a sprint. Lean on the KVN, stay connected locally, and build a routine. You don't have to manage this alone.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1277,6 +1414,79 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
       <div class="ib"><div class="ib-t">Real-time alerts live on your base's official channels</div><div class="ib-b">Gate closures, training restrictions, weather alerts, and base news are posted in real time on official social media. These links go straight to your base's pages.</div></div>
       <div id="news-content"></div>
     </div>
+
+    <!-- COMMUNITY TIPS -->
+    <div class="panel" id="p-tips">
+      <div class="ib"><div class="ib-t">Real tips from real Marines</div><div class="ib-b">Crowdsourced knowledge from the community. Filter by duty station or category — or share something you wish someone had told you.</div></div>
+      <button class="tips-toggle-form-btn" id="tips-toggle-btn" onclick="toggleTipForm()">+ Share a tip</button>
+      <div id="tip-form-wrap" style="display:none;">
+        <div class="tip-form">
+          <div class="tip-form-title">Share a tip with the community</div>
+          <div class="tf-grid">
+            <div class="tf-row">
+              <label class="tf-label">Duty Station *</label>
+              <input class="tf-input" id="tf-station" placeholder="e.g. Camp Pendleton" />
+            </div>
+            <div class="tf-row">
+              <label class="tf-label">Category *</label>
+              <select class="tf-select" id="tf-category">
+                <option value="">Select...</option>
+                <option>PCS tips</option>
+                <option>Housing &amp; BAH</option>
+                <option>Healthcare / TRICARE</option>
+                <option>On-base resources</option>
+                <option>Off-base recommendations</option>
+                <option>General gotchas</option>
+              </select>
+            </div>
+          </div>
+          <div class="tf-row">
+            <label class="tf-label">Your tip *</label>
+            <textarea class="tf-textarea" id="tf-text" placeholder="What do you wish someone had told you?"></textarea>
+          </div>
+          <div class="tf-grid">
+            <div class="tf-row">
+              <label class="tf-label">Name (optional)</label>
+              <input class="tf-input" id="tf-name" placeholder="e.g. Cpl Smith" />
+            </div>
+            <div class="tf-row">
+              <label class="tf-label">Unit (optional)</label>
+              <input class="tf-input" id="tf-unit" placeholder="e.g. 1/5 Marines" />
+            </div>
+          </div>
+          <button class="tf-submit" id="tf-submit-btn" onclick="submitTip()">Submit tip</button>
+          <div id="tf-msg" style="font-size:12px;margin-top:8px;text-align:center;display:none;"></div>
+        </div>
+      </div>
+      <div class="tips-filters">
+        <select class="tips-filter-select" id="tips-filter-station" onchange="loadTips()">
+          <option value="">All stations</option>
+          <option>Camp Pendleton</option>
+          <option>29 Palms</option>
+          <option>MCB Quantico</option>
+          <option>Camp Lejeune</option>
+          <option>MCAS Miramar</option>
+          <option>MCB Hawaii</option>
+          <option>Okinawa</option>
+          <option>Cherry Point</option>
+          <option>New River</option>
+          <option>Yuma</option>
+          <option>8th and I</option>
+          <option>Iwakuni</option>
+        </select>
+        <select class="tips-filter-select" id="tips-filter-category" onchange="loadTips()">
+          <option value="">All categories</option>
+          <option>PCS tips</option>
+          <option>Housing &amp; BAH</option>
+          <option>Healthcare / TRICARE</option>
+          <option>On-base resources</option>
+          <option>Off-base recommendations</option>
+          <option>General gotchas</option>
+        </select>
+      </div>
+      <div id="tips-feed"><div class="tips-loading">Loading tips...</div></div>
+    </div>
+
     </div><!-- /main-inner -->
     <footer class="site-footer">
       <span>&copy; 2026 Semper Sorted</span>
@@ -1365,6 +1575,7 @@ function buildSidebar(){
     facilities:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5C5.3 1.5 3.5 3.3 3.5 5.5c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="7.5" cy="5.5" r="1.4" stroke="currentColor" stroke-width="1.3"/></svg>',
     contacts:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 2.5h3l1.5 3-1.8 1.2c.8 1.8 2.3 3.3 4.1 4.1L10 9l3 1.5v3C13 13.8 12 14 12 14 5 14 1 8.5 1 3c0 0 .2-1 1.5-.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
     news:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="2" width="11" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><line x1="4.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="4.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><line x1="4.5" y1="10" x2="7.5" y2="10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+    tips:'<svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5C5 1.5 3 3.3 3 5.7c0 1.5.8 2.8 2 3.6V11h5V9.3c1.2-.8 2-2.1 2-3.6 0-2.4-2-4.2-4.5-4.2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="5.5" y1="12.5" x2="9.5" y2="12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
   };
   var items=[
     {id:'overview',label:'Home'},
@@ -1381,6 +1592,7 @@ function buildSidebar(){
     {id:'facilities',label:'Base Facilities'},
     {id:'contacts',label:'Who To Call'},
     {id:'news',label:'Base News'},
+    {id:'tips',label:'Community Tips'},
   ];
   var nav=document.getElementById('sb-nav');
   if(nav&&!nav.hasChildNodes()){
@@ -1476,11 +1688,14 @@ function tab(name,el){
   if(body)body.scrollTop=0;
   if(name==='facilities')initFacilities();
   if(name==='news')renderNews();
+  if(name==='tips')loadTips();
   track('tab_click',{tab:name});
   if(window.innerWidth<=768){var sb=document.querySelector('.sidebar');if(sb.classList.contains('open'))toggleSidebar();}
 }
 
 function buildSys(){return `You are the Semper Sorted assistant for U.S. Marines and military families. User profile: ${P.grade}, ${P.yos} yrs service, ${P.living === 'barracks' ? 'on base' : 'off base'}, ${P.depcount} dependent(s), ${P.station}. USMC basics you know well: Unit structure (Fire Team 4→Squad 13→Platoon 40→Company 180→Battalion 800→Regiment 3,000→Division). Ranks E-1 through E-9, W-1 through W-5, O-1 through O-10. Key acronyms: BAH, BAS, CAC, CO, XO, S1, S3, MOS, PCS, TAD, PTAD, SCRA, UA, COLA, CONUS, OCONUS, OHA. Major bases: Pendleton, 29 Palms, Miramar, Lejeune, Quantico, K-Bay, Okinawa, Iwakuni, Blaz, Yuma, 8th & I. For current unit locations or deployment schedules, direct them to their S3 or marines.mil — you don't have live operational data. You help with: pay, BAH/BAS/OHA, TRICARE, PCS, VA benefits, GI Bill, MyCAA, TSP/BRS, DEERS, legal resources, and military discounts. Be direct, 3–5 sentences. Always verify specifics with S1, DFAS, or VA.gov. Never invent numbers or policy. Use "DoW"/"Department of War" not "DoD."`;}
+function toggleFMSection(id){var sec=document.getElementById('fms-'+id);if(!sec)return;sec.classList.toggle('closed');try{localStorage.setItem('fm_section_'+id,sec.classList.contains('closed')?'0':'1');}catch(e){}}
+function initFMSections(){['structure','ranks','acronyms','deployment'].forEach(function(id){var stored=null;try{stored=localStorage.getItem('fm_section_'+id);}catch(e){}if(stored==='0'){var sec=document.getElementById('fms-'+id);if(sec)sec.classList.add('closed');}});}
 function filterAcro(letter,btn){document.querySelectorAll('.acro-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');document.querySelectorAll('#acro-grid .acro-pill').forEach(function(p){p.classList.toggle('hidden',letter!=='ALL'&&p.dataset.letter!==letter);});}
 function updateCharCount(){const inp=document.getElementById('ask-input'),el=document.getElementById('ask-char-count'),len=inp.value.length;el.textContent=len+'/500';el.classList.toggle('warn',len>=400);}
 async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text)return;if(!P.grade){inp.value='';updateCharCount();if(!document.querySelector('.profile-nudge')){const n=addMsg('Please set up your profile first (click the ✏️ icon in the sidebar) so I can give you personalized answers.','ai');if(n)n.classList.add('profile-nudge');}return;}if(text.length>500){addMsg('Your message is too long (max 500 characters). Please shorten it and try again.','ai');return;}inp.value='';updateCharCount();addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
@@ -1746,6 +1961,7 @@ window.addEventListener('DOMContentLoaded', function(){
   buildUI();
   buildSidebar();
   switchBase('pendleton');
+  initFMSections();
   // Show profile modal on first visit
   openProfileModal();
 });
@@ -1812,6 +2028,156 @@ const BASE_NEWS = {
     ]
   }
 };
+
+// ── Community Tips ──────────────────────────────────────────────
+var tipsVoted = {};
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function toggleTipForm() {
+  var wrap = document.getElementById('tip-form-wrap');
+  var btn = document.getElementById('tips-toggle-btn');
+  if (wrap.style.display === 'none') {
+    wrap.style.display = 'block';
+    btn.textContent = '× Close';
+  } else {
+    wrap.style.display = 'none';
+    btn.textContent = '+ Share a tip';
+  }
+}
+
+async function loadTips() {
+  var feed = document.getElementById('tips-feed');
+  if (!feed) return;
+  feed.innerHTML = '<div class="tips-loading">Loading tips...</div>';
+  var station = document.getElementById('tips-filter-station').value;
+  var category = document.getElementById('tips-filter-category').value;
+  var params = new URLSearchParams();
+  if (station) params.set('station', station);
+  if (category) params.set('category', category);
+  try {
+    var res = await fetch('/api/tips?' + params.toString());
+    var data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed to load');
+    renderTips(data.tips || []);
+  } catch (e) {
+    feed.innerHTML = '<div class="tips-empty">Could not load tips. Try again later.</div>';
+  }
+}
+
+function renderTips(tips) {
+  var feed = document.getElementById('tips-feed');
+  if (!feed) return;
+  if (!tips.length) {
+    feed.innerHTML = '<div class="tips-empty">No tips yet for this filter. Be the first to share one!</div>';
+    return;
+  }
+  var catStyles = {
+    'PCS tips': 'background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe',
+    'Housing & BAH': 'background:#fff7ed;color:#d97706;border:1px solid #fde68a',
+    'Healthcare / TRICARE': 'background:#f0fdfa;color:#0d9488;border:1px solid #a7f3d0',
+    'On-base resources': 'background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe',
+    'Off-base recommendations': 'background:#fdf4ff;color:#a21caf;border:1px solid #e9d5ff',
+    'General gotchas': 'background:#fef2f2;color:#b91c1c;border:1px solid #fecaca',
+  };
+  feed.innerHTML = tips.map(function(t) {
+    var catStyle = catStyles[t.category] || 'background:var(--coral-light);color:var(--coral);border:1px solid var(--coral-mid)';
+    var votedUp = tipsVoted[t.id] === 'up';
+    var votedDown = tipsVoted[t.id] === 'down';
+    return '<div class="tip-card">' +
+      '<div class="tip-card-header">' +
+        '<span class="tip-cat-pill" style="' + catStyle + '">' + escHtml(t.category) + '</span>' +
+        '<span class="tip-station-pill">' + escHtml(t.station) + '</span>' +
+      '</div>' +
+      '<div class="tip-text">' + escHtml(t.tip_text) + '</div>' +
+      '<div class="tip-footer">' +
+        '<span class="tip-submitter">' + (t.submitter_name ? escHtml(t.submitter_name) + (t.unit ? ' &middot; ' + escHtml(t.unit) : '') : 'Anonymous') + '</span>' +
+        '<div class="tip-votes">' +
+          '<button class="tip-vote-btn' + (votedUp ? ' voted' : '') + '" onclick="voteTip(\'' + t.id + '\',\'up\',this)">' +
+            '<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 2L9.5 8H1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>' +
+            ' ' + (t.upvotes || 0) +
+          '</button>' +
+          '<button class="tip-vote-btn' + (votedDown ? ' voted' : '') + '" onclick="voteTip(\'' + t.id + '\',\'down\',this)">' +
+            '<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 9L1.5 3H9.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>' +
+            ' ' + (t.downvotes || 0) +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+async function voteTip(id, dir, btn) {
+  if (tipsVoted[id]) return;
+  tipsVoted[id] = dir;
+  btn.classList.add('voted');
+  try {
+    var res = await fetch('/api/tips', {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({id: id, dir: dir})
+    });
+    var data = await res.json();
+    if (res.ok && data.tip) {
+      var parent = btn.closest('.tip-votes');
+      if (parent) {
+        var btns = parent.querySelectorAll('.tip-vote-btn');
+        btns[0].lastChild.textContent = ' ' + data.tip.upvotes;
+        btns[1].lastChild.textContent = ' ' + data.tip.downvotes;
+      }
+    }
+  } catch(e) {}
+}
+
+async function submitTip() {
+  var submitBtn = document.getElementById('tf-submit-btn');
+  var msg = document.getElementById('tf-msg');
+  var station = document.getElementById('tf-station').value.trim();
+  var category = document.getElementById('tf-category').value;
+  var text = document.getElementById('tf-text').value.trim();
+  var name = document.getElementById('tf-name').value.trim();
+  var unit = document.getElementById('tf-unit').value.trim();
+  if (!station || !category || !text) {
+    msg.style.display = 'block';
+    msg.style.color = '#b91c1c';
+    msg.textContent = 'Please fill in duty station, category, and tip text.';
+    return;
+  }
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+  msg.style.display = 'none';
+  try {
+    var res = await fetch('/api/tips', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({station: station, category: category, tip_text: text, submitter_name: name || null, unit: unit || null})
+    });
+    var data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed');
+    msg.style.display = 'block';
+    msg.style.color = '#166534';
+    msg.textContent = 'Tip submitted! Thanks for helping the community.';
+    document.getElementById('tf-station').value = '';
+    document.getElementById('tf-category').value = '';
+    document.getElementById('tf-text').value = '';
+    document.getElementById('tf-name').value = '';
+    document.getElementById('tf-unit').value = '';
+    submitBtn.textContent = 'Submit tip';
+    submitBtn.disabled = false;
+    loadTips();
+    track('tip_submitted', {station: station, category: category});
+  } catch(e) {
+    msg.style.display = 'block';
+    msg.style.color = '#b91c1c';
+    msg.textContent = 'Something went wrong. Please try again.';
+    submitBtn.textContent = 'Submit tip';
+    submitBtn.disabled = false;
+  }
+}
+// ── End Community Tips ───────────────────────────────────────────
 
 function renderNews() {
   const stKey = resolveStation(P.station);
