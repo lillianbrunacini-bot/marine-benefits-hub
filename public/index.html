@@ -1125,13 +1125,60 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
         </div>
       </div>
 
-      <!-- DEPLOYMENT -->
-      <div class="fm-section" id="fms-deployment">
-        <button class="fm-section-header" onclick="toggleFMSection('deployment')">
-          <span>Deployment</span>
+      <!-- DEPLOYMENT 101 -->
+      <div class="fm-section" id="fms-deploy101">
+        <button class="fm-section-header" onclick="toggleFMSection('deploy101')">
+          <span>Deployment 101</span>
           <svg class="fm-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 8,11 13,6"/></svg>
         </button>
-        <div class="fm-section-body" id="fmb-deployment">
+        <div class="fm-section-body" id="fmb-deploy101">
+          <div class="deploy-card">
+            <div class="deploy-card-title">What Is a Deployment?</div>
+            <div class="deploy-card-body">A deployment is when a Marine is assigned away from their home unit for an extended period, typically 6–9 months. It's different from training (short, local), TAD/TDY (temporary duty, usually weeks), or PCS (a permanent move to a new duty station). Deployment means your Marine is operationally away — often with limited communication.</div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">What Is a MEU?</div>
+            <div class="deploy-card-body">A Marine Expeditionary Unit is a self-contained force of ~2,200 Marines built around an infantry battalion, a helicopter squadron, and a logistics element. MEUs are the USMC's rapid-response force — they deploy on Navy ships and can respond to crises anywhere in the world within hours of getting the order. The 7-month float is the classic MEU deployment.</div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">Is Every Deployment a MEU?</div>
+            <div class="deploy-card-body">No. MEU (float) is one of several deployment types. Others include:
+              <ul>
+                <li><strong>UDP (Unit Deployment Program):</strong> typically 6 months to Okinawa, Japan, living on base</li>
+                <li><strong>OCONUS billets:</strong> individual orders to Korea, Bahrain, Europe, or elsewhere — often 12 months unaccompanied</li>
+                <li><strong>IA (Individual Augment):</strong> a Marine sent alone to support another unit or mission</li>
+                <li><strong>Combat deployments:</strong> to specific theaters, varying length</li>
+              </ul>
+              Your Marine's MOS and unit type largely determine which kind they'll see.
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">How Long Do Deployments Last?</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>MEU float:</strong> ~7 months</li>
+                <li><strong>UDP to Okinawa:</strong> 6 months</li>
+                <li><strong>Unaccompanied OCONUS tours:</strong> 12 months (sometimes extendable)</li>
+                <li><strong>Combat deployments:</strong> historically 7–12 months depending on theater and unit</li>
+                <li><strong>Training evolutions (not true deployments):</strong> days to weeks</li>
+              </ul>
+              Note: end dates shift. "7 months" often means 7.5 or 8 in practice — build your mental model around a range, not a date.
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">What's a "Float"?</div>
+            <div class="deploy-card-body">Float is informal for a MEU deployment aboard Navy ships (an Amphibious Ready Group). Your Marine lives and works at sea, moving between locations as the mission requires. Communication is more limited than a land deployment — phone and internet access depends on the ship's schedule and EMCON status.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPLOYMENT: RESOURCES -->
+      <div class="fm-section" id="fms-deployres">
+        <button class="fm-section-header" onclick="toggleFMSection('deployres')">
+          <span>Deployment: Resources</span>
+          <svg class="fm-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 8,11 13,6"/></svg>
+        </button>
+        <div class="fm-section-body" id="fmb-deployres">
           <div class="deploy-card">
             <div class="deploy-card-title">Deployment Lifecycle</div>
             <div class="deploy-card-body">
@@ -1180,6 +1227,70 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
                 <li><strong>Military OneSource:</strong> Free counseling (up to 12 sessions) for service members and families. Available 24/7 by phone or online — no referral needed.</li>
                 <li><strong>DSTRESS Line:</strong> 1-877-476-7734 — Marines-specific, confidential, 24/7. Staffed by counselors who understand military culture.</li>
                 <li><strong>For families:</strong> Deployment is a marathon, not a sprint. Lean on the KVN, stay connected locally, and build a routine. You don't have to manage this alone.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOS & CAREER FIELDS -->
+      <div class="fm-section" id="fms-mos">
+        <button class="fm-section-header" onclick="toggleFMSection('mos')">
+          <span>MOS &amp; Career Fields</span>
+          <svg class="fm-chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,6 8,11 13,6"/></svg>
+        </button>
+        <div class="fm-section-body" id="fmb-mos">
+          <div class="deploy-card">
+            <div class="deploy-card-title">What Is an MOS?</div>
+            <div class="deploy-card-body">
+              MOS stands for <strong>Military Occupational Specialty</strong> — it's the code that defines what your Marine does. Every enlisted Marine gets an MOS at the School of Infantry (SOI) or their MOS school after boot camp. Officers receive theirs after The Basic School (TBS). Your MOS drives your billet, your base assignment, your deployment schedule, and often your career trajectory. It can be changed, but usually only at specific career milestones or through a formal lateral move request.
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">How to Read an MOS Code</div>
+            <div class="deploy-card-body">
+              MOS codes are 4-digit numbers, sometimes followed by a letter. The first two digits indicate the <strong>occupational field</strong>; the last two narrow it to a specific specialty.
+              <ul>
+                <li><strong>03xx</strong> — Infantry (0311 = Rifleman, 0331 = Machine Gunner, 0341 = Mortarman)</li>
+                <li><strong>06xx</strong> — Communications</li>
+                <li><strong>08xx</strong> — Field Artillery</li>
+                <li><strong>18xx</strong> — Tank &amp; Assault Amphibious (transitioning as the Corps modernizes)</li>
+                <li><strong>26xx / 17xx</strong> — Cyber &amp; Electronic Warfare</li>
+                <li><strong>35xx</strong> — Motor Transport</li>
+                <li><strong>68xx</strong> — Aviation (varies by airframe)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">Combat vs. Support vs. Aviation</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>Combat MOSs (03xx, 08xx, 0861):</strong> Highest deployment frequency. Infantry, artillery, assault amphibious. Physical demands are extreme. Often the longest and most remote deployments.</li>
+                <li><strong>Combat Support (04xx, 06xx, 35xx, 21xx):</strong> Logistics, comms, motor transport, engineer. Deployed in support of combat units — still downrange, but different op tempo.</li>
+                <li><strong>Combat Service Support (30xx, 31xx, 34xx, 65xx):</strong> Admin, supply, food service, finance. Usually closer to established FOBs. Lower deployment frequency in some MOSs, but not always.</li>
+                <li><strong>Aviation (60xx–75xx):</strong> Pilots and aircrew. Deployed with Marine Air Wings. High-demand, high-training-investment fields. Different promotion timelines than ground MOSs.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">What Your Marine's MOS Means for Your Life</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>Deployment frequency:</strong> Infantry and aviation MOSs typically see the most time away. Some support MOSs deploy less often but can still have 6–9 month rotations.</li>
+                <li><strong>Base assignment:</strong> MOS largely determines where you'll be stationed. 03xx is tied to Pendleton, Lejeune, and Okinawa. Aviation to Miramar, Cherry Point, New River, or K-Bay.</li>
+                <li><strong>Work hours:</strong> Combat MOSs often have field ops, overnight exercises, and unpredictable schedules even when not deployed. Admin/logistics MOSs tend to keep more regular garrison hours.</li>
+                <li><strong>Career length:</strong> Some MOSs have better retention incentive bonuses (SRBs) and promotion rates than others. Research your Marine's MOS specifically for realistic long-term planning.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="deploy-card">
+            <div class="deploy-card-title">How to Look Up an MOS</div>
+            <div class="deploy-card-body">
+              <ul>
+                <li><strong>Official source:</strong> MCO 1200.17 (MOS Manual) — available on Marines.mil or via your unit's admin section</li>
+                <li><strong>Quick lookup:</strong> Search "[4-digit MOS] USMC" — the Marine Corps' official MOS descriptions are publicly available</li>
+                <li><strong>Ask the AI tab:</strong> Type your Marine's MOS code in the Ask AI tab for a plain-English breakdown of what that job actually involves day-to-day</li>
+                <li><strong>Unit S-1:</strong> For questions about MOS lateral moves, re-designation, or billet availability — that's always your first call</li>
               </ul>
             </div>
           </div>
@@ -1695,7 +1806,7 @@ function tab(name,el){
 
 function buildSys(){return `You are the Semper Sorted assistant for U.S. Marines and military families. User profile: ${P.grade}, ${P.yos} yrs service, ${P.living === 'barracks' ? 'on base' : 'off base'}, ${P.depcount} dependent(s), ${P.station}. USMC basics you know well: Unit structure (Fire Team 4→Squad 13→Platoon 40→Company 180→Battalion 800→Regiment 3,000→Division). Ranks E-1 through E-9, W-1 through W-5, O-1 through O-10. Key acronyms: BAH, BAS, CAC, CO, XO, S1, S3, MOS, PCS, TAD, PTAD, SCRA, UA, COLA, CONUS, OCONUS, OHA. Major bases: Pendleton, 29 Palms, Miramar, Lejeune, Quantico, K-Bay, Okinawa, Iwakuni, Blaz, Yuma, 8th & I. For current unit locations or deployment schedules, direct them to their S3 or marines.mil — you don't have live operational data. You help with: pay, BAH/BAS/OHA, TRICARE, PCS, VA benefits, GI Bill, MyCAA, TSP/BRS, DEERS, legal resources, and military discounts. Be direct, 3–5 sentences. Always verify specifics with S1, DFAS, or VA.gov. Never invent numbers or policy. Use "DoW"/"Department of War" not "DoD."`;}
 function toggleFMSection(id){var sec=document.getElementById('fms-'+id);if(!sec)return;sec.classList.toggle('closed');try{localStorage.setItem('fm_section_'+id,sec.classList.contains('closed')?'0':'1');}catch(e){}}
-function initFMSections(){['structure','ranks','acronyms','deployment'].forEach(function(id){var stored=null;try{stored=localStorage.getItem('fm_section_'+id);}catch(e){}if(stored==='0'){var sec=document.getElementById('fms-'+id);if(sec)sec.classList.add('closed');}});}
+function initFMSections(){try{localStorage.removeItem('fm_section_deployment');}catch(e){}['structure','ranks','acronyms','deploy101','deployres','mos'].forEach(function(id){var stored=null;try{stored=localStorage.getItem('fm_section_'+id);}catch(e){}if(stored==='0'){var sec=document.getElementById('fms-'+id);if(sec)sec.classList.add('closed');}});}
 function filterAcro(letter,btn){document.querySelectorAll('.acro-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');document.querySelectorAll('#acro-grid .acro-pill').forEach(function(p){p.classList.toggle('hidden',letter!=='ALL'&&p.dataset.letter!==letter);});}
 function updateCharCount(){const inp=document.getElementById('ask-input'),el=document.getElementById('ask-char-count'),len=inp.value.length;el.textContent=len+'/500';el.classList.toggle('warn',len>=400);}
 async function sendMsg(){const inp=document.getElementById('ask-input'),text=inp.value.trim();if(!text)return;if(!P.grade){inp.value='';updateCharCount();if(!document.querySelector('.profile-nudge')){const n=addMsg('Please set up your profile first (click the ✏️ icon in the sidebar) so I can give you personalized answers.','ai');if(n)n.classList.add('profile-nudge');}return;}if(text.length>500){addMsg('Your message is too long (max 500 characters). Please shorten it and try again.','ai');return;}inp.value='';updateCharCount();addMsg(text,'user');document.getElementById('suggests').style.display='none';await callAI(text);}
