@@ -78,7 +78,7 @@ Home, Ask AI, Pay, Healthcare, Housing, Education, Spouse, Field Manual, Family,
 - **Pay table:** E-1–E-9, W-1–W-5, O-1–O-8 (DFAS 2026)
 - **BAH:** 7 bases × 2 tiers — Camp Pendleton, 29 Palms, Quantico, Camp Lejeune, MCAS Miramar, MCB Hawaii, Okinawa
 - **BAS:** Enlisted $476.95 / Officer $328.48
-- **VA disability:** All 6 levels, 3.2% COLA applied
+- **VA disability:** All 6 levels, 2026 rates (2.8% COLA, effective Dec 1, 2025)
 
 ### Station mapping
 | Input | Maps to |
