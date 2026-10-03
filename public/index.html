@@ -1485,12 +1485,12 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
       <div class="ib"><div class="ib-t">Start documenting injuries now, not later</div><div class="ib-b">VA disability is based on proving a service connection. Every injury, exposure, or medical issue you document while on active duty makes a future claim stronger. Don't wait until you're separating.</div></div>
       <div class="card"><div class="ch"><div class="ct"><div class="ct-t">VA disability pay (2026)</div><div class="ct-d">Tax-free monthly payment based on your disability rating</div></div></div><div class="div"></div>
         <div class="rows">
-          <div class="row"><span class="rl">10% rating</span><span class="rv">$175.51 / mo</span></div>
-          <div class="row"><span class="rl">20% rating</span><span class="rv">$346.95 / mo</span></div>
-          <div class="row"><span class="rl">30% rating</span><span class="rv">$537.42 / mo</span></div>
-          <div class="row"><span class="rl">50% rating</span><span class="rv">$1,102.04 / mo</span></div>
-          <div class="row"><span class="rl">70% rating</span><span class="rv">$1,759.19 / mo</span></div>
-          <div class="row"><span class="rl">100% rating</span><span class="rv g">$3,831.30 / mo</span></div>
+          <div class="row"><span class="rl">10% rating</span><span class="rv">$180.42 / mo</span></div>
+          <div class="row"><span class="rl">20% rating</span><span class="rv">$356.66 / mo</span></div>
+          <div class="row"><span class="rl">30% rating</span><span class="rv">$552.47 / mo</span></div>
+          <div class="row"><span class="rl">50% rating</span><span class="rv">$1,132.90 / mo</span></div>
+          <div class="row"><span class="rl">70% rating</span><span class="rv">$1,808.45 / mo</span></div>
+          <div class="row"><span class="rl">100% rating</span><span class="rv g">$3,938.58 / mo</span></div>
         </div>
       </div>
       <div class="ib"><div class="ib-t">PACT Act &mdash; burn pit exposure</div><div class="ib-b">If you were near burn pits or had toxic exposures, file a claim under the PACT Act. The burden of proof has flipped &mdash; the VA now has to prove you're NOT eligible. Always worth filing.</div></div>
@@ -1743,37 +1743,38 @@ html,body{min-height:100%;font-family:'Plus Jakarta Sans',sans-serif;background:
   </div><!-- /content -->
 
 <script>
+// 2026 monthly basic pay (3.8% raise, eff. 1 Jan 2026). null = grade not reached at that YOS.
 const PAY={
 'E-1':[2407,2407,2407,2407,2407,2407,2407,2407,2407,2407,2407,2407],
 'E-2':[2698,2698,2698,2698,2698,2698,2698,2698,2698,2698,2698,2698],
-'E-3':[2836,2836,2836,2836,2836,2836,2836,2836,2836,2836,2836,2836],
-'E-4':[3146,3146,3146,3146,3146,3146,3146,3146,3146,3146,3146,3146],
-'E-5':[3343,3516,3516,3609,3785,3785,3785,3785,3785,3785,3785,3785],
-'E-6':[3653,3791,3865,3960,4107,4229,4307,4307,4307,4307,4307,4307],
-'E-7':[4221,4609,4686,4686,4801,4929,5149,5311,5390,5390,5390,5390],
-'E-8':[5068,5068,5163,5163,5275,5378,5594,5713,5921,6032,6032,6032],
-'E-9':[6199,6199,6199,6199,6199,6354,6560,6751,6940,7241,7519,7716],
-'W-1':[3706,3968,4094,4221,4441,4620,4800,4980,5158,5337,5518,5697],
-'W-2':[4241,4507,4618,4727,4956,5182,5409,5637,5862,6090,6317,6544],
-'W-3':[4796,5063,5192,5321,5561,5799,6041,6283,6524,6764,7005,7247],
-'W-4':[5356,5628,5757,5889,6141,6397,6650,6906,7158,7413,7666,7920],
-'W-5':[6294,6294,6294,6294,7046,7046,7536,7536,7536,7536,7536,7536],
-'O-1':[4150,4320,5026,5026,5026,5026,5026,5026,5026,5026,5026,5026],
-'O-2':[4782,5446,6272,6484,6618,6618,6618,6618,6618,6618,6618,6618],
-'O-3':[5535,6273,6771,7383,7737,8125,8376,8788,9004,9004,9004,9004],
-'O-4':[6294,7286,7773,7881,8332,8816,9419,9888,10214,10402,10510,10510],
-'O-5':[7295,8219,8787,8894,9250,9462,9929,10272,10714,11392,11714,12033],
+'E-3':[2837,3015,3198,3198,3198,3198,3198,3198,3198,3198,3198,3198],
+'E-4':[3142,3303,3482,3659,3815,3815,3815,3815,3815,3815,3815,3815],
+'E-5':[3343,3598,3776,3947,4110,4300,4395,4422,4422,4422,4422,4422],
+'E-6':[3401,3743,3908,4069,4236,4613,4759,5043,5130,5194,5268,5268],
+'E-7':[3932,4291,4456,4673,4844,5136,5300,5592,5835,6001,6177,6246],
+'E-8':[null,null,null,null,null,5657,5907,6062,6247,6448,6811,6995],
+'E-9':[null,null,null,null,null,null,6910,7067,7264,7496,7731,8105],
+'W-1':[4057,4494,4611,4859,5152,5584,5786,6069,6347,6565,6766,7010],
+'W-2':[4622,5059,5193,5286,5585,6051,6282,6510,6788,7005,7201,7437],
+'W-3':[5223,5440,5664,5737,5971,6431,6911,7136,7398,7666,8150,8477],
+'W-4':[5720,6152,6329,6502,6802,7098,7398,7848,8244,8620,8928,9229],
+'W-5':[null,null,null,null,null,null,null,null,null,null,null,10170],
+'O-1':[4150,4320,5222,5222,5222,5222,5222,5222,5222,5222,5222,5222],
+'O-2':[4782,5446,6273,6485,6618,6618,6618,6618,6618,6618,6618,6618],
+'O-3':[5534,6274,6770,7383,7737,8125,8376,8788,9004,9004,9004,9004],
+'O-4':[6295,7286,7773,7881,8332,8816,9420,9888,10214,10402,10510,10510],
+'O-5':[7295,8218,8787,8894,9250,9461,9928,10272,10715,11391,11714,12033],
 'O-6':[8751,9614,10245,10245,10284,10725,10784,10784,11396,12480,13115,13751],
-'O-7':[11541,11541,11541,11541,11541,11541,11541,12142,12480,12823,13115,13751],
-'O-8':[13888,14344,14645,14730,15107,15736,15882,16480,16652,17166,18598,18598]};
+'O-7':[11540,12076,12324,12522,12879,13232,13639,14046,14454,15735,16818,16818],
+'O-8':[13888,14344,14646,14729,15107,15735,15882,16480,16652,17167,17912,18598]};
 const YOS_IDX=[0,2,3,4,6,8,10,12,14,16,18,20];
 const BAH={
 'pendleton':{'E-1':2739,'E-2':2739,'E-3':2739,'E-4':2739,'E-5':3093,'E-6':3324,'E-7':3642,'E-8':4056,'E-9':4182,'W-1':3513,'W-2':4053,'W-3':4197,'W-4':4416,'O-1':3285,'O-2':3855,'O-3':4239,'O-4':4494,'O-5':4548,'O-6':4641},
 'pendleton_d':{'E-1':3627,'E-2':3627,'E-3':3627,'E-4':3627,'E-5':3963,'E-6':4398,'E-7':4494,'E-8':4596,'E-9':4779,'W-1':4419,'W-2':4536,'W-3':4662,'W-4':4824,'O-1':4023,'O-2':4395,'O-3':4659,'O-4':5085,'O-5':5391,'O-6':5439},
 '29palms':{'E-1':1755,'E-2':1755,'E-3':1755,'E-4':1755,'E-5':1782,'E-6':1914,'E-7':1986,'E-8':2097,'E-9':2265,'W-1':1929,'W-2':2094,'W-3':2286,'W-4':2571,'O-1':1809,'O-2':1989,'O-3':2343,'O-4':2646,'O-5':2703,'O-6':2796},
 '29palms_d':{'E-1':1896,'E-2':1896,'E-3':1896,'E-4':1896,'E-5':1980,'E-6':2550,'E-7':2649,'E-8':2751,'E-9':2892,'W-1':2571,'W-2':2688,'W-3':2817,'W-4':2919,'O-1':2052,'O-2':2544,'O-3':2814,'O-4':3090,'O-5':3291,'O-6':3318},
-'quantico':{'E-1':2109,'E-2':2109,'E-3':2109,'E-4':2109,'E-5':2361,'E-6':2523,'E-7':2739,'E-8':3006,'E-9':3060,'W-1':2661,'W-2':3003,'W-3':3072,'W-4':3180,'O-1':2499,'O-2':3171,'O-3':3384,'O-4':3795,'O-5':3897,'O-6':3939},
-'quantico_d':{'E-1':2730,'E-2':2730,'E-3':2730,'E-4':2730,'E-5':2955,'E-6':3174,'E-7':3228,'E-8':3288,'E-9':3444,'W-1':3192,'W-2':3252,'W-3':3330,'W-4':3489,'O-1':2991,'O-2':3822,'O-3':4080,'O-4':4572,'O-5':4695,'O-6':4749},
+'quantico':{'E-1':2109,'E-2':2109,'E-3':2109,'E-4':2109,'E-5':2361,'E-6':2523,'E-7':2739,'E-8':3006,'E-9':3060,'W-1':2661,'W-2':3003,'W-3':3072,'W-4':3180,'O-1':2499,'O-2':2883,'O-3':3090,'O-4':3222,'O-5':3252,'O-6':3306},
+'quantico_d':{'E-1':2730,'E-2':2730,'E-3':2730,'E-4':2730,'E-5':2955,'E-6':3174,'E-7':3228,'E-8':3288,'E-9':3444,'W-1':3192,'W-2':3252,'W-3':3330,'W-4':3489,'O-1':2991,'O-2':3171,'O-3':3327,'O-4':3753,'O-5':4065,'O-6':4098},
 'lejeune':{'E-1':1323,'E-2':1323,'E-3':1323,'E-4':1323,'E-5':1476,'E-6':1569,'E-7':1593,'E-8':1662,'E-9':1761,'W-1':1590,'W-2':1659,'W-3':1776,'W-4':1950,'O-1':1566,'O-2':1596,'O-3':1809,'O-4':1989,'O-5':2016,'O-6':2064},
 'lejeune_d':{'E-1':1578,'E-2':1578,'E-3':1578,'E-4':1578,'E-5':1584,'E-6':1944,'E-7':1995,'E-8':2049,'E-9':2160,'W-1':1962,'W-2':2016,'W-3':2088,'W-4':2187,'O-1':1635,'O-2':1941,'O-3':2085,'O-4':2355,'O-5':2553,'O-6':2571},
 'miramar':{'E-1':2763,'E-2':2763,'E-3':2763,'E-4':2763,'E-5':3147,'E-6':3387,'E-7':3678,'E-8':4065,'E-9':4188,'W-1':3564,'W-2':4062,'W-3':4206,'W-4':4410,'O-1':3351,'O-2':3873,'O-3':4248,'O-4':4440,'O-5':4458,'O-6':4494},
@@ -1796,12 +1797,12 @@ let P={},msgs=[];
 P={grade:'',yos:0,living:'offbase',station:'',depcount:0};
 
 function getPayIdx(y){for(let i=YOS_IDX.length-1;i>=0;i--){if(y>=YOS_IDX[i])return i;}return 0;}
-function getBasePay(g,y){const a=PAY[g];if(!a)return 2000;return a[getPayIdx(parseInt(y)||0)]||a[0];}
+function getBasePay(g,y){const a=PAY[g];if(!a)return 2000;return a[getPayIdx(parseInt(y)||0)]||a.find(function(v){return v;});}
 function resolveStation(s){const sl=s.toLowerCase();for(const[k,a]of Object.entries(STATION_MAP)){if(a.some(x=>sl.includes(x)))return k;}return null;}
 function getBAH(g,living,depcount,stKey){if(living==='barracks')return 0;if(!stKey||stKey==='okinawa')return null;const t=BAH[depcount>0?stKey+'_d':stKey];return t?t[g]||null:null;}
 function fmt(n){return'$'+Math.round(n).toLocaleString();}
 
-function buildUI(){const{grade,yos,living,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,living,P.depcount,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&living!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(living==='barracks'?' \u00b7 barracks':P.depcount>0?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');document.getElementById('ov-profile-grade').textContent=grade+' · '+yos+' yrs';document.getElementById('ov-profile-station').textContent=station;document.getElementById('ov-profile-deps').textContent=living==='barracks'?'Barracks · no BAH':P.depcount>0?P.depcount+' dependent'+(P.depcount!==1?'s':''):'No dependents';var hLbl=stKey==='okinawa'?'OHA (Overseas Housing Allowance)':'BAH';const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(living==='barracks'?'<div class="row"><span class="rl">'+hLbl+'</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;var bw=document.getElementById('pay-barracks-warn');if(bw){var jrG=['E-1','E-2','E-3'];if(jrG.indexOf(grade)!==-1&&P.depcount===0&&living!=='barracks'){bw.textContent='Junior enlisted (E-1\u2013E-3) without dependents are typically required to live in barracks and do not receive BAH. Verify your housing situation with your command.';bw.style.display='';}else{bw.style.display='none';}}const giBah=getBAH('E-5','dep',stKey);const giEl=document.getElementById('gi-bah-rate');if(giEl)giEl.textContent=giBah?fmt(giBah)+'/mo (E-5 w/ dep, '+station+')':'Check DTMO.mil for your area';document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(living==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'offbase',0,stKey),wd=getBAH(grade,'offbase',1,stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
+function buildUI(){const{grade,yos,living,station}=P,isO=grade.startsWith('O')||grade.startsWith('W'),bp=getBasePay(grade,yos),stKey=resolveStation(station),bah=getBAH(grade,living,P.depcount,stKey),bas=isO?BAS.officer:BAS.enlisted,bahKnown=bah!==null&&living!=='barracks',total=bp+(bahKnown?bah:0)+bas;document.getElementById('ava').textContent=grade;document.getElementById('h-name').textContent=grade+' \u2014 Marine';document.getElementById('h-meta').textContent=station+(living==='barracks'?' \u00b7 barracks':P.depcount>0?' \u00b7 '+P.depcount+' dependent'+(P.depcount!==1?'s':''):' \u00b7 no dependents');document.getElementById('h-pay').textContent=fmt(total)+(bahKnown?'':'+');document.getElementById('ov-profile-grade').textContent=grade+' · '+yos+' yrs';document.getElementById('ov-profile-station').textContent=station;document.getElementById('ov-profile-deps').textContent=living==='barracks'?'Barracks · no BAH':P.depcount>0?P.depcount+' dependent'+(P.depcount!==1?'s':''):'No dependents';var hLbl=stKey==='okinawa'?'OHA (Overseas Housing Allowance)':'BAH';const html='<div class="row"><span class="rl">Base pay ('+grade+', '+yos+' yrs)</span><span class="rv g">'+fmt(bp)+'/mo</span></div>'+(living==='barracks'?'<div class="row"><span class="rl">'+hLbl+'</span><span class="rv dim">Waived (barracks)</span></div>':bahKnown?'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>':'<div class="row"><span class="rl">'+hLbl+' ('+station+')</span><span class="rv dim">Look up at DTMO.mil</span></div>')+'<div class="row"><span class="rl">BAS (food allowance)</span><span class="rv g">'+fmt(bas)+'/mo \u2014 tax-free</span></div><div class="row" style="border-top:1px solid var(--border);padding-top:9px;margin-top:2px;"><span class="rl" style="font-weight:600;color:var(--ink);">Total estimate</span><span class="rv g" style="font-size:14px;">'+fmt(total)+'/mo'+(bahKnown?'':' + BAH')+'</span></div>';document.getElementById('pay-rows').innerHTML=html;document.getElementById('pay-desc').textContent=grade+' \u00b7 '+yos+' yrs \u00b7 '+station;var bw=document.getElementById('pay-barracks-warn');if(bw){var jrG=['E-1','E-2','E-3'];if(jrG.indexOf(grade)!==-1&&P.depcount===0&&living!=='barracks'){bw.textContent='Junior enlisted (E-1\u2013E-3) without dependents are typically required to live in barracks and do not receive BAH. Verify your housing situation with your command.';bw.style.display='';}else{bw.style.display='none';}}const giBah=getBAH('E-5','offbase',1,stKey);const giEl=document.getElementById('gi-bah-rate');if(giEl)giEl.textContent=giBah?fmt(giBah)+'/mo (E-5 w/ dep, '+station+')':'Check DTMO.mil for your area';document.getElementById('bah-desc').textContent=grade+' \u00b7 '+station;const br=document.getElementById('bah-rows');if(living==='barracks'){br.innerHTML='<div class="row"><span class="rl">Living in barracks \u2014 BAH is waived</span><span class="rv dim">n/a</span></div>';}else if(bahKnown){const nd=getBAH(grade,'offbase',0,stKey),wd=getBAH(grade,'offbase',1,stKey);br.innerHTML='<div class="row"><span class="rl">Without dependents</span><span class="rv">'+(nd?fmt(nd):'--')+'</span></div><div class="row"><span class="rl">With dependents</span><span class="rv">'+(wd?fmt(wd):'--')+'</span></div><div class="row"><span class="rl">Your current rate</span><span class="rv g">'+fmt(bah)+'/mo \u2014 tax-free</span></div>';}else{br.innerHTML='<div class="row"><span class="rl">Exact BAH for '+station+'</span><span class="rv dim">Look up at DTMO.mil or ask the AI tab</span></div>';}buildPayTable(grade);}
 function buildPayTable(ug){const grades=['E-1','E-2','E-3','E-4','E-5','E-6','E-7','E-8','E-9','W-1','W-2','W-3','O-1','O-2','O-3','O-4','O-5','O-6'],cols=[0,2,4,6,8];let h='<tr><th>Grade</th>'+cols.map(i=>'<th>'+YOS_IDX[i]+' yrs</th>').join('')+'</tr>';grades.forEach(g=>{const a=PAY[g]||[],hl=(g===ug)?'class="hl"':'';h+='<tr '+hl+'><td>'+g+'</td>'+cols.map(i=>'<td>'+(a[i]?'$'+Math.round(a[i]/100)*100/1000+'k':'--')+'</td>').join('')+'</tr>';});document.getElementById('pay-table').innerHTML=h;}
 
 function buildSidebar(){
